@@ -1,0 +1,17 @@
+{
+  "en": {
+    "title": "FAQ",
+    "updatedAt": "2025-11-12",
+    "items": [
+      { "q": "How to reset password?", "a": "Open the app → Settings → Reset." },
+      { "q": "Is offline mode supported?", "a": "Yes, for viewing cached items." }
+    ]
+  },
+  "es": {
+    "title": "Preguntas frecuentes",
+    "updatedAt": "2025-11-12",
+    "items": [
+      { "q": "¿Cómo restablecer la contraseña?", "a": "Abre la app → Ajustes → Restablecer." }
+    ]
+  }
+}
