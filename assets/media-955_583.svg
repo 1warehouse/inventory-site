@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="21.046 45.652 238.154 134.217" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 147" height="147" width="288" data-type="ugc">
+    <g>
+        <mask height="147" width="288" y="0" x="0" maskUnits="userSpaceOnUse" style="mask-type:alpha" id="0e58593f-cb50-43ac-a149-a80008bcaf05" fill="none">
+            <path fill="#D9D9D9" d="M288 0v147H0V0z"/>
+        </mask>
+        <g filter="url(#4a0d1f24-3fa7-4840-b710-46f4fe0f6468)" mask="url(#0e58593f-cb50-43ac-a149-a80008bcaf05)">
+            <path fill="#053D17" d="M259.2 75.652v74.217c0 16.569-13.431 30-30 30H51.046c-16.569 0-30-13.431-30-30V75.652c0-16.569 13.431-30 30-30H229.2c16.569 0 30 13.431 30 30"/>
+        </g>
+        <defs fill="none">
+            <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="214.217" width="318.154" y="5.652" x="-18.954" id="4a0d1f24-3fa7-4840-b710-46f4fe0f6468">
+                <feFlood result="BackgroundImageFix" flood-opacity="0"/>
+                <feBlend result="shape" in2="BackgroundImageFix" in="SourceGraphic"/>
+                <feGaussianBlur result="effect1_foregroundBlur_955_743" stdDeviation="20"/>
+            </filter>
+        </defs>
+    </g>
+</svg>
