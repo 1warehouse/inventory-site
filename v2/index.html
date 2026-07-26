@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+
+  <title>Barcode inventory app that saves to your own Google Sheet | 1inventory</title>
+  <meta name="description" content="Inventory for your home or small business, in a Google Sheet you own. Scan a barcode and the details fill themselves in. Free on iPhone and Android." />
+
+  <link rel="canonical" href="https://1inventory.io/" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/" />
+  <meta property="og:title" content="Barcode inventory app that saves to your own Google Sheet | 1inventory" />
+  <meta property="og:description" content="Inventory for your home or small business, in a Google Sheet you own. Scan a barcode and the details fill themselves in. Free on iPhone and Android." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — scan a barcode, the product lands in a Google Sheet in your own Drive." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Barcode inventory app that saves to your own Google Sheet | 1inventory" />
+  <meta name="twitter:description" content="Inventory for your home or small business, in a Google Sheet you own. Scan a barcode and the details fill themselves in. Free on iPhone and Android." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=4" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "1inventory",
+    "url": "https://1inventory.io/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "iOS 15.6+, Android 7.0+",
+    "description": "A barcode inventory app that keeps your data in a Google Sheet in your own Google Drive. Scan a barcode and the name, description and photo fill themselves in.",
+    "inLanguage": "en",
+    "downloadUrl": "https://apps.apple.com/us/app/1inventory/id6747425128",
+    "sameAs": [
+      "https://apps.apple.com/us/app/1inventory/id6747425128",
+      "https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sparkybit GmbH",
+      "url": "https://1inventory.io/"
+    }
+  }
+  </script>
+</head>
+<body>
+<div style="background:#062e14;color:#7fd79a;text-align:center;font:500 13px/1.6 Poppins,sans-serif;padding:8px 16px;">v2 preview for team review — framed visuals are placeholders. <a href="/" style="color:#fff;">Current live site</a></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how-it-works">How it works</a>
+        <a href="#plans">Plans</a>
+      </nav>
+    </div>
+
+    <div class="nav-cta">
+      <a class="btn btn--green" href="#get-the-app" data-cta="header">Get the app</a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="container split split--55">
+
+      <div class="split__copy hero__copy stack--sm">
+
+        <p class="swap-line" data-hero-variant="default">Inventory for your home or small business.</p>
+
+        <h1 id="hero-title">Everything you keep,<br /> in a spreadsheet you own.</h1>
+
+        <div class="lead">
+          <p>Scan a barcode and the name, photo and description fill themselves in. Sort things by place, count them at a glance, find any of it later — all in a Google Sheet in your own Drive.</p>
+        </div>
+
+        <div class="cta-block">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="store-ios">
+              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="154" height="48" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="store-android">
+              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="154" height="48" />
+            </a>
+          </div>
+
+          <p class="cta-strip"><span>Sign in with Google</span><span>Free plan, no card</span><span>iPhone and Android</span></p>
+        </div>
+
+      </div>
+
+      <div class="split__media">
+        <div class="hero-blob" aria-hidden="true"></div>
+
+        <div class="phone phone--lg">
+          <div class="phone__screen">
+            <div class="phone__placeholder">
+              <span class="placeholder__icon" aria-hidden="true"></span>
+              <span class="placeholder__label">Asset #1 · scanner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--mint" id="next-time" aria-labelledby="s2-title">
+    <div class="container">
+
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Why people use it</span>
+        <h2 id="s2-title" class="mb-0">So, next time…</h2>
+      </div>
+
+      <div class="audience-grid">
+
+        <div class="audience-card">
+          <svg class="audience-card__glyph" viewBox="0 0 44 44" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4 20 L22 6 L40 20" />
+            <path d="M8.5 17.5 V38 H35.5 V17.5" />
+            <path d="M17.5 38 V27 H26.5 V38" />
+          </svg>
+          <h3>At home</h3>
+          <ul class="bullets bullets--green">
+            <li>You're in the shop wondering if you've got paprika. You check. You have. Three.</li>
+            <li>The freezer stops being a mystery box.</li>
+            <li>The garage, the loft and the shed each get their own list.</li>
+            <li>Your collection is searchable, and you stop buying the game you already own.</li>
+          </ul>
+        </div>
+
+        <div class="audience-card">
+          <svg class="audience-card__glyph" viewBox="0 0 44 44" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5.5 17 L9 7.5 H35 L38.5 17 Z" />
+            <path d="M9 17 V38 H35 V17" />
+            <path d="M13.5 22.5 H23 V31 H13.5 Z" />
+            <path d="M27.5 38 V22.5 H33 V38" />
+          </svg>
+          <h3>At work</h3>
+          <ul class="bullets bullets--green">
+            <li>
+              Stocktake stops being a clipboard and a lost afternoon. Walk the shelf, scan,
+              tap +, and the count is in a spreadsheet before you sit down.
+            </li>
+            <li>You can tell a customer what you've actually got, today, without going to look.</li>
+            <li>Your partner or a colleague works from the same list you do.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="closing-line">
+        Built for homes and small operations — up to five places, up to five people.
+        Not a warehouse system, and we'd rather say so now.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section section--soft" id="how-it-works" aria-labelledby="s3-title">
+    <div class="container split split--45 split--top">
+
+      <div class="split__copy stack--sm">
+        <p class="eyebrow">The part everyone gives up on</p>
+        <h2 id="s3-title">Three taps per thing.</h2>
+
+        <div class="prose">
+          <p>Most inventory apps ask you to type. This one asks you to point.</p>
+          <p>Point the camera at a barcode. We search global product databases, and the name, description and photo come back filled in — in your language.</p>
+          <p>Then tap Save &amp; scan next and keep going. The camera never closes. That's how you count a shelf.</p>
+        </div>
+
+        <ul class="bullets bullets--green">
+          <li>Reads twelve barcode formats — everyday retail labels, QR codes and more.</li>
+          <li>Auto-zoom picks up small or distant barcodes, and a beep confirms every hit so you don't have to look.</li>
+          <li>No barcode? Add the item by hand.</li>
+        </ul>
+      </div>
+
+      <div class="split__media">
+        <div class="frame-row" role="group" aria-label="What a scan looks like, in three steps" tabindex="0">
+
+          <div class="frame-row__item phone phone--sm">
+            <div class="phone__screen">
+              <div class="phone__placeholder">
+                <span class="placeholder__label">Asset #2 · scanner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="frame-row__item phone phone--sm">
+            <div class="phone__screen">
+              <div class="phone__placeholder">
+                <span class="placeholder__label">Asset #3 · searching</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="frame-row__item phone phone--sm">
+            <div class="phone__screen">
+              <div class="phone__placeholder">
+                <span class="placeholder__label">Asset #4 · result</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="placeholder-legend">
+          Prototype: every framed visual here is a placeholder, not a screenshot.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="find-it-again" aria-labelledby="s4-title">
+    <div class="container">
+
+      <div class="split split--45 split--top">
+
+        <div class="split__copy stack--sm">
+          <p class="eyebrow">Once everything's in</p>
+          <h2 id="s4-title">Now find it again.</h2>
+
+          <div class="prose">
+            <p>A list of everything you own is worth nothing if you can't get to one thing in it.</p>
+            <p>Search reads more than the name. Type any scrap you remember — half a barcode, a word from the description, the supplier you typed into a field of your own — and it finds the item.</p>
+            <p>Folder view turns each location into a folder. Tap Pantry, see what's in Pantry. Anything unfiled sits in Without location. Places side by side — there's no tree to build.</p>
+          </div>
+        </div>
+
+        <div class="split__media">
+          <div class="frame-row" role="group" aria-label="Folder view and search" tabindex="0">
+
+            <div class="frame-row__item phone phone--forward">
+              <div class="phone__screen">
+                <div class="phone__placeholder">
+                  <span class="placeholder__icon" aria-hidden="true"></span>
+                  <span class="placeholder__label">Asset #13 · folders</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="frame-row__item phone phone--sm phone--behind">
+              <div class="phone__screen">
+                <div class="phone__placeholder">
+                  <span class="placeholder__label">Asset #14 · search</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="frame-caption">Supplier isn't one of our fields. It's one of yours.</p>
+        </div>
+
+      </div>
+
+      <div class="section__foot">
+        <div class="card card--tint">
+          <h3>Expiry date. Supplier. Serial number. Warranty end.</h3>
+          <p class="measure">Track what matters to you — add your own fields, in eight types. Each one becomes a real column in your spreadsheet, and each one is searchable.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--soft" id="stocktake" aria-labelledby="s5-title">
+    <div class="container">
+
+      <div class="split split--45 split--top">
+
+        <div class="split__copy stack--sm">
+          <p class="eyebrow">Every week after that</p>
+          <h2 id="s5-title">The second time you scan a thing, it's a stocktake.</h2>
+
+          <div class="prose">
+            <p>Filling the list is one afternoon. Counting it is the rest of the year.</p>
+            <p>Scan something that's already yours and the app doesn't ask you anything. It knows the thing, shows the number you had, and waits. Tap + until it matches the shelf, then Save &amp; scan next. Walk, scan, tap, walk.</p>
+            <p>Add a photo to a product and the list stops being a wall of words.</p>
+          </div>
+        </div>
+
+        <div class="split__media">
+          <div class="frame-row" role="group" aria-label="The recount loop" tabindex="0">
+
+            <div class="frame-row__item phone">
+              <div class="phone__screen">
+                <div class="phone__placeholder">
+                  <span class="placeholder__icon" aria-hidden="true"></span>
+                  <span class="placeholder__label">Asset #16 · scanner</span>
+                </div>
+              </div>
+            </div>
+
+            <svg class="loop-glyph" viewBox="0 0 44 44" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 12h16a10 10 0 0 1 0 20H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M21 27l-5 5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <div class="frame-row__item phone phone--sm">
+              <div class="phone__screen">
+                <div class="phone__placeholder">
+                  <span class="placeholder__label">Asset #17 · preview</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="handoff muted" data-scroll-50>Every count you save goes into the spreadsheet while you're still standing at the shelf. Which leaves one question: whose spreadsheet is it?</p>
+
+    </div>
+  </section>
+
+  <section class="section" id="your-sheet" aria-labelledby="s6-title">
+    <div class="container">
+
+      <div class="split split--60 split--media-first">
+
+        <div class="split__copy">
+          <span class="eyebrow">Your data, not our database</span>
+          <h2 id="s6-title">It's a Google Sheet. In your Drive. With your name on it.</h2>
+
+          <div class="prose">
+            <p>
+              The first time you sign in, 1inventory creates a spreadsheet in your own Google
+              Drive. There's no setup step. Every product you add is a row.
+            </p>
+            <p>
+              It's a normal file. Open it on a laptop and sort it, chart it, run a formula over
+              it, or share it with your accountant the way you'd share any Google file.
+            </p>
+          </div>
+
+          <p class="pull-quote">
+            There's no export button, because there's nothing to export. Your data is already
+            in the most portable format there is.
+          </p>
+        </div>
+
+        <div class="split__media">
+          <div class="sheet-mock__wrap">
+            <div class="sheet-mock">
+
+              <div class="sheet-mock__chrome">
+                <span class="sheet-mock__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="sheet-mock__url">docs.google.com/spreadsheets/d/…</span>
+              </div>
+
+              <table class="sheet-mock__table">
+                <caption class="visually-hidden">
+                  Schematic preview of the Products tab of the spreadsheet. The column names are
+                  real; the cell contents are placeholders in this prototype.
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Barcode</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Last Updated</th>
+                    <th scope="col" class="sheet-mock__col--custom">Supplier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td class="is-num"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="sheet-mock__col--custom"><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="is-num"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="sheet-mock__col--custom"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td class="is-num"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="sheet-mock__col--custom"><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="is-num"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="sheet-mock__col--custom"><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td class="is-num"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--long" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                    <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
+                    <td class="sheet-mock__col--custom"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="sheet-mock__tabs">
+                <span class="sheet-mock__tab">Info</span>
+                <span class="sheet-mock__tab is-active">Products</span>
+                <span class="sheet-mock__tab">History</span>
+              </div>
+
+            </div>
+          </div>
+
+          <p class="caption">The Products tab as it arrives.</p>
+        </div>
+
+      </div>
+
+      <div class="section__foot">
+        <div class="strip">
+          <div class="strip__item">
+            <h3>Stop paying</h3>
+            <p>
+              Nothing is deleted. Extra inventories, locations and fields are locked, not
+              removed, and come back when you resubscribe.
+            </p>
+          </div>
+          <div class="strip__item">
+            <h3>Delete your account</h3>
+            <p>
+              Your spreadsheets stay in your Google Drive. Removing them is a separate
+              checkbox, off by default.
+            </p>
+          </div>
+          <div class="strip__item">
+            <h3>Delete the app</h3>
+            <p>The file is still in your Drive. You lose the scanner, not the data.</p>
+          </div>
+          <div class="strip__item">
+            <h3>If we disappear</h3>
+            <p>Same answer. That's how it's built, not just something we promise.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--dark" id="permission" aria-labelledby="s7-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <span class="eyebrow">In plain words</span>
+        <h2 id="s7-title" class="mb-0">The rest of your Drive is invisible to us.</h2>
+      </div>
+
+      <div class="prose">
+        <p>
+          When you sign in we ask for three things: your name, your email, and permission to
+          create files in your Drive. That last one is the narrowest permission Google offers —
+          it lets the app open the spreadsheet and photo folder it made for you, and nothing
+          else. Google enforces that. It isn't a promise from us.
+        </p>
+      </div>
+
+      <div class="perm-cols">
+        <div class="perm-col">
+          <h3>What it can open</h3>
+          <ul class="perm-list perm-list--can">
+            <li>The spreadsheet it created for you</li>
+            <li>The photo folder beside it</li>
+            <li>Your name, email and profile picture</li>
+          </ul>
+        </div>
+        <div class="perm-col">
+          <h3>What it can never see</h3>
+          <ul class="perm-list perm-list--cannot">
+            <li>Every other file in your Drive</li>
+            <li>Anything you didn't open with it</li>
+            <li>Gmail, Calendar, anything else in your Google account</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section__foot">
+        <div class="prose">
+          <p>Your products do pass through our servers on the way to Google. We don't keep them.</p>
+          <p>You can check it, and switch it off, any time in your Google Account under Security → Third-party apps.</p>
+        </div>
+
+        <p class="note scope-footnote">Technically, that's the <span class="code-chip">drive.file</span> scope.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--soft" id="plans" aria-labelledby="s8-title">
+    <div class="container">
+
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Plans</span>
+        <h2 id="s8-title">Free is a real plan. Not a trial.</h2>
+        <p>Enough to catalog a room and decide whether you like it.</p>
+      </div>
+
+      <div class="plans-card">
+        <table class="plans-table">
+          <caption class="visually-hidden">What is included in the Free and Premium plans</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Feature</span></th>
+              <th scope="col">Free</th>
+              <th scope="col" class="plans-col--premium">
+                <span class="plans-star" aria-hidden="true">★</span>Premium
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Inventories</th>
+              <td>1</td>
+              <td class="plans-col--premium">Up to 5</td>
+            </tr>
+            <tr>
+              <th scope="row">Locations</th>
+              <td>1</td>
+              <td class="plans-col--premium">Up to 5</td>
+            </tr>
+            <tr>
+              <th scope="row">People on an inventory</th>
+              <td>Just you</td>
+              <td class="plans-col--premium">Up to 5, including you</td>
+            </tr>
+            <tr>
+              <th scope="row">Your own fields</th>
+              <td>1</td>
+              <td class="plans-col--premium">Up to 15</td>
+            </tr>
+            <tr>
+              <th scope="row">Barcode lookups a day</th>
+              <td>5</td>
+              <td class="plans-col--premium">200</td>
+            </tr>
+            <tr>
+              <th scope="row">Change history</th>
+              <td>
+                <span aria-hidden="true">—</span><span class="visually-hidden">No</span>
+              </td>
+              <td class="plans-col--premium">
+                Yes
+                <span class="plans-note">In inventories you create while subscribed</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Products per inventory</th>
+              <td>Unlimited</td>
+              <td class="plans-col--premium">Unlimited</td>
+            </tr>
+            <tr>
+              <th scope="row">Price</th>
+              <td>Free</td>
+              <td class="plans-col--premium">
+                Monthly. Price shown in the app, in your own currency.
+                <span class="plans-note">7-day free trial. Cancel any time.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="plans-cards">
+
+        <div class="plan-card">
+          <h3 class="plan-card__head">Free</h3>
+          <dl>
+            <div class="plan-card__row"><dt>Inventories</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>Locations</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>People on an inventory</dt><dd>Just you</dd></div>
+            <div class="plan-card__row"><dt>Your own fields</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>Barcode lookups a day</dt><dd>5</dd></div>
+            <div class="plan-card__row"><dt>Change history</dt><dd>No</dd></div>
+            <div class="plan-card__row"><dt>Products per inventory</dt><dd>Unlimited</dd></div>
+            <div class="plan-card__row"><dt>Price</dt><dd>Free</dd></div>
+          </dl>
+        </div>
+
+        <div class="plan-card plan-card--premium">
+          <h3 class="plan-card__head"><span class="plans-star" aria-hidden="true">★</span>Premium</h3>
+          <dl>
+            <div class="plan-card__row"><dt>Inventories</dt><dd>Up to 5</dd></div>
+            <div class="plan-card__row"><dt>Locations</dt><dd>Up to 5</dd></div>
+            <div class="plan-card__row"><dt>People on an inventory</dt><dd>Up to 5, including you</dd></div>
+            <div class="plan-card__row"><dt>Your own fields</dt><dd>Up to 15</dd></div>
+            <div class="plan-card__row"><dt>Barcode lookups a day</dt><dd>200</dd></div>
+            <div class="plan-card__row">
+              <dt>Change history</dt>
+              <dd>Yes<span class="plans-note">In inventories you create while subscribed</span></dd>
+            </div>
+            <div class="plan-card__row"><dt>Products per inventory</dt><dd>Unlimited</dd></div>
+            <div class="plan-card__row">
+              <dt>Price</dt>
+              <dd>
+                Monthly. Price shown in the app, in your own currency.
+                <span class="plans-note">7-day free trial. Cancel any time.</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+
+      <ul class="footnotes plans-footnotes">
+        <li>
+          Barcode lookups belong to the inventory's owner and are shared by everyone in it.
+          The daily counter resets at midnight UTC.
+        </li>
+        <li>Adding people to an inventory is a Premium feature — on Free, it's just you.</li>
+        <li>
+          History is Premium, and it only exists in inventories you create while you're
+          subscribed — upgrading an inventory you already have doesn't add one, and history
+          never fills in the past.
+        </li>
+        <li>
+          Subscriptions are handled by the App Store and Google Play. Cancel there, any
+          time.
+        </li>
+      </ul>
+
+      <div class="plans-cta">
+        <a class="btn btn--primary" href="#get-the-app" data-cta="plans">Get the app</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--gradient" id="get-the-app" aria-labelledby="s9-title">
+    <div class="container">
+      <div class="final-cta">
+
+        <img class="final-cta__icon" src="img/app-icon.svg" alt="" width="64" height="64" />
+
+        <h2 id="s9-title">Start with one shelf.</h2>
+
+        <p class="final-cta__body">Sign in with Google, scan ten things, and open the spreadsheet on your laptop. If it isn't for you, the file is still yours.</p>
+
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="store-ios">
+              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="154" height="48" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="store-android">
+              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="154" height="48" />
+            </a>
+          </div>
+
+          <p class="cta-strip"><span>Free plan, no card</span><span>iPhone and Android</span></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — a barcode inventory app that keeps your data in your own Google Sheet.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is available in English, German, Spanish, French and Portuguese.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="#how-it-works">How it works</a>
+          <a href="#plans">Plans</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms and conditions</a>
+          <span>Impressum — coming</span>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="mailto:support@1inventory.com">support@1inventory.com</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Get the app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Get the app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="js/main.js?v=3" defer></script>
+</body>
+</html>
