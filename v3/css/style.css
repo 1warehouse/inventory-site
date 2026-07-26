@@ -2004,7 +2004,7 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 
 /* marker highlight on the ownership clause */
 .u-marker {
-  background-image: linear-gradient(transparent 64%, rgba(31,154,70,.24) 64%, rgba(31,154,70,.24) 94%, transparent 94%);
+  background-image: linear-gradient(transparent 56%, rgba(31,154,70,.26) 56%, rgba(31,154,70,.26) 88%, transparent 88%);
   border-radius: 2px;
 }
 
@@ -2219,4 +2219,127 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
   .float-pill { height: 22px; }
   .scan-btn { width: 28px; height: 28px; }
   .preview-card { padding: 8px 7px; }
+}
+
+/* ======================================================================
+   25 — V3.1 SCREEN QUALITY PASS.
+   The miniature app screens now scale with their frame via container
+   queries (cqw = % of phone width), so they stay proportionate and crisp
+   at every viewport. Frames are larger, especially on phones, where they
+   are the page's main visual. Icons are the app's own SVGs. The sheet
+   mock's filter arrow flows inline after the header text instead of
+   overlapping it.
+   ====================================================================== */
+
+/* --- frames: larger everywhere; screens are now worth looking at --- */
+.phone { --phone-h: 400px; container-type: inline-size; }
+.phone--sm { --phone-h: 330px; }
+.phone--lg { --phone-h: 460px; }
+@media (max-width: 960px) {
+  /* overrides the earlier mobile caps further up the file — the screens are
+     the hero of the mobile page and need legible size; rows snap-scroll */
+  .phone { --phone-h: 360px; }
+  .phone--sm { --phone-h: 380px; }
+  .phone--lg { --phone-h: 420px; }
+}
+
+/* --- inline app icons --- */
+.svgi { display: block; width: 100%; height: 100%; }
+.pill-ico { display: flex; align-items: center; justify-content: center; color: #37453d; }
+.pill-ico--dim { color: #6b7a70; }
+.vp-btn--dim { color: #6b7a70; padding: 0 15%; }
+.svgi-ghost { color: #cfd9d2; width: 58%; height: 58%; margin: auto; }
+.p-thumb--lg { display: flex; }
+
+/* --- container-query scaling: everything inside a screen is sized in cqw.
+       Browsers without container queries keep the px sizes defined above. --- */
+@supports (container-type: inline-size) {
+  /* scanner */
+  .scan-cutout { width: 78%; border-radius: 5cqw; }
+  .scan-cutout .b { border-width: 1.7cqw; }
+  .app-scan .b.tl { border-radius: 5cqw 0 0 0; } .app-scan .b.tr { border-radius: 0 5cqw 0 0; }
+  .app-scan .b.bl { border-radius: 0 0 0 5cqw; } .app-scan .b.br { border-radius: 0 0 5cqw 0; }
+  .scan-code { gap: 1.6cqw; }
+  .scan-code span { width: 1.6cqw; }
+  .scan-code span:nth-child(2n) { width: 1.1cqw; }
+  .scan-code span:nth-child(3n) { width: 2.6cqw; }
+  .scan-code span:nth-child(5n) { width: .8cqw; }
+  .scan-caption { font-size: 5.6cqw; left: 9%; right: 9%; bottom: 8%; }
+  /* sheets */
+  .app-sheet { border-radius: 8cqw 8cqw 0 0; padding: 4cqw 5cqw 6cqw; }
+  .app-sheet--tall { padding-bottom: 7cqw; }
+  .sheet-grip { width: 16cqw; height: 1.8cqw; margin-bottom: 3.6cqw; }
+  .sheet-title { font-size: 6.4cqw; margin-bottom: 3cqw; }
+  .sheet-busy { font-size: 5.4cqw; gap: 3cqw; }
+  .spinner { width: 7cqw; height: 7cqw; border-width: 1.4cqw; }
+  .result-img { width: 44%; border-radius: 5cqw; margin-bottom: 3.6cqw; }
+  .result-img svg { width: 42%; height: 42%; }
+  .result-name { font-size: 6.2cqw; margin-bottom: 1.6cqw; }
+  .result-code { font-size: 5cqw; margin-bottom: 2.6cqw; }
+  .result-desc { font-size: 5cqw; }
+  /* home / folders / search */
+  .app-home { padding: 4cqw 4cqw 5cqw; gap: 3.6cqw; }
+  .app-bar { padding: 1cqw 1cqw 0; }
+  .i-menu { width: 7cqw; height: 5cqw; }
+  .view-pill { padding: 1cqw; gap: 1cqw; }
+  .vp-btn { width: 12.5cqw; height: 8cqw; }
+  .vp-on .i-folder { width: 5.2cqw; height: 3.6cqw; }
+  .vp-on .i-folder::before { width: 2.6cqw; height: 1.1cqw; top: -1.1cqw; }
+  .i-info { width: 5.6cqw; height: 5.6cqw; border-width: .8cqw; }
+  .i-info::after { width: .8cqw; height: 2.4cqw; top: 1.2cqw; }
+  .folder-list { gap: 2.6cqw; }
+  .f-row { gap: 3cqw; border-radius: 4.6cqw; padding: 3cqw 3.6cqw; }
+  .f-ico { width: 8cqw; height: 6cqw; border-radius: 1.1cqw; }
+  .f-ico::before { width: 3.2cqw; height: 1.3cqw; top: -1.3cqw; }
+  .f-name { font-size: 6cqw; }
+  .f-n { font-size: 5.2cqw; padding: .8cqw 3cqw; }
+  .float-pill { height: 13cqw; padding: 0 16%; border-radius: 999px; }
+  .pill-ico .svgi { width: 6cqw; height: 6cqw; }
+  .scan-btn { width: 17cqw; height: 17cqw; transform: translate(-50%, -56%); }
+  .scan-btn .svgi { width: 9.4cqw; height: 9.4cqw; color: #fff; }
+  .search-bar { gap: 3cqw; padding: 3cqw 4.4cqw; }
+  .search-bar .svgi { width: 5.4cqw; height: 5.4cqw; }
+  .search-q { font-size: 6cqw; }
+  .caret { width: .8cqw; height: 5.6cqw; }
+  .p-row { gap: 3.4cqw; border-radius: 4.6cqw; padding: 3cqw 3.4cqw; }
+  .p-thumb { width: 12cqw; height: 12cqw; border-radius: 2.6cqw; }
+  .p-txt { gap: .8cqw; }
+  .p-name { font-size: 5.8cqw; }
+  .p-sub { font-size: 5cqw; }
+  .p-qty { font-size: 5.8cqw; }
+  /* stocktake preview */
+  .preview-card { margin: auto 2cqw; border-radius: 6cqw; padding: 5cqw 4.6cqw; gap: 2.6cqw; }
+  .p-thumb--lg { width: 17cqw; height: 17cqw; border-radius: 4cqw; }
+  .pv-name { font-size: 6cqw; }
+  .pv-loc { font-size: 5.2cqw; }
+  .qty-row { gap: 4.6cqw; margin-top: 1cqw; }
+  .qty-btn { width: 11cqw; height: 11cqw; border-width: .8cqw; font-size: 6.4cqw; }
+  .qty-val { font-size: 8.2cqw; }
+  .pv-cta { font-size: 5.6cqw; padding: 2.2cqw 6cqw; margin-top: 1.4cqw; }
+}
+
+/* --- scanner polish: quiet vignette, chip depth, live-bracket glow --- */
+.app-scan::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4,14,8,.38)); }
+.scan-cutout { box-shadow: 0 0 0 2000px rgba(6,20,12,.30), 0 2px 10px rgba(0,0,0,.35); z-index: 1; }
+.scan--live .scan-cutout .b { filter: drop-shadow(0 0 5px rgba(31,154,70,.55)); }
+.app-sheet, .preview-card { z-index: 1; }
+
+/* --- sheet mock: filter arrow flows inline after the header text --- */
+.sheet-mock__table thead th { position: static; }
+.sheet-mock__table thead th::after {
+  content: "";
+  position: static;
+  display: inline-block;
+  width: 8px; height: 8px;
+  margin-left: 7px;
+  border: 0;
+  transform: none;
+  vertical-align: 0;
+  background-color: var(--green-700);
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.829 5.414c-1.782 0-2.674 2.155-1.414 3.415L10.586 18a2 2 0 0 0 2.829 0l9.171-9.171c1.26-1.26.368-3.415-1.414-3.415z"/></svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.829 5.414c-1.782 0-2.674 2.155-1.414 3.415L10.586 18a2 2 0 0 0 2.829 0l9.171-9.171c1.26-1.26.368-3.415-1.414-3.415z"/></svg>') center / contain no-repeat;
+}
+@supports not ((mask: url("")) or (-webkit-mask: url(""))) {
+  .sheet-mock__table thead th::after { display: none; }
 }
