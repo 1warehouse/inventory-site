@@ -2343,3 +2343,172 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
   .sheet-mock__table thead th::after { display: none; }
 }
+
+/* ======================================================================
+   26 — V3.2 BRIGHT SCREENS. Emoji product "photos" on pastel tints
+   (the app itself uses an emoji picker, so this is on-brand), an opened
+   Pantry list mirroring the app's real 80px rows (radius-10 cover thumbs,
+   plain trailing quantity), a warmer scanner scene, and a completed
+   lookup-result card. All illustrative; frames stay aria-hidden.
+   ====================================================================== */
+
+/* product photo thumbs — pastel tints, emoji as the image */
+.thumb {
+  display: flex; align-items: center; justify-content: center;
+  width: 13cqw; height: 13cqw; border-radius: 3.4cqw; flex: none;
+  font-size: 7.4cqw; line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(9,46,24,.05);
+}
+.thumb--peach { background: #fde4d3; }
+.thumb--lemon { background: #faf0c8; }
+.thumb--mint  { background: #ddf1e3; }
+.thumb--sky   { background: #dbeaf6; }
+.thumb--rose  { background: #f9dfe3; }
+.thumb--hero  { width: 26cqw; height: 26cqw; border-radius: 5cqw; font-size: 15cqw; margin: 0 auto 3cqw; }
+
+/* opened-location bar (back chevron · title · count) */
+.loc-bar { display: flex; align-items: center; gap: 2.6cqw; padding: 1cqw 1cqw 0; }
+.svgi-chev { width: 6cqw; height: 6cqw; color: #37453d; flex: none; }
+.loc-title { font-size: 6cqw; font-weight: 600; color: var(--ink); flex: 1; }
+
+/* product rows — the app's real list anatomy: thumb · title+sub · plain qty */
+.prod-list { display: flex; flex-direction: column; }
+.prod-row {
+  display: flex; align-items: center; gap: 3.4cqw;
+  padding: 2.8cqw 1.4cqw;
+  border-bottom: 1px solid var(--line);
+}
+.prod-row:last-child { border-bottom: 0; }
+.p-sub2 { font-size: 4.6cqw; color: var(--muted); }
+.p-num { font-size: 5.8cqw; font-weight: 500; color: var(--ink); flex: none; font-variant-numeric: tabular-nums; }
+
+/* lookup-result card: completed state with primary action */
+.app-sheet--tall .thumb--hero { margin-bottom: 3.4cqw; }
+.sheet-cta {
+  margin-top: 4cqw; background: var(--green-600); color: #fff; text-align: center;
+  font-size: 5.2cqw; font-weight: 600; border-radius: 999px; padding: 2.8cqw 0;
+  box-shadow: 0 3px 10px rgba(23,128,56,.35);
+}
+
+/* searching sheet: incoming-data skeletons */
+.skel { display: flex; flex-direction: column; gap: 2.2cqw; margin-top: 3.4cqw; }
+.skel-bar { height: 3.4cqw; border-radius: 999px; background: #edf2ee; }
+@media (prefers-reduced-motion: no-preference) {
+  .skel-bar { background: linear-gradient(90deg, #edf2ee 30%, #f7faf8 50%, #edf2ee 70%); background-size: 200% 100%; animation: shimmer 1.6s linear infinite; }
+  @keyframes shimmer { to { background-position: -200% 0; } }
+}
+
+/* scanner scene — warmer, brighter, less murky */
+.app-scan {
+  background:
+    radial-gradient(70% 46% at 24% 20%, rgba(255,190,120,.30), transparent 70%),
+    radial-gradient(60% 42% at 78% 30%, rgba(127,215,154,.22), transparent 70%),
+    radial-gradient(80% 60% at 50% 88%, rgba(255,225,180,.14), transparent 70%),
+    linear-gradient(168deg, #45544b 0%, #2b3831 55%, #222d27 100%);
+}
+.scan-dim { background: rgba(10,24,16,.10); }
+.scan-cutout { box-shadow: 0 0 0 2000px rgba(8,22,14,.22), 0 3px 12px rgba(0,0,0,.30); transform: rotate(-2.5deg); }
+.app-scan::after { background: radial-gradient(130% 95% at 50% 40%, transparent 60%, rgba(6,16,10,.30)); }
+.scan-caption { color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.4); }
+
+/* the preview card inherits the bigger photo */
+.preview-card .thumb--hero { margin-bottom: 1cqw; }
+
+/* ======================================================================
+   27 — HERO COMPOSITION: the phone list and its Google Sheet, same data,
+   joined by the app's own arrows icon. This IS the H1 drawn as a picture:
+   "Everything you keep" (the list) "in a spreadsheet you own" (the sheet).
+   ====================================================================== */
+
+.hero-combo {
+  --overhang: clamp(240px, 25vw, 320px);   /* how far the sheet extends past the phone */
+  position: relative; width: fit-content; margin-inline: auto;
+  padding: 8px var(--overhang) 54px 0;
+}
+.phone--hero { position: relative; z-index: 2; }
+
+/* hero list uses the list-view toggle state */
+.vp-on--list { color: #fff; }
+.vp-on--list .svgi { width: 5.2cqw; height: 5.2cqw; }
+.i-folder--dim { width: 5.2cqw; height: 3.6cqw; background: #9fb0a5; border-radius: 1.1cqw; position: relative; }
+.i-folder--dim::before { content: ""; position: absolute; top: -1.1cqw; left: 0; width: 2.6cqw; height: 1.1cqw; background: #9fb0a5; border-radius: 1px 1px 0 0; }
+
+/* the mini Google Sheet — beside the phone, tucked just under its edge */
+.mini-sheet {
+  position: absolute; z-index: 1;
+  right: 0; bottom: -14px;
+  width: clamp(250px, 25vw, 330px);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 22px 48px -20px rgba(9,46,24,.35), 0 4px 12px -6px rgba(9,46,24,.15);
+  transform: rotate(2.2deg);
+  overflow: hidden;
+}
+.ms-table { display: flex; flex-direction: column; }
+.ms-tr {
+  display: grid; grid-template-columns: 1.9fr .8fr 1fr;
+  gap: 8px; align-items: center;
+  padding: 7px 12px;
+  border-bottom: 1px solid #eef2ef;
+  font-size: 10.5px; line-height: 1.35; color: var(--body);
+  white-space: nowrap;
+}
+.ms-tr span { overflow: hidden; text-overflow: ellipsis; }
+.ms-tr--head { background: var(--bg-mint); font-weight: 600; color: var(--ink); font-size: 10px; }
+.ms-num { text-align: right; font-variant-numeric: tabular-nums; }
+.ms-tabs { display: flex; gap: 14px; padding: 7px 12px 8px; font-size: 9.5px; color: var(--muted); background: #fbfdfb; }
+.ms-tab--on { color: var(--green-700); font-weight: 600; position: relative; }
+.ms-tab--on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; border-radius: 2px; background: var(--green-600); }
+
+/* the app's arrows icon, pinned to the phone–sheet seam */
+.sync-badge {
+  position: absolute; z-index: 3;
+  right: calc(var(--overhang) - 14px);
+  bottom: 150px;
+  width: 42px; height: 42px; padding: 10px;
+  background: var(--green-600); color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(23,128,56,.45), 0 0 0 5px rgba(255,255,255,.8);
+  display: flex; align-items: center; justify-content: center;
+}
+.sync-badge svg { width: 100%; height: 100%; }
+
+/* the same row lights up in both — one story, two surfaces */
+@media (prefers-reduced-motion: no-preference) {
+  .sync-badge { animation: syncPulse 6s ease-in-out infinite; }
+  @keyframes syncPulse {
+    0%, 100% { transform: scale(1); }
+    8%       { transform: scale(1.12); }
+    16%      { transform: scale(1); }
+  }
+  .hc-row1 { animation: rowGlowA 6s ease-in-out infinite; border-radius: 3cqw; }
+  @keyframes rowGlowA {
+    0%, 100% { background: transparent; }
+    6%, 14%  { background: rgba(31,154,70,.10); }
+    22%      { background: transparent; }
+  }
+  .hc-srow1 { animation: rowGlowB 6s ease-in-out infinite; }
+  @keyframes rowGlowB {
+    0%, 12%  { background: transparent; }
+    18%, 28% { background: rgba(31,154,70,.14); }
+    38%, 100% { background: transparent; }
+  }
+}
+
+/* responsive: keep the whole composition on-screen at every width */
+@media (max-width: 1100px) { .hero-combo { --overhang: clamp(150px, 18vw, 210px); } }
+@media (max-width: 960px) {
+  /* on phones the sheet drops BELOW the handset, tucked under its lower-left
+     corner, so the whole Name column stays readable */
+  .hero-combo { --overhang: 46px; padding-top: 4px; padding-bottom: 128px; }
+  .mini-sheet { width: min(80vw, 310px); right: -8px; bottom: -86px; transform: rotate(1.6deg); }
+  .sync-badge { width: 38px; height: 38px; padding: 9px; bottom: 76px; right: 16%; }
+}
+@media (max-width: 480px) {
+  .hero-combo { padding-bottom: 140px; }
+  .mini-sheet { width: min(86vw, 292px); bottom: -96px; }
+  .ms-tr { font-size: 9.5px; padding: 6px 10px; }
+  .ms-tr--head { font-size: 9px; }
+  .sync-badge { bottom: 84px; right: 12%; }
+}
