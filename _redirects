@@ -1,3 +1,0 @@
-# Preserve legacy Wix-style paths
-/1inventory      /            301
-/1inventory/*    /:splat      301
