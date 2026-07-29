@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sparkybit.oneinventory",
+      "sha256_cert_fingerprints": [
+        "67:5E:86:64:C0:6F:6F:01:75:F8:51:12:35:F1:0C:D8:86:52:9C:02:39:C6:FF:8D:1A:85:D2:8A:D1:B2:17:1D"
+      ]
+    }
+  }
+]
