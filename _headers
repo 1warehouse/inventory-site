@@ -12,3 +12,14 @@
 
 /js/*
   Cache-Control: public, max-age=604800
+
+# App deep-link verification files. The AASA file has no extension, so the
+# JSON content type must be set explicitly; both must be served with 200 and
+# no redirects for iOS/Android link verification to succeed.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+/.well-known/assetlinks.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
