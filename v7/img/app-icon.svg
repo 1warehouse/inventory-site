@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="0.478 0.701 106.479 106.479" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107 108" height="108" width="107" data-type="ugc">
+    <g>
+        <path fill="url(#1c39e8f7-4041-438d-8555-e04cea5f24bc)" d="M86.847.702H20.588C9.482.702.478 9.705.478 20.812V87.07c0 11.107 9.004 20.11 20.11 20.11h66.26c11.105 0 20.109-9.004 20.109-20.11V20.811c0-11.106-9.004-20.11-20.11-20.11"/>
+        <path fill="#ffffff" d="M63.397 52.973h-6.776v13.552h6.776z"/>
+        <path fill="#ffffff" d="M83.725 78.14H23.71V42.367l30.008-17.466 30.007 17.466zm-56.071-3.976H79.78v-29.5L53.718 29.49 27.654 44.663z"/>
+        <path fill="#ffffff" d="M52.75 66.525h-6.82v-17.05h-5.764l12.584-7.15z"/>
+        <path fill="#FFA100" d="M63.397 42.325h-6.776V49.1h6.776z"/>
+        <defs fill="none">
+            <linearGradient gradientUnits="userSpaceOnUse" y2="107.18" x2="53.718" y1=".702" x1="53.718" id="1c39e8f7-4041-438d-8555-e04cea5f24bc">
+                <stop stop-color="#178038"/>
+                <stop stop-color="#0A5221" offset="1"/>
+            </linearGradient>
+        </defs>
+    </g>
+</svg>

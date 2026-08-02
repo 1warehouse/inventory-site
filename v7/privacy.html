@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- PREVIEW CACHE CONTROL.
+       python -m http.server sends Last-Modified and nothing else, so a browser
+       will happily serve a previously fetched copy of this page and show a
+       build that no longer exists on disk. That cost a review cycle once.
+       These three keep the preview honest. REMOVE THEM on promotion to the
+       root — the live site wants normal caching. -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <script>document.documentElement.className += " js";</script>
+
+  <title>Privacy policy | 1inventory</title>
+  <meta name="description" content="The 1inventory privacy policy: what we collect, how your data is handled, and your rights under the GDPR." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body>
+
+<!-- =====================================================================
+     PRIVACY POLICY
+
+     The legal text below is lifted VERBATIM from /privacy.html at the site root.
+     Not a word of it has been edited, reordered or reformatted — it is a
+     published legal document and only its owner may change it.
+
+     What changed is the chrome. The root copy loads the legacy stylesheet
+     and carries a different menu ("Home / How it works / Plans"), so a
+     reader following the footer link out of v7 landed on what looked like
+     a different website. This copy wears the same header, nav and footer
+     as every other v7 page.
+
+     ON PROMOTION: this replaces the root file, and the footer links go back
+     to being /privacy.html rather than page-relative.
+     ===================================================================== -->
+
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./">How it works</a>
+        <a href="plans.html">Plans</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="./#get-the-app" data-cta="header">Get the app</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose legal">
+      <h1>Privacy policy</h1>
+      <p class="updated">Last Updated: June 22, 2025</p>
+
+      <p>
+        Sparkybit GmbH (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting
+        your personal data. This Privacy Policy outlines our practices for collecting, storing, using, and
+        protecting your information when you use our 1inventory mobile application, our server-side services,
+        and their interactions with your Google Drive (collectively, the &ldquo;Services&rdquo;).
+      </p>
+      <p>
+        As the &ldquo;controller&rdquo; in the sense of the General Data Protection Regulation (GDPR), we are
+        responsible for protecting your personal data. Our data protection team will be happy to assist you
+        with any questions you may have about data processing, your rights, or this privacy policy statement.
+        It can be reached at: <a href="mailto:gdpr@1inventory.com">gdpr@1inventory.com</a>.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We collect information to provide and improve our Services. The types of information we collect are:</p>
+      <p><strong>Information You Provide to Us:</strong></p>
+      <ul>
+        <li>
+          <strong>Account Information:</strong> When you register for our Services using your Google Account,
+          we collect your first name, last name, email address, and the URL of your profile picture.
+          Authentication is handled entirely by Google; we do not process your Google password.
+        </li>
+      </ul>
+      <p><strong>Information We Store:</strong></p>
+      <ul>
+        <li><strong>User Data:</strong> We store your name, email, profile picture URL, and settings for any custom fields you create within the app.</li>
+        <li><strong>Google API Tokens:</strong> To connect to your Google account, we store access and refresh tokens. These tokens are kept in an encrypted format.</li>
+        <li><strong>Inventory Data:</strong> The actual data for your inventories is stored directly within Google Sheets on your personal Google Drive. This data passes through our server, which acts as a proxy, but it is not stored or cached on our servers.</li>
+      </ul>
+      <p><strong>Information We Collect Automatically:</strong></p>
+      <ul>
+        <li><strong>Usage Analytics:</strong> We use Firebase Analytics to collect statistics on how users interact with our mobile application. This helps us understand usage patterns and improve the service.</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li><strong>To Provide and Maintain the Service:</strong> We use your Google API tokens to access the specific Google Sheets created by our application, allowing you to manage your inventory.</li>
+        <li><strong>To Personalize Your Experience:</strong> We use your account information to identify you within the application.</li>
+        <li><strong>For Service Improvement:</strong> We analyze usage data through Firebase Analytics to understand what features are used most and to guide future development.</li>
+        <li><strong>To Communicate with You:</strong> We may use your email address to send you important information about the Services.</li>
+      </ul>
+
+      <h2>3. How We Share Your Information</h2>
+      <p>We do not sell your personal information. We may share your information only in the following circumstances:</p>
+      <ul>
+        <li><strong>With Service Providers:</strong> Our application is hosted on Microsoft Azure. We also use Google&rsquo;s Firebase service for analytics. These providers have access to data only as necessary to perform their functions.</li>
+        <li><strong>For Legal Reasons:</strong> We may disclose your information if required by law or in response to a valid legal process.</li>
+        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred to the new entity.</li>
+      </ul>
+
+      <h2>4. Data Security</h2>
+      <p>We implement strong security measures to protect your data.</p>
+      <ul>
+        <li>The access and refresh tokens we store are encrypted in our database using robust encryption standards like AES 256.</li>
+        <li>Access to user data requires compromising multiple security layers, including the database, the decryption keys, and our application&rsquo;s unique client-id and client-secret.</li>
+        <li>The permissions granted to our application are non-sensitive and limited to accessing your profile and email, and managing only the files that our application creates in your Google Drive. We utilize the Google People API, Drive API, and Sheets API for these purposes.</li>
+      </ul>
+
+      <h2>5. Data Retention</h2>
+      <p>
+        We do not have a set data retention period and will store your information as long as your account is
+        active. You can delete your account at any time. Upon receiving a deletion request, we will remove all
+        personal data associated with your account from our servers.
+      </p>
+      <p>
+        Please note that Google may automatically revoke an API refresh token if it has not been used for six
+        months, which would require you to re-authenticate.
+      </p>
+
+      <h2>6. Your Rights Under GDPR (UK &amp; EEA Residents)</h2>
+      <p>
+        We comply with the GDPR. If you are a resident of the European Economic Area (EEA) or the UK, you have
+        the following rights regarding your personal data:
+      </p>
+      <ul>
+        <li><strong>Right to Access:</strong> You have the right to request a copy of the information we hold about you.</li>
+        <li><strong>Right to Rectification:</strong> You have the right to correct any inaccurate or incomplete data.</li>
+        <li><strong>Right to Erasure (&ldquo;Right to be Forgotten&rdquo;):</strong> You can request the deletion of your personal data. You can perform this action yourself at any time using the &ldquo;Delete my account&rdquo; function in your profile, which will remove all of your data from our systems.</li>
+        <li><strong>Right to Restrict Processing:</strong> You have the right to request that we limit the processing of your data under certain conditions.</li>
+        <li><strong>Right to Data Portability:</strong> You have the right to receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to Object:</strong> You have the right to object to our processing of your data.</li>
+      </ul>
+      <p>
+        To exercise any of these rights, please contact our data protection team at
+        <a href="mailto:gdpr@1inventory.com">gdpr@1inventory.com</a>.
+      </p>
+
+      <h2>7. Cross-Border Data Transfers</h2>
+      <p>
+        Our servers are located in Europe and the US. Therefore, your data may be transferred to and stored in
+        countries outside of your country of residence, including outside the EEA. We ensure that such transfers
+        comply with applicable laws and that your data is protected to the standard required within the EEA.
+      </p>
+
+      <h2>8. Children&rsquo;s Privacy</h2>
+      <p>
+        Our services are not intended for or directed at children, and we do not knowingly collect any personal
+        information from them.
+      </p>
+
+      <h2>9. Changes to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. The &ldquo;Last Updated&rdquo; date at the top of
+        this policy will indicate when the latest revisions were made. We encourage you to review this policy
+        periodically.
+      </p>
+
+      <h2>10. Contact Us</h2>
+      <p>
+        If you have any questions or concerns about this Privacy Policy or our data practices, please contact us.
+      </p>
+      <address>
+        <strong>Company:</strong><br />
+        Sparkybit GmbH<br />
+        Im D&ouml;rener Feld 3<br />
+        33100 Paderborn<br />
+        Germany<br /><br />
+        General Support Email: <a href="mailto:support@1inventory.com">support@1inventory.com</a><br />
+        GDPR-related Inquiries: <a href="mailto:gdpr@1inventory.com">gdpr@1inventory.com</a>
+      </address>
+    </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — a barcode inventory app for your home or your business, in a Google Sheet
+          you own.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is available in English, German, Spanish, French and Portuguese.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="./">How it works</a>
+          <a href="plans.html">Plans</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms and conditions</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=7"></script>
+</body>
+</html>
