@@ -2845,20 +2845,25 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 #top .cta-block .note { margin-top: 14px; }
 
 /* -------------------------------------------------------------------------
-   v7 — .trust-glyph
-   The shield on the permissions band. That section is the page's strongest
-   trust argument and its only dark band, but with no mark of its own it read
-   as one more block of prose and got skimmed. Sized to sit above the eyebrow
-   without competing with the h2.
+   v7 — .eyebrow--badge
+   The shield on the permissions band, locked to the section label rather than
+   floating above it. As a free-standing glyph it read as decoration; sitting
+   on the eyebrow it reads as a badge and marks what kind of section this is
+   before a word is read. Sized to the eyebrow's cap height so the two share a
+   baseline instead of one hanging off the other.
    ------------------------------------------------------------------------- */
-.trust-glyph {
-  width: 42px;
-  height: 42px;
-  display: block;
-  margin-bottom: 14px;
-  color: var(--accent-on-dark);
+.eyebrow--badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-@media (max-width: 560px) { .trust-glyph { width: 36px; height: 36px; } }
+.eyebrow--badge svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  /* Optical, not mathematical: a shield's visual centre sits below its box. */
+  margin-top: -1px;
+}
 
 /* -------------------------------------------------------------------------
    v7 — .eml, the obfuscated email links.
@@ -2878,3 +2883,41 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 }
 .eml[href]:hover { color: var(--green-600); }
 .section--dark .eml[href] { color: var(--accent-on-dark); }
+
+/* -------------------------------------------------------------------------
+   v7 — the "never see" crosses in red.
+   They were rgba(255,255,255,.55), the same weight as the ticks opposite, so
+   the two columns read as one neutral list of facts. Red makes the boundary
+   the point: these are the things the app is shut out of.
+
+   Not pure red. #ff8f85 is a light coral that carries on the dark green band
+   at roughly 7:1, where a saturated #e00 sits near 3:1 and vibrates against
+   the green. Colour is not the only signal either — the column heading says
+   "never see" in words, and the glyphs stay hidden from assistive tech.
+   ------------------------------------------------------------------------- */
+.perm-list--cannot > li::before { color: #ff8f85; }
+
+/* -------------------------------------------------------------------------
+   v7 — .hero-shot, the real app screenshot in the hero.
+   The PNG already contains the device frame, so it gets no .phone wrapper and
+   no shadow — either would draw a second bezel around the first. Capped at
+   330px: the intrinsic file is 696px wide, which keeps it sharp on a 2x
+   display at that size.
+   ------------------------------------------------------------------------- */
+.hero-shot {
+  display: block;
+  /* Bounded by HEIGHT, not width. Capped at 330px wide the screenshot stood
+     684px tall against a 414px copy column: 270px of overhang, and the image
+     rather than the copy was setting the height of the whole hero. Scaling to
+     the row means the phone ends near where the copy does. */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: clamp(340px, 33vw, 470px);
+  margin-inline: auto;
+}
+@media (max-width: 900px) {
+  /* Stacked under the copy, so there is no row to match and the constraint
+     goes back to width. */
+  .hero-shot { max-height: none; width: 100%; max-width: 280px; }
+}

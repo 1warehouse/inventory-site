@@ -143,23 +143,21 @@
         </div>
       </div>
 
+      <!-- A real screenshot, supplied by the client, with the device frame
+           already in it — so no .phone wrapper, which would draw a second one.
+
+           The CSS mockup this replaced carried the page's one placeholder
+           disclosure ("App screens are representations…"). That line is gone
+           with it, because this screen is no longer a representation.
+
+           width and height are the intrinsic pixels: they reserve the box
+           before the file arrives, so the hero does not jump. fetchpriority
+           high because at this size it is the page's likely LCP element. -->
       <div class="split__media">
-        <div class="phone">
-          <div class="phone__screen">
-            <div class="app-screen app-home">
-              <div class="loc-bar"><span class="loc-title">Kitchen</span><span class="f-n">18</span></div>
-              <div class="prod-list">
-                <div class="prod-row"><span class="thumb thumb--peach"></span><span class="p-txt"><span class="p-name">Passata, 700 ml</span><span class="p-sub2">Glass bottle</span></span><span class="p-num">6</span></div>
-                <div class="prod-row"><span class="thumb thumb--lemon"></span><span class="p-txt"><span class="p-name">Olive oil, 1 L</span><span class="p-sub2">Extra virgin</span></span><span class="p-num">2</span></div>
-                <div class="prod-row"><span class="thumb thumb--mint"></span><span class="p-txt"><span class="p-name">Spaghetti, 500 g</span><span class="p-sub2">Bronze-cut</span></span><span class="p-num">4</span></div>
-                <div class="prod-row"><span class="thumb thumb--sky"></span><span class="p-txt"><span class="p-name">Smoked paprika, 75 g</span><span class="p-sub2">Tin</span></span><span class="p-num">3</span></div>
-                <div class="prod-row"><span class="thumb thumb--rose"></span><span class="p-txt"><span class="p-name">Acacia honey, 250 g</span><span class="p-sub2">Local market</span></span><span class="p-num">1</span></div>
-                <div class="prod-row"><span class="thumb thumb--peach"></span><span class="p-txt"><span class="p-name">Tinned chickpeas</span><span class="p-sub2">400 g</span></span><span class="p-num">7</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="placeholder-legend">App screens are representations built from the app&rsquo;s own design system.</p>
+        <img class="hero-shot" src="img/app-home.png"
+             width="696" height="1442"
+             fetchpriority="high" decoding="async"
+             alt="The 1inventory product list on a phone. Five items with a thumbnail, barcode and quantity each: passata, olive oil, spaghetti, smoked paprika and acacia honey. A scan button sits in the middle of the bottom bar." />
       </div>
     </div>
   </section>
@@ -503,19 +501,24 @@
        ================================================================= -->
   <section class="section section--dark" id="permission" aria-labelledby="s6-title">
     <div class="container container--narrow">
-      <!-- The shield is here because this band was getting skimmed. It is the
-           page's strongest trust argument and its only dark band, but with no
-           mark of its own it read as one more section of prose. A single glyph
-           tells a scroller what kind of section this is before they read a
-           word. Decorative: the heading carries the meaning. -->
+      <!-- The shield sits ON the label rather than floating above it. As a
+           free-standing glyph it read as decoration; locked to the eyebrow it
+           reads as a badge, and it says what kind of section this is before a
+           word is read.
+
+           The eyebrow was "In plain words", which described the writing style
+           rather than the subject. This band is the page's trust argument, so
+           it now names it. Decorative glyph: the heading carries the meaning. -->
       <div class="section__head">
-        <svg class="trust-glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor"
-             stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true" focusable="false">
-          <path d="M20 4.5 6.5 10v10.5c0 8 5.7 13 13.5 15 7.8-2 13.5-7 13.5-15V10z" />
-          <path d="M14.5 20.5 18.5 24.5 26 16.5" />
-        </svg>
-        <span class="eyebrow">In plain words</span>
+        <span class="eyebrow eyebrow--badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <path d="M12 2.5 3.5 6v6.3c0 4.9 3.5 8 8.5 9.2 5-1.2 8.5-4.3 8.5-9.2V6z" />
+            <path d="M8.6 12.2 11 14.6l4.6-4.8" />
+          </svg>
+          Privacy and security
+        </span>
         <h2 id="s6-title" class="mb-0">The rest of your Drive is invisible to us.</h2>
       </div>
       <div class="prose">
