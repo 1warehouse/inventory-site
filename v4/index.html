@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>document.documentElement.className += " js";</script>
 
-  <!-- Metadata follows the content plan §7. The primary keyword is unchanged;
-       only the tail of the description moved, because the app is now live in
-       both stores and the page no longer collects emails. -->
+  <!-- Metadata follows the content plan §7. The primary keyword is unchanged.
+       v4: the description now carries the alerts hook. It is the one genuinely
+       new thing the product does that a spreadsheet cannot, and it is the
+       highest-value phrase we have for the paid-search work in Phase 4 — it
+       previously appeared nowhere on the page or in any metadata.
+       Held to 140 characters so nothing is truncated in the result. -->
   <title>Barcode inventory app that saves to your own Google Sheet | 1inventory</title>
-  <meta name="description" content="Inventory for your home or small business, in a Google Sheet you own. Scan a barcode and the details fill themselves in. Free on iPhone and Android." />
+  <meta name="description" content="Inventory for home or small business, in a Google Sheet you own. Scan a barcode, get alerts before things expire. Free on iPhone and Android." />
 
   <link rel="canonical" href="https://1inventory.io/" />
   <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
   <link rel="alternate" hreflang="x-default" href="https://1inventory.io/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <!-- v4 is a PREVIEW folder at /v4/, not the live root. noindex keeps it out of
+       search so it cannot compete with 1inventory.io/ for its own keywords; the
+       canonical above still points at the root. Both must flip together on the
+       day this content is promoted to /. -->
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#0b3d1e" />
 
   <!-- Open Graph -->
@@ -23,7 +30,7 @@
   <meta property="og:locale" content="en" />
   <meta property="og:url" content="https://1inventory.io/" />
   <meta property="og:title" content="Barcode inventory app that saves to your own Google Sheet | 1inventory" />
-  <meta property="og:description" content="Inventory for your home or small business, in a Google Sheet you own. Scan a barcode and the details fill themselves in. Free on iPhone and Android." />
+  <meta property="og:description" content="Inventory for home or small business, in a Google Sheet you own. Scan a barcode, get alerts before things expire. Free on iPhone and Android." />
   <!-- TODO(asset): og:image does not exist yet. Plan §8 asset #10 — a purpose-built
        1200x630 composed from the scanner frame, a sheet row and the H1, rendered once
        with headless Chrome. Create /img/og-cover-1200x630.png before launch; a missing
@@ -36,7 +43,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Barcode inventory app that saves to your own Google Sheet | 1inventory" />
-  <meta name="twitter:description" content="Inventory for your home or small business, in a Google Sheet you own. Scan a barcode and the details fill themselves in. Free on iPhone and Android." />
+  <meta name="twitter:description" content="Inventory for home or small business, in a Google Sheet you own. Scan a barcode, get alerts before things expire. Free on iPhone and Android." />
   <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
 
   <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
@@ -46,7 +53,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=4" />
+  <link rel="stylesheet" href="css/style.css?v=45" />
 
   <!-- MobileApplication is the SoftwareApplication subtype the plan §7 specifies.
        Both store listings are live, so downloadUrl and sameAs are now real and
@@ -69,7 +76,7 @@
     "url": "https://1inventory.io/",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS 15.6+, Android 7.0+",
-    "description": "A barcode inventory app that keeps your data in a Google Sheet in your own Google Drive. Scan a barcode and the name, description and photo fill themselves in.",
+    "description": "A barcode inventory app that keeps your data in a Google Sheet in your own Google Drive. Scan a barcode and the name, description and photo fill themselves in, import what you already have from a CSV, and get an alert before anything expires.",
     "inLanguage": "en",
     "downloadUrl": "https://apps.apple.com/us/app/1inventory/id6747425128",
     "sameAs": [
@@ -88,6 +95,12 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- Preview banner. Carried over from how /v3/ is deployed, and removed on the
+     day this is promoted to the root — together with the noindex above. The
+     inline style is deliberate: the banner must not enter the stylesheet,
+     because the stylesheet is byte-identical to v3's and has to stay that way. -->
+<div style="background:#062e14;color:#7fd79a;text-align:center;font:500 13px/1.6 Poppins,sans-serif;padding:8px 16px;">v4 content preview for team review — same design as /v3, updated content. <a href="/v3/" style="color:#fff;">Compare with /v3</a></div>
+
 <!-- =====================================================================
      SECTION 0 — HEADER
      Sticky, frosted, 74px. Brand + two links + one CTA.
@@ -96,7 +109,7 @@
      ===================================================================== -->
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="/" aria-label="1inventory — home">
+    <a class="brand" href="./" aria-label="1inventory — home">
       <img src="img/app-icon.svg" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
@@ -206,10 +219,14 @@
              =============================================================== -->
         <p class="swap-line" data-hero-variant="default">Inventory for your home or small business.</p>
 
-        <h1 id="hero-title">Everything you keep,<br /> in a spreadsheet you own.</h1>
+        <h1 id="hero-title">Everything you keep,<br /> in a spreadsheet <span class="u-marker">you own.</span></h1>
 
+        <!-- v4: the lead now traces the whole arc of the page rather than only
+             the scanner — get it in, find it, recount it, be told before a date
+             matters, and all of it in a file you own. The four verbs map
+             one-to-one onto sections 3-5 and 6, in the order they appear. -->
         <div class="lead">
-          <p>Scan a barcode and the name, photo and description fill themselves in. Sort things by place, count them at a glance, find any of it later — all in a Google Sheet in your own Drive.</p>
+          <p>Scan a barcode and the name, photo and description fill themselves in. Find it again later, recount a shelf by scanning it, and get told before anything expires — all in a Google Sheet in your own Drive.</p>
         </div>
 
         <!-- CTA instance 2 of 4 — the real install path.
@@ -259,12 +276,33 @@
              beneath. No fake status bar, no 9:41 clock.
              Needs one photo of a real barcode; a blurred gradient is the
              approved fallback. -->
-        <div class="phone phone--lg">
-          <div class="phone__screen">
-            <div class="phone__placeholder">
-              <span class="placeholder__icon" aria-hidden="true"></span>
-              <span class="placeholder__label">Asset #1 · scanner</span>
+        <div class="hero-combo" aria-hidden="true">
+          <div class="phone phone--lg phone--hero">
+            <div class="phone__screen">
+              <div class="app-screen app-home app-home--ref">
+                <div class="app-bar"><span class="i-menu"></span><span class="view-pill"><span class="vp-btn vp-on vp-on--list"><svg class="svgi" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.5 10.834h1.667V9.167H2.5zm0 3.333h1.667V12.5H2.5zm0-6.667h1.667V5.834H2.5zm3.333 3.334H17.5V9.167H5.833zm0 3.333H17.5V12.5H5.833zm0-8.333V7.5H17.5V5.834z"/></svg></span><span class="vp-btn"><i class="i-folder i-folder--dim"></i></span></span><span class="i-tune"><svg class="svgi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="16" r="2"/></svg></span></div>
+                <div class="ref-list"><div class="ref-row"><span class="rr-thumb">💊</span><span class="rr-txt"><span class="rr-name">Vitamin D3&nbsp;+&nbsp;K2, 60 caps</span><span class="rr-code"><svg class="bc-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 20v-4.55h1.82v2.73h2.73V20zm15.45 0v-1.82h2.73v-2.73H22V20zM4.72 17.27V6.36h1.82v10.91zm2.73 0V6.36h.91v10.91zm2.73 0V6.36H12v10.91zm2.73 0V6.36h2.73v10.91zm3.64 0V6.36h.91v10.91zm1.82 0V6.36h.91v10.91zM2 8.18V3.64h4.55v1.82H3.82v2.73H2Zm18.18 0V5.45h-2.73V3.63H22v4.55z"/></svg>0 23249 09166 7</span><span class="rr-dash">–</span></span><span class="rr-qty">3</span></div><div class="ref-row"><span class="rr-thumb">🐟</span><span class="rr-txt"><span class="rr-name">Omega-3 fish oil, 120 caps</span><span class="rr-code"><svg class="bc-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 20v-4.55h1.82v2.73h2.73V20zm15.45 0v-1.82h2.73v-2.73H22V20zM4.72 17.27V6.36h1.82v10.91zm2.73 0V6.36h.91v10.91zm2.73 0V6.36H12v10.91zm2.73 0V6.36h2.73v10.91zm3.64 0V6.36h.91v10.91zm1.82 0V6.36h.91v10.91zM2 8.18V3.64h4.55v1.82H3.82v2.73H2Zm18.18 0V5.45h-2.73V3.63H22v4.55z"/></svg>0 23249 01115 9</span><span class="rr-dash">–</span></span><span class="rr-qty">5</span></div><div class="ref-row"><span class="rr-thumb rr-thumb--ph"><svg viewBox="0 0 24 24" width="46%" height="46%" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="M4 7l8 4 8-4M12 11v10M8 5l8 4"/></svg></span><span class="rr-txt"><span class="rr-name">Maple syrup, 16 oz</span><span class="rr-code"><svg class="bc-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 20v-4.55h1.82v2.73h2.73V20zm15.45 0v-1.82h2.73v-2.73H22V20zM4.72 17.27V6.36h1.82v10.91zm2.73 0V6.36h.91v10.91zm2.73 0V6.36H12v10.91zm2.73 0V6.36h2.73v10.91zm3.64 0V6.36h.91v10.91zm1.82 0V6.36h.91v10.91zM2 8.18V3.64h4.55v1.82H3.82v2.73H2Zm18.18 0V5.45h-2.73V3.63H22v4.55z"/></svg>7 33739 06948 4</span><span class="rr-dash">–</span></span><span class="rr-qty">4</span></div><div class="ref-row"><span class="rr-thumb">🍵</span><span class="rr-txt"><span class="rr-name">Green tea extract, 90 caps</span><span class="rr-code"><svg class="bc-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 20v-4.55h1.82v2.73h2.73V20zm15.45 0v-1.82h2.73v-2.73H22V20zM4.72 17.27V6.36h1.82v10.91zm2.73 0V6.36h.91v10.91zm2.73 0V6.36H12v10.91zm2.73 0V6.36h2.73v10.91zm3.64 0V6.36h.91v10.91zm1.82 0V6.36h.91v10.91zM2 8.18V3.64h4.55v1.82H3.82v2.73H2Zm18.18 0V5.45h-2.73V3.63H22v4.55z"/></svg>8 10014 67315 1</span><span class="rr-dash">–</span></span><span class="rr-qty">2</span></div></div>
+                <div class="float-pill"><span class="pill-ico"><svg class="svgi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.2 6h-2.4v4.8H6v2.4h4.8V18h2.4v-4.8H18v-2.4h-4.8z"/></svg></span><span class="scan-btn"><svg class="svgi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 20v-4.55h1.82v2.73h2.73V20zm15.45 0v-1.82h2.73v-2.73H22V20zM4.72 17.27V6.36h1.82v10.91zm2.73 0V6.36h.91v10.91zm2.73 0V6.36H12v10.91zm2.73 0V6.36h2.73v10.91zm3.64 0V6.36h.91v10.91zm1.82 0V6.36h.91v10.91zM2 8.18V3.64h4.55v1.82H3.82v2.73H2Zm18.18 0V5.45h-2.73V3.63H22v4.55z"/></svg></span><span class="pill-ico"><svg class="svgi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.2"/><path d="M15.2 15.2 20 20"/></svg></span></div>
+              </div>
             </div>
+          </div>
+
+          <div class="flow-arrows">
+            <svg viewBox="0 0 48 40" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 12h36m0 0-8-8m8 8-8 8"/>
+              <path d="M44 28H8m0 0 8-8m-8 8 8 8"/>
+            </svg>
+          </div>
+
+          <div class="mini-sheet">
+            <div class="ms-table">
+              <div class="ms-tr ms-tr--head"><span>Name</span><span class="ms-num">Quantity</span><span>Barcode</span></div>
+              <div class="ms-tr hc-srow1"><span>Vitamin D3 + K2, 60 caps</span><span class="ms-num">3</span><span>023249091667</span></div>
+              <div class="ms-tr"><span>Omega-3 fish oil, 120 caps</span><span class="ms-num">5</span><span>023249011159</span></div>
+              <div class="ms-tr"><span>Maple syrup, 16 oz</span><span class="ms-num">4</span><span>733739069484</span></div>
+              <div class="ms-tr"><span>Green tea extract, 90 caps</span><span class="ms-num">2</span><span>810014673151</span></div>
+            </div>
+            <div class="ms-tabs"><span>Info</span><span class="ms-tab--on">Products</span><span>History</span></div>
           </div>
         </div>
       </div>
@@ -309,7 +347,16 @@
           <h3>At home</h3>
           <ul class="bullets bullets--green">
             <li>You're in the shop wondering if you've got paprika. You check. You have. Three.</li>
-            <li>The freezer stops being a mystery box.</li>
+            <!-- v4: this slot used to read "The freezer stops being a mystery box."
+                 It was the vaguest line on the page and the pantry idea is already
+                 carried by the paprika bullet above. It now does real work: it is
+                 the first mention of alerts, phrased as the thing that happens to
+                 you rather than as a feature. Section 5 explains it. -->
+            <!-- "Nothing goes out of date unnoticed" was the first draft and it is an
+                 absolute this product cannot honour: a Free user has one custom field
+                 and one alert rule, so exactly one kind of date is being watched.
+                 Naming food and medicine keeps the scenario concrete and true. -->
+            <li>Food and medicine stop going out of date unnoticed — you hear about it days before, not when you reach for it.</li>
             <!-- THREE locations, deliberately: true on Premium (five) and named
                  in the plans table. Do not raise it to four. -->
             <li>The garage, the loft and the shed each get their own list.</li>
@@ -338,6 +385,12 @@
                  Changes reach other phones on refresh, not instantly; do not add a
                  word that implies real-time or live sync. -->
             <li>Your partner or a colleague works from the same list you do.</li>
+            <!-- v4: change history, which until now appeared only as a row in the
+                 plans table. Phrased from the app's own string
+                 (settings_inventory_history_subtitle) and kept as the consequence
+                 — the moment you actually want it is when a number looks wrong.
+                 Also balances the two cards at four bullets each. -->
+            <li>When a number looks wrong, you can see what changed, who did it and when.</li>
           </ul>
         </div>
 
@@ -349,11 +402,16 @@
 
            NOTE — resolved 2026-07-26: the client standardized on the plans
            table as the reference, so the former "Up to 2,000 things" figure
-           was removed from this line. The backend still enforces
-           Spreadsheet.MaxProducts = 2000 (inventory-api appsettings.json);
-           the plans table's "Unlimited" matches the app's paywall by client
-           decision. If engineering ever surfaces the cap in the app, §8's two
-           Products cells and this comment are the places to revisit. -->
+           was removed from this line.
+           UPDATED v4: the backend cap is now Spreadsheet.MaxProducts = 10000,
+           raised from 2000 in the July 2026 release (inventory-api
+           appsettings.json:93). It is a global cap, not a tier split, so the
+           plans table's "Unlimited / Unlimited" still matches the app's own
+           paywall by client decision 7. Volume is no longer the binding
+           constraint on this product — five places and five people are, which
+           is exactly what the sentence below says. If engineering ever
+           surfaces the cap in the app, §8's two Products cells and this
+           comment are the places to revisit. -->
       <p class="closing-line">
         Built for homes and small operations — up to five places, up to five people.
         Not a warehouse system, and we'd rather say so now.
@@ -373,7 +431,12 @@
        reinstate an in-section quota aside.
        =================================================================== -->
   <section class="section section--soft" id="how-it-works" aria-labelledby="s3-title">
-    <div class="container split split--45 split--top">
+    <!-- v4: .container and .split were the same element in v3. They are separated
+         here so a .section__foot can close the section beneath both columns — the
+         identical structure §4 already uses for its custom-fields sub-block. No
+         new CSS: .split keeps every class it had, it has simply moved one level in. -->
+    <div class="container">
+      <div class="split split--45 split--top">
 
       <div class="split__copy stack--sm">
         <p class="eyebrow">The part everyone gives up on</p>
@@ -404,33 +467,53 @@
           <!-- PLACEHOLDER — plan §8, asset #2. Pre-detection. Reuse asset #1,
                colour swap only — the state change from the hero's green is
                the point. -->
-          <div class="frame-row__item phone phone--sm">
+          <div class="frame-row__item phone phone--sm" aria-hidden="true">
             <div class="phone__screen">
-              <div class="phone__placeholder">
-                <span class="placeholder__label">Asset #2 · scanner</span>
-              </div>
+              <div class="app-screen app-scan ">
+  <div class="scan-dim"></div>
+  <div class="scan-cutout">
+    <i class="b tl"></i><i class="b tr"></i><i class="b bl"></i><i class="b br"></i>
+    <div class="scan-line"></div>
+    <div class="scan-code"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <p class="scan-caption">Scan a barcode to add a new product or find existing one.</p>
+</div>
             </div>
           </div>
 
           <!-- PLACEHOLDER — plan §8, asset #3. Title, spinner, and the app's
                real string: "Searching global database for product
                information." -->
-          <div class="frame-row__item phone phone--sm">
+          <div class="frame-row__item phone phone--sm" aria-hidden="true">
             <div class="phone__screen">
-              <div class="phone__placeholder">
-                <span class="placeholder__label">Asset #3 · searching</span>
-              </div>
+              <div class="app-screen app-scan scan--dim">
+  <div class="scan-dim"></div>
+  <div class="app-sheet">
+    <div class="sheet-grip"></div>
+    <p class="sheet-title">Not in your inventory</p>
+    <div class="sheet-busy"><span class="spinner"></span> Searching global database for product information.</div>
+    <div class="skel"><span class="skel-bar" style="width:72%"></span><span class="skel-bar" style="width:46%"></span></div>
+  </div>
+</div>
             </div>
           </div>
 
           <!-- PLACEHOLDER — plan §8, asset #4. Name, barcode row with digits,
                description block, 200×200 image. Needs a neutral client-owned
                packshot — never a branded image pulled from a lookup API. -->
-          <div class="frame-row__item phone phone--sm">
+          <div class="frame-row__item phone phone--sm" aria-hidden="true">
             <div class="phone__screen">
-              <div class="phone__placeholder">
-                <span class="placeholder__label">Asset #4 · result</span>
-              </div>
+              <div class="app-screen app-scan scan--dim">
+  <div class="scan-dim"></div>
+  <div class="app-sheet app-sheet--tall">
+    <div class="sheet-grip"></div>
+    <span class="thumb thumb--peach thumb--hero">🥫</span>
+    <p class="result-name">Tomato passata, 700&nbsp;ml</p>
+    <p class="result-code">4 770001 234567</p>
+    <p class="result-desc">Strained tomatoes in a glass bottle. Store in a cool, dry place.</p>
+    <div class="sheet-cta">Add product</div>
+  </div>
+</div>
             </div>
           </div>
 
@@ -439,8 +522,38 @@
         <!-- The one placeholder disclosure on the page. Placed once, near the
              first group of frames. Remove it when real mockups land. -->
         <p class="placeholder-legend">
-          Prototype: every framed visual here is a placeholder, not a screenshot.
+          App screens shown are representations built from the app&rsquo;s own design system — not screenshots.
         </p>
+      </div>
+
+      </div>
+
+      <!-- v4 — CSV IMPORT. New in the July 2026 release and absent from the site
+           until now. It belongs here because this section is "how things get in",
+           and scanning was the only answer the page gave. It also removes the
+           objection that blocks the biggest single group of prospects: people who
+           already keep a list and read "scan everything you own" as a week of work.
+
+           ⚠ ACCURACY — all four claims below are verified, do not loosen them:
+             · "matched automatically" — the match is automatic and is NOT
+               reviewable or editable before the run. The app shows the mapping
+               afterwards (settings_import_columns_subtitle). Never write anything
+               that implies the user confirms the mapping first.
+             · "created as the file is read" — true, and only within plan limits.
+               Over-limit fields and locations still reach the Google Sheet, they
+               just aren't linked as app fields (settings_import_custom_fields_sheet_only).
+             · "skipped rather than overwritten" — import is insert-only
+               (settings_import_summary_duplicates). It never updates an existing
+               product. Do not describe it as a sync, a merge or an update.
+             · CSV only. Not Excel, not .xlsx, not Numbers. If anyone asks to
+               write "spreadsheet file" here, the answer is no.
+           Limits (≤5 MB, ≤60 columns, a name column is required) are deliberately
+           left in the app. They are true, but this is a landing page. -->
+      <div class="section__foot">
+        <div class="card card--tint">
+          <h3>Already keep a list? Don&rsquo;t type it in twice.</h3>
+          <p class="measure">Import a CSV and your column headers are matched to the right fields automatically — there&rsquo;s nothing to map by hand. Fields and locations you don&rsquo;t have yet are created as the file is read, within your plan&rsquo;s limits, and rows you already have are skipped rather than overwritten.</p>
+        </div>
       </div>
 
     </div>
@@ -495,10 +608,17 @@
                  centred over it. -->
             <div class="frame-row__item phone phone--forward">
               <div class="phone__screen">
-                <div class="phone__placeholder">
-                  <span class="placeholder__icon" aria-hidden="true"></span>
-                  <span class="placeholder__label">Asset #13 · folders</span>
-                </div>
+                <div class="app-screen app-home">
+  <div class="loc-bar"><svg class="svgi svgi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg><span class="loc-title">Pantry</span><span class="f-n">15</span></div>
+  <div class="prod-list">
+    <div class="prod-row"><span class="thumb thumb--peach">🥫</span><span class="p-txt"><span class="p-name">Tomato passata, 700 ml</span><span class="p-sub2">Glass bottle</span></span><span class="p-num">6</span></div>
+    <div class="prod-row"><span class="thumb thumb--lemon">🍝</span><span class="p-txt"><span class="p-name">Spaghetti, 500 g</span><span class="p-sub2">Bronze-cut</span></span><span class="p-num">4</span></div>
+    <div class="prod-row"><span class="thumb thumb--mint">🫒</span><span class="p-txt"><span class="p-name">Olive oil, 1 L</span><span class="p-sub2">Extra virgin</span></span><span class="p-num">2</span></div>
+    <div class="prod-row"><span class="thumb thumb--sky">🍯</span><span class="p-txt"><span class="p-name">Acacia honey, 250 g</span><span class="p-sub2">Local market</span></span><span class="p-num">3</span></div>
+    <div class="prod-row"><span class="thumb thumb--rose">🌶️</span><span class="p-txt"><span class="p-name">Smoked paprika, 75 g</span><span class="p-sub2">Tin</span></span><span class="p-num">3</span></div>
+  </div>
+  <div class="float-pill"><span class="pill-ico"><svg class="svgi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.2 6h-2.4v4.8H6v2.4h4.8V18h2.4v-4.8H18v-2.4h-4.8z"/></svg></span><span class="scan-btn"><svg class="svgi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 20v-4.55h1.82v2.73h2.73V20zm15.45 0v-1.82h2.73v-2.73H22V20zM4.72 17.27V6.36h1.82v10.91zm2.73 0V6.36h.91v10.91zm2.73 0V6.36H12v10.91zm2.73 0V6.36h2.73v10.91zm3.64 0V6.36h.91v10.91zm1.82 0V6.36h.91v10.91zM2 8.18V3.64h4.55v1.82H3.82v2.73H2Zm18.18 0V5.45h-2.73V3.63H22v4.55z"/></svg></span><span class="pill-ico"><svg class="svgi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.2"/><path d="M15.2 15.2 20 20"/></svg></span></div>
+</div>
               </div>
             </div>
 
@@ -509,9 +629,14 @@
                  quantity. -->
             <div class="frame-row__item phone phone--sm phone--behind">
               <div class="phone__screen">
-                <div class="phone__placeholder">
-                  <span class="placeholder__label">Asset #14 · search</span>
-                </div>
+                <div class="app-screen app-home">
+  <div class="search-bar"><span class="pill-ico pill-ico--dim"><svg class="svgi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.2"/><path d="M15.2 15.2 20 20"/></svg></span><span class="search-q">northgate</span><span class="caret"></span></div>
+  <div class="prod-list">
+    <div class="prod-row"><span class="thumb thumb--sky">🏷️</span><span class="p-txt"><span class="p-name">Label rolls 57×32</span><span class="p-sub">Northgate Supplies</span></span><span class="p-num">14</span></div>
+    <div class="prod-row"><span class="thumb thumb--peach">📦</span><span class="p-txt"><span class="p-name">Packing tape, brown</span><span class="p-sub">Northgate Supplies</span></span><span class="p-num">9</span></div>
+    <div class="prod-row"><span class="thumb thumb--mint">🧾</span><span class="p-txt"><span class="p-name">Thermal receipt rolls</span><span class="p-sub">Northgate Supplies</span></span><span class="p-num">11</span></div>
+  </div>
+</div>
               </div>
             </div>
 
@@ -530,7 +655,13 @@
                number, decimal, checkbox, dropdown, date, date/time). Counting them
                is the sales line; listing them is the manual. The count is still
                exact, so nothing is overstated. -->
-          <p class="measure">Track what matters to you — add your own fields, in eight types. Each one becomes a real column in your spreadsheet, and each one is searchable.</p>
+          <!-- v4: one clause added at the end. The h3 above has always led with
+               "Expiry date" and "Warranty end" without the page ever saying that
+               anything happens to those dates. It does now, and this is the handoff
+               into §5 — which is also the honest disclosure that alerts need a date
+               field you made yourself, stated as a capability rather than a caveat.
+               "a date" covers both Date and Date/Time; do not narrow it to one. -->
+          <p class="measure">Track what matters to you — add your own fields, in eight types. Each one becomes a real column in your spreadsheet, and each one is searchable. Make one of them a date, and the app can warn you before it arrives.</p>
         </div>
       </div>
 
@@ -539,9 +670,121 @@
 
 
   <!-- ===================================================================
+       SECTION 4B — ALERTS  ·  H2 "It tells you. You don't have to remember."
+       NEW IN v4. Numbered 4B rather than 5 so every section comment, id and
+       aria target downstream keeps the number it already had.
+
+       WHY THIS SECTION EXISTS, AND WHY IT IS WHERE IT IS.
+       Alerts are the first thing this product does that a spreadsheet cannot
+       do at all. Every other argument on this page is about WHERE the data
+       lives; this one is about the app doing something for the reader while
+       they are not looking. It is the strongest sales beat we have and the
+       site did not mention it before v4.
+       It sits after §4 because §4's custom-fields card is what creates the
+       date field alerts depend on, and before §5 because §5 is already the
+       "keeping it current" beat. Band is --mint so the run reads
+       plain → mint → soft with no two neighbours alike.
+
+       NO NEW CSS, and none may be added. Every class here already exists and
+       is already used elsewhere on this page: .container--narrow, .section__head,
+       .eyebrow, .prose, .grid/.grid--2 (collapses to one column at 560px),
+       .card, .note, .measure. §7 is the proof of shape — a full section with
+       no phone frame at all.
+
+       DELIBERATELY NO APP MOCKUP. Every screen on this page is hand-built
+       bespoke CSS; adding one would make this a design change instead of a
+       content change. If a frame is wanted later it is a separate pass.
+
+       ⚠ ACCURACY — the product has exactly ONE rule type, DateThreshold
+         (inventory-api DAL/Enums/AlertRuleType.cs). It watches Date and
+         Date/Time CUSTOM fields only — not quantity, not stock level, not
+         the built-in fields. There is no low-stock alert, and no reorder
+         point. If anyone asks to add "get told when you're running low",
+         the answer is that it does not exist. Everything claimed below maps
+         to a shipped string in assets/i18n/en.json.
+       =================================================================== -->
+  <section class="section section--mint" id="alerts" aria-labelledby="alerts-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <span class="eyebrow">Before it matters</span>
+        <h2 id="alerts-title">It tells you. You don&rsquo;t have to remember.</h2>
+      </div>
+
+      <div class="prose">
+        <!-- Deliberately does NOT list examples: the card below is a list of
+             examples, and naming them twice in forty words was the draft's
+             worst redundancy. -->
+        <p>
+          Put a date on something and say how much warning you want. The app watches the date
+          and gets in touch.
+        </p>
+        <!-- THE CONTRAST LINE. This is the one place on the page where the
+             spreadsheet is described as not enough on its own, which is
+             precisely why it sells: it is a limit of files in general, not a
+             dig at any competitor, and the reader supplies the comparison.
+             Client decision: implicit contrast only — never name a rival
+             product and never name a rival category. Do not soften this to
+             "spreadsheets are great, but"; the sentence works because it
+             concedes the spreadsheet's strength first. -->
+        <p>
+          A spreadsheet will hold that date perfectly well. It just won&rsquo;t ever mention it
+          again. That is the one thing a file on its own can&rsquo;t do for you.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>What you put a date on</h3>
+          <ul class="bullets bullets--green bullets--tight">
+            <li>Best-before and expiry</li>
+            <li>Warranty and guarantee ends</li>
+            <li>Service, maintenance and inspection due</li>
+            <li>Renewals, and anything else with a deadline</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How you hear about it</h3>
+          <!-- All four verified against shipped strings: alerts_form_notify_push /
+               _email and alerts_form_channel_required (at least one is required,
+               hence "or both"), alerts_rule_before / _after, and
+               alerts_form_time_label. Do not add SMS, and do not add in-app
+               banners — neither exists. -->
+          <ul class="bullets bullets--green bullets--tight">
+            <li>A push notification, an email, or both</li>
+            <li>However many days ahead you want warning</li>
+            <li>Or after the date, for things that slip</li>
+            <li>At a time of day you choose</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- The quota only. The date-field dependency is NOT restated here on
+           purpose: §4's custom-fields card sets it up two paragraphs earlier
+           ("Make one of them a date…") and footnote 4 under the plans table
+           states it exactly. Saying it a third time in one screen was the other
+           redundancy in the draft.
+           Worth knowing, and deliberately unsaid on the page: a Free user gets
+           one custom field AND one alert rule, so that single field has to BE
+           the date field for the rule to have anything to watch. Spelled out
+           it reads as a riddle; both numbers are in the table for anyone who
+           wants to work it out. -->
+      <p class="note measure">
+        One alert rule on the Free plan, up to 50 on Premium.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
        SECTION 5 — THE SECOND TIME ROUND
        H2 "The second time you scan a thing, it's a stocktake."
-       Everything claimed in this section is available on the Free plan.
+       Everything in the SPLIT is available on the Free plan. That is no longer
+       true of the whole section: the v4 sub-block below adds change history,
+       which is Premium and is labelled as such in its own card. The dashboard
+       beside it is on every plan — it is the screen that shows a Free user how
+       close they are to their caps (dashboard_plan_free, dashboard_cap_of).
 
        This section absorbed the deepest cuts in v2: the barcode-lookup-meter
        paragraph, the "turn on the beep and the buzz first" clause and the
@@ -573,10 +816,15 @@
                  beeper, torch — in that order, vibration and beeper on. -->
             <div class="frame-row__item phone">
               <div class="phone__screen">
-                <div class="phone__placeholder">
-                  <span class="placeholder__icon" aria-hidden="true"></span>
-                  <span class="placeholder__label">Asset #16 · scanner</span>
-                </div>
+                <div class="app-screen app-scan scan--live">
+  <div class="scan-dim"></div>
+  <div class="scan-cutout">
+    <i class="b tl"></i><i class="b tr"></i><i class="b bl"></i><i class="b br"></i>
+    <div class="scan-line"></div>
+    <div class="scan-code"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  
+</div>
               </div>
             </div>
 
@@ -592,11 +840,17 @@
                  NEW total; the original value and its green +N sit on their
                  own row beneath. "Save & scan next" filled, "Edit" outlined,
                  stacked. No unit suffix anywhere. -->
-            <div class="frame-row__item phone phone--sm">
+            <div class="frame-row__item phone phone--sm" aria-hidden="true">
               <div class="phone__screen">
-                <div class="phone__placeholder">
-                  <span class="placeholder__label">Asset #17 · preview</span>
-                </div>
+                <div class="app-screen app-home">
+  <div class="preview-card">
+    <span class="thumb thumb--lemon thumb--hero">🔋</span>
+    <p class="pv-name">AA batteries, 8-pack</p>
+    <p class="pv-loc">Office shelf</p>
+    <div class="qty-row"><span class="qty-btn">−</span><span class="qty-val">36</span><span class="qty-btn qty-btn--plus">+</span></div>
+    <div class="pv-cta">Save &amp; scan next</div>
+  </div>
+</div>
               </div>
             </div>
 
@@ -610,6 +864,41 @@
 
         </div>
 
+      </div>
+
+      <!-- v4 — HISTORY AND DASHBOARD. Both shipped before v4 and neither had a
+           sentence on the site; history existed only as a row in the plans table.
+           They belong together and they belong here, because this section is
+           about keeping a list true over time and these are the two things that
+           tell you whether it still is.
+
+           Same .section__foot + .grid--2 + .card construction as §3 and §4B. No
+           new CSS. Placed BEFORE the handoff line, which has to stay last — it
+           is the bridge into §6 and it ends on the question §6 answers.
+
+           ⚠ ACCURACY:
+             · History is Premium AND only exists in inventories created while
+               subscribed. The card says "Premium"; the full caveat is footnote 3
+               under the plans table and is not repeated here.
+             · The four actions named are exactly the four the app records
+               (settings_inventory_history_action_*): created, increased,
+               decreased, deleted. There is no edit-tracking of names, fields or
+               locations. Do not write "every edit".
+             · The dashboard figures listed are all real keys (dashboard_products,
+               _locations, _total_stock, _last_activity_*, _cap_of). "Stock health"
+               is a real section of that screen but its exact contents were not
+               verified, so it is not described here. -->
+      <div class="section__foot">
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Every change, and who made it</h3>
+            <p>What changed, who did it and when — created, added to, taken from, deleted. When a number looks wrong, you can see how it got that way. It arrives as a tab in your spreadsheet too. <strong>Premium.</strong></p>
+          </div>
+          <div class="card">
+            <h3>Your inventory at a glance</h3>
+            <p>Products, locations, total stock, what changed last, and how much of your plan you&rsquo;ve used — on one screen, without scrolling a list.</p>
+          </div>
+        </div>
       </div>
 
       <!-- The handoff line closes the section and hands over to §6.
@@ -709,7 +998,7 @@
                     <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
                     <td class="sheet-mock__col--custom"><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
                   </tr>
-                  <tr>
+                  <tr class="sm-new">
                     <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
                     <td class="is-num"><span class="sheet-mock__bar sheet-mock__bar--short" aria-hidden="true"></span></td>
                     <td><span class="sheet-mock__bar sheet-mock__bar--mid" aria-hidden="true"></span></td>
@@ -960,6 +1249,18 @@
               <td>5</td>
               <td class="plans-col--premium">200</td>
             </tr>
+            <!-- v4 — NEW ROW. Free 1 / Premium 50, verified at
+                 inventory-api/inventory.WebAPI/appsettings.json:37 and :46
+                 (SubscriptionQuotas.Free.MaxAlertRules / .Premium.MaxAlertRules).
+                 Alerts are NOT a Premium-only feature — the Free plan really does
+                 get one working rule, which is why §4B can be sold to every reader
+                 and not only to subscribers. The mobile .plan-card lists below
+                 mirror this row by hand; both were changed together. -->
+            <tr>
+              <th scope="row">Alert rules</th>
+              <td>1</td>
+              <td class="plans-col--premium">Up to 50</td>
+            </tr>
             <tr>
               <th scope="row">Change history</th>
               <td>
@@ -982,9 +1283,15 @@
                    Published as "Unlimited" in BOTH columns to match the app's own
                    paywall, and the client has standardized the whole page on this
                    table as the reference (the former "Up to 2,000 things" line in
-                   §2 was removed). NOTE FOR ENGINEERING: the backend still enforces
-                   a hard cap of 2,000 products per inventory on both tiers
-                   (inventory-api appsettings.json, Spreadsheet.MaxProducts).
+                   §2 was removed).
+                   NOTE FOR ENGINEERING, UPDATED v4: the backend cap is now 10,000
+                   products per inventory, raised from 2,000 in the July 2026
+                   release (inventory-api appsettings.json:93,
+                   Spreadsheet.MaxProducts). It is a single global cap and is NOT
+                   split by tier, so "Unlimited / Unlimited" remains the same
+                   distance from the truth in both columns. At 10,000 the cap is
+                   now far outside anything the five-location, five-person audience
+                   this page addresses will reach.
                    If that cap ever surfaces in the app, correcting this page is a
                    one-line change in each of these two cells and in the two
                    matching rows of the mobile .plan-card markup below.
@@ -1028,9 +1335,11 @@
             <div class="plan-card__row"><dt>People on an inventory</dt><dd>Just you</dd></div>
             <div class="plan-card__row"><dt>Your own fields</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Barcode lookups a day</dt><dd>5</dd></div>
+            <!-- v4 — mirrors the new Alert rules row in the table above. -->
+            <div class="plan-card__row"><dt>Alert rules</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Change history</dt><dd>No</dd></div>
             <!-- CLIENT DECISION 7 — mirrors the table cell above. Reads "Unlimited"
-                 to match the app's paywall; the backend cap is 2,000. -->
+                 to match the app's paywall; the backend cap is 10,000 (v4). -->
             <div class="plan-card__row"><dt>Products per inventory</dt><dd>Unlimited</dd></div>
             <div class="plan-card__row"><dt>Price</dt><dd>Free</dd></div>
           </dl>
@@ -1044,13 +1353,15 @@
             <div class="plan-card__row"><dt>People on an inventory</dt><dd>Up to 5, including you</dd></div>
             <div class="plan-card__row"><dt>Your own fields</dt><dd>Up to 15</dd></div>
             <div class="plan-card__row"><dt>Barcode lookups a day</dt><dd>200</dd></div>
+            <!-- v4 — mirrors the new Alert rules row in the table above. -->
+            <div class="plan-card__row"><dt>Alert rules</dt><dd>Up to 50</dd></div>
             <!-- CLIENT DECISION 10 — mirrors the table cell above. -->
             <div class="plan-card__row">
               <dt>Change history</dt>
               <dd>Yes<span class="plans-note">In inventories you create while subscribed</span></dd>
             </div>
             <!-- CLIENT DECISION 7 — mirrors the table cell above. Reads "Unlimited"
-                 to match the app's paywall; the backend cap is 2,000. -->
+                 to match the app's paywall; the backend cap is 10,000 (v4). -->
             <div class="plan-card__row"><dt>Products per inventory</dt><dd>Unlimited</dd></div>
             <!-- PRICE PENDING — mirrors the table cell above. Monthly only, no figure. -->
             <div class="plan-card__row">
@@ -1073,6 +1384,15 @@
           The daily counter resets at midnight UTC.
         </li>
         <li>Adding people to an inventory is a Premium feature — on Free, it's just you.</li>
+        <!-- v4 — the dependency, stated once here and once in §4B. Worth knowing
+             but not spelled out on the page: a Free user gets ONE custom field and
+             ONE alert rule, so that field has to be the date field if the rule is
+             to watch anything. Both numbers are in the table above; the reader who
+             cares can put it together, and saying it outright reads as a riddle. -->
+        <li>
+          Alert rules watch Date and Date/Time fields you add yourself, so the field comes
+          first. They don't watch quantity — there is no low-stock alert.
+        </li>
         <!-- DEPARTURE FROM THE PLAN'S COPY — mandated by client decision 10, which
              required a sharper caveat than the plan's "it doesn't fill in the past".
              The plan's original line was:
@@ -1159,7 +1479,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-col">
-        <a class="footer-brand" href="/" aria-label="1inventory — home">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
           <img src="img/app-icon.svg" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
@@ -1186,8 +1506,8 @@
       <div class="footer-col">
         <h2>Legal</h2>
         <nav class="footer-links" aria-label="Legal">
-          <a href="privacy.html">Privacy policy</a>
-          <a href="terms.html">Terms and conditions</a>
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms and conditions</a>
           <!-- IMPRESSUM — DEFERRED (client decision 5).
                A German GmbH running a commercial site is legally required to
                publish an Impressum. The page does not exist and no company
@@ -1237,6 +1557,6 @@
   <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
 </div>
 
-<script src="js/main.js?v=3" defer></script>
+<script src="js/main.js?v=30" defer></script>
 </body>
 </html>

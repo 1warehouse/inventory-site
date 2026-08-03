@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- PREVIEW CACHE CONTROL.
+       python -m http.server sends Last-Modified and nothing else, so a browser
+       will happily serve a previously fetched copy of this page and show a
+       build that no longer exists on disk. That cost a review cycle once.
+       These three keep the preview honest. REMOVE THEM on promotion to the
+       root — the live site wants normal caching. -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <!-- EMBEDDED MODE.
+       The shipped app hard-links to 1inventory.io/faq. Adding ?mobile=1 renders
+       this same page without any site chrome so it can be shown inside the app's
+       own webview: no header, no nav, no footer, no install CTA, tighter
+       padding. One URL, one copy of the answers — an app-only FAQ would drift
+       out of sync with this one within a release or two.
+
+       The class is set here rather than on DOMContentLoaded so the header never
+       paints and then disappears. Accepts ?mobile, ?mobile=1 and ?mobile=true. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
+
+  <!-- The title and description used to echo the "questions people actually
+       ask" line. That copy was cut from the page on client instruction, so the
+       metadata that mirrored it was cut too — metadata must not promise a
+       heading the page no longer has. -->
+  <title>FAQ — questions and answers | 1inventory</title>
+  <meta name="description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
+
+  <link rel="canonical" href="https://1inventory.io/faq" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/faq" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/faq" />
+  <!-- v7 is a PREVIEW folder. noindex keeps it out of search so it cannot
+       compete with the live page for its own long-tail question queries. It
+       flips together with the canonical on promotion day. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/faq" />
+  <meta property="og:title" content="FAQ — questions and answers | 1inventory" />
+  <meta property="og:description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
+  <!-- TODO(asset): og-cover-1200x630.png does not exist yet. Same missing asset
+       the homepage flags; one image serves every page until a per-page set exists. -->
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — a barcode inventory app that writes to a Google Sheet in your own Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ — questions and answers | 1inventory" />
+  <meta name="twitter:description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=16" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg?v=16" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=16" />
+
+  <!-- =====================================================================
+       FAQPage STRUCTURED DATA
+
+       BINDING RULE: this block describes ONLY questions that are visibly on
+       the page, and every answer below is the same text a reader sees, with
+       the markup stripped. Twenty-one entries, in page order. If a question
+       is added, moved or reworded in the body, edit it here in the same
+       commit — a mismatch between the two is a structured-data violation and
+       is the fastest way to lose rich-result eligibility for the whole site.
+
+       Nothing is collapsed on this page (brief §6.5): no accordion, no
+       details/summary. A hidden answer is one a crawler discounts and a
+       hurried reader never opens.
+
+       aggregateRating and review are deliberately absent here as they are on
+       every other page: zero ratings exist and inventing one is both false
+       and a store-policy violation.
+       ===================================================================== -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://1inventory.io/faq",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sparkybit GmbH",
+    "url": "https://1inventory.io/"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why not just use a Google Sheet directly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You are: that’s the design. What the app adds is a camera, a global product database, a folder view with a count per shelf, a quantity stepper you can hit with a thumb, and columns that arrive already named and formatted. Try typing a 13-digit barcode into a cell on a phone. That is the part we removed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a Google account? Can I sign up with an email address?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it is the only sign-in the app uses. The upside is that signing up takes one tap: there is no form to fill in and no password to invent, and your first spreadsheet exists before you reach the home screen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does an inventory app need access to my Google Drive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It asks for drive.file, the narrowest Drive permission Google offers. An app holding it can touch only the files it created itself, so 1inventory can open the spreadsheet and photo folder it made for you and nothing besides. Google enforces that boundary. Gmail, Calendar and the rest of your account stay out of reach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the scanner recognise my things?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shop-bought goods with retail barcodes come back with a name, description and photo: tins, jars, medicine, ISBN books, board games, Lego, DVDs, batteries. Own-brand and warehouse labels scan fine too, the lookup simply has nothing to fill in, so you type the name. Twelve barcode formats are supported, and scanning itself is unlimited; only the database lookups are capped, at 5 a day on Free and 200 on Premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a web app? Does it work on an iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your data is fully usable on a laptop: the spreadsheet opens in Google Sheets like any other file, where you can sort, filter, chart and print it. The app itself is a portrait phone app for iOS 15.6 and later and Android 7.0 and later, so there is no tablet layout or browser client today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I already have a list. Do I have to retype it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a German export headed Bezeichnung / Menge / Lagerort lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many products can I have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Up to 10,000 per inventory, on the free plan and on Premium alike; the cap has nothing to do with paying. Premium gives you up to five separate inventories, which is 50,000 things in total. The ceiling is enforced: at 10,000 the app returns an error, so you will know you have reached it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet, and it’s on the way. Every action is a network call today, so you need a connection to add or change something. Offline is coming in a future release, and it matters most in cellars, garages, lock-ups and vans, which is exactly where an inventory tends to live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will it tell me when I’m running low?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not right now. Today’s alerts watch dates rather than quantities: put an expiry, a warranty end or a service date on a product and you get a push notification or an email a set number of days before that date, or after it. Quantity-based alerts are an extension we’re working on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I need more than five locations or five people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Five places and five people is what the app is built around: a household, a workshop, or a small crew. Locations sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones, per-location permissions or a read-only role, a larger system will serve you better."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to let my partner or a colleague in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. They sign in with their own Google account, and where the inventory has a History tab every change lands there with their name on it. Worth knowing: there are two roles rather than a read-only option, so anyone you invite can edit and delete. Inviting needs Premium, the cap is five people including you, and the spreadsheet stays in your Drive alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will their changes appear on my phone straight away?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Changes reach your Google Sheet as soon as they are saved. On another phone they appear when the list is pulled down to refresh, rather than updating live while you are looking at it. If two people count the same shelf at the same moment, the last one saved wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Premium cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "€0.99 a month, with a seven-day free trial. Billing is monthly and there is no annual plan, no bundle and no second tier. The subscription is handled by the App Store or Google Play, so you cancel it there, and the app shows the price in your own currency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I stop paying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nothing is deleted. Extra inventories, locations, custom fields and the people you invited are locked, and all of it comes back in one pass if you resubscribe. Your products are untouched, because they live in your Google Sheet. While an inventory is locked it is hidden in the app, and the people you invited lose access until you subscribe again."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it worth paying for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start free and find out. Catalogue a room on the free plan, and within a fortnight you will know whether you want a second inventory, a second place, a second person, more alert rules, or a change history. Those five things are what Premium adds, and €0.99 a month is the whole price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no export button, because there is nothing to export. Your inventory is already a Google Sheet in your own Drive, and Google will save it out as CSV, Excel or PDF whenever you like. One caveat: the file lives in the inventory owner’s Drive, so this is something owners can do and invited people cannot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I delete something by accident?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your inventory is a Google Sheet, so it inherits Google Drive’s version history. The app’s Backups screen lists the revisions and walks you through restoring one; the restore itself happens in Google Sheets rather than in the app. One thing to note: deleting a custom field removes that whole column from your spreadsheet, values included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if 1inventory shuts down?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The spreadsheet, its history tab and the photo folder are in your Google Drive and stay there, readable by anything that opens a spreadsheet. What you would lose is the scanner, the barcode lookup and the folder view. We can promise continuity of data, not continuity of service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who makes this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sparkybit GmbH, a company in Paderborn, Germany. The registration details are on our Impressum, and the same publisher name appears on the App Store and Google Play listings, so you can check that the app you are installing comes from the people whose name is on this page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you show ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, on either plan. There is no advertising SDK in the app, and it has never asked for a tracking identifier or shown you an App Tracking Transparency prompt. The free plan is paid for by the people who upgrade, which is the whole of the business model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages is it in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "English, German, Spanish, French and Portuguese: the whole app, and also the alert emails and the barcode lookup results, which come back in your language. Your language setting belongs to your account, so it follows you when you change phones."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preview banner. Same inline-style treatment the other v6 pages use: it is
+     deployment furniture, not design, and it must not enter the shared
+     stylesheet. Removed together with the noindex on promotion day. -->
+
+<!-- =====================================================================
+     HEADER — identical on all eight v6 pages.
+     Class names (.site-header/.scrolled/.nav-toggle/.nav-menu/.open) are the
+     ones js/main.js binds to. Do not rename.
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg?v=16" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./">How it works</a>
+        <a href="plans.html">Plans</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+      </nav>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="#get-the-app" data-cta="header">Get the app</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================================
+       INTRO
+       Band: .section--major. This page is hard-linked from five places in
+       the shipped app, so a reader can land here cold with a specific
+       question and no context at all. The intro therefore does two jobs and
+       no more: say what the page is, and get out of the way with a jump
+       list.
+
+       Layout is stacked, not two columns. It was .grid--pair-uneven with the
+       heading left and the jump card right, which worked while an introductory
+       paragraph filled the left column. That copy was cut on client
+       instruction, leaving a heading beside a tall card and a large hole under
+       it. The card now sits directly beneath the heading, which is also where
+       the client asked for it.
+       =================================================================== -->
+  <section class="section section--major" id="top" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+
+        <div class="stack--sm">
+          <p class="eyebrow">FAQ</p>
+          <h1 id="faq-title">Questions and answers</h1>
+        </div>
+
+        <!-- Jump list. Six entries, matching the six question groups below.
+             A real table of contents, not decoration: support sends people
+             here with one question in mind. -->
+        <div class="card card--tint" style="margin-top:22px">
+          <h2 class="h4 mb-0">Jump to</h2>
+          <nav aria-label="Sections of this page">
+            <ul class="bullets bullets--green bullets--tight" style="margin-top:14px">
+              <li><a href="#install">Before you install</a></li>
+              <li><a href="#existing-list">The list you already keep</a></li>
+              <li><a href="#limits">Limits and what&rsquo;s next</a></li>
+              <li><a href="#sharing">Letting someone else in</a></li>
+              <li><a href="#price">What it costs</a></li>
+              <li><a href="#permanence">If we disappear</a></li>
+            </ul>
+          </nav>
+        </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       GROUP 1 — BEFORE YOU INSTALL  ·  five questions
+       The pre-install objection set, in the order a sceptic hits them:
+       why bother, what do I have to give you, what can you see, will it
+       work on my stuff, will it work on my hardware.
+
+       Group sizes across this page are 5 / 2 / 3 / 2 / 3 / 6 — deliberately
+       uneven. The v5 teardown's second structural finding was that five v4
+       blocks resolved to 4+4 or 3+3; a FAQ is the easiest page in the world
+       to accidentally build as six neat groups of three or four.
+       =================================================================== -->
+  <section class="section section--soft" id="install" aria-labelledby="install-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="install-title" class="mb-0">Before you install</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Why not just use a Google Sheet directly?</h3>
+          <p class="measure">
+            You are: that&rsquo;s the design. What the app adds is a camera, a global product
+            database, a folder view with a count per shelf, a quantity stepper you can hit
+            with a thumb, and columns that arrive already named and formatted. Try typing a
+            13-digit barcode into a cell on a phone. That is the part we removed.
+          </p>
+        </div>
+
+        <div>
+          <h3>Do I need a Google account? Can I sign up with an email address?</h3>
+          <p class="measure">
+            Yes, and it is the only sign-in the app uses. The upside is that signing up takes one tap: there is no form to fill in and no password to invent, and your first spreadsheet exists before you reach the home screen.
+          </p>
+        </div>
+
+        <div>
+          <h3>Why does an inventory app need access to my Google Drive?</h3>
+          <!-- The scope name is set as a .code-chip here, the same treatment the
+               homepage's permission band gives it. The full
+               https://www.googleapis.com/auth/drive.file URL is deliberately not
+               rendered anywhere on the site. -->
+          <p class="measure">
+            It asks for <span class="code-chip">drive.file</span>, the narrowest Drive
+            permission Google offers. An app holding it can touch only the files it created
+            itself, so 1inventory can open the spreadsheet and photo folder it made for you
+            and nothing besides. Google enforces that boundary. Gmail, Calendar and the rest
+            of your account stay out of reach.
+          </p>
+          <!-- Body copy has no inline link style in this system — a bare <a> in a
+               paragraph inherits its colour and loses its underline, so it reads as
+               plain text. .link-arrow is the foundation's standalone link primitive
+               (block 06) and is used for every cross-link on this page. -->
+        </div>
+
+        <div>
+          <h3>Will the scanner recognise my things?</h3>
+          <!-- ⚠ "unlimited" is a banned word site-wide with exactly one exception:
+               barcode SCANNING, where it is literally true. The daily cap is on
+               lookups against the global database, and conflating the two is the
+               single most common way this claim goes wrong. -->
+          <p class="measure">
+            Shop-bought goods with retail barcodes come back with a name, description and photo: tins, jars, medicine, ISBN books, board games, Lego, DVDs, batteries. Own-brand and warehouse labels scan fine too, the lookup simply has nothing to fill in, so you type the name. Twelve barcode formats are supported, and scanning itself is unlimited; only the database lookups are capped, at 5 a day on Free and 200 on Premium.
+          </p>
+        </div>
+
+        <div>
+          <h3>Is there a web app? Does it work on an iPad?</h3>
+          <p class="measure">
+            Your data is fully usable on a laptop: the spreadsheet opens in Google Sheets like any other file, where you can sort, filter, chart and print it. The app itself is a portrait phone app for iOS 15.6 and later and Android 7.0 and later, so there is no tablet layout or browser client today.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       GROUP 2 — THE LIST YOU ALREADY KEEP  ·  two questions
+       Band: .section--tight. Two questions is not a section's worth of
+       argument and it should not be padded to look like one. The tight
+       band is exactly what --tight exists for.
+       =================================================================== -->
+  <section class="section section--tight" id="existing-list" aria-labelledby="existing-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="existing-title" class="mb-0">What about the list you already keep?</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>I already have a list. Do I have to retype it?</h3>
+          <!-- ⚠ ACCURACY, all four verified and none may be loosened:
+                 · CSV only. Not Excel, not .xlsx, not Numbers.
+                 · The mapping is automatic and is NOT reviewable beforehand. The
+                   app reports it after the run. Never imply a preview or a confirm
+                   step.
+                 · Import is insert-only. Duplicates are skipped and existing rows
+                   are never updated, so it is not a sync, a merge or an update.
+                 · 5 MB, 60 columns, name column required.
+               The German header example is from the brief and is load-bearing: it
+               is the one detail that proves the matching is by meaning rather than
+               by exact English string. -->
+          <p class="measure">
+            No. Import a CSV and your column headers are matched to fields by meaning, so a
+            German export headed <em>Bezeichnung / Menge / Lagerort</em> lands in the right
+            columns with no setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
+            required. The mapping runs in one pass and is shown to you afterwards.
+            Duplicates are skipped.
+          </p>
+        </div>
+
+        <div>
+          <h3>How many products can I have?</h3>
+          <!-- ⚠ 10,000 per inventory is a single global cap and is NOT split by
+               tier. The plans table on the homepage still reads "Unlimited" in both
+               columns to match the in-app paywall (client decision 7); this page
+               publishes the real number, which is the more useful answer to
+               somebody who is asking it directly. Both are true statements about
+               the same cap; only this one is specific. -->
+          <p class="measure">
+            Up to 10,000 per inventory, on the free plan and on Premium alike; the cap has
+            nothing to do with paying. Premium gives you up to five separate inventories,
+            which is 50,000 things in total. The ceiling is enforced: at 10,000 the app
+            returns an error, so you will know you have reached it.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
+       Band: .section--mint AND .section--major. This is the beat that earns
+       the page, so it gets the page's largest padding. §8.3 of the brief:
+       the costliest, most credible signal available to an unknown GmbH with
+       zero reviews is real page real estate spent on what the product
+       cannot do.
+
+       ⚠ THE LOW-STOCK ANSWER IS THE MOST IMPORTANT SENTENCE ON THIS PAGE.
+         The product has exactly ONE alert rule type (DateThreshold) and it
+         watches Date and Date/Time custom fields. There is no low-stock
+         alert, no reorder point and no par level, and nothing anywhere on
+         this site may imply otherwise.
+       =================================================================== -->
+  <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="limits-title" class="mb-0">Limits, and what we&rsquo;re working on</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Does it work offline?</h3>
+          <p class="measure">
+            Not yet, and it&rsquo;s on the way. Every action is a network call today, so you need a connection to add or change something. Offline is coming in a future release, and it matters most in cellars, garages, lock-ups and vans, which is exactly where an inventory tends to live.
+          </p>
+        </div>
+
+        <div>
+          <h3>Will it tell me when I&rsquo;m running low?</h3>
+          <p class="measure">
+            Not right now. Today&rsquo;s alerts watch dates rather than quantities: put an expiry, a warranty end or a service date on a product and you get a push notification or an email a set number of days before that date, or after it. Quantity-based alerts are an extension we&rsquo;re working on.
+          </p>
+        </div>
+
+        <div>
+          <h3>What if I need more than five locations or five people?</h3>
+          <p class="measure">
+            Five places and five people is what the app is built around: a household, a workshop, or a small crew. Locations sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones, per-location permissions or a read-only role, a larger system will serve you better.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- .admission — the foundation's costly-honesty block (v6 additions). It is
+           quieter than a card on purpose: this must not look like a feature being
+           sold back to the reader. Used exactly once on this page. -->
+      <div class="admission">
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- ===================================================================
+       GROUP 4 — LETTING SOMEONE ELSE IN  ·  two questions
+       Default band, default padding. After a --major band and a --dark
+       connector, an ordinary band reads as a return to normal service,
+       which is the point of having a three-step padding scale at all.
+
+       ⚠ Two accuracy traps, both handled below:
+         1. History is Premium AND only exists in inventories created while
+            subscribed, so "every change lands in your History tab" is only
+            true where a History tab exists. Hence the conditional clause.
+         2. Banned vocabulary includes "real-time" and "sync". The second
+            answer denies both ideas without using either word.
+       =================================================================== -->
+  <section class="section" id="sharing" aria-labelledby="sharing-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="sharing-title" class="mb-0">Letting someone else in</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Is it safe to let my partner or a colleague in?</h3>
+          <p class="measure">
+            Yes. They sign in with their own Google account, and where the inventory has a History tab every change lands there with their name on it. Worth knowing: there are two roles rather than a read-only option, so anyone you invite can edit and delete. Inviting needs Premium, the cap is five people including you, and the spreadsheet stays in your Drive alone.
+          </p>
+        </div>
+
+        <div>
+          <h3>Will their changes appear on my phone straight away?</h3>
+          <p class="measure">
+            Changes reach your Google Sheet as soon as they are saved. On another phone they appear when the list is pulled down to refresh, rather than updating live while you are looking at it. If two people count the same shelf at the same moment, the last one saved wins.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       GROUP 5 — WHAT IT COSTS  ·  three questions
+       PRICE IS NOW CONFIRMED AND PUBLISHABLE: EUR 0.99 per month, 7-day free
+       trial, monthly billing only. Earlier drafts of this site carried
+       "Price shown in the app" because no figure had been supplied. That
+       placeholder is dead; do not reinstate it.
+
+       At €0.99 the price is a proof point and not a disclosure, so it is set
+       as a .stat beside the questions instead of being buried in a sentence.
+       .grid--pair-uneven puts the three answers in the 1.35fr column and the
+       number in the 1fr column, which is the second deliberate asymmetry on
+       the page.
+       =================================================================== -->
+  <!-- ===================================================================
+       GROUP 5 — WHAT IT COSTS  ·  three questions
+
+       This band used to be the odd one out on the page in four ways, all now
+       corrected so it matches the other five groups:
+         · .container instead of .container--narrow, so its measure was wider
+           than every other answer on the page;
+         · a .grid--pair-uneven two-column layout where the rest go straight
+           from .section__head into a .stack;
+         · a .card--flat sidebar carrying the price as a large .stat. No other
+           group has a sidebar, and its text duplicated the first answer almost
+           word for word, so removing it loses nothing;
+         · the heading was the statement "It costs €0.99 a month." where the
+           other five are plain labels. It is now "What it costs", which also
+           matches what the Jump-to list has always called it — those two
+           disagreed before.
+       =================================================================== -->
+  <section class="section section--soft" id="price" aria-labelledby="price-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="price-title" class="mb-0">What it costs</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>What does Premium cost?</h3>
+          <p class="measure">
+            &euro;0.99 a month, with a seven-day free trial. Billing is monthly and there
+            is no annual plan, no bundle and no second tier. The subscription is handled
+            by the App Store or Google Play, so you cancel it there, and the app shows the
+            price in your own currency.
+          </p>
+        </div>
+
+        <div>
+          <h3>What happens if I stop paying?</h3>
+          <p class="measure">
+            Nothing is deleted. Extra inventories, locations, custom fields and the people
+            you invited are locked, and all of it comes back in one pass if you resubscribe.
+            Your products are untouched, because they live in your Google Sheet. While an
+            inventory is locked it is hidden in the app, and the people you invited lose
+            access until you subscribe again.
+          </p>
+        </div>
+
+        <div>
+          <h3>Is it worth paying for?</h3>
+          <!-- The five things named here are the five Free-plan caps that actually
+               bite: a second inventory, a second location, a second person, more
+               alert rules, and change history. The list is exact — every one of
+               them is a row in the plans table. -->
+          <p class="measure">
+            Start free and find out. Catalogue a room on the free plan, and within a
+            fortnight you will know whether you want a second inventory, a second place, a
+            second person, more alert rules, or a change history. Those five things are what
+            Premium adds, and &euro;0.99 a month is the whole price.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       CONNECTOR — the page's one pull quote.
+       .quote-major is used once per page by design. It sits here because
+       the six questions below it share a single answer, and saying that
+       once in large type is shorter than saying it six times in small.
+
+       This is also the page's ONE sanctioned "X, not Y" antithesis budget
+       item's neighbour: the antithesis itself is "continuity of data, not
+       continuity of service" in the shutdown answer below. This quote is
+       deliberately NOT antithetical, so the two do not compete.
+
+       Plain <div>, not <section>: a band with no heading has nothing to
+       label, and an aria-labelledby pointing at a pull quote is noise.
+       =================================================================== -->
+  <div class="section section--mint section--tight">
+    <div class="container container--narrow">
+      <p class="quote-major">Most of what follows has the same answer: the file is already in your Drive.</p>
+    </div>
+  </div>
+
+
+  <!-- ===================================================================
+       GROUP 6 — IF WE DISAPPEAR  ·  six questions
+       The longest group on the page, which is why the heading is a
+       conditional fragment and the band is the plain default: the size of
+       the group is doing the emphasis, and stacking a --major band on top of
+       it would make the page end on two crescendos in a row.
+
+       Contains the page's one permitted antithesis ("continuity of data, not
+       continuity of service") and the brief's one sanctioned aphorism
+       ("There is no export button, because there is nothing to export").
+       Both are pre-assigned in §9.1. Nothing else on this page may use
+       either shape.
+       =================================================================== -->
+  <section class="section" id="permanence" aria-labelledby="permanence-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="permanence-title" class="mb-0">If we disappear</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Can I export my data?</h3>
+          <p class="measure">
+            There is no export button, because there is nothing to export. Your inventory is
+            already a Google Sheet in your own Drive, and Google will save it out as CSV,
+            Excel or PDF whenever you like. One caveat: the file lives in the inventory
+            owner&rsquo;s Drive, so this is something owners can do and invited people
+            cannot.
+          </p>
+        </div>
+
+        <div>
+          <h3>What if I delete something by accident?</h3>
+          <!-- ⚠ There is genuinely no restore button in the app. The Backups screen
+               lists Drive revisions and hands you off to Google Sheets to do the
+               restore. Do not describe it as a restore feature. -->
+          <p class="measure">
+            Your inventory is a Google Sheet, so it inherits Google Drive&rsquo;s version history. The app&rsquo;s Backups screen lists the revisions and walks you through restoring one; the restore itself happens in Google Sheets rather than in the app. One thing to note: deleting a custom field removes that whole column from your spreadsheet, values included.
+          </p>
+        </div>
+
+        <div>
+          <h3>What happens if 1inventory shuts down?</h3>
+          <p class="measure">
+            The spreadsheet, its history tab and the photo folder are in your Google Drive
+            and stay there, readable by anything that opens a spreadsheet. What you would
+            lose is the scanner, the barcode lookup and the folder view. We can promise
+            continuity of data, not continuity of service.
+          </p>
+        </div>
+
+        <div>
+          <h3>Who makes this?</h3>
+          <!-- The Impressum link is a standalone .link-arrow, never an inline <a>
+               inside the sentence: .link-arrow is inline-flex with a 44px minimum
+               height, so mid-paragraph it would blow the line box apart. Every
+               cross-link on this page sits on its own line for that reason. -->
+          <p class="measure">
+            Sparkybit GmbH, a company in Paderborn, Germany. The registration details are on
+            our Impressum, and the same publisher name appears on the App Store and Google
+            Play listings, so you can check that the app you are installing comes from the
+            people whose name is on this page.
+          </p>
+        </div>
+
+        <div>
+          <h3>Do you show ads?</h3>
+          <p class="measure">
+            No, on either plan. There is no advertising SDK in the app, and it has never
+            asked for a tracking identifier or shown you an App Tracking Transparency
+            prompt. The free plan is paid for by the people who upgrade, which is the whole
+            of the business model.
+          </p>
+        </div>
+
+        <div>
+          <h3>What languages is it in?</h3>
+          <p class="measure">
+            English, German, Spanish, French and Portuguese: the whole app, and also the
+            alert emails and the barcode lookup results, which come back in your language.
+            Your language setting belongs to your account, so it follows you when you change
+            phones.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Closes the question set and routes the leftover question somewhere a
+           human answers it. Support is a compliance-priority page in the brief's
+           URL map, and this is the highest-intent moment to link it. -->
+      <div class="section__foot">
+        <p class="measure">
+          A question that isn&rsquo;t here is worth sending to us. The support form in the
+          app sorts messages into feature requests, bug reports, billing and everything
+          else, and the same address works from a laptop.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       CLOSE — the offer block the brief requires on every page.
+       Same construction and the same store links as the homepage's final
+       band, so a reader who lands on this page from inside the app and
+       reads to the bottom converts without being sent back to /.
+       =================================================================== -->
+  <section class="section section--gradient section--major" id="get-the-app" aria-labelledby="close-title">
+    <div class="container">
+      <div class="final-cta">
+        <h2 id="close-title">Start with one shelf.</h2>
+        <p class="final-cta__body">Sign in with Google, scan ten things, and open the spreadsheet on your laptop. If it isn&rsquo;t for you, the file is still yours.</p>
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="faq-ios">
+              <img src="img/badge-appstore.svg?v=16" alt="Download on the App Store" width="150" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="faq-android">
+              <img src="img/badge-googleplay.svg?v=16" alt="Get it on Google Play" width="169" height="50" />
+            </a>
+          </div>
+          <p class="cta-strip"><span>Free plan, no card</span><span>iPhone and Android</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER — identical on all eight v6 pages.
+     Legal hrefs are ABSOLUTE (/privacy.html, /terms.html): those two files
+     live at the site root, and a relative link from inside /v6/ would 404.
+     Everything else is relative because it is a sibling page in this folder.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg?v=16" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — a barcode inventory app for your home or your business, in a Google Sheet
+          you own.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is available in English, German, Spanish, French and Portuguese.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="./">How it works</a>
+          <a href="plans.html">Plans</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms and conditions</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA. Same component and the same unvaried label as every
+     other page; js/main.js handles hide-on-scroll and dismissal. -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Get the app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Get the app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="js/main.js?v=16" defer></script>
+</body>
+</html>

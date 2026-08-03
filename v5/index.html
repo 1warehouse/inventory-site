@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>document.documentElement.className += " js";</script>
+
+<title>Barcode inventory app that writes to your own Google Sheet | 1inventory</title>
+<meta name="description" content="Scan a barcode and it becomes a row in a Google Sheet in your own Drive. Name, description and photo fill themselves in. Free on iPhone and Android. Premium EUR 0.99 a month." />
+
+<link rel="canonical" href="https://1inventory.io/" />
+<!-- v5 is a PREVIEW at /v5/. noindex keeps it from competing with the live root
+     for its own keywords; flip this and the banner together on promotion. -->
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#062e14" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="1inventory" />
+<meta property="og:url" content="https://1inventory.io/" />
+<meta property="og:title" content="Three taps and the tin's in your spreadsheet" />
+<meta property="og:description" content="A barcode scanner for a Google Sheet you own. The file is in your Drive, not ours, and it stays there whatever happens to us." />
+<!-- TODO(asset): og-cover-1200x630.png does not exist. Until it does, every
+     share on WhatsApp, Slack and iMessage renders as a bare link. -->
+<meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Poppins:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=1" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "1inventory",
+  "url": "https://1inventory.io/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "iOS 15.6+, Android 7.0+",
+  "description": "A barcode inventory app whose database is a Google Sheet in the user's own Google Drive. Scan a barcode and the name, description and photo fill themselves in.",
+  "inLanguage": ["en","de","es","fr","pt"],
+  "downloadUrl": "https://apps.apple.com/us/app/1inventory/id6747425128",
+  "sameAs": [
+    "https://apps.apple.com/us/app/1inventory/id6747425128",
+    "https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory"
+  ],
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "name": "Free" },
+    { "@type": "Offer", "price": "0.99", "priceCurrency": "EUR", "name": "Premium",
+      "description": "Monthly subscription with a 7-day free trial." }
+  ],
+  "publisher": { "@type": "Organization", "name": "Sparkybit GmbH", "url": "https://1inventory.io/" }
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preview banner. Removed together with the noindex above on promotion. -->
+<div style="background:#062e14;color:#7fd79a;text-align:center;font:500 12px/1.6 'JetBrains Mono',monospace;padding:7px 16px;">
+  v5 preview — editorial rebuild, new content and new design.
+  <a href="/v4/" style="color:#fff;">Compare with v4</a>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg" alt="" width="26" height="26" />
+      <span>1inventory</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="the-sheet.html">The sheet</a>
+      <a href="your-data.html">Your data</a>
+      <a href="what-it-doesnt-do.html">What it doesn&rsquo;t do</a>
+      <a href="plans.html">Plans</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--primary" href="#get" data-cta="header">Get the app</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     BEAT 1 — HERO
+     The v4 H1 ("Everything you keep, in a spreadsheet you own.") had no verb,
+     no category and no outcome, and buried the word "inventory" in a 13px
+     eyebrow. This one leads with the effort promise AND the outcome, and
+     opens on a numeral, which breaks the declarative-heading pattern the
+     teardown found running nine times in a row.
+     ===================================================================== -->
+<section class="band band--lg" id="top" aria-labelledby="h-hero">
+  <span class="colmark" aria-hidden="true">A</span>
+  <div class="container">
+    <span class="kicker">Barcode inventory app · iPhone and Android · Built by Sparkybit GmbH, Paderborn</span>
+    <div class="hero-head">
+      <h1 id="h-hero">Three taps and the tin&rsquo;s in your spreadsheet. That&rsquo;s how you stop buying a fourth one.</h1>
+    </div>
+
+    <div class="split split--copyLead split--top">
+      <div>
+        <p class="lead">
+          1inventory is a barcode scanner for a Google Sheet you own. Point the camera at anything
+          with a printed barcode and the name, the description and the photo fill themselves in.
+          The spreadsheet it writes to is a real one, in your Drive, with your name on it. You can
+          open it on a laptop while you&rsquo;re still standing in the kitchen.
+        </p>
+
+        <div class="storebar" style="margin-top:28px">
+          <a href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="hero-ios" aria-label="Download on the App Store">
+            <svg width="150" height="52" viewBox="0 0 150 52" role="img" aria-hidden="true" focusable="false">
+              <rect width="150" height="52" fill="#000"/>
+              <rect x="1" y="1" width="148" height="50" fill="none" stroke="#4d4d4d" stroke-width="1"/>
+              <path fill="#fff" transform="translate(15,13) scale(0.052)" d="M318 176c-1 -60 49-89 51-90-28-41-71-46-86-47-37-4-72 22-91 22-19 0-47-21-78-21-40 1-77 23-97 59-41 72-11 178 29 236 20 28 43 60 74 59 30-1 41-19 77-19 36 0 46 19 78 18 32-1 52-29 71-57 23-33 32-65 33-67-1-1-63-24-64-96zM258 61c16-20 27-48 24-76-23 1-52 16-69 36-15 17-28 45-25 72 26 2 53-13 70-32z"/>
+              <text x="46" y="22" fill="#fff" font-family="Poppins,Helvetica,Arial,sans-serif" font-size="9" letter-spacing=".4">Download on the</text>
+              <text x="46" y="39" fill="#fff" font-family="Poppins,Helvetica,Arial,sans-serif" font-size="17" font-weight="500" letter-spacing="-.2">App Store</text>
+            </svg>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="hero-android" aria-label="Get it on Google Play">
+            <svg width="160" height="52" viewBox="0 0 160 52" role="img" aria-hidden="true" focusable="false">
+              <rect width="160" height="52" fill="#000"/>
+              <rect x="1" y="1" width="158" height="50" fill="none" stroke="#4d4d4d" stroke-width="1"/>
+              <g transform="translate(14,14) scale(0.048)">
+                <path fill="#00d4ff" d="M13 3 265 255 13 507c-8-8-13-19-13-32V35c0-13 5-24 13-32z"/>
+                <path fill="#ffd200" d="M357 347 265 255l92-92 108 62c22 13 22 47 0 60l-108 62z"/>
+                <path fill="#ff3a44" d="M357 347 265 255 13 507c11 11 28 12 46 2l298-162z"/>
+                <path fill="#00e676" d="M357 163 59 1C41-9 24-8 13 3l252 252 92-92z"/>
+              </g>
+              <text x="48" y="22" fill="#fff" font-family="Poppins,Helvetica,Arial,sans-serif" font-size="9" letter-spacing=".4">GET IT ON</text>
+              <text x="48" y="39" fill="#fff" font-family="Poppins,Helvetica,Arial,sans-serif" font-size="17" font-weight="500" letter-spacing="-.2">Google Play</text>
+            </svg>
+          </a>
+        </div>
+
+        <!-- This exact text is repeated verbatim at beat 17. Never thinned. -->
+        <p class="reassure">
+          Free to install. One tap to sign in with Google. No form, no password, nothing to verify
+          by email. Your first inventory exists before you reach the home screen.
+        </p>
+      </div>
+
+      <!-- VISUAL: phone left, sheet right, one line carrying the row across.
+           TODO(asset): both halves must become real screenshots. -->
+      <div class="stack-sm">
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span>My Inventory</span><span>larder</span></div>
+          <div class="phone__body">
+            <div class="prow"><span><span class="prow__name">passata 700ml</span><span class="prow__meta">8003530003005 · larder</span></span><span class="prow__qty">3</span></div>
+            <div class="prow"><span><span class="prow__name">SMOKED PAPRIKA</span><span class="prow__meta">5000119061218 · larder</span></span><span class="prow__qty">1</span></div>
+            <div class="prow"><span><span class="prow__name">bicarb</span><span class="prow__meta">no barcode · larder</span></span><span class="prow__qty is-zero">0</span></div>
+          </div>
+        </div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet__chrome"><span class="sheet__dot"></span><span class="sheet__url">docs.google.com/spreadsheets/d/&hellip; — My Inventory</span></div>
+          <table>
+            <thead><tr><th class="colhead"></th><th>A Name</th><th>B Qty</th><th>C Barcode</th><th>D Location</th></tr></thead>
+            <tbody>
+              <tr><td class="colhead">2</td><td>passata 700ml</td><td class="qty">3</td><td>8003530003005</td><td>larder</td></tr>
+              <tr><td class="colhead">3</td><td>SMOKED PAPRIKA</td><td class="qty">1</td><td>5000119061218</td><td>larder</td></tr>
+            </tbody>
+          </table>
+          <div class="sheet__tabs"><span>INFO</span><span class="on">PRODUCTS</span><span>HISTORY</span><span>ALERTS</span></div>
+        </div>
+        <p class="disclosure">Screens are renderings of the real layout and the real fixture data. Photographs pending.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BEAT 2 — THE SCENE
+     Puts the reader inside a loss they have already personally paid for,
+     before a single feature appears. The demonstrated answer is ZERO, not a
+     comic three: a page that only shows flattering outcomes reads as fiction.
+     ===================================================================== -->
+<section class="band band--tint" aria-labelledby="h-scene">
+  <span class="colmark" aria-hidden="true">B</span>
+  <div class="container">
+    <div class="split split--copyLead">
+      <div>
+        <h2 id="h-scene">Have you got bicarb?</h2>
+        <p>
+          You&rsquo;re in aisle four. Someone texts and asks. You genuinely do not know. There&rsquo;s a
+          picture in your head of a tub at the back of the larder, but you had that picture last
+          time too, and last time you were wrong, and that&rsquo;s why there are now two.
+        </p>
+        <p>
+          That is the whole job. Not stock control. Not asset management. Just being able to answer
+          a question about your own house from somewhere that isn&rsquo;t your house.
+        </p>
+        <p>
+          So you open the app in the shop and type <span class="num">b-i-c</span>. The answer
+          arrives before you finish the word, because the search runs on the list already in your
+          hand rather than going off to ask a server.
+        </p>
+        <p><strong>Bicarb. Larder. Zero.</strong></p>
+        <p style="margin-top:26px">
+          <a class="btn btn--primary" href="#get" data-cta="scene">Get the app — free</a>
+        </p>
+      </div>
+      <div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span>Search</span><span>bic|</span></div>
+          <div class="phone__body">
+            <div class="prow"><span><span class="prow__name"><span class="hl">bic</span>arb</span><span class="prow__meta">larder · no barcode</span></span><span class="prow__qty is-zero">0</span></div>
+          </div>
+        </div>
+        <p class="disclosure">One result. The quantity is zero, which is the point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BEAT 3 — THREE TAPS, SCOPED HONESTLY
+     The second half of this beat is the scanner's real limits. It is here
+     rather than buried because the scanner is both the reason people install
+     and the reason some of them uninstall.
+     ===================================================================== -->
+<section class="band" id="how" aria-labelledby="h-taps">
+  <span class="colmark" aria-hidden="true">C</span>
+  <div class="container">
+    <h2 id="h-taps">Three taps per thing. Here they are.</h2>
+    <div class="split split--top" style="margin-top:32px">
+      <div class="stack">
+        <p>
+          <strong>One.</strong> Tap the big green circle in the middle of the bottom bar. The camera
+          opens with a scan window in the middle and everything else dimmed. Four corner brackets sit
+          around it in white, and they flip to green the instant they catch a code. It zooms itself
+          in on small print, there&rsquo;s a torch for the back of a dark cupboard, and it will read
+          twelve formats.
+        </p>
+        <p>
+          <strong>Two.</strong> If it&rsquo;s something you already own, the quantity comes straight up
+          and you&rsquo;re done. If it&rsquo;s new, the app says <em>Not in your inventory</em>, then
+          <em>Searching global database for product information</em>, and hands you a create form with
+          the name, the description and a photo already in it. If your phone is set to German, the
+          name arrives in German, even if the product is French.
+        </p>
+        <p>
+          <strong>Three.</strong> Hit <em>Save &amp; scan next</em>. The camera is back up before your
+          hand has moved.
+        </p>
+        <p>Most inventory apps ask you to type. This one asks you to point.</p>
+      </div>
+      <div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span>Not in your inventory</span><span>&nbsp;</span></div>
+          <div class="phone__body">
+            <div style="padding:14px 13px;border-bottom:1px solid var(--line)">
+              <span class="prow__name" style="font-size:var(--fs-body)">Passata di pomodoro, 700&nbsp;ml</span>
+              <span class="prow__meta">8003530003005</span>
+              <p style="font-size:var(--fs-xs);color:var(--muted);margin:9px 0 0">Strained tomatoes in a glass bottle. Store in a cool, dry place.</p>
+            </div>
+            <div style="padding:12px 13px"><span class="btn btn--primary" style="width:100%;min-height:42px;font-size:var(--fs-xs)">Save &amp; scan next</span></div>
+          </div>
+        </div>
+        <p class="disclosure" style="margin-top:14px">
+          Reads: QR · Aztec · Codabar · Code&nbsp;128 · Code&nbsp;39 · Code&nbsp;93 · Data&nbsp;Matrix ·
+          EAN-13 · EAN-8 · ITF · UPC-A · UPC-E
+        </p>
+      </div>
+    </div>
+
+    <!-- The honest half. Not a footnote — full width, same type size as the sell. -->
+    <div class="cell cell--tint" style="margin-top:44px">
+      <h3>Now the honest half.</h3>
+      <p>
+        Shop-bought things with a printed retail barcode come back with a name and a picture: tins,
+        jars, cleaning stuff, medicine, books with an ISBN, board games, Lego boxes, DVDs, batteries.
+        Your own asset labels, internal SKUs and a lot of own-brand corner-shop stock will scan
+        perfectly well and come back blank, and then you type the name yourself. Loose fixings,
+        pre-barcode books, most clothing once it&rsquo;s out of the packet and anything handmade is
+        manual entry, always.
+      </p>
+      <p>
+        And scanning is not the same thing as looking up. Pointing the camera at a barcode is free
+        and unmetered forever, on both plans, with no counter anywhere. Asking the global database
+        what that barcode is costs you one of <span class="num">5</span> lookups a day on the free
+        plan, or one of <span class="num">200</span> on Premium. Two minutes into a serious first
+        session on a full larder you will hit five. We would rather you knew that here than found it
+        out there.
+      </p>
+    </div>
+
+    <p style="margin-top:30px"><a class="btn btn--primary" href="#get" data-cta="taps">Start scanning — free</a></p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BEAT 4 — ONE AFTERNOON
+     No CTA in this beat by design: it is the setup for beat 5 and
+     interrupting it costs more than the click is worth.
+     ===================================================================== -->
+<section class="band band--deep" aria-labelledby="h-afternoon">
+  <span class="colmark" aria-hidden="true">D</span>
+  <div class="container">
+    <h2 id="h-afternoon">One shelf. Forty-one rows. About an hour.</h2>
+    <div class="split split--wideMedia split--top" style="margin-top:30px">
+      <div class="stack">
+        <p>Here is that larder after an afternoon, and it is not tidy.</p>
+        <p>
+          There&rsquo;s a row in capitals because that&rsquo;s how the jar was labelled and nobody went
+          back to fix it. A row with no barcode, because the bag came from a market stall. A row with
+          a quantity of zero, because the bicarb ran out in February and nobody has been to a shop
+          since. And a description field that just says <em>for cake??</em>.
+        </p>
+        <p>
+          That&rsquo;s what a working inventory looks like. The app doesn&rsquo;t ask you to be neat and
+          it doesn&rsquo;t tidy up behind you. Rows with no name get skipped rather than becoming ghost
+          products. Blank spacer rows are ignored. Anything you type into a column the app has never
+          heard of comes back as one of your own fields instead of being thrown away.
+        </p>
+        <p style="font-size:var(--fs-lead);line-height:1.4">
+          <strong>Filling the list is one afternoon. Counting it is the rest of the year.</strong>
+          The rest of this page is about the year.
+        </p>
+      </div>
+      <div>
+        <div class="sheet" aria-hidden="true">
+          <div class="sheet__chrome"><span class="sheet__dot"></span><span class="sheet__url">docs.google.com/spreadsheets/d/&hellip; — My Inventory</span></div>
+          <table>
+            <thead><tr><th class="colhead"></th><th>A Name</th><th>B Qty</th><th>C Barcode</th><th>D Location</th><th>E Description</th></tr></thead>
+            <tbody>
+              <tr><td class="colhead">2</td><td>passata 700ml</td><td class="qty">3</td><td>8003530003005</td><td>larder</td><td></td></tr>
+              <tr><td class="colhead">3</td><td>SMOKED PAPRIKA</td><td class="qty">1</td><td>5000119061218</td><td>larder</td><td>75g tin</td></tr>
+              <tr><td class="colhead">4</td><td>bicarb</td><td class="qty zero">0</td><td></td><td>larder</td><td>for cake??</td></tr>
+              <tr><td class="colhead">5</td><td>Calpol 6+ (strawberry)</td><td class="qty">2</td><td>5000158062603</td><td>bathroom</td><td>exp 04/2027</td></tr>
+              <tr><td class="colhead">6</td><td>AA batteries 8pk</td><td class="qty">1</td><td>4008496550975</td><td>drawer</td><td></td></tr>
+            </tbody>
+          </table>
+          <div class="sheet__tabs"><span>INFO</span><span class="on">PRODUCTS</span><span>HISTORY</span><span>ALERTS</span></div>
+        </div>
+        <p class="disclosure">
+          TODO(asset): this must become a real screenshot of a real catalogued shelf, forty-one rows,
+          legible to the cell. It is the single most important image on the site.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BEAT 5 — THE ABANDONMENT OBJECTION
+     Objection 8 in the map, and the one that actually kills installs for this
+     category. It gets its own beat rather than a line in an FAQ.
+     ===================================================================== -->
+<section class="band" aria-labelledby="h-keepup">
+  <span class="colmark" aria-hidden="true">E</span>
+  <div class="container">
+    <div class="split split--copyLead split--top">
+      <div class="stack">
+        <h2 id="h-keepup">&ldquo;I&rsquo;ll start it, and then I&rsquo;ll stop.&rdquo;</h2>
+        <p>
+          You&rsquo;re right to think that. Everybody who has ever downloaded an inventory app has
+          abandoned one. The list gets built in an enthusiastic weekend and then it quietly stops
+          being true, and a list that isn&rsquo;t true is worse than no list, because you trust it once
+          and get burned.
+        </p>
+        <p>
+          So here is the only mechanism that matters, and it&rsquo;s less a feature than a shape. The
+          second time you scan something, you&rsquo;re not adding it. The camera pauses, the product you
+          already have comes up with a big editable number and a plus and a minus, you thumb it from
+          <span class="num">3</span> down to <span class="num">1</span>, and the camera comes back.
+          Walk the shelf. Scan, thumb, scan, thumb. Recounting is the same loop you used to build the
+          thing in the first place, which is why it actually gets done.
+        </p>
+        <p>
+          The other half is that a date on a product does work while you&rsquo;re not using the app at
+          all, which is a few sections down.
+        </p>
+        <p>
+          And here&rsquo;s where the fear is justified. Nothing decrements on its own. There is no till,
+          no sales feed, no integration reaching in to adjust a number when something leaves the
+          house. If you sell things for a living, this count will be wrong inside a week and you
+          should buy something else. If you keep things, it&rsquo;ll be as accurate as the last time you
+          walked past a shelf with your phone in your hand.
+        </p>
+        <p><a class="btn btn--primary" href="#get" data-cta="keepup">Get the app — free</a></p>
+      </div>
+      <div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span>AA batteries 8pk</span><span>drawer</span></div>
+          <div class="phone__body" style="padding:22px 13px;text-align:center">
+            <div style="display:flex;align-items:center;justify-content:center;gap:20px">
+              <span style="font-family:var(--mono);font-size:22px;color:var(--muted)">&minus;</span>
+              <span class="num" style="font-size:40px;color:var(--ink);line-height:1">1</span>
+              <span style="font-family:var(--mono);font-size:22px;color:var(--muted)">+</span>
+            </div>
+            <p class="num" style="font-size:var(--fs-xs);color:#c5221f;margin:10px 0 0">3 &rarr; 1</p>
+            <div style="margin-top:16px"><span class="btn btn--primary" style="width:100%;min-height:42px;font-size:var(--fs-xs)">Save &amp; scan next</span></div>
+          </div>
+        </div>
+        <p class="disclosure">
+          TODO(asset): a four-second silent loop of the real re-scan — scan, stepper, tap, camera
+          back. The brief rates this the highest-converting single asset the company can produce.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BEAT 6 — THE REVEAL. The longest beat and the argument the whole page
+     exists to make. Given --pad-lg while supporting sections get --pad-md,
+     so it physically dominates. This is the deliberate answer to v4's
+     identical 28.16px padding on all nine sections.
+     ===================================================================== -->
+<section class="band band--lg" id="sheet" aria-labelledby="h-reveal">
+  <span class="colmark" aria-hidden="true">F</span>
+  <div class="container">
+    <span class="kicker">The claim you can check without installing anything</span>
+    <h2 id="h-reveal">It&rsquo;s a Google Sheet. In your Drive. With your name on it.</h2>
+
+    <div class="split split--top" style="margin-top:34px">
+      <div class="stack">
+        <p>
+          Stop reading for ten seconds and do this bit yourself, because it&rsquo;s the one claim on
+          this page you can check without installing anything. Open
+          <a href="https://drive.google.com">drive.google.com</a> on a laptop. Now picture a file
+          called <em>My Inventory</em> sitting in it. That isn&rsquo;t a metaphor for where we keep your
+          data. That is where your data is.
+        </p>
+        <p>
+          When you make an inventory, the app creates an actual Google Spreadsheet in your Drive and
+          a folder next to it for the photos. Every product you add is a row written into that file.
+          Every list you look at is read back out of it. Our own database holds accounts,
+          subscriptions, push tokens, support tickets and the definitions of your fields and
+          locations. <strong>No table in it holds your inventory</strong> — not a quantity, not a
+          location value, not a custom field value, and none of your photos. The only product data we
+          keep at all is a shared cache of public barcode lookups, identical for every user, so that
+          the second person to scan a tin of passata gets the answer instantly.
+        </p>
+      </div>
+      <div>
+        <h3>The file has four tabs.</h3>
+        <ul class="rule-list">
+          <li data-mark="1"><strong>INFO.</strong> Written when the sheet is created, in your language. A welcome line, a link back to us, two house rules, and a link straight to the Drive folder where your photos live — the only place in the whole product that tells you where they are.</li>
+          <li data-mark="2"><strong>PRODUCTS.</strong> Seven columns before you add any of your own: A Name, B Quantity, C Barcode, D Location, E Description, F Image, G Last Updated. Header row bold, centred and frozen, with a filter already applied across A to G.</li>
+          <li data-mark="3"><strong>HISTORY.</strong> Every product created, every product deleted, every quantity changed, with who did it and when. Premium only, and it starts the day you subscribe. There is no backfill and we can&rsquo;t invent one, because we never had the data.</li>
+          <li data-mark="4"><strong>ALERTS.</strong> A log of every reminder that has fired: the product, the field, the value that triggered it, and which rule caught it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cell" style="margin-top:40px">
+      <p>
+        And one detail that will matter to roughly one reader in five, and matter a great deal to
+        that one. When the app writes to your sheet it updates the value and the formatting, and
+        nothing else. That&rsquo;s a deliberate choice with a comment next to it in the code explaining
+        why: writing everything would also wipe your notes and your data validation. So you can carry
+        on using the file as a spreadsheet. Add a column by hand and the app reads it back as one of
+        your fields. Drag a column somewhere else and the app follows it — dragging columns in Google
+        Sheets is in fact the only way to reorder your fields, because there are no drag handles in
+        the app at all.
+      </p>
+      <p>
+        There is no 1inventory web app and there never has been. The desktop half of this product is
+        Google Sheets, and we&rsquo;d rather say that plainly than let the word &ldquo;anywhere&rdquo;
+        do the lying for us.
+      </p>
+    </div>
+
+    <div style="margin-top:56px;padding-top:40px;border-top:1px solid var(--line-firm)">
+      <p class="pullquote">There&rsquo;s no export button, because there&rsquo;s nothing to export.</p>
+      <div class="storebar" style="margin-top:30px">
+        <a class="btn btn--primary" href="#get" data-cta="reveal">Get the app — free</a>
+        <a class="btn btn--ghost" href="the-sheet.html">See the whole file</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="sticky-cta" id="sticky">
+  <p>Free. Sign in with Google.</p>
+  <a class="btn btn--primary" href="#get" data-cta="sticky">Get the app</a>
+</div>
+
+<script src="js/main.js?v=1"></script>
+</body>
+</html>

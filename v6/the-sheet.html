@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+
+  <!-- Title and description follow brief §6.1 and §10.2. The brief's own page
+       title carries an em dash; a colon does the same job here and keeps the
+       page's em-dash count at zero, which is where §9.1 wants it on a spoke. -->
+  <title>The Google Sheet 1inventory creates for you: every tab, every column | 1inventory</title>
+  <meta name="description" content="The file 1inventory makes in your Google Drive: four tabs, seven columns, what the app writes, what it leaves alone, and how Google's version history undoes a mistake." />
+
+  <link rel="canonical" href="https://1inventory.io/the-sheet" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/the-sheet" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/the-sheet" />
+  <!-- v6 is a PREVIEW folder. noindex keeps it out of search so it cannot compete
+       with the live site for its own keywords; the canonical above still points at
+       the real URL. Both flip together on the day this is promoted. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/the-sheet" />
+  <meta property="og:title" content="The Google Sheet 1inventory creates for you: every tab, every column" />
+  <meta property="og:description" content="Four tabs, seven columns, and the exact rules for editing the file by hand. The spreadsheet is the database, and it sits in your own Drive." />
+  <!-- TODO(asset): this image does not exist yet. Same missing asset as the
+       homepage (plan §8 asset #10). A per-page 1200x630 showing the Products tab
+       with the fixture rows would be better than the shared cover; until either
+       exists, every share of this URL renders without a card image. -->
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Products tab of a 1inventory spreadsheet, five rows of a household larder." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Google Sheet 1inventory creates for you: every tab, every column" />
+  <meta name="twitter:description" content="Four tabs, seven columns, and the exact rules for editing the file by hand. The spreadsheet is the database, and it sits in your own Drive." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+
+  <!-- WebPage + BreadcrumbList only. No FAQPage (no questions are marked up on
+       this page), no aggregateRating (zero ratings exist), no Product offer. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "The Google Sheet 1inventory creates for you",
+    "url": "https://1inventory.io/the-sheet",
+    "inLanguage": "en",
+    "description": "The file 1inventory makes in your Google Drive: four tabs, seven columns, what the app writes, what it leaves alone, and how Google's version history undoes a mistake.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "1inventory",
+      "url": "https://1inventory.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sparkybit GmbH",
+      "url": "https://1inventory.io/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://1inventory.io/" },
+        { "@type": "ListItem", "position": 2, "name": "The sheet", "item": "https://1inventory.io/the-sheet" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preview banner. Removed on the day this is promoted to the root, together
+     with the noindex above. The inline style is deliberate and is carried over
+     verbatim from /v4/: the banner must not enter the shared stylesheet. -->
+<div style="background:#062e14;color:#7fd79a;text-align:center;font:500 13px/1.6 Poppins,sans-serif;padding:8px 16px;">v6 preview: v4's design, v5's content. <a href="/v4/" style="color:#fff;">Compare with /v4</a></div>
+
+<!-- =====================================================================
+     HEADER
+     Identical on all eight v6 pages. Class names (.site-header / .scrolled /
+     .nav-toggle / .nav-menu / .open) are the ones js/main.js binds to.
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Primary">
+        <!-- aria-current marks the page we are on. It is the only difference
+             between this nav and the other seven pages'. -->
+        <a href="the-sheet.html" aria-current="page">The sheet</a>
+        <a href="your-data.html">Your data</a>
+        <a href="what-it-doesnt-do.html">What it doesn&rsquo;t do</a>
+        <a href="plans.html">Plans</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+
+    <!-- A sibling of .nav-menu, not a child, so the button stays visible on
+         mobile instead of hiding inside the sheet. -->
+    <div class="nav-cta">
+      <a class="btn btn--green" href="#get-the-app" data-cta="header">Get the app</a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================================
+       SECTION 1 — THE FILE ITSELF
+       Band: .section--major. This is the page's entrance and the artefact
+       shot; it gets the largest padding on the page along with §6.
+
+       The opening paragraph is brief §6.1's 45-word extractable passage,
+       carried over close to verbatim. It is the AI-citation target for this
+       URL, so it must stay self-contained: no pronoun in it depends on the
+       H1 above it, and it names the product, the file and the ownership
+       claim in one block.
+
+       THE FIXTURE SET (brief §3.4) IS MANDATORY AND IS USED VERBATIM BELOW.
+       Lower case, ALL CAPS, an abbreviation, a quantity of zero, a missing
+       barcode, a missing photo, and a description that reads "for cake??".
+       Do not tidy these rows. The mess is the proof; calibrated sample data
+       where every row is equally interesting is the loudest AI tell there is.
+       =================================================================== -->
+  <section class="section section--major" id="the-file" aria-labelledby="the-file-title">
+    <div class="container">
+
+      <div class="section__head">
+        <h1 id="the-file-title">This is the file, and this is exactly what&rsquo;s in it.</h1>
+        <p>When you create an inventory in 1inventory, the app creates a real Google Spreadsheet in your own Google Drive and uses it as the database. Your products are rows in that file. You own it, you can open it on any laptop, and it stays if the app goes away.</p>
+      </div>
+
+      <!-- THE PRODUCTS TAB, full container width.
+           Structure is real: browser chrome, the physical column order A-G as
+           the app writes it, one appended custom-field column, the bold centred
+           filtered header row, and the four-tab strip with Products active.
+
+           Accuracy rules, binding on anyone editing these cells:
+             · exactly ONE location per row (multi-location does not exist)
+             · NO unit of measure in the Quantity column (no kg, no pcs, no pkg)
+             · quantities are plain integers
+             · the custom column stays a TEXT field. A Date custom field writes
+               raw ISO and its Sheets rendering has never been verified.
+           The Image cell really holds a link into the images folder on your
+           Drive; the fixture set renders it as a tick because a full Drive URL
+           is 90 characters wide and would push the custom column off the table.
+           The bullet list under "Products" below states what the cell contains. -->
+      <div class="sheet-mock__wrap">
+        <div class="sheet-mock">
+
+          <div class="sheet-mock__chrome">
+            <span class="sheet-mock__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="sheet-mock__url">docs.google.com/spreadsheets/d/&hellip;</span>
+          </div>
+
+          <table class="sheet-mock__table">
+            <caption class="visually-hidden">
+              The Products tab of a 1inventory spreadsheet. Columns A to G are written by the
+              app; column H is a custom field the owner of this sheet added.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Location</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Last Updated</th>
+                <!-- Tinted so it reads as "a header you typed became a real
+                     column". Lower case on purpose: a person typed it. -->
+                <th scope="col" class="sheet-mock__col--custom">bought at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>passata 700ml</td>
+                <td class="is-num">3</td>
+                <td>8003530003005</td>
+                <td>larder</td>
+                <td></td>
+                <td>&#10003;</td>
+                <td>12/03 09:14</td>
+                <td class="sheet-mock__col--custom">lidl</td>
+              </tr>
+              <tr>
+                <td>SMOKED PAPRIKA</td>
+                <td class="is-num">1</td>
+                <td>5000119061218</td>
+                <td>larder</td>
+                <td>75g tin</td>
+                <td>&#10003;</td>
+                <td>12/03 09:16</td>
+                <td class="sheet-mock__col--custom"></td>
+              </tr>
+              <tr>
+                <td>bicarb</td>
+                <td class="is-num">0</td>
+                <td></td>
+                <td>larder</td>
+                <td>for cake??</td>
+                <td></td>
+                <td>12/03 09:22</td>
+                <td class="sheet-mock__col--custom"></td>
+              </tr>
+              <tr>
+                <td>Calpol 6+ (strawberry)</td>
+                <td class="is-num">2</td>
+                <td>5000158062603</td>
+                <td>bathroom</td>
+                <td>exp 04/2027</td>
+                <td>&#10003;</td>
+                <td>12/03 09:41</td>
+                <td class="sheet-mock__col--custom">boots</td>
+              </tr>
+              <tr>
+                <td>AA batteries 8pk</td>
+                <td class="is-num">1</td>
+                <td>4008496550975</td>
+                <td>drawer</td>
+                <td></td>
+                <td>&#10003;</td>
+                <td>12/03 09:44</td>
+                <td class="sheet-mock__col--custom"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="sheet-mock__tabs" aria-hidden="true">
+            <span class="sheet-mock__tab">Info</span>
+            <span class="sheet-mock__tab is-active">Products</span>
+            <span class="sheet-mock__tab">History</span>
+            <span class="sheet-mock__tab">Alerts</span>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="caption">Five rows of somebody&rsquo;s larder. Columns A to G are the app&rsquo;s. Column H is one they typed in themselves.</p>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 2 — THE FOUR TABS
+       Band: .section--soft, default padding. The reference section: longest
+       on the page by word count, and the one people will come back to.
+
+       DELIBERATE ASYMMETRY (v5 teardown, §9.3 and §9.4). The content is four
+       tabs, so the count is honest, but they are NOT four equal cards:
+         Info      full-width tinted card, two rules
+         Products  a 68/32 split, seven bullets against one short card
+         History   } an uneven pair, History roughly a third wider
+         Alerts    }
+       Three different layout templates inside one band, none of them a
+       symmetric grid.
+       =================================================================== -->
+  <section class="section section--soft" id="tabs" aria-labelledby="tabs-title">
+    <div class="container">
+
+      <div class="section__head">
+        <h2 id="tabs-title">Four tabs. Two of them might not be there yet.</h2>
+        <p>Info and Products are created immediately. History appears if you&rsquo;re subscribed. Alerts appears the first time a date reminder fires.</p>
+      </div>
+
+      <div class="stack">
+
+        <!-- ---- Info ---------------------------------------------------- -->
+        <div class="card card--tint">
+          <h3>Info</h3>
+          <p class="measure">Written once, when the sheet is created, in your language. It welcomes you to the sheet, links back to 1inventory.io, and sets out two rules:</p>
+          <ul class="bullets bullets--green bullets--tight">
+            <li>Don&rsquo;t change the names of the columns the app made, and don&rsquo;t move them.</li>
+            <li>Don&rsquo;t rename or delete any of the tabs.</li>
+          </ul>
+          <!-- This really is the only surface in the whole product that tells
+               you where the photos are stored. Worth saying plainly. -->
+          <p class="measure">It also tells you where your product images live, hyperlinked to the actual folder on your Drive. That line is the only place in the entire product that says where the photos went.</p>
+        </div>
+
+        <!-- ---- Products ------------------------------------------------
+             Seven bullets. Seven is a permitted list length under §9.3 and it
+             is also simply how many columns there are. -->
+        <div class="split split--70 split--top">
+
+          <div class="split__copy stack--sm">
+            <h3>Products</h3>
+            <p>Seven columns before you add any of your own.</p>
+            <ul class="bullets bullets--green">
+              <li><strong>A &middot; Name.</strong> The only required field.</li>
+              <li><strong>B &middot; Quantity.</strong> Whole numbers, 0 to 9,999 in the app.</li>
+              <li><strong>C &middot; Barcode.</strong> Free text, optional, and nothing validates it.</li>
+              <li><strong>D &middot; Location.</strong> Matches the name of one of your locations.</li>
+              <li><strong>E &middot; Description.</strong> Free text.</li>
+              <li><strong>F &middot; Image.</strong> A link into the images folder on your Drive.</li>
+              <li><strong>G &middot; Last Updated.</strong> Written by the server.</li>
+            </ul>
+          </div>
+
+          <!-- .split__copy, not .split__media, for the second column: there is no
+               media in it. .split__media is a centring flex column sized to its
+               content, which is right for a phone frame and wrong for a card that
+               should fill the column. -->
+          <div class="split__copy">
+            <div class="card card--tint">
+              <h3>How it&rsquo;s set up</h3>
+              <p>The header row is bold, centred and frozen. A basic filter covers A to G and widens as you add fields. Quantity is number-formatted as an integer. Your own fields append to the right as H, I, J and onwards.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ---- History and Alerts -------------------------------------- -->
+        <div class="grid grid--pair-uneven">
+
+          <div class="card">
+            <h3>History</h3>
+            <p class="measure">Seven columns: the product, its barcode, what happened to it, the quantity before and after, who did it, and when.</p>
+
+            <!-- Second sheet mock, no browser chrome this time — the chrome is
+                 established by the mock in §1 and repeating it would read as a
+                 second file. Two rows only: this is a shape, not a dataset.
+                 The four operations shown are exactly the four the app records
+                 (created, increased, decreased, deleted). There is no edit
+                 tracking of names, fields or locations; do not write "every
+                 edit". -->
+            <div class="sheet-mock__wrap">
+              <div class="sheet-mock">
+                <table class="sheet-mock__table">
+                  <caption class="visually-hidden">The History tab, showing its seven column headings and two example rows.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Barcode</th>
+                      <th scope="col">Operation</th>
+                      <th scope="col">QuantityOld</th>
+                      <th scope="col">QuantityNew</th>
+                      <th scope="col">User</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>passata 700ml</td>
+                      <td>8003530003005</td>
+                      <td>increased</td>
+                      <td class="is-num">1</td>
+                      <td class="is-num">3</td>
+                      <td>you@gmail.com</td>
+                      <td>12/03 09:14</td>
+                    </tr>
+                    <tr>
+                      <td>bicarb</td>
+                      <td></td>
+                      <td>decreased</td>
+                      <td class="is-num">1</td>
+                      <td class="is-num">0</td>
+                      <td>you@gmail.com</td>
+                      <td>12/03 09:22</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="sheet-mock__tabs" aria-hidden="true">
+                  <span class="sheet-mock__tab">Info</span>
+                  <span class="sheet-mock__tab">Products</span>
+                  <span class="sheet-mock__tab is-active">History</span>
+                  <span class="sheet-mock__tab">Alerts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ⚠ ACCURACY. The tab is created WITH the inventory, for people
+                 already subscribed at that moment. Do NOT write that upgrading
+                 an existing inventory adds history to it: it does not (client
+                 decision 10, and the plans-page footnote says the same). The
+                 self-healing behaviour is about a DELETED tab being rebuilt,
+                 which is a different thing and is covered in the "break it"
+                 section below. -->
+            <p class="measure">Premium, at &euro;0.99 a month. The tab is created with the inventory, if you&rsquo;re subscribed at the time. It records from the day it exists and nothing is filled in for the days before that, because we never had the data.</p>
+
+            <p><span class="stat">100,000</span><span class="stat-label">rows, and then the History tab stops adding to itself.</span></p>
+          </div>
+
+          <div class="card">
+            <h3>Alerts</h3>
+            <p>Created the first time one of your date reminders fires, and not before. Six columns:</p>
+            <!-- Column names as code chips rather than a third table. Three
+                 sheet mocks in one band would flatten the section. -->
+            <p>
+              <span class="code-chip">Product Name</span>
+              <span class="code-chip">Barcode</span>
+              <span class="code-chip">Field</span>
+              <span class="code-chip">Field Value</span>
+              <span class="code-chip">Triggered At</span>
+              <span class="code-chip">Rule Name</span>
+            </p>
+            <p>Same ceiling: 100,000 rows.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 3 — WHAT THE APP WRITES
+       Band: .section--major on white. One of the three argument-carrying
+       bands, and the one that earns the trust the rest of the page spends.
+
+       Layout is a 68/32 split with the page's ONE .quote-major in the narrow
+       column, set like a margin note. .quote-major is used once per page by
+       design; if another page section wants a large quote, it doesn't get one.
+       =================================================================== -->
+  <section class="section section--major" id="what-it-writes" aria-labelledby="writes-title">
+    <div class="container container--narrow">
+
+      <div class="split split--70 split--top">
+
+        <div class="split__copy">
+          <h2 id="writes-title">What the app writes, and what it leaves alone</h2>
+          <div class="prose">
+            <p>When the app updates a row it writes the value and the formatting. That is all it writes. There is a comment in the code next to that decision explaining why: writing the whole row back would also wipe the notes and the data validation you added by hand.</p>
+            <p>So carry on using the file as a spreadsheet. Type a note into a cell we don&rsquo;t manage and it survives. Add data validation to a column and it survives. Leave a blank spacer row between two sections and the app steps over it instead of reading it as a product with no name.</p>
+          </div>
+        </div>
+
+        <!-- Also .split__copy: the narrow column holds type, not a frame, and it
+             should sit flush left like a margin note rather than be centred. -->
+        <div class="split__copy">
+          <p class="quote-major">It writes the cell it changed. Nothing else on the sheet moves.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 4 — EDITING BY HAND
+       Band: .section--soft, default padding.
+
+       §9.3: the brief lists three edit behaviours. Three equal bullets is a
+       banned shape, and these three are not equal anyway — the third one has
+       a whole UI flow behind it. So: two bullets, then the location flow as
+       its own paragraph, then the admission. Visibly unequal, which is the
+       point.
+       =================================================================== -->
+  <section class="section section--soft" id="editing" aria-labelledby="editing-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="editing-title">Go ahead and edit it yourself</h2>
+      </div>
+
+      <ul class="bullets bullets--green">
+        <li><strong>Add a column.</strong> Type a header the app has never heard of and its values come back to the app as a custom field.</li>
+        <li><strong>Move a column.</strong> Drag it somewhere else in Google Sheets and the app follows it. That is in fact the only way to reorder your own fields, because there are no drag handles in the app. The seven columns the app made are the exception: those stay where they are.</li>
+      </ul>
+
+      <div class="prose">
+        <p>Type a location straight into column D and the app notices. You get a green link reading <em>View 3 unmapped locations</em>, and a sheet that explains itself: &ldquo;These location values are used in your products but haven&rsquo;t been created yet. Add them to organize your inventory.&rdquo; Each one gets an Add button, green if you have a location slot free and orange if it needs an upgrade.</p>
+      </div>
+
+      <!-- .admission is deliberately quieter than a card: this is costly
+           honesty, and it must not look like a feature being sold. -->
+      <div class="admission">
+        <p>That screen only exists because we genuinely expect you to open the file and type into it, which is a thing no inventory app keeping your catalogue on its own servers would ever have to build, and it is the clearest evidence we can give you that the spreadsheet is the database.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 5 — BREAKING IT
+       Band: .section--tight on white. A connector, not a section: four
+       sentences, no image, the smallest padding on the page. §9.4 asks for a
+       longest-to-shortest ratio of at least four; §2 to this band clears it.
+       =================================================================== -->
+  <section class="section section--tight" id="breaking-it" aria-labelledby="breaking-title">
+    <div class="container container--narrow">
+
+      <h2 id="breaking-title">So what happens if you break it?</h2>
+
+      <div class="prose">
+        <p>Rename or move one of the seven columns and the app stops, then tells you exactly which columns to add or rename. Delete the History tab and it notices on the next read, builds the tab again with the right headings and formatting, and retries. Recreating a tab does not bring back what was in it. For that you want the next bit.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 6 — VERSION HISTORY
+       Band: .section--dark + .section--major. The page's one dark band and
+       one of its three major bands: this is the crescendo, and it is the
+       argument that the file outlives us.
+
+       ⚠ Do NOT use .admission on this band. Its rule sets p { color: --muted },
+         which is a dark grey and unreadable on the dark green. .card gets the
+         --dark treatment properly and is used instead.
+
+       The three steps are stated as one sentence with a .code-chip menu path
+       rather than a three-item list: §9.3 bans three-item grids, and the
+       numeral in the heading already delivers "three".
+       =================================================================== -->
+  <section class="section section--dark section--major" id="version-history" aria-labelledby="history-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <!-- The page's only eyebrow, and a plain label rather than a mood
+             adverbial. Eight kickers in a row are a machine-written table of
+             contents; one is a signpost. -->
+        <span class="eyebrow">Backups</span>
+        <h2 id="history-title">Three steps, and all three are Google&rsquo;s</h2>
+      </div>
+
+      <div class="prose">
+        <p>Your inventory is a Google Sheet, so it inherits Google Drive&rsquo;s own revision history. The Backups screen in the app lists the revision timestamps it can see and then hands you over: open the sheet from the link, go to <span class="code-chip">File</span> &rarr; <span class="code-chip">Version history</span> &rarr; <span class="code-chip">See version history</span>, pick the version you want and click Restore.</p>
+      </div>
+
+      <div class="card">
+        <p>There is no restore button in 1inventory. The restoring happens inside Google Sheets, which is the honest description and also the more reassuring one, because it means it does not depend on us.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 7 — THE CAVEAT
+       Band: .section--tight on white. Short, quiet, and the last thing before
+       the offer, which is where a disclosure belongs if it is going to change
+       anybody's mind before they install.
+
+       THE PAGE'S ONE ANTITHESIS. "in the owner's Drive, not in yours" is the
+       single "X, not Y" construction on this page. §9.1 allows one per spoke
+       and it is spent here on purpose, because this is the sentence a
+       collaborator most needs to read twice.
+       =================================================================== -->
+  <section class="section section--tight" id="caveat" aria-labelledby="caveat-title">
+    <div class="container container--narrow">
+
+      <h2 id="caveat-title">If somebody invited you, the file isn&rsquo;t yours to open.</h2>
+
+      <div class="admission">
+        <p>The spreadsheet lives in the inventory owner&rsquo;s Drive, not in yours. You can use the app exactly as they do, but the <em>Open in Google Sheet</em> link never appears for you anywhere, because every read and write runs under the owner&rsquo;s Google account and no Drive sharing is performed.</p>
+      </div>
+
+      <ul class="footnotes">
+        <li>What the app can and cannot see in your Drive is set out in full on <a href="your-data.html">Your data</a>.</li>
+        <li>The things it deliberately does not do are listed on <a href="what-it-doesnt-do.html">What it doesn&rsquo;t do</a>, and the limits per plan are on <a href="plans.html">Plans</a>.</li>
+        <li>Anything still unanswered is probably in the <a href="faq.html">FAQ</a>.</li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SECTION 8 — GET THE APP
+       Band: .section--gradient, the same offer block and store links the
+       homepage carries. Default padding: the gradient already carries the
+       weight, and a --major band here would compete with §6.
+       =================================================================== -->
+  <section class="section section--gradient" id="get-the-app" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="final-cta">
+
+        <img class="final-cta__icon" src="img/app-icon.svg" alt="" width="64" height="64" />
+
+        <h2 id="cta-title">Open it on a laptop before you trust us</h2>
+
+        <p class="final-cta__body">Install the app, sign in with Google, scan five things off one shelf, then open the file on a laptop. If it is not the file we described, you will know in ten minutes.</p>
+
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="store-ios">
+              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="150" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="store-android">
+              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="169" height="50" />
+            </a>
+          </div>
+
+          <p class="cta-strip"><span>Free plan, no card</span><span>Premium &euro;0.99 a month</span><span>iPhone and Android</span></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER — identical on all eight v6 pages.
+     Legal links are ABSOLUTE. Relative ones 404 from inside /v6/.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — a barcode inventory app that keeps your data in your own Google Sheet.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is available in English, German, Spanish, French and Portuguese.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="./">Home</a>
+          <a href="the-sheet.html">The sheet</a>
+          <a href="your-data.html">Your data</a>
+          <a href="what-it-doesnt-do.html">What it doesn&rsquo;t do</a>
+          <a href="plans.html">Plans</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms and conditions</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im D&ouml;rener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     STICKY MOBILE CTA BAR
+     Mobile only, dismissible. Visible by default so it works with JS off.
+     The label is the approved one, unvaried, on every page.
+     ===================================================================== -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Get the app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Get the app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="js/main.js?v=1" defer></script>
+</body>
+</html>

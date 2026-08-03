@@ -307,3 +307,25 @@
     el.textContent = new Date().getFullYear();
   });
 })();
+
+/* 8. v3 — scroll reveals. Sections after the hero fade-and-rise as they
+      enter the viewport. Gated on prefers-reduced-motion; no-JS pages and
+      reduced-motion users see everything immediately. */
+(function () {
+  "use strict";
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+  var targets = Array.prototype.slice.call(
+    document.querySelectorAll("main > section:not(.hero) > .container")
+  );
+  targets.forEach(function (el) { el.classList.add("reveal"); });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+  targets.forEach(function (el) { io.observe(el); });
+})();

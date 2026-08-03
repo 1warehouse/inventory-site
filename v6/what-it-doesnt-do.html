@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+
+  <!-- TITLE. No em dash here on purpose. The page's dash budget is two and both
+       are spent in the body, where an interruption is doing real work; a title,
+       an og:title and a twitter:title would have cost three on punctuation
+       nobody reads as punctuation. Colon does the same job. -->
+  <title>What 1inventory doesn't do: the limitations, stated plainly | 1inventory</title>
+  <meta name="description" content="No offline mode, no export button, no low-stock alerts, no web or iPad app. The complete list of what 1inventory cannot do, before you install it." />
+
+  <link rel="canonical" href="https://1inventory.io/what-it-doesnt-do" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/what-it-doesnt-do" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/what-it-doesnt-do" />
+  <!-- v6 is a PREVIEW folder, not the live root. noindex keeps it out of search
+       so it cannot compete with the real URL for its own keywords; the canonical
+       above already points at where this will live. Both flip together on the day
+       this content is promoted. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/what-it-doesnt-do" />
+  <meta property="og:title" content="What 1inventory doesn't do: the limitations, stated plainly" />
+  <meta property="og:description" content="No offline mode, no export button, no low-stock alerts, no web or iPad app. The complete list of what 1inventory cannot do, before you install it." />
+  <!-- TODO(asset): og-cover-1200x630.png does not exist yet. Same open asset as
+       the homepage; this page shares it rather than commissioning a second. -->
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — scan a barcode, the product lands in a Google Sheet in your own Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What 1inventory doesn't do: the limitations, stated plainly" />
+  <meta name="twitter:description" content="No offline mode, no export button, no low-stock alerts, no web or iPad app. The complete list of what 1inventory cannot do, before you install it." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+
+  <!-- A plain WebPage node, nothing more. This is the page most likely to be
+       quoted back by an answer engine, so it is worth naming and attributing —
+       but deliberately NOT an FAQPage: there is exactly one question-shaped
+       heading here and structured data may not describe content that isn't on
+       the page. No aggregateRating anywhere on this site: zero ratings exist. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "What 1inventory doesn't do",
+    "url": "https://1inventory.io/what-it-doesnt-do",
+    "description": "The complete list of 1inventory's limitations: no offline mode, no export button, no low-stock alerts, no web or iPad app, five locations and five people, 10,000 products per inventory.",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "1inventory",
+      "url": "https://1inventory.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sparkybit GmbH",
+      "url": "https://1inventory.io/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preview banner. Removed on the day this is promoted to the root, together
+     with the noindex above. The inline style is deliberate and is carried over
+     from how /v3 and /v4 are deployed: the banner must not enter the stylesheet,
+     which is shared by all eight v6 pages. -->
+<div style="background:#062e14;color:#7fd79a;text-align:center;font:500 13px/1.6 Poppins,sans-serif;padding:8px 16px;">v6 preview &middot; v4 design system, v5 content. <a href="/v4/" style="color:#fff;">Compare with /v4</a></div>
+
+<!-- =====================================================================
+     HEADER — identical on all eight v6 pages.
+     Class names (.site-header/.scrolled/.nav-toggle/.nav-menu/.open) are the
+     ones js/main.js binds to. Do not rename.
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="the-sheet.html">The sheet</a>
+        <a href="your-data.html">Your data</a>
+        <!-- aria-current marks the page you are on. It is an attribute, not a
+             style hook: the design system has no "current nav item" treatment
+             and this page is not the place to invent one. -->
+        <a href="what-it-doesnt-do.html" aria-current="page">What it doesn&rsquo;t do</a>
+        <a href="plans.html">Plans</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+
+    <div class="nav-cta">
+      <a class="btn btn--green" href="#get-the-app" data-cta="header">Get the app</a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================================
+       BAND A — THE OPENING
+       Single narrow column inside the .hero band. NO phone frame and no
+       illustration anywhere on this page: v5 §9.4 makes this the one page
+       with no imagery at all, and the visual restraint is the argument. A
+       page that admits nine things while showing you glossy product shots
+       is doing two contradictory things at once.
+       =================================================================== -->
+  <section class="hero" id="top" aria-labelledby="page-title">
+    <div class="container container--narrow">
+      <div class="hero__copy stack--sm">
+
+        <!-- One orienting sentence. Most arrivals here come from a search for a
+             limitation ("inventory app offline", "does it export"), not from the
+             homepage, so the page has to say what the product is before it
+             starts listing what it isn't. -->
+        <p class="swap-line">1inventory is a barcode inventory app that saves to a Google Sheet you own.</p>
+
+        <h1 id="page-title">We&rsquo;d rather lose you here than in a one-star review.</h1>
+
+        <div class="lead">
+          <p>
+            The fastest way to make somebody distrust everything else on a website is to let
+            them find out about a limitation after they have paid. So here is the whole list.
+          </p>
+        </div>
+
+        <!-- ⚠ INLINE LINKS, AND WHY THEY LOOK LIKE THIS.
+             The stylesheet gives an inline body link NO treatment on a light
+             band: `a { color: inherit; text-decoration: none }` and the only
+             overrides are `.section--dark a:not(.btn)` and `.footer-links a`.
+             An unstyled cross-reference here would be indistinguishable from the
+             sentence around it, which fails WCAG 1.4.1 outright.
+             Composed from what exists instead of adding a rule: `.accent` is
+             --green-600 (5.4:1 on white), and it goes on a <b> rather than on
+             the <a> because the base `strong, b` rule sets color:--ink and would
+             otherwise win. <b> and not <strong>: this is stylistically offset
+             text, not text of greater importance. Weight plus hue means the link
+             is not signalled by colour alone.
+             THE REAL FIX is one line in the stylesheet — an inline-link rule for
+             light bands — but the stylesheet is shared by eight pages and frozen
+             for this build. Logged as an open dependency. -->
+        <div class="prose">
+          <p>
+            If any of it is a dealbreaker, close the tab with our blessing &mdash; and if you
+            <a href="mailto:support@1inventory.com"><b class="accent">tell us which one</b></a>,
+            we will at least know. Nothing below is a roadmap. It is what the product does not do
+            today, on the day this page was written.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       BAND B — THE ONE THAT COSTS THE MOST TRAFFIC
+       "Will it tell me when I'm running low?" is objection #12 in the v5
+       brief's map, it is negative-keyworded in paid, and it is the single
+       most common wrong expectation people bring to an inventory app. It
+       gets its own band, ahead of the list, because a visitor who wants
+       reorder alerts should be able to leave in under fifteen seconds.
+
+       This band also carries the page's ONE .quote-major. Used once, per
+       the class comment in the v6 additions block.
+
+       ⚠ ACCURACY — the product has exactly ONE alert rule type, DateThreshold,
+         watching Date and Date/Time CUSTOM fields only. There is no low-stock
+         alert, no reorder point and no threshold on quantity. Nothing on this
+         page or any other may imply otherwise.
+       =================================================================== -->
+  <section class="section section--mint" id="running-low" aria-labelledby="running-low-title">
+    <div class="container">
+
+      <div class="section__head">
+        <h2 id="running-low-title">Will it tell me when I&rsquo;m running low?</h2>
+      </div>
+
+      <!-- .grid--pair-uneven, not .grid--2: a 1.35 / 1 split so the answer
+           carries visibly more weight than the inventory of missing fields
+           beside it. Collapses to one column at 560px. -->
+      <div class="grid grid--pair-uneven">
+
+        <div class="stack">
+          <p class="quote-major">No. Nothing in it knows how much of anything is left, except the number you last typed.</p>
+
+          <div class="prose">
+            <p>
+              One kind of alert exists, and it watches a <strong>date</strong>. You add a date
+              field of your own, you say how many days of warning you want, and the app emails
+              you or pushes you a notification before the date arrives, or after it, if the
+              thing is the kind of thing that slips. That is the whole automation story.
+            </p>
+            <p>
+              Nothing watches quantity. If your real job is selling things, buy a till system,
+              and we mean that.
+            </p>
+            <p class="note">
+              More on how the date alerts work, and what they cost, on the
+              <a href="faq.html"><b class="accent">FAQ</b></a> and in
+              <a href="plans.html"><b class="accent">plans</b></a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Ten field names, not a summary. The specificity is the point: a
+             reader looking for one of these words finds it and leaves, which is
+             the job of this page. Ten items, so it cannot read as a designed
+             grid of three or four. -->
+        <div class="card card--flat">
+          <h3>Fields the product does not have</h3>
+          <ul class="bullets bullets--tight">
+            <li>Minimum stock</li>
+            <li>Par level</li>
+            <li>Reorder point</li>
+            <li>Cost, or price</li>
+            <li>Supplier</li>
+            <li>Purchase order</li>
+            <li>SKU</li>
+            <li>Category</li>
+            <li>Unit of measure</li>
+            <li>Sales, or transactions of any kind</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       BAND C — THE LIST. The argument-carrying band, so it takes
+       .section--major (40-78px) against the default 20-31px everywhere
+       else. This is the whole reason --major exists.
+
+       Ten items, each an .admission. That component is deliberately
+       quieter than a .card — a bordered, shadowed white box would make
+       each of these look like a feature being sold, which is the opposite
+       of what they are. Muted 15px body under an --ink heading reads as a
+       specification sheet, which is what it is.
+
+       The ten are VISIBLY UNEQUAL in length, from twenty words to a
+       hundred. v5 §9.3: never a symmetric grid, and where a set could be
+       padded to evenness, do not pad it.
+
+       Low stock is NOT in this list. It has band B to itself.
+       =================================================================== -->
+  <section class="section section--major" id="the-list" aria-labelledby="list-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <span class="eyebrow">Limitations</span>
+        <h2 id="list-title">Ten gaps, listed properly</h2>
+        <!-- The subhead was "…checked against the shipping code, not against a feature
+             page." The page's one "X, not Y" antithesis is spent nine items lower
+             ("a plan, not a date"), and the budget is one, so the flourish came off
+             and the plain claim stayed. -->
+        <p>Every one of these was checked against the shipping code.</p>
+      </div>
+
+      <!-- 1 ---------------------------------------------------------------
+           The biggest gap in the product, and it goes first. The app's own
+           paywall labels this row "Coming soon", which is why the last
+           sentence is phrased the way it is.
+
+           ⚠ THE PAGE'S ONE "X, not Y" ANTITHESIS IS HERE ("a plan, not a
+             date"). Budget is one per page. If a later edit needs an
+             antithesis somewhere else, this one gets rewritten first. -->
+      <div class="admission">
+        <h3>No offline mode.</h3>
+        <p>
+          Every operation in the app is a network call. There is no cached-read mode, no offline
+          queue and no local copy of your products on the phone. Cellars, lock-ups, underground
+          car parks, vans, building sites and market pitches in fields are all places where this
+          app will not load. It is the biggest functional gap in the product. We know. Other apps
+          beat us on it outright. The app itself labels offline mode &ldquo;Coming soon&rdquo;,
+          and that is a plan, not a date.
+        </p>
+      </div>
+
+      <!-- 2 ---------------------------------------------------------------
+           ⚠ VOCABULARY: the words "real-time" and "sync" are banned site-wide
+             by v5 §9.8, including in denials — the denial plants the word and
+             the word is what gets remembered. Describe the mechanism instead.
+             Cross-device propagation is manual pull-to-refresh. There is no
+             background fetch, no polling timer and no websocket anywhere in
+             either repository. -->
+      <div class="admission">
+        <h3>Nothing updates by itself.</h3>
+        <p>
+          Two people on the same inventory do not see each other&rsquo;s changes as they happen.
+          Saving writes to your Google Sheet. The other phone finds out when somebody pulls the
+          list down to refresh it. There is no background refresh, no notification when a number
+          moves, and nothing watching the spreadsheet for edits you make on a laptop.
+        </p>
+      </div>
+
+      <!-- 3 ---------------------------------------------------------------
+           Export is the one gap where our answer is genuinely better than the
+           button, and it is still listed as a gap. Claiming the architecture
+           makes the absence irrelevant is exactly the move this page exists to
+           avoid. -->
+      <div class="admission">
+        <h3>No export button.</h3>
+        <p>
+          No CSV export, no PDF report, no download-my-data button and no share sheet. Our answer
+          is architectural: your rows are already in a Google Sheet in your own Drive, and Google
+          will export that file in whatever format you want. We think it is the better answer.
+          It is not the same thing as a button, so it belongs on this list.
+          <a href="the-sheet.html"><b class="accent">What the file looks like</b></a> is its own
+          page.
+        </p>
+      </div>
+
+      <!-- 4 ---------------------------------------------------------------
+           Portrait lock is applied at runtime in main.dart for every device,
+           including tablets, so an iPad renders a stretched phone layout. Do
+           not soften this to "works best on a phone". -->
+      <div class="admission">
+        <h3>No iPad, no web app, no desktop app.</h3>
+        <p>
+          Portrait phone only, on both platforms. Orientation is locked in code on every device,
+          tablets included, and there is no tablet layout anywhere in the app. There is no browser
+          client and no desktop build. Your <em>data</em> opens on a laptop through Google Sheets,
+          which is a real partial answer. There is no 1inventory to run there.
+        </p>
+      </div>
+
+      <!-- 5 ---------------------------------------------------------------
+           ⚠ THE PAGE'S ONE SECTION-CLOSING APHORISM IS THE LAST SENTENCE HERE.
+             Budget is one per page. Insurance documentation is a segment we
+             actively repel (it is negative-keyworded in paid), so the one
+             memorable line is spent here on purpose.
+             Image numbers are exact: the phone downscales to at most 500x500
+             before upload and the server re-encodes as WebP at quality 30. -->
+      <div class="admission">
+        <h3>One photo per product, compressed hard.</h3>
+        <p>
+          Exactly one image per product. No gallery, no second angle. Your phone shrinks it to at
+          most 500&nbsp;&times;&nbsp;500 before it leaves, and our side re-encodes it as WebP at
+          quality 30. Good enough to recognise a jar on a shelf.
+        </p>
+        <p>
+          There is no serial-number field, no valuation, no receipt storage and no report of any
+          kind. This app helps you know what you own. It does not help you prove it.
+        </p>
+      </div>
+
+      <!-- 6 ---------------------------------------------------------------
+           Deliberately the longest item, because it is six separate absences
+           that people discover one at a time. Search covers name, barcode,
+           description and your own fields; Location is excluded, which is
+           genuinely surprising and so it is stated rather than omitted.
+           "no parent, no tree, no breadcrumbs and no sub-locations" is four
+           items on purpose — three would have been a tricolon, and the page's
+           tricolon budget is one, unspent. -->
+      <div class="admission">
+        <h3>Flat locations, and nothing in bulk.</h3>
+        <p>
+          A location is a name and a position in a list. No parent, no tree, no breadcrumbs and
+          no sub-locations. There is no multi-select, no bulk delete, no bulk move and no bulk
+          edit anywhere in the app: everything is done one product at a time. Two views exist,
+          List and Folder. There is no grid.
+        </p>
+        <p>
+          The app reads barcodes. It cannot generate or print one, so there is no shelf-label
+          workflow. Search covers the name, the barcode, the description and the fields you added
+          yourself, and it does not cover the location name, which surprises people. Quantities
+          are whole numbers from 0 to 9,999.
+        </p>
+      </div>
+
+      <!-- 7 ---------------------------------------------------------------
+           Caps and roles together, because they are the same objection. The
+           owner-credentials model is a structural property worth disclosing:
+           the daily barcode-lookup allowance belongs to the owner and is shared
+           by everyone on the inventory. -->
+      <div class="admission">
+        <h3>Two roles, and five people is the ceiling.</h3>
+        <p>
+          An inventory has an owner, and it has members. That is the entire permission model.
+          There is no read-only guest, no per-location access, no approval step and no audit role.
+          Everybody who is in can edit everything and delete anything.
+        </p>
+        <p>
+          The numbers are five people including you, five locations and five inventories, on the
+          paid plan. None of them can be bought up. Inviting anybody at all requires the owner to
+          be subscribed, and the inventory runs on the owner&rsquo;s Google account and the
+          owner&rsquo;s daily allowance of barcode lookups, which everybody in it shares.
+        </p>
+      </div>
+
+      <!-- 8 --------------------------------------------------------------- -->
+      <div class="admission">
+        <h3>Google sign-in only.</h3>
+        <p>
+          There is one button on the login screen and it says Google. No email and password, no
+          magic link, no QR code, no local-only mode. If you do not want a Google account attached
+          to this, there is no version of this product for you. The
+          <a href="your-data.html"><b class="accent">permission we ask for</b></a> is the narrowest
+          one Google offers, which is a separate argument and does not change this one.
+        </p>
+      </div>
+
+      <!-- 9 ---------------------------------------------------------------
+           v5 brief: print the number, because a number is checkable. The
+           ceiling is a single global cap and is NOT split by tier. The
+           performance caution is real and belongs here: the list is loaded
+           unpaged into memory and searched linearly on every keystroke, and
+           nobody has benchmarked it at this size. -->
+      <div class="admission">
+        <h3>10,000 products in one inventory.</h3>
+        <p>
+          On both plans. It is not divided between them, and it is enforced: at the ceiling the
+          app stops and returns <span class="code-chip">Product limit reached (10000)</span>. You
+          will almost certainly never see it. We print the number because a number is checkable.
+        </p>
+        <p>
+          One caution goes with it. The app loads an entire inventory into memory and searches it
+          again on every keystroke, and nobody here has measured how that feels at ten thousand
+          rows. Read the figure as a wall. It is not a performance claim.
+        </p>
+      </div>
+
+      <!-- 10 --------------------------------------------------------------
+           Shortest item in the list, immediately after the longest pair. The
+           unevenness is the point. -->
+      <div class="admission">
+        <h3>Five languages.</h3>
+        <p>
+          English, German, Spanish, French and Portuguese, and that includes the alert emails and
+          the product text that comes back from a barcode lookup. Anything else, and you get
+          English.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       BAND D — THE DISQUALIFIER LIST
+       Nine items. Not eight, not ten, and not a card grid: a plain dash
+       list, because the reader is scanning it for their own job title and
+       any styling gets in the way of that. Several of these segments are
+       negative-keyworded in paid, so this list is also the reference the
+       campaign work reads.
+       =================================================================== -->
+  <section class="section section--soft" id="not-for-you" aria-labelledby="not-for-you-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="not-for-you-title">Go and buy something else if this is you.</h2>
+        <p>None of these is a gap we are working on. They are jobs this product was not built for.</p>
+      </div>
+
+      <ul class="bullets">
+        <li>Running a warehouse, or anything with bins, aisles, pick lists, receiving or cycle counts.</li>
+        <li>Running a shop with a till. Buy a POS.</li>
+        <li>Documenting a house or a business for insurance. Buy something built for evidence.</li>
+        <li>Managing IT assets with serial numbers, check-in and check-out, and depreciation.</li>
+        <li>Needing to be told when to reorder.</li>
+        <li>Working somewhere without a signal.</li>
+        <li>Needing more than five people on one list, or any read-only role.</li>
+        <li>Needing it on an iPad, or in a browser.</li>
+        <li>Unwilling to connect a Google account.</li>
+      </ul>
+
+      <!-- Two footnotes rather than a third body paragraph. Both are the sort
+           of thing a reader finds out on day three otherwise. -->
+      <ul class="footnotes">
+        <li>
+          Food, medicine, warranties, services and renewals are all handled by the date alerts,
+          which is a different job from reordering and is worth not confusing with it.
+        </li>
+        <li>
+          A household, a workshop, a club store or a two-to-five-person shared list is what this
+          was built for, and the caps above are the shape of that decision.
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       BAND E — THE TURN
+       .section--tight (14-20px). It is a connector, not a section, and it
+       should read as one line of speech between the list and the CTA.
+       This is also where the price lands: at EUR 0.99 a month the "another
+       subscription" objection is smaller than any single item above it, so
+       it is stated as a fact in passing and not as an announcement.
+       =================================================================== -->
+  <section class="section section--tight" id="still-here" aria-labelledby="still-here-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="still-here-title" class="mb-0">Still here?</h2>
+      </div>
+
+      <div class="prose">
+        <p>
+          Then most of that list was noise to you, and the rest of the site is worth your time.
+          The free plan is one inventory, one location, one field of your own and one alert rule,
+          and it does not expire. Premium is &euro;0.99 a month with a seven-day trial, which
+          makes the decision you have left a small one.
+        </p>
+        <!-- .link-arrow, the foundation's standalone-link primitive. Its CSS
+             comment records that it had no user on the homepage after the v2
+             compact pass and was kept as a primitive; this is a legitimate use
+             of it. Each one is 44px tall with a 2px underline rule, so these
+             four are both distinguishable as links and above the touch-target
+             minimum, neither of which is true of a bare <a> on a light band. -->
+        <p>
+          <a class="link-arrow" href="the-sheet.html">The spreadsheet you end up with</a> &middot;
+          <a class="link-arrow" href="your-data.html">What we can and cannot see</a> &middot;
+          <a class="link-arrow" href="plans.html">The two plans, with the real numbers</a> &middot;
+          <a class="link-arrow" href="faq.html">The awkward questions</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       BAND F — GET THE APP
+       The page's destination. Header and sticky CTAs both point here. Two
+       real store badges, no form, no phone frame.
+       ⚠ The <img alt> is the accessible name of each link. It is page copy,
+         not decoration, and must never be emptied. The badge artwork is the
+         client-supplied compliant black pair and must not be restyled.
+       =================================================================== -->
+  <section class="section section--gradient" id="get-the-app" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="final-cta">
+
+        <img class="final-cta__icon" src="img/app-icon.svg" alt="" width="64" height="64" />
+
+        <h2 id="cta-title">Start with one shelf.</h2>
+
+        <p class="final-cta__body">
+          Sign in with Google, scan ten things, and open the spreadsheet on your laptop. If it
+          turns out not to be for you, the file is still yours.
+        </p>
+
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="store-ios">
+              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="160" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="store-android">
+              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="160" height="50" />
+            </a>
+          </div>
+
+          <p class="cta-strip"><span>Free plan, no card</span><span>Premium &euro;0.99 a month</span><span>iPhone and Android</span></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER — identical on all eight v6 pages.
+     Legal links are ABSOLUTE (/privacy.html, /terms.html). Relative ones
+     404 from inside a version subfolder.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — a barcode inventory app that keeps your data in your own Google Sheet.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is available in English, German, Spanish, French and Portuguese.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="./">Home</a>
+          <a href="the-sheet.html">The sheet</a>
+          <a href="your-data.html">Your data</a>
+          <a href="what-it-doesnt-do.html" aria-current="page">What it doesn&rsquo;t do</a>
+          <a href="plans.html">Plans</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms and conditions</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     STICKY MOBILE CTA BAR
+     Mobile only, dismissible. Visible by default so it works with JS off.
+     The label is the approved one, unvaried: "Get the app".
+     ===================================================================== -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Get the app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Get the app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="js/main.js?v=1" defer></script>
+</body>
+</html>

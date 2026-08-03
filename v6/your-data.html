@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+
+  <!-- Title and description come from the v5 brief §10.2 verbatim. The title
+       matches the H1's promise ("here are the permissions, in full") rather
+       than describing the page in the abstract — an organic click that lands
+       on a different promise than the one in the SERP is the mismatch the
+       brief calls out. 54 characters, so nothing truncates. -->
+  <title>What 1inventory can and cannot see in your Google Drive</title>
+  <meta name="description" content="Three OAuth scopes, printed in full. drive.file lets an app touch only files it created. Here's the can/cannot list, and how to revoke it in ten seconds." />
+
+  <link rel="canonical" href="https://1inventory.io/your-data.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/your-data.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/your-data.html" />
+  <!-- v6 is a PREVIEW folder. noindex keeps it out of search so it cannot
+       compete with the live page for its own keywords; the canonical above
+       still points at the eventual root URL. Both flip together on promotion. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/your-data.html" />
+  <meta property="og:title" content="What 1inventory can and cannot see in your Google Drive" />
+  <meta property="og:description" content="Three OAuth scopes, printed in full. drive.file lets an app touch only files it created. Here's the can/cannot list, and how to revoke it in ten seconds." />
+  <!-- TODO(asset): og:image does not exist yet. Shared with the homepage —
+       one 1200x630 cover, created before launch. A missing og:image degrades
+       every messenger and paid-social share of this page. -->
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — the three Google permissions the app requests, printed in full." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What 1inventory can and cannot see in your Google Drive" />
+  <meta name="twitter:description" content="Three OAuth scopes, printed in full. drive.file lets an app touch only files it created. Here's the can/cannot list, and how to revoke it in ten seconds." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+
+  <!-- WebPage only. No FAQPage: this page has no Q&A markup on it, and
+       structured data may not describe content that is not present.
+       No aggregateRating and no review, ever — none exist. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "What 1inventory can and cannot see in your Google Drive",
+    "url": "https://1inventory.io/your-data.html",
+    "description": "The three Google OAuth scopes 1inventory requests, what drive.file does and does not permit, and how to revoke access from your own Google Account.",
+    "inLanguage": "en",
+    "dateModified": "2026-08-01",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "1inventory",
+      "url": "https://1inventory.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sparkybit GmbH",
+      "url": "https://1inventory.io/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preview banner. Removed on the day v6 is promoted to the root, together
+     with the noindex above. The inline style is deliberate and matches how
+     /v3 and /v4 were deployed: the banner must never enter the stylesheet,
+     which is shared by all eight v6 pages. -->
+<div style="background:#062e14;color:#7fd79a;text-align:center;font:500 13px/1.6 Poppins,sans-serif;padding:8px 16px;">v6 preview &middot; v4 design system, v5 content. <a href="/v4/" style="color:#fff;">Compare with /v4</a></div>
+
+<!-- =====================================================================
+     HEADER
+     Identical on all eight pages. Class names (.site-header / .scrolled /
+     .nav-toggle / .nav-menu / .open) are the ones js/main.js binds to; do
+     not rename them. The CTA is a SIBLING of .nav-menu, not a child, so it
+     stays visible on mobile instead of hiding behind the toggle.
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="the-sheet.html">The sheet</a>
+        <!-- aria-current marks the page you are on. The link stays clickable
+             so the nav's shape is identical on every page. -->
+        <a href="your-data.html" aria-current="page">Your data</a>
+        <a href="what-it-doesnt-do.html">What it doesn&rsquo;t do</a>
+        <a href="plans.html">Plans</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+
+    <div class="nav-cta">
+      <a class="btn btn--green" href="#get-the-app" data-cta="header">Get the app</a>
+    </div>
+
+    <!-- Last in source order so it is the right-most control on mobile:
+         brand · button · menu. Hidden on desktop. -->
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================================
+       MASTHEAD
+       Uses .hero rather than .section for two reasons: it gives the page the
+       same opening surface as the homepage (the gradient and the two aurora
+       blurs are already attached to .hero), and js/main.js's reveal pass
+       explicitly skips `main > section:not(.hero)`, so the first thing a
+       visitor sees is never mid-fade.
+
+       Layout is .split--70 — one of the v6 additions. v4's splits all
+       resolved to near-parity (55/45, 50/50), which is part of why the page
+       read as generated. 68/32 is unambiguously uneven: copy carries the
+       argument, the number sits beside it.
+       =================================================================== -->
+  <section class="hero" id="top" aria-labelledby="page-title">
+    <div class="container split split--70 split--top">
+
+      <div class="split__copy hero__copy stack--sm">
+        <p class="eyebrow">Your data</p>
+
+        <!-- The page's only h1. Numeral-led and closing on a comma clause, so
+             it does not share a shape with any h2 below it. -->
+        <h1 id="page-title">Three permissions. Here they are, in full.</h1>
+
+        <div class="prose">
+          <p>
+            1inventory asks Google for three things: your name, your email address, and a
+            permission called <span class="code-chip">drive.file</span>.
+          </p>
+          <p>
+            <span class="code-chip">drive.file</span> is the narrowest Drive permission Google
+            offers. An app holding it can open the files it created itself, and nothing else. So
+            1inventory can open the spreadsheet it made for you, and the folder its photos go
+            into. Everything else in your Drive &mdash; every file you made yourself, every file
+            somebody shared with you &mdash; sits outside what that permission reaches. Google
+            enforces that boundary, and we could not widen it without sending you back to a
+            consent screen to approve it.
+          </p>
+        </div>
+
+        <!-- Visible last-updated date, per the brief's metadata rule. It is
+             the date this copy was written, not a freshness signal to game. -->
+        <p class="note">Last updated 1 August 2026.</p>
+      </div>
+
+      <div class="split__media">
+        <!-- .stat + .stat-label, used once on this page. A number set in
+             running prose gets skimmed; the whole proof strategy here leans
+             on checkable specifics, so the countable claim gets its own size. -->
+        <p class="mb-0">
+          <span class="stat">3</span>
+          <span class="stat-label">Google permissions requested. All three are named below.</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       THE SCOPES
+       Default section padding: this band informs, it does not carry the
+       argument, so it sits between --major and --tight on the three-step
+       scale the v6 additions introduce.
+
+       .grid--lead (1.45fr 1fr 1fr) rather than .grid--3. There genuinely are
+       three scopes, and the H1 says so, so three cards is the honest count —
+       but they are not three equal things, and an even grid would say they
+       were. drive.file gets the wide cell because it is the only one anybody
+       has a question about.
+
+       ⚠ ACCURACY: the three scopes are drive.file, userinfo.profile and
+         userinfo.email. Do not add openid, and do not describe drive.file as
+         "read-only" — the app writes.
+       =================================================================== -->
+  <section class="section section--soft" id="scopes" aria-labelledby="scopes-title">
+    <div class="container">
+
+      <div class="section__head">
+        <!-- Verbless fragment, no terminal punctuation. The heading set on
+             this page is deliberately mixed: fragment, question, imperative,
+             declarative, conditional clause, imperative. -->
+        <h2 id="scopes-title" class="mb-0">What the app asks Google for</h2>
+      </div>
+
+      <div class="grid grid--lead">
+
+        <div class="card">
+          <h3><span class="code-chip">drive.file</span></h3>
+          <p>
+            The one that does the work. It covers files this app created: your inventory
+            spreadsheet, and the folder its photos are uploaded to. It can read and change
+            those two things. A spreadsheet you made yourself is not one of them, and the app
+            has no way to ask for it later.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3><span class="code-chip">userinfo.profile</span></h3>
+          <p>
+            Your name and profile picture, so that anyone you share an inventory with sees a
+            person rather than an account id.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3><span class="code-chip">userinfo.email</span></h3>
+          <p>
+            Your email address. It identifies your account, and it is where alert emails arrive
+            if you switch them on.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="section__foot">
+        <div class="prose">
+          <p>
+            The broad Drive scopes are never requested: <span class="code-chip">drive</span>,
+            <span class="code-chip">drive.readonly</span>,
+            <span class="code-chip">drive.metadata</span> and
+            <span class="code-chip">spreadsheets</span>. None of them appears in our
+            configuration, so none of them can be used.
+          </p>
+          <p>
+            After you sign in, our backend asks Google&rsquo;s own tokeninfo endpoint which
+            scopes were actually granted, compares the answer against the three above, and
+            refuses to continue if any of them is missing. That check runs on every login,
+            and it exists because a client application can claim anything at all about itself
+            and the only way to know what Google really handed over is to go and ask Google.
+          </p>
+        </div>
+
+        <!-- The scope names appear above as short chips because .code-chip is
+             white-space:nowrap, and a 42-character URL inside one would push
+             the page sideways on a phone. The full strings are given here as
+             plain text instead. Do NOT wrap these in .code-chip.
+
+             The <wbr> tags are load-bearing, not decoration: Chrome does not
+             offer a line-break opportunity inside a URL on its own, and
+             without them this line overflows a 320px viewport by ~24px and
+             the whole page scrolls horizontally. Measured, not guessed. -->
+        <p class="note">
+          Written out in full, each one is prefixed
+          https://<wbr />www.googleapis.com/<wbr />auth/, so the first is
+          https://<wbr />www.googleapis.com/<wbr />auth/<wbr />drive.file.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       CAN / CANNOT — the argument-carrying band, hence .section--major.
+       The one dark band on the page. After two bands of type, a dark surface
+       with no imagery at all reads as a serious aside rather than more
+       selling — and this section deliberately has no image, which is also
+       what stops the page falling into the copy-left / media-right rhythm
+       every v4 section shared.
+
+       DO NOT add a mock of Google's consent dialog here, in a later pass or
+       ever. A facsimile of another company's interface risks reading as an
+       endorsement, and the whole argument of this page is that the
+       enforcement is Google's, not a design of ours.
+
+       Five items against six, deliberately unequal — the same asymmetry the
+       brief specifies. Do not "balance" them.
+       =================================================================== -->
+  <section class="section section--major section--dark" id="can-cannot" aria-labelledby="can-cannot-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="can-cannot-title" class="mb-0">So what can it actually open?</h2>
+      </div>
+
+      <div class="prose">
+        <p>Two lists. The second one is longer, which is the point.</p>
+      </div>
+
+      <div class="perm-cols">
+        <div class="perm-col">
+          <h3>1inventory can</h3>
+          <ul class="perm-list perm-list--can">
+            <li>Create your inventory spreadsheet</li>
+            <li>Create a folder for its photos</li>
+            <li>Read and edit those two things</li>
+            <li>Upload photos into that folder</li>
+            <!-- Volunteered rather than omitted: drive.file does grant
+                 revision access to the file the app created. Leaving it out
+                 of the "can" column would be the kind of gap a reader who
+                 checks would find. -->
+            <li>List the revision history of that one file</li>
+          </ul>
+        </div>
+        <div class="perm-col">
+          <h3>1inventory cannot</h3>
+          <ul class="perm-list perm-list--cannot">
+            <li>See any other file in your Drive</li>
+            <li>Search your Drive</li>
+            <li>Open a document you made</li>
+            <li>Read your Gmail</li>
+            <li>Read your Calendar or your Contacts</li>
+            <li>Know that any of it is there</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section__foot">
+        <div class="prose">
+          <p>
+            Nothing in the second list is a policy we wrote. It is what Google&rsquo;s permission
+            model does with an application that only ever asked for the files it made.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       CHECK IT YOURSELF — .section--tight.
+       A connector, not a section: two facts, forty words apiece, and it
+       should not carry the same vertical weight as the band above it. This
+       is exactly what --tight exists for.
+
+       .container--tight and a two-item .bullets list: a third layout
+       template in a row, so no two consecutive sections look alike.
+       Two items, which is a permitted list length.
+       =================================================================== -->
+  <section class="section section--tight" id="check-it" aria-labelledby="check-title">
+    <div class="container container--tight">
+
+      <div class="section__head">
+        <h2 id="check-title" class="mb-0">Read the permission screen before you tap Allow. We&rsquo;ll wait.</h2>
+      </div>
+
+      <div class="prose">
+        <p>Both of these take about ten seconds, and neither of them involves us.</p>
+      </div>
+
+      <ul class="bullets bullets--green">
+        <li>
+          Before you install: the consent screen names the permission when you tap Sign in with
+          Google. It is Google&rsquo;s screen, and it says the same thing this page says.
+        </li>
+        <li>
+          After you install: open your Google Account, then Security, then Third-party apps with
+          account access. Everything 1inventory has been granted is listed there, and the control
+          that revokes it is on the same page. You do not have to ask us, or tell us.
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       THE SENTENCE WE WON'T WRITE — .section--major.
+       The costly-honesty centre of the page and the reason it can be
+       believed at all. This is the sentence a page built to mislead you
+       would not contain.
+
+       ⚠ THREE FORMULATIONS ARE FORBIDDEN ON THIS PAGE AND ALL THREE ARE
+         ABSENT. Do not reintroduce any of them in a later edit:
+           1. "we can't see your data" — products are proxied through our
+              servers, and the barcode cache retains looked-up names. The
+              whole point of this section is to refuse that sentence.
+           2. "Google-verified" / "Google-approved" / "audited by Google" —
+              the Cloud project's OAuth verification status is UNVERIFIED.
+           3. "bank-grade security" — meaningless, and unsupported here.
+
+       This section spends the page's ONE permitted "X, not Y" antithesis
+       ("we don't keep your rows, not that we couldn't read one in transit").
+       Every other negation on this page is written as a plain positive.
+
+       .quote-major is used exactly once, here, and it carries the costly
+       admission rather than a boast. That inversion is the point: the
+       biggest type on the page is the concession.
+       =================================================================== -->
+  <section class="section section--major" id="proxy" aria-labelledby="proxy-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="proxy-title" class="mb-0">The sentence we won&rsquo;t write.</h2>
+      </div>
+
+      <!-- .stack supplies the gaps: .quote-major carries margin:0 by design,
+           so without a stack the paragraphs would butt straight against it.
+           No inline style needed.
+
+           The quote sits AFTER the opening paragraph, not under the H2. At
+           38px semibold it is within a few pixels of the h2, and stacked
+           directly beneath one it read as a second heading rather than as a
+           pull quote. Placed here it is the reveal the paragraph sets up. -->
+      <div class="stack">
+        <div class="prose">
+          <p>
+            Plenty of apps built the way this one is built will tell you that your data never
+            touches them. That would be a good sentence to be able to write, and we can&rsquo;t
+            write it.
+          </p>
+        </div>
+
+        <p class="quote-major">Your rows pass through our servers.</p>
+
+        <div class="prose">
+          <p>
+            Every product you add travels through our servers on the way to your spreadsheet, and
+            comes back the same way when you open the app. That is how the app reaches Drive at
+            all. We do not retain any of it: there is no table in our database that holds your
+            inventory, and the privacy policy said so long before this page existed. The accurate
+            version is that we don&rsquo;t keep your rows, not that we couldn&rsquo;t read one in
+            transit.
+          </p>
+        </div>
+      </div>
+
+      <!-- .admission — quieter than a card on purpose. This is a disclosure,
+           and it must not be presented as a feature. Used once on this page.
+
+           ⚠ The Barcodes table really does cache public lookup results
+             (value, name, description, image). It is shared across all users
+             and holds nothing user-specific, which is why it can be disclosed
+             in full rather than hedged. Do not soften this to "some technical
+             data" and do not delete it: it is half the reason the paragraph
+             above is credible. -->
+      <div class="admission">
+        <p>
+          There is one thing we do keep, and it is the only product data we hold at all: a shared
+          cache of public barcode lookups. When a retail barcode is scanned, the name, description
+          and image that come back are stored, so the next person who scans that barcode does not
+          spend one of their lookups for the day. The cache is identical for every user and it
+          contains nothing of yours.
+        </p>
+      </div>
+
+      <p class="note">
+        The legal version of everything on this page is in the
+        <a href="/privacy.html">privacy policy</a>.
+      </p>
+
+      <!-- OMITTED DELIBERATELY — the sub-processor section.
+           The v5 brief specifies a "Who else is involved" block here listing
+           every live sub-processor with one line each on what it does and
+           what it receives. It is NOT in this page, because the brief gates
+           it: the block must not ship until the published privacy policy is
+           expanded to match, and today privacy.html does not disclose them.
+           Publishing a list here that the policy contradicts would do more
+           damage than the omission does. When the policy is expanded, add
+           the section between this one and the deletion band below, and make
+           the two documents agree line for line. -->
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       LEAVING — default section padding on --soft.
+       .grid--pair-uneven (1.35fr 1fr): the two answers are not the same size,
+       so the cells are not either. This is the fourth distinct layout on the
+       page, and the last one before the close.
+
+       ⚠ ACCURACY: account deletion removes inventories and settings. The
+         checkbox that also removes the Sheets and images from Drive is opt-in
+         and ships UNTICKED. Never describe deletion as removing the
+         spreadsheets by default; it does the opposite.
+       =================================================================== -->
+  <section class="section section--soft" id="leaving" aria-labelledby="leaving-title">
+    <div class="container">
+
+      <div class="section__head">
+        <!-- Conditional clause, no terminal full stop. Nine identical
+             declaratives ending in a period was one of the v4 fingerprints. -->
+        <h2 id="leaving-title" class="mb-0">If you delete your account, the spreadsheets stay</h2>
+      </div>
+
+      <div class="grid grid--pair-uneven">
+
+        <div class="card">
+          <h3>Deleting your 1inventory account</h3>
+          <p>
+            It removes your inventories and their settings from the app. On the same screen there
+            is a separate checkbox offering to delete the Google Sheets and the images from your
+            Drive as well, and it starts unticked. You would have to go looking for it. Leave it
+            alone and the vendor goes while the data stays.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Deleting the app</h3>
+          <p>
+            The spreadsheet is in your Drive tonight, and next year, and after you have changed
+            phones twice. You lose the scanner. You keep the file.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="section__foot">
+        <div class="prose">
+          <p>
+            What that file actually contains, tab by tab and column by column, is set out on
+            <a href="the-sheet.html">the sheet</a>. The things this app will not do for you are
+            listed on <a href="what-it-doesnt-do.html">what it doesn&rsquo;t do</a>, and the
+            permission questions people send us are answered on the <a href="faq.html">FAQ</a>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       CLOSE — the store badges, on the gradient band.
+       Same component as the homepage's final band, so a reader arriving here
+       from an ad converts without being sent back to the homepage.
+
+       The €0.99 figure is confirmed and publishable (client, 2026). At that
+       price it belongs in the reassurance strip as a proof point rather than
+       in a paragraph as a disclosure.
+       =================================================================== -->
+  <section class="section section--gradient" id="get-the-app" aria-labelledby="close-title">
+    <div class="container">
+      <div class="final-cta">
+
+        <img class="final-cta__icon" src="img/app-icon.svg" alt="" width="64" height="64" />
+
+        <h2 id="close-title">Install it, then go and look at your Drive.</h2>
+
+        <p class="final-cta__body">
+          Sign in with Google and scan one thing. Then open drive.google.com on a laptop: there
+          will be a spreadsheet in there created a minute ago, with that thing in it.
+        </p>
+
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="store-ios">
+              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="160" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="store-android">
+              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="160" height="50" />
+            </a>
+          </div>
+
+          <p class="cta-strip"><span>Free plan, no card</span><span>Premium &euro;0.99 a month</span><span>iPhone and Android</span></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER
+     Identical on all eight pages. The Legal links are ABSOLUTE (/privacy.html,
+     /terms.html) because this file lives in a version subfolder and relative
+     ones would 404 from here. The in-folder page links stay relative so the
+     whole preview folder can be moved or promoted without editing them.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          Built by Sparkybit GmbH, Paderborn, Germany.
+        </p>
+        <!-- The brief's footer baseline, reworded to stay inside the page's
+             style budgets: its original form spent an em dash and an "X, not
+             Y" on boilerplate that repeats on all eight pages. Same facts. -->
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is in English, German, Spanish, French and Portuguese. The alert emails and
+          the barcode lookup results are translated too.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="./">Home</a>
+          <a href="the-sheet.html">The sheet</a>
+          <a href="your-data.html" aria-current="page">Your data</a>
+          <a href="what-it-doesnt-do.html">What it doesn&rsquo;t do</a>
+          <a href="plans.html">Plans</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms and conditions</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im D&ouml;rener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     STICKY MOBILE CTA BAR
+     Mobile only, dismissible. Visible by default so it still works with JS
+     off; js/main.js adds .is-hidden while the close band is in view and
+     .is-dismissed when the visitor closes it. The label is the approved one,
+     unvaried on every page.
+     ===================================================================== -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Get the app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Get the app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="js/main.js?v=1" defer></script>
+</body>
+</html>
