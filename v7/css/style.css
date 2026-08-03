@@ -2910,10 +2910,15 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
      684px tall against a 414px copy column: 270px of overhang, and the image
      rather than the copy was setting the height of the whole hero. Scaling to
      the row means the phone ends near where the copy does. */
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
-  max-height: clamp(340px, 33vw, 470px);
+  /* Sized to the column, not the row. The previous cap was tuned for a
+     phone-only image; this one spends roughly 40% of its height on the
+     illustration around the phone, so the same cap shrank the screen itself.
+     Filling the media column keeps the phone legible. The overhang below the
+     copy is soft illustration that fades out, so it reads as composition
+     rather than as an image that did not fit. */
+  max-width: 430px;
   margin-inline: auto;
 }
 @media (max-width: 900px) {
@@ -2921,3 +2926,49 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
      goes back to width. */
   .hero-shot { max-height: none; width: 100%; max-width: 280px; }
 }
+
+/* -------------------------------------------------------------------------
+   v7 — .frame-shot, the real screenshots inside a .frame-row.
+   Height-matched to the 330px CSS mockups they replaced so the section keeps
+   its proportions. Each PNG has its own device frame, so no border, no radius
+   and no shadow. flex:none stops the snap-scroll row squeezing them.
+   ------------------------------------------------------------------------- */
+.frame-shot {
+  height: 330px;
+  width: auto;
+  flex: none;
+  display: block;
+  scroll-snap-align: center;
+}
+@media (max-width: 1180px) { .frame-shot { height: 300px; } }
+@media (max-width: 960px)  { .frame-shot { height: 340px; } }
+@media (max-width: 560px)  { .frame-shot { height: 300px; } }
+
+/* A single screenshot standing alone rather than in a scroll row. */
+.frame-shot--solo { margin-inline: auto; }
+
+/* -------------------------------------------------------------------------
+   v7 — .frame-shot--card, a screenshot heading a column in the "more" grid.
+   Taller than the strip variants because each stands alone above its own
+   heading rather than competing with two neighbours in a scroll row.
+   ------------------------------------------------------------------------- */
+.frame-shot--card {
+  height: auto;
+  width: 100%;
+  max-width: 210px;
+  margin: 0 0 18px;
+}
+@media (max-width: 900px) { .frame-shot--card { max-width: 190px; } }
+@media (max-width: 560px) { .frame-shot--card { max-width: 220px; margin-inline: auto; } }
+
+/* The audience glyphs live in .card--tint now rather than the old
+   .audience-card wrapper, so they need the block display that wrapper's
+   layout used to give them. */
+.card .audience-card__glyph { display: block; }
+
+/* Five across for the feature row. Steps down to three, then two, then one —
+   five columns of running text below about 1150px is four words a line. */
+.grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 22px); }
+@media (max-width: 1150px) { .grid--5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 820px)  { .grid--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px)  { .grid--5 { grid-template-columns: 1fr; } }

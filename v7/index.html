@@ -31,11 +31,11 @@
   <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=13" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=7" />
+  <link rel="stylesheet" href="css/style.css?v=13" />
 
   <script type="application/ld+json">
   {
@@ -68,7 +68,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="./" aria-label="1inventory — home">
-      <img src="img/app-icon.svg" alt="" width="32" height="32" />
+      <img src="img/app-icon.svg?v=13" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
@@ -133,10 +133,10 @@
         <div class="cta-block">
           <div class="store-badges">
             <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="hero-ios">
-              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="150" height="50" />
+              <img src="img/badge-appstore.svg?v=13" alt="Download on the App Store" width="150" height="50" />
             </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="hero-android">
-              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="169" height="50" />
+              <img src="img/badge-googleplay.svg?v=13" alt="Get it on Google Play" width="169" height="50" />
             </a>
           </div>
           <p class="note">Free to install. Sign in with Google. No form, no password.</p>
@@ -154,10 +154,10 @@
            before the file arrives, so the hero does not jump. fetchpriority
            high because at this size it is the page's likely LCP element. -->
       <div class="split__media">
-        <img class="hero-shot" src="img/app-home.png"
-             width="696" height="1442"
+        <img class="hero-shot" src="img/app-home.png?v=13"
+             width="1240" height="1640"
              fetchpriority="high" decoding="async"
-             alt="The 1inventory product list on a phone. Five items with a thumbnail, barcode and quantity each: passata, olive oil, spaghetti, smoked paprika and acacia honey. A scan button sits in the middle of the bottom bar." />
+             alt="The 1inventory product list on a phone — passata, olive oil, spaghetti, smoked paprika and acacia honey, each with a thumbnail, barcode and quantity — surrounded by the kinds of things people catalogue: jars, a bottle, stacked boxes, a medicine cabinet, records and books." />
       </div>
     </div>
   </section>
@@ -282,19 +282,46 @@
       </div>
       <div class="grid grid--2">
         <div class="card card--tint">
+          <!-- Line art carried over from v4's own audience cards, which had
+               these before the v7 rebuild dropped them. Same .audience-card__glyph
+               class and the same stroke weight as the journey glyphs above, so
+               nothing new enters the design system. Decorative: the h3 says
+               "At home" and "At work" in words. -->
+          <svg class="audience-card__glyph" viewBox="0 0 44 44" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4 20 L22 6 L40 20" />
+            <path d="M8.5 17.5 V38 H35.5 V17.5" />
+            <path d="M17.5 38 V27 H26.5 V38" />
+          </svg>
           <h3>At home</h3>
           <ul class="bullets bullets--green bullets--tight">
-            <li>Know what&rsquo;s in the cupboard while you&rsquo;re standing in the shop.</li>
+            <li>Know what is in the cupboard while you are standing in the shop.</li>
             <li>Food and medicine stop going out of date unnoticed.</li>
-            <li>Garage, loft and shed each get their own list.</li>
+            <li>A collection becomes searchable: books, board games, wine, tools.</li>
+            <li>The garage, the loft and the shed each get their own list.</li>
           </ul>
         </div>
         <div class="card card--tint">
+          <!-- Line art carried over from v4's own audience cards, which had
+               these before the v7 rebuild dropped them. Same .audience-card__glyph
+               class and the same stroke weight as the journey glyphs above, so
+               nothing new enters the design system. Decorative: the h3 says
+               "At home" and "At work" in words. -->
+          <svg class="audience-card__glyph" viewBox="0 0 44 44" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5.5 17 L9 7.5 H35 L38.5 17 Z" />
+            <path d="M9 17 V38 H35 V17" />
+            <path d="M13.5 22.5 H23 V31 H13.5 Z" />
+            <path d="M27.5 38 V22.5 H33 V38" />
+          </svg>
           <h3>At work</h3>
           <ul class="bullets bullets--green bullets--tight">
-            <li>Stocktake is a walk down the shelf, not a lost afternoon.</li>
+            <li>Stocktake is a walk down the shelf with the phone you already carry.</li>
             <li>Tell a customer what you have without going to look.</li>
-            <li>Up to five people work from the same list.</li>
+            <li>Supplier, serial number, warranty end: add the columns your trade needs.</li>
+            <li>Up to five people work from the same list, and history shows who changed what.</li>
           </ul>
         </div>
       </div>
@@ -335,37 +362,28 @@
         </div>
 
         <div class="split__media">
-          <div class="frame-row" role="group" aria-label="What a scan looks like" tabindex="0">
-            <div class="frame-row__item phone phone--sm" aria-hidden="true">
-              <div class="phone__screen">
-                <div class="app-screen app-scan">
-                  <div class="scan-dim"></div>
-                  <div class="scan-cutout">
-                    <i class="b tl"></i><i class="b tr"></i><i class="b bl"></i><i class="b br"></i>
-                    <div class="scan-line"></div>
-                    <div class="scan-code"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                  </div>
-                  <p class="scan-caption">Scan a barcode to add a new product or find an existing one.</p>
-                </div>
-              </div>
-            </div>
-            <div class="frame-row__item phone phone--sm" aria-hidden="true">
-              <div class="phone__screen">
-                <div class="app-screen app-scan scan--dim">
-                  <div class="scan-dim"></div>
-                  <div class="app-sheet app-sheet--tall">
-                    <div class="sheet-grip"></div>
-                    <span class="thumb thumb--peach thumb--hero"></span>
-                    <p class="result-name">Passata di pomodoro, 700&nbsp;ml</p>
-                    <p class="result-code">8 003530 003005</p>
-                    <p class="result-desc">Strained tomatoes in a glass bottle.</p>
-                    <div class="sheet-cta">Save &amp; scan next</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <!-- Real screenshots, in the order the flow happens: aim, look up,
+               result. Each PNG carries its own device frame, so no .phone
+               wrapper — that would draw a second bezel.
+
+               .frame-row is the existing horizontal snap-scroll strip; below
+               960px it becomes one scrollable row rather than a stack, which
+               is why the group is focusable and labelled. Heights match the
+               CSS mockups these replaced (330px) so the section does not move.
+
+               These are not decorative: they are the demonstration this
+               section is making, so each carries real alt text rather than
+               aria-hidden. -->
+          <div class="frame-row" role="group" aria-label="What a scan looks like, in three steps" tabindex="0">
+            <img class="frame-shot" src="img/scan-barcode-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="The scanner aimed at a bottle, with the barcode framed by four white brackets and the prompt: scan a barcode to add a new product or find existing one." />
+            <img class="frame-shot" src="img/scan-search-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="A sheet reading Not in your inventory, with a spinner and the line: searching global database for product information." />
+            <img class="frame-shot" src="img/scan-search-results-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="The looked-up result: Extra Virgin Olive Oil, Cold Pressed 1 L, its barcode, a description and a product photo, with an Add button." />
           </div>
         </div>
+
       </div>
 
       <!-- CSV import. One card, no section of its own. -->
@@ -382,90 +400,113 @@
     </div>
   </section>
 
-  <!-- =================================================================
-       FIND IT AGAIN — search, folders, own fields. Compressed from v4's
-       three prose paragraphs plus a card into one column plus one card.
+    <!-- =================================================================
+       FIND IT AND FIX THE NUMBER — merged in v7 from two sections that were
+       telling one story. "Then find it again" and "The second scan is a
+       stocktake" both answer the same question: the list exists, now what?
+       Searching, browsing by location and re-scanning to recount are three
+       ways into the same product, so they belong in one band with the three
+       screens that show them.
+
+       The Alerts / History / Dashboard bullets that used to close the
+       stocktake section have moved to their own band below — they are not
+       part of this loop, and burying them here was underselling them.
        ================================================================= -->
   <section class="section" id="find-it-again" aria-labelledby="s3-title">
     <div class="container">
       <div class="split split--45 split--top">
         <div class="split__copy stack--sm">
           <p class="eyebrow">Once everything&rsquo;s in</p>
-          <h2 id="s3-title">Then find it again.</h2>
+          <h2 id="s3-title">Three ways back to one thing.</h2>
           <div class="prose">
             <p>
-              Search reads more than the name. Type half a barcode, a word from the description or a
-              supplier you typed into a field of your own, and it finds the item.
+              <strong>Scan it again.</strong> The second scan is a stocktake: the app shows the
+              number you had and waits. Thumb it up or down, save, and the camera comes back. Walk
+              the shelf and the count is done before you sit down.
             </p>
             <p>
-              Folder view turns each location into a folder — tap Pantry, see what&rsquo;s in Pantry.
-              Add your own fields in eight types, and each one becomes a real column in your
-              spreadsheet.
+              <strong>Search</strong> reads more than the name. Type half a barcode, a word from
+              the description or a supplier you typed into a field of your own, and it finds the
+              item.
+            </p>
+            <p>
+              <strong>Locations view</strong> turns each place into a folder. Tap Pantry, see what
+              is in Pantry. Anything unfiled sits in Without location rather than disappearing.
             </p>
           </div>
+          <p class="note">Nothing decrements on its own. There is no till feed and no low-stock alert, so if you sell things all day this count will drift.</p>
         </div>
+
         <div class="split__media">
-          <div class="phone" aria-hidden="true">
-            <div class="phone__screen">
-              <div class="app-screen app-home">
-                <div class="search-bar"><span class="search-q">northgate</span><span class="caret"></span></div>
-                <div class="prod-list">
-                  <div class="prod-row"><span class="thumb thumb--sky"></span><span class="p-txt"><span class="p-name">Label rolls 57&times;32</span><span class="p-sub">Northgate Supplies</span></span><span class="p-num">14</span></div>
-                  <div class="prod-row"><span class="thumb thumb--peach"></span><span class="p-txt"><span class="p-name">Packing tape, brown</span><span class="p-sub">Northgate Supplies</span></span><span class="p-num">9</span></div>
-                  <div class="prod-row"><span class="thumb thumb--mint"></span><span class="p-txt"><span class="p-name">Thermal receipt rolls</span><span class="p-sub">Northgate Supplies</span></span><span class="p-num">11</span></div>
-                </div>
-              </div>
-            </div>
+          <div class="frame-row" role="group" aria-label="Re-scanning, search and locations view" tabindex="0">
+            <img class="frame-shot" src="img/edit-count-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="Scanning a product already in the list brings up its quantity sheet: Extra Virgin Olive Oil with its photo, a minus and plus either side of the number 2, and an Apply button." />
+            <img class="frame-shot" src="img/search-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="A search for the word oil, matching three products by name with the match highlighted: olive oil, sunflower oil and sesame oil, each with its barcode and quantity." />
+            <img class="frame-shot" src="img/locations-list-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="Locations view listing each place with a count: Kitchen 24, Pantry shelf 38, Cellar 12, Garage shelf 9, and Without location 3." />
           </div>
-          <p class="frame-caption">Supplier isn&rsquo;t one of our fields. It&rsquo;s one of yours.</p>
         </div>
       </div>
     </div>
   </section>
 
+
   <!-- =================================================================
-       STAYING CURRENT — v4 and v6 both spread this across four sections
-       (stocktake, alerts, history, dashboard). One section here. The four
-       ideas are one idea: the list keeps being true without much effort.
+       AND THERE'S MORE — new in v7. These three shipped in the July release
+       and were three bullets at the foot of the stocktake section, which
+       undersold them: alerts are the one thing here a spreadsheet cannot do
+       at all, and history and the dashboard are the two reasons a list stays
+       trustworthy.
+
+       Heading is the app's own ("And there's more", getting_started_more_title).
+
+       ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
+       the free plan gets one rule. Do not add a Premium tag to that bullet.
        ================================================================= -->
-  <section class="section section--soft section--major" id="staying-current" aria-labelledby="s4-title">
+  <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
     <div class="container">
-      <div class="split split--media-first split--45 split--top">
-        <div class="split__copy stack--sm">
-          <p class="eyebrow">Every week after that</p>
-          <h2 id="s4-title">The second scan is a stocktake.</h2>
-          <div class="prose">
-            <p>
-              Scan something you already own and the app doesn&rsquo;t ask you anything. It shows the
-              number you had and waits. Thumb it up or down, save, and the camera comes back. Walk the
-              shelf and the count is done before you sit down.
-            </p>
-          </div>
-          <ul class="bullets bullets--green bullets--tight">
-            <li><strong>Alerts.</strong> Put an expiry, warranty or service date on something and it tells you days before, by push or email.</li>
-            <li><strong>History.</strong> What changed, who did it and when. Premium.</li>
-            <li><strong>Dashboard.</strong> Products, locations, total stock and last activity on one screen.</li>
-          </ul>
-          <p class="note">Nothing decrements on its own. There&rsquo;s no till feed and no low-stock alert. If you sell things all day, this count will drift.</p>
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Every week after that</span>
+        <h2 id="s4-title" class="mb-0">And there&rsquo;s more.</h2>
+      </div>
+
+      <div class="grid grid--5" style="margin-top:28px">
+        <div>
+          <img class="frame-shot frame-shot--card" src="img/dashboard-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+               alt="The dashboard for an inventory called Home inv: 5 products, 4 locations, 2 custom fields, 1 user, 1 alert rule, total stock 86, and the last activity." />
+          <h3>Dashboard</h3>
+          <p>Products, locations, total stock and the last thing that changed, on one screen.</p>
         </div>
-        <div class="split__media">
-          <div class="phone" aria-hidden="true">
-            <div class="phone__screen">
-              <div class="app-screen app-home">
-                <div class="preview-card">
-                  <span class="thumb thumb--lemon thumb--hero"></span>
-                  <p class="pv-name">AA batteries, 8-pack</p>
-                  <p class="pv-loc">Office shelf</p>
-                  <div class="qty-row"><span class="qty-btn">&minus;</span><span class="qty-val">36</span><span class="qty-btn qty-btn--plus">+</span></div>
-                  <div class="pv-cta">Save &amp; scan next</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="img/custom-fields-wt.png?v=13" width="696" height="1444" loading="lazy" decoding="async"
+               alt="The edit fields screen listing five custom fields with their types: Best before and Opened on as dates, Purchase price as a number, Supplier as text, and Storage bin as a dropdown with six options." />
+          <h3>Your own fields</h3>
+          <p>Prices, dates, serial numbers. Eight types, and each becomes a real column in the sheet.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="img/alert-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+               alt="The new alert rule screen: a rule named Expiring soon, watching the Best before field, notifying seven days before the date at 09:00, limited to the Kitchen and Pantry shelf locations, with push and email both switched on." />
+          <h3>Alerts</h3>
+          <p>A date on a product, and it tells you days before it passes, by push or email.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="img/users-wt.png?v=13" width="696" height="1444" loading="lazy" decoding="async"
+               alt="The users screen for an inventory, listing Anna Weber as Owner and Marek Nowak and Lisa Chen as User, each with their email address, and an Invite action." />
+          <h3>Sharing <span class="pill">Premium</span></h3>
+          <p>Invite up to four other people. Everyone works from the same list.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="img/history-wt.png?v=13" width="696" height="1442" loading="lazy" decoding="async"
+               alt="The history screen listing every change with a date, the product, who made it and the quantity before and after: olive oil raised from 1 to 2, passata lowered from 7 to 6, smoked paprika created, cane sugar deleted." />
+          <h3>History <span class="pill">Premium</span></h3>
+          <p>What changed, who did it and when. Every quantity moved, every product added or deleted.</p>
         </div>
       </div>
     </div>
   </section>
+
+
 
   <!-- =================================================================
        YOUR SHEET — shortened on client instruction. v4 ran ~210 words plus
@@ -563,10 +604,10 @@
         <div class="cta-block cta-block--center">
           <div class="store-badges">
             <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="home-ios">
-              <img src="img/badge-appstore.svg" alt="Download on the App Store" width="150" height="50" />
+              <img src="img/badge-appstore.svg?v=13" alt="Download on the App Store" width="150" height="50" />
             </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="home-android">
-              <img src="img/badge-googleplay.svg" alt="Get it on Google Play" width="169" height="50" />
+              <img src="img/badge-googleplay.svg?v=13" alt="Get it on Google Play" width="169" height="50" />
             </a>
           </div>
           <p class="cta-strip"><span>Free plan, no card</span><span>iPhone and Android</span></p>
@@ -582,7 +623,7 @@
     <div class="footer-top">
       <div class="footer-col">
         <a class="footer-brand" href="./" aria-label="1inventory — home">
-          <img src="img/app-icon.svg" alt="" width="34" height="34" />
+          <img src="img/app-icon.svg?v=13" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
         <p class="footer-blurb">
@@ -630,6 +671,6 @@
   <a class="btn btn--primary" href="#get-the-app" data-cta="sticky">Get the app</a>
 </div>
 
-<script src="js/main.js?v=7"></script>
+<script src="js/main.js?v=13"></script>
 </body>
 </html>
