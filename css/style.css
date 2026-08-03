@@ -2847,26 +2847,10 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 #top .cta-block { margin-top: clamp(20px, 2.6vw, 32px); }
 #top .cta-block .note { margin-top: 14px; }
 
-/* -------------------------------------------------------------------------
-   v7 — .eyebrow--badge
-   The shield on the permissions band, locked to the section label rather than
-   floating above it. As a free-standing glyph it read as decoration; sitting
-   on the eyebrow it reads as a badge and marks what kind of section this is
-   before a word is read. Sized to the eyebrow's cap height so the two share a
-   baseline instead of one hanging off the other.
-   ------------------------------------------------------------------------- */
-.eyebrow--badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.eyebrow--badge svg {
-  width: 18px;
-  height: 18px;
-  flex: none;
-  /* Optical, not mathematical: a shield's visual centre sits below its box. */
-  margin-top: -1px;
-}
+/* .eyebrow--badge was here: a small shield-and-tick locked to the permissions
+   band's section label. It went when that band gained the shield artwork in
+   its right column — the same symbol twice, forty pixels apart, was worse than
+   either alone. Removed rather than left dead; nothing else used it. */
 
 /* -------------------------------------------------------------------------
    v7 — .eml, the obfuscated email links.
@@ -2995,3 +2979,25 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
    separation from the band beneath it.
    ------------------------------------------------------------------------- */
 #top.section--major { padding-top: clamp(16px, 2.2vw, 30px); }
+
+/* -------------------------------------------------------------------------
+   v7 — .shield-shot  (the Privacy and security artwork)
+
+   Sits in the right column of #permission. Capped well below its 620px
+   intrinsic width: the file is deliberately oversized so it stays sharp on a
+   2x display at the ~300px it actually occupies.
+
+   On mobile the split stacks and this would push the store badges a full
+   screen further down for no informational gain, so below the split's own
+   breakpoint it is simply not rendered. The band still reads correctly — the
+   artwork was never carrying meaning, which is why its alt is empty.
+   ------------------------------------------------------------------------- */
+.shield-shot {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+
+@media (max-width: 860px) {
+  #permission .split__media { display: none; }
+}
