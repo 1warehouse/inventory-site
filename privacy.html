@@ -3,45 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>document.documentElement.className += " js";</script>
-  <title>Privacy policy | 1inventory.io</title>
-  <meta name="description" content="Privacy Policy for the 1inventory mobile application and services provided by Sparkybit GmbH, including GDPR rights." />
+  <!-- EMBEDDED MODE — same flag as the FAQ. Adding ?mobile=1 to this URL
+       strips the site chrome (header, footer, skip link) so the app can show
+       this document inside its own webview without a second navigation bar.
+       The heading and every word of the legal text stay: this is a published
+       legal notice, not marketing, and the app is a second place it is served
+       rather than a different version of it. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
+
+  <title>Privacy policy | 1inventory</title>
+  <meta name="description" content="The 1inventory privacy policy: what we collect, how your data is handled, and your rights under the GDPR." />
+  <link rel="canonical" href="https://1inventory.io/privacy.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0b3d1e" />
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=16" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=1" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
 </head>
 <body>
 
-  <header class="site-header scrolled">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="1inventory.io home">
-        <img src="img/logo-mark.jpg" alt="1inventory logo" />
-        <span><b>1inventory</b>.io</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-menu">
-        <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="index.html#how-it-works">How it works</a>
-          <a href="index.html#plans">Plans</a>
-        </nav>
-        <div class="nav-cta">
-          <!-- Repointed by the v2 homepage rebuild: #mobile and #product no longer
-               exist on index.html. This CTA already read "Get the app", which is
-               the approved label, so only the target changed. -->
-          <a class="btn btn-primary" href="index.html#get-the-app">Get the app</a>
-        </div>
-      </div>
-    </div>
-  </header>
+<!-- =====================================================================
+     PRIVACY POLICY
 
-  <main class="legal">
-    <div class="container">
+     The legal text below is lifted VERBATIM from /privacy.html at the site root.
+     Not a word of it has been edited, reordered or reformatted — it is a
+     published legal document and only its owner may change it.
+
+     What changed is the chrome. The root copy loads the legacy stylesheet
+     and carries a different menu ("Home / How it works / Plans"), so a
+     reader following the footer link out of v7 landed on what looked like
+     a different website. This copy wears the same header, nav and footer
+     as every other v7 page.
+
+     ON PROMOTION: this replaces the root file, and the footer links go back
+     to being /privacy.html rather than page-relative.
+     ===================================================================== -->
+
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — home">
+      <img src="img/app-icon.svg?v=16" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./">How it works</a>
+        <a href="plans.html">Plans</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="./#get-the-app" data-cta="header">Get the app</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose legal">
       <h1>Privacy policy</h1>
       <p class="updated">Last Updated: June 22, 2025</p>
 
@@ -55,7 +95,7 @@
         As the &ldquo;controller&rdquo; in the sense of the General Data Protection Regulation (GDPR), we are
         responsible for protecting your personal data. Our data protection team will be happy to assist you
         with any questions you may have about data processing, your rights, or this privacy policy statement.
-        It can be reached at: <a href="mailto:gdpr@1inventory.com">gdpr@1inventory.com</a>.
+        It can be reached at: <a class="eml" data-u="&#103;&#100;&#112;&#114;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#99;&#111;&#109;">&#103;&#100;&#112;&#114;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#99;&#111;&#109;</a>.
       </p>
 
       <h2>1. Information We Collect</h2>
@@ -130,7 +170,7 @@
       </ul>
       <p>
         To exercise any of these rights, please contact our data protection team at
-        <a href="mailto:gdpr@1inventory.com">gdpr@1inventory.com</a>.
+        <a class="eml" data-u="&#103;&#100;&#112;&#114;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#99;&#111;&#109;">&#103;&#100;&#112;&#114;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#99;&#111;&#109;</a>.
       </p>
 
       <h2>7. Cross-Border Data Transfers</h2>
@@ -163,32 +203,62 @@
         Im D&ouml;rener Feld 3<br />
         33100 Paderborn<br />
         Germany<br /><br />
-        General Support Email: <a href="mailto:support@1inventory.com">support@1inventory.com</a><br />
-        GDPR-related Inquiries: <a href="mailto:gdpr@1inventory.com">gdpr@1inventory.com</a>
+        General Support Email: <a class="eml" data-u="&#115;&#117;&#112;&#112;&#111;&#114;&#116;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#99;&#111;&#109;</a><br />
+        GDPR-related Inquiries: <a class="eml" data-u="&#103;&#100;&#112;&#114;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#99;&#111;&#109;">&#103;&#100;&#112;&#114;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#99;&#111;&#109;</a>
       </address>
     </div>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <a class="footer-brand" href="/">
-          <img src="img/logo-mark.jpg" alt="1inventory logo" />
-          <span>1inventory.io</span>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — home">
+          <img src="img/app-icon.svg?v=16" alt="" width="34" height="34" />
+          <span>1inventory</span>
         </a>
-        <nav class="footer-links">
-          <a href="/">Home</a>
-          <a href="terms.html">Terms and conditions</a>
-          <a href="privacy.html">Privacy policy</a>
+        <p class="footer-blurb">
+          1inventory — a barcode inventory app for your home or your business, in a Google Sheet
+          you own.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          The app is available in English, German, Spanish, French and Portuguese.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Product</h2>
+        <nav class="footer-links" aria-label="Product">
+          <a href="./">How it works</a>
+          <a href="plans.html">Plans</a>
+          <a href="faq.html">FAQ</a>
         </nav>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; <span data-year>2026</span>, All Rights Reserved</span>
-        <span>Sparkybit GmbH &middot; Paderborn, Germany</span>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms and conditions</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <nav class="footer-links" aria-label="Contact">
+          <a href="support.html">Support</a>
+        </nav>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
 
-  <script src="js/main.js?v=1"></script>
+<script src="js/main.js?v=16"></script>
 </body>
 </html>

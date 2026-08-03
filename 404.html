@@ -4,25 +4,85 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>document.documentElement.className += " js";</script>
-  <title>Page not found | 1inventory.io</title>
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg" />
+
+  <title>Page not found | 1inventory</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=16" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=1" />
+  <link rel="stylesheet" href="/css/style.css?v=16" />
 </head>
 <body>
-  <main class="hero" style="min-height:70vh;display:grid;place-items:center;text-align:center;">
-    <div class="container">
-      <img src="img/app-icon.svg" alt="1inventory" width="88" height="88" style="margin:0 auto 24px;border-radius:20px;" />
-      <h1>Page not found</h1>
-      <p class="hero-lead" style="margin-inline:auto;">
-        The page you&rsquo;re looking for doesn&rsquo;t exist or has moved.
-      </p>
-      <div class="hero-actions" style="justify-content:center;">
-        <a class="btn btn-primary" href="/">Back to home</a>
-      </div>
+
+<!-- =====================================================================
+     404
+
+     Rewritten when v7 was promoted to the root. The previous version used
+     .btn-primary, .hero-actions and .hero-lead — classes from the legacy
+     stylesheet that v7's does not define, so it would have rendered
+     unstyled the moment the root stylesheet was replaced.
+
+     Every path here is root-absolute. A 404 is served for URLs at any
+     depth (/rooms/pantry, /v9/foo), and relative asset paths break on all
+     of them.
+     ===================================================================== -->
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="1inventory — home">
+      <img src="/img/app-icon.svg?v=16" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">How it works</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/faq.html">FAQ</a>
+      </nav>
     </div>
-  </main>
+    <div class="nav-cta">
+      <a class="btn btn--primary" href="/#get-the-app" data-cta="header">Get the app</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section section--major" aria-labelledby="nf-title">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <span class="eyebrow">404</span>
+        <h1 id="nf-title">That page isn&rsquo;t here.</h1>
+      </div>
+      <div class="prose">
+        <p>
+          It may have moved, or the link may be wrong. Everything on the site is one of these:
+        </p>
+      </div>
+      <ul class="bullets bullets--green">
+        <li><a href="/">How it works</a> — what the app does, start to finish.</li>
+        <li><a href="/plans.html">Plans</a> — what is free and what Premium costs.</li>
+        <li><a href="/faq.html">FAQ</a> — the questions people ask before installing.</li>
+        <li><a href="/support.html">Support</a> — if something is broken, tell us.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Germany</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=16"></script>
 </body>
 </html>

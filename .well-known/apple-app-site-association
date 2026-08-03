@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["7MBRQ3583S.com.sparkybit.oneinventory.prod"],
+        "components": [
+          {
+            "/": "/inventories/*/alerts",
+            "comment": "Open the Alerts screen deep link in the app"
+          }
+        ]
+      }
+    ]
+  }
+}
