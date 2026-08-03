@@ -3,7 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>document.documentElement.className += " js";</script>
+  <!-- EMBEDDED MODE — same flag as the FAQ. Adding ?mobile=1 to this URL
+       strips the site chrome (header, footer, skip link) so the app can show
+       this document inside its own webview without a second navigation bar.
+       The heading and every word of the legal text stay: this is a published
+       legal notice, not marketing, and the app is a second place it is served
+       rather than a different version of it. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
 
   <title>Impressum | 1inventory</title>
   <meta name="description" content="Legal notice for 1inventory, published by Sparkybit GmbH, Paderborn, Germany." />
@@ -11,11 +22,11 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0b3d1e" />
 
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=15" />
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=16" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
 </head>
 <body>
 
@@ -44,7 +55,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="./" aria-label="1inventory — home">
-      <img src="img/app-icon.svg?v=15" alt="" width="32" height="32" />
+      <img src="img/app-icon.svg?v=16" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
@@ -161,7 +172,7 @@
     <div class="footer-top">
       <div class="footer-col">
         <a class="footer-brand" href="./" aria-label="1inventory — home">
-          <img src="img/app-icon.svg?v=15" alt="" width="34" height="34" />
+          <img src="img/app-icon.svg?v=16" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
         <p class="footer-blurb">
@@ -204,6 +215,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=15"></script>
+<script src="js/main.js?v=16"></script>
 </body>
 </html>

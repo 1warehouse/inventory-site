@@ -2722,7 +2722,10 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 
 /* The h1 is a screen title here, not a hero. */
 .is-embedded h1 { font-size: 1.5rem; }
-.is-embedded .eyebrow { display: none; }
+/* Eyebrows are NOT hidden. The FAQ's only one sits inside #top, which is
+   hidden wholesale, so the blanket rule bought nothing there — and on the
+   Impressum the eyebrow carries "Angaben gemäß § 5 TMG", the statutory
+   heading of a German legal notice. It has to survive in the app view. */
 
 /* Jump-to earns its place on a long phone document, so it stays — but as a
    plain list rather than a tinted card floating in a native screen. */
