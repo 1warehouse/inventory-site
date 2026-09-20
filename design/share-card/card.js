@@ -67,7 +67,7 @@ async function boot() {
     document.body.dataset.shrunk = shrunk.map(s => `${s.text} ${s.from}->${s.to}`).join(' | ');
     console.warn('shrunk to fit:', shrunk);
   }
-  const clashes = auditOverlaps(document);
+  const clashes = [...auditOverlaps(document), ...auditFit(document)];
   if (clashes.length) {
     document.body.dataset.overlaps = clashes
       .map(c => `${c.screen}: "${c.a}" x "${c.b}" ${c.overlap}`).join(' | ');

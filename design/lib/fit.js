@@ -12,6 +12,9 @@
      data-row-label /     a row with a label on the left and a right-anchored
      data-row-value       value: keep a gap between them, shrinking the value
                           first and the label only if that was not enough
+     data-fit-group="x"   these texts are read as one control (the two halves
+                          of a segmented switch, say), so they all end up at
+                          the size the longest of them needed
 
    fitAll() returns what it changed, so a caller can surface it.
    ========================================================================= */
@@ -101,6 +104,21 @@ function fitAll(root) {
     svg.querySelectorAll('[data-fit]:not([data-bar-title])').forEach(t => {
       const n = fitOne(t);
       if (n) notes.push(n);
+    });
+
+    // Members of a group are one control to the eye, so they must not end up
+    // at different sizes: level them to whatever the longest one needed.
+    const groups = {};
+    svg.querySelectorAll('[data-fit-group]').forEach(t => {
+      (groups[t.dataset.fitGroup] = groups[t.dataset.fitGroup] || []).push(t);
+    });
+    Object.values(groups).forEach(members => {
+      const sizes = members.map(m => parseFloat(getComputedStyle(m).fontSize) ||
+                                     parseFloat(m.getAttribute('font-size')));
+      const smallest = Math.min(...sizes);
+      members.forEach((m, i) => {
+        if (sizes[i] > smallest) m.setAttribute('font-size', smallest);
+      });
     });
   });
   return notes;

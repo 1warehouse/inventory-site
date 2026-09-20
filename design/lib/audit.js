@@ -14,6 +14,33 @@
    design/check.py, which loads every screen in every language.
    ========================================================================= */
 
+/* Text can also escape the shape it sits in — a segmented switch's option
+   running out of its half — without touching any other text. Which shape is
+   the container cannot be guessed from the drawing: a label sits inside the
+   screen, a card, a chip and whatever decorative blob happens to be behind
+   it, and only one of those says anything about whether it fits. So the
+   template declares it with data-fit, and this checks the declaration held.
+   A text still too wide after fitting has hit the size floor, which means the
+   string needs to be shorter, not smaller. */
+function auditFit(root = document) {
+  const found = [];
+  root.querySelectorAll('svg').forEach(svg => {
+    const label = svg.closest('figure')?.querySelector('figcaption')
+                     ?.textContent.split('—')[0].trim()
+                  || svg.getAttribute('data-id') || 'screen';
+    svg.querySelectorAll('text[data-fit]').forEach(t => {
+      const max = parseFloat(t.dataset.fit);
+      const width = t.getBBox().width;
+      if (width > max + 0.5) {
+        found.push({ screen: label, a: t.textContent.replace(/\s+/g, ' ').trim(),
+                     b: `its box (${max.toFixed(0)} units)`,
+                     overlap: `${(width - max).toFixed(0)} too wide at the size floor` });
+      }
+    });
+  });
+  return found;
+}
+
 function auditOverlaps(root = document) {
   const found = [];
   const contains = (outer, inner) =>

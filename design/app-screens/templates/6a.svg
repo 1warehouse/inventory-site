@@ -19,7 +19,7 @@
           <path d="M30 19l7 4v8l-7 4-7-4v-8z" fill="none" stroke="#178038" stroke-width="1.8" stroke-linejoin="round"/>
           <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">5</text>
           <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.products}}</text>
+          <text data-fit="118" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.products}}</text>
         </g>
         <g transform="translate(164,152)">
           <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
@@ -27,7 +27,7 @@
           <path d="M24 21h5l1.6 2H37a1.6 1.6 0 0 1 1.6 1.6v6.8A1.6 1.6 0 0 1 37 33H24a1.6 1.6 0 0 1-1.6-1.6v-8.8A1.6 1.6 0 0 1 24 21z" fill="none" stroke="#4A7C99" stroke-width="1.8" stroke-linejoin="round"/>
           <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">4</text>
           <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.locations}}</text>
+          <text data-fit="118" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.locations}}</text>
         </g>
         <g transform="translate(18,230)">
           <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
@@ -36,7 +36,7 @@
           <path d="M23 24.5h14" stroke="#C89A34" stroke-width="1.8"/>
           <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">5</text>
           <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.customFields}}</text>
+          <text data-fit="118" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.customFields}}</text>
         </g>
         <g transform="translate(164,230)">
           <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
@@ -45,7 +45,7 @@
           <path d="M24 33a6 6 0 0 1 12 0" fill="none" stroke="#6E7A72" stroke-width="1.8" stroke-linecap="round"/>
           <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">3</text>
           <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{users.title}}</text>
+          <text data-fit="118" x="16" y="58" font-size="12.5" fill="#4A5851">{{users.title}}</text>
         </g>
         <g transform="translate(18,308)">
           <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
@@ -54,7 +54,7 @@
           <path d="M23 30h14M28.5 33a2 2 0 0 0 3 0" stroke="#C4453D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
           <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">1</text>
           <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.alertRules}}</text>
+          <text data-fit="118" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.alertRules}}</text>
         </g>
 
         <text x="18" y="410" font-size="12.5" font-weight="500" fill="#96A199">{{dashboard.stockHealth}}</text>

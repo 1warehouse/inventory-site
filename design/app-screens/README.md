@@ -113,9 +113,19 @@ rather than silent.
 python3 design/check.py
 ```
 
-It loads every screen in every language and reports three things: tokens with
-no string behind them, **texts whose ink overlaps**, and labels that had to
-shrink. It exits non-zero on the first two, so it can gate a render.
+It loads every screen in every language and reports: tokens with no string
+behind them, **texts whose ink overlaps**, **text still too wide after
+shrinking** — it hit the size floor, so the string needs to be shorter rather
+than smaller — and labels that shrank but fit. It exits non-zero on the first
+three, so it can gate a render.
+
+Which shape holds a text cannot be guessed from the drawing: a label sits
+inside the screen, a card, a chip and whatever decorative blob is behind it,
+and only one of those says anything about whether it fits. So **a box that
+constrains text has to be declared** with `data-fit`, and the check verifies
+the declaration held. A switch, a tab bar or anything else read as one control
+also takes `data-fit-group`, so its parts end up at one size instead of each
+shrinking on its own.
 
 Fitting keeps a string inside the box it was given; it cannot know that two
 boxes share a line. That is what the overlap check is for — it caught the
@@ -126,6 +136,12 @@ way by the same proportion rather than one of them collapsing to the floor.
 
 Read the `shrunk` lines too: a label that lands on the 9.5 floor usually means
 the string wants a shorter translation, not a smaller size.
+
+That is why the dashboard's custom-fields tile says `Eigene Felder`,
+`Campos propios` and `Campos próprios` rather than the app's own
+`Benutzerdefinierte Felder` / `Campos personalizados`: the tile is 138 units
+wide and the full phrase does not fit at any size worth reading. The fields
+screen itself still uses the app's wording, where there is room for it.
 
 ## Note on the 2026-09 refresh
 
