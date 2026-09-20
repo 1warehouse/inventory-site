@@ -148,7 +148,7 @@
       "name": "I already have a list. Do I have to retype it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a German export headed Bezeichnung / Menge / Lagerort lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
+        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a sheet headed Item / Qty / Where lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
       }
     },
     {
@@ -177,10 +177,10 @@
     },
     {
       "@type": "Question",
-      "name": "What if I need more than five locations or five people?",
+      "name": "What if I need more than five people?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Five places and five people is what the app is built around: a household, a workshop, or a small crew. Locations sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones, per-location permissions or a read-only role, a larger system will serve you better."
+        "text": "Five people is what the app is built around: a household, a workshop, or a small crew. Places are not capped on Premium, but they sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones inside zones, per-location permissions or a read-only role, a larger system will serve you better."
       }
     },
     {
@@ -465,13 +465,17 @@
                  · Import is insert-only. Duplicates are skipped and existing rows
                    are never updated, so it is not a sync, a merge or an update.
                  · 5 MB, 60 columns, name column required.
-               The German header example is from the brief and is load-bearing: it
-               is the one detail that proves the matching is by meaning rather than
-               by exact English string. -->
+               The header example is load-bearing: it is the one detail that proves
+               the matching is by meaning rather than by exact field name. The brief's
+               original was a German one (Bezeichnung / Menge / Lagerort); the client
+               replaced it with an English example on 2026-09-20, because on an English
+               site the German read as an aside rather than as proof. Keep whatever
+               example is here unofficial-looking — "Item / Qty / Where" works because
+               none of the three is the app's own field name. -->
           <p class="measure">
             No. Import a CSV and your column headers are matched to fields by meaning, so a
-            German export headed <em>Bezeichnung / Menge / Lagerort</em> lands in the right
-            columns with no setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
+            sheet headed <em>Item / Qty / Where</em> lands in the right columns with no
+            setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
             required. The mapping runs in one pass and is shown to you afterwards.
             Duplicates are skipped.
           </p>
@@ -537,9 +541,9 @@
         </div>
 
         <div>
-          <h3>What if I need more than five locations or five people?</h3>
+          <h3>What if I need more than five people?</h3>
           <p class="measure">
-            Five places and five people is what the app is built around: a household, a workshop, or a small crew. Locations sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones, per-location permissions or a read-only role, a larger system will serve you better.
+            Five people is what the app is built around: a household, a workshop, or a small crew. Places are not capped on Premium, but they sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones inside zones, per-location permissions or a read-only role, a larger system will serve you better.
           </p>
         </div>
 

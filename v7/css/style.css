@@ -615,6 +615,19 @@ h4, .h4 { font-size: var(--fs-h4); line-height: 1.3; }
   color: var(--body);
 }
 .nav-links a:hover { color: var(--green-700); }
+/* The page you are on. Green plus a rule under the word in the desktop bar;
+   in the mobile sheet the colour alone marks it, because every item there
+   already sits on a 1px divider and a second line would read as clutter.
+   Weight stays 500 so the bar does not reflow from page to page. */
+.nav-links a[aria-current="page"] { position: relative; color: var(--green-700); }
+.nav-links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 9px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green-600);
+}
 .nav-cta { display: flex; align-items: center; gap: 12px; margin-left: 14px; }
 
 .nav-toggle { display: none; }
@@ -1572,6 +1585,7 @@ h4, .h4 { font-size: var(--fs-h4); line-height: 1.3; }
   .nav-menu.open { display: flex; }
   .nav-menu .nav-links { display: flex; flex-direction: column; gap: 0; }
   .nav-menu .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .nav-menu .nav-links a[aria-current="page"]::after { display: none; }
   .nav-menu .btn { width: 100%; }
 
   /* The header CTA stays in the bar (plan §0: brand left, button right,
