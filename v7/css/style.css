@@ -3015,3 +3015,19 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
 @media (max-width: 860px) {
   #permission .split__media { display: none; }
 }
+
+/* -------------------------------------------------------------------------
+   v7 — .sheet-shot  (the spreadsheet mockup on #your-sheet)
+
+   Sits at the full width of .container--narrow (900px), so the 1144px source
+   still has density to spare on a 2x display. Unlike the phone frames it gets
+   no cap and no frame of its own: the artwork already carries a monitor.
+   ------------------------------------------------------------------------- */
+.sheet-shot {
+  margin: clamp(26px, 3.6vw, 42px) 0 0;
+}
+.sheet-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
