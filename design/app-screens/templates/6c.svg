@@ -1,0 +1,70 @@
+<svg viewBox="0 0 348 721" width="348" height="721" font-family="Poppins, system-ui, sans-serif" style="display:block;border-radius:46px">
+        <rect width="348" height="721" rx="46" fill="#000"/>
+        <g transform="translate(14,14)">
+        <rect width="320" height="693" rx="32" fill="#fff"/>
+        <path d="M26 20l-8 8 8 8" stroke="#16201A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text data-bar-title x="150" y="34" font-size="17" font-weight="700" fill="#16201A" text-anchor="middle">{{alert.title}}</text>
+        <rect id="saveBtn" x="248" y="10" width="54" height="36" rx="8" fill="#178038"/>
+        <text data-bar-action data-pill="saveBtn" x="275" y="33" font-size="14.5" font-weight="600" fill="#fff" text-anchor="middle">{{common.save}}</text>
+
+        <text x="18" y="72" font-size="11.5" font-weight="600" fill="#6B7A70">{{alert.sectionRule}}</text>
+        <rect x="18" y="81" width="284" height="59" rx="12" fill="#F6F7F5"/>
+        <text x="34" y="103" font-size="9.5" font-weight="600" fill="#96A199" letter-spacing=".1">{{alert.nameLabel}}</text>
+        <text x="34" y="127" font-size="15" fill="#16201A">{{alert.nameValue}}</text>
+
+        <text x="18" y="165" font-size="11.5" font-weight="600" fill="#6B7A70">{{alert.sectionWhen}}</text>
+        <rect x="18" y="177" width="284" height="272" rx="12" fill="#F6F7F5"/>
+        <path d="M18 189a12 12 0 0 1 12-12h260a12 12 0 0 1 12 12v32H18z" fill="#D9EBDF"/>
+        <rect x="32" y="185" width="28" height="28" rx="7" fill="#C3E1CC"/>
+        <rect x="39" y="192" width="14" height="14" rx="2.6" fill="none" stroke="#178038" stroke-width="1.8"/>
+        <path d="M39 196h14M43 190v3M49 190v3" stroke="#178038" stroke-width="1.8" stroke-linecap="round"/>
+        <text x="70" y="204" font-size="14" font-weight="600" fill="#16201A">{{alert.targetField}}</text>
+        <text x="272" y="204" font-size="13.5" fill="#178038" text-anchor="end">{{fields.names.0}}</text>
+        <path d="M280 194l5 5-5 5" stroke="#178038" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <text x="32" y="245" font-size="13" fill="#4A5851">{{alert.notifyMe}}</text>
+        <rect x="32" y="255" width="256" height="30" rx="15" fill="#fff" stroke="#C9D2CC"/>
+        <path d="M32 270a15 15 0 0 1 15-15h113v30H47a15 15 0 0 1-15-15z" fill="#6E7A72"/>
+        <text x="96" y="275" font-size="12.5" font-weight="500" fill="#fff" text-anchor="middle">{{alert.before}}</text>
+        <text x="224" y="275" font-size="12.5" fill="#16201A" text-anchor="middle">{{alert.after}}</text>
+
+        <text x="32" y="312" font-size="13.5" fill="#4A5851">{{alert.howManyDays}}</text>
+        <text x="32" y="329" font-size="12" fill="#96A199">{{alert.before}}</text>
+        <circle cx="112" cy="362" r="20" fill="#ECEEEC"/>
+        <path d="M104 362h16" stroke="#16201A" stroke-width="2.4" stroke-linecap="round"/>
+        <text x="160" y="371" font-size="21" font-weight="700" fill="#16201A" text-anchor="middle">7</text>
+        <circle cx="208" cy="362" r="20" fill="#ECEEEC"/>
+        <g stroke="#16201A" stroke-width="2.4" stroke-linecap="round"><path d="M200 362h16M208 354v16"/></g>
+        <path d="M32 396h256" stroke="#E2E7E3"/>
+
+        <rect x="32" y="410" width="28" height="28" rx="7" fill="#DDF1E3"/>
+        <path d="M39 419h5l1.4 2h8a1.4 1.4 0 0 1 1.4 1.4v6a1.4 1.4 0 0 1-1.4 1.4H39a1.4 1.4 0 0 1-1.4-1.4v-8A1.4 1.4 0 0 1 39 419z" fill="none" stroke="#178038" stroke-width="1.6" stroke-linejoin="round"/>
+        <text x="70" y="421" font-size="14" font-weight="600" fill="#16201A">{{alert.targetLocations}}</text>
+        <text x="70" y="438" font-size="12" fill="#96A199">{{alert.locationsValue}}</text>
+        <rect x="244" y="412" width="44" height="24" rx="12" fill="#178038"/>
+        <circle cx="276" cy="424" r="9" fill="#fff"/>
+
+        <text x="18" y="475" font-size="11.5" font-weight="600" fill="#6B7A70">{{alert.sectionHow}}</text>
+        <rect x="18" y="488" width="284" height="152" rx="12" fill="#F6F7F5"/>
+        <rect x="32" y="498" width="28" height="28" rx="7" fill="#ECEEEC"/>
+        <circle cx="46" cy="512" r="8" fill="none" stroke="#6E7A72" stroke-width="1.6"/>
+        <path d="M46 508v4.5l3 2" stroke="#6E7A72" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <text x="70" y="517" font-size="14" font-weight="600" fill="#16201A">{{alert.time}}</text>
+        <text x="276" y="517" font-size="13.5" fill="#4A5851" text-anchor="end">09:00</text>
+        <path d="M284 507l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M32 540h256" stroke="#E2E7E3"/>
+        <rect x="32" y="552" width="28" height="28" rx="7" fill="#ECEEEC"/>
+        <path d="M41 570v-6a5 5 0 0 1 10 0v6z" fill="none" stroke="#6E7A72" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M39 570h14M44.5 573a2.2 2.2 0 0 0 3 0" stroke="#6E7A72" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <text x="70" y="571" font-size="14" font-weight="600" fill="#16201A">{{alert.push}}</text>
+        <rect x="244" y="554" width="44" height="24" rx="12" fill="#178038"/>
+        <circle cx="276" cy="566" r="9" fill="#fff"/>
+        <path d="M32 594h256" stroke="#E2E7E3"/>
+        <rect x="32" y="606" width="28" height="28" rx="7" fill="#ECEEEC"/>
+        <rect x="38" y="613" width="16" height="12" rx="2" fill="none" stroke="#6E7A72" stroke-width="1.6"/>
+        <path d="M38 614l8 6 8-6" fill="none" stroke="#6E7A72" stroke-width="1.6" stroke-linejoin="round"/>
+        <text x="70" y="625" font-size="14" font-weight="600" fill="#16201A">{{alert.email}}</text>
+        <rect x="244" y="608" width="44" height="24" rx="12" fill="#178038"/>
+        <circle cx="276" cy="620" r="9" fill="#fff"/>
+        </g>
+      </svg>

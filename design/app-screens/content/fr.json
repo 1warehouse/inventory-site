@@ -1,0 +1,170 @@
+{
+  "_note": "App chrome from inventory-mobile-app/assets/i18n/fr.json; demo data and line breaks written for this site. Lines are literal: SVG does not wrap.",
+  "common": {
+    "add": "Ajouter",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
+  "scan": {
+    "title": "Scanner un code-barres",
+    "notFound": "Pas dans votre inventaire",
+    "hint": [
+      "Scannez un code-barres",
+      "pour ajouter un produit",
+      "ou en trouver un existant"
+    ],
+    "looking": [
+      "Recherche des informations produit",
+      "dans la base mondiale"
+    ],
+    "productName": [
+      "Huile d'olive vierge extra,",
+      "pressée à froid 1 L"
+    ],
+    "productDesc": [
+      "Première pression à froid d'une seule",
+      "récolte, en verre foncé pour préserver",
+      "le goût. Acidité 0,3 %."
+    ]
+  },
+  "quantity": {
+    "label": "Quantité",
+    "apply": "Appliquer",
+    "edit": "Modifier"
+  },
+  "locations": {
+    "without": "Sans localisation",
+    "add": "Ajouter une localisation",
+    "names": [
+      "Cuisine",
+      "Garde-manger",
+      "Cave",
+      "Étagère du garage"
+    ]
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "eyebrow": "INVENTAIRE ACTUEL",
+    "overview": "Aperçu",
+    "products": "Produits",
+    "locations": "Emplacements",
+    "customFields": "Champs personnalisés",
+    "alertRules": "Règles d'alerte",
+    "stockHealth": "État du stock",
+    "totalStock": "Stock total",
+    "lastActivity": "Dernière activité",
+    "inventory": "Maison",
+    "activityMeta": "Anna Weber · aujourd'hui 10:44"
+  },
+  "fields": {
+    "title": "Modifier les champs",
+    "names": [
+      "À consommer avant",
+      "Ouvert le",
+      "Prix d'achat",
+      "Fournisseur",
+      "Bac de rangement"
+    ],
+    "types": {
+      "date": "Date",
+      "number": "Nombre",
+      "text": "Texte",
+      "dropdown": "Liste · 6 options"
+    },
+    "subtitle": [
+      "Vos propres champs sur chaque produit —",
+      "prix, tailles, numéros de série. Les dates",
+      "peuvent déclencher des alertes."
+    ]
+  },
+  "alert": {
+    "title": "Nouvelle règle d'alerte",
+    "sectionRule": "Règle",
+    "nameLabel": "Nom de l'alerte",
+    "sectionWhen": "Quand alerter",
+    "targetField": "Champ cible",
+    "notifyMe": "Me notifier",
+    "before": "Avant la date",
+    "after": "Après la date",
+    "howManyDays": "Combien de jours",
+    "targetLocations": "Emplacements ciblés",
+    "sectionHow": "Comment recevoir les notifications",
+    "time": "Heure",
+    "push": "Push",
+    "email": "E-mail",
+    "nameValue": "Bientôt périmé",
+    "locationsValue": "Cuisine, Garde-manger"
+  },
+  "users": {
+    "title": "Utilisateurs",
+    "invite": "Inviter",
+    "active": "Utilisateurs actifs",
+    "subtitle": [
+      "Invitez des utilisateurs à collaborer et",
+      "gérer cet inventaire"
+    ],
+    "owner": "Propriétaire",
+    "user": "Utilisateur"
+  },
+  "history": {
+    "title": "Historique",
+    "subtitle": [
+      "Chaque modification de votre inventaire —",
+      "ce qui a changé, par qui et quand."
+    ],
+    "when": [
+      "3 août 2026 10:44",
+      "3 août 2026 09:12",
+      "2 août 2026 18:05",
+      "2 août 2026 17:40"
+    ]
+  },
+  "products": {
+    "passata": "Passata, 700 ml",
+    "oliveOil": "Huile d'olive, 1 L",
+    "spaghetti": "Spaghetti, 500 g",
+    "paprika": "Paprika fumé, 75 g",
+    "honey": "Miel d'acacia, 250 g",
+    "sugar": "Sucre de canne, 1 kg"
+  },
+  "notes": {
+    "passata": "Bouteille en verre",
+    "oliveOil": "Vierge extra",
+    "spaghetti": "Tréfilé bronze",
+    "paprika": "Boîte",
+    "honey": "Marché local"
+  },
+  "people": [
+    {
+      "name": "Anna Weber",
+      "mail": "anna.weber@1inventory.io"
+    },
+    {
+      "name": "Marek Nowak",
+      "mail": "marek.nowak@1inventory.io"
+    },
+    {
+      "name": "Lisa Chen",
+      "mail": "lisa.chen@1inventory.io"
+    }
+  ],
+  "search": {
+    "query": "huile",
+    "sunflower": "Huile de tournesol, 750 ml",
+    "sunflowerNote": "Pressée à froid",
+    "sesame": "Huile de sésame, 250 ml",
+    "sesameNote": "Grillée"
+  },
+  "sheet": {
+    "docTitle": "Inventaire maison",
+    "share": "Partager",
+    "total": "Total",
+    "columns": [
+      "NOM",
+      "QUANTITÉ",
+      "CODE-BARRES",
+      "EMPLACEMENT",
+      "DESCRIPTION"
+    ]
+  }
+}

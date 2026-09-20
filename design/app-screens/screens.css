@@ -1,0 +1,63 @@
+/* =========================================================================
+   1inventory — app screen mockups, page chrome.
+
+   The artwork carries its own styling inside templates/*.svg. This file only
+   loads Poppins (so a render does not depend on the machine's fonts) and
+   dresses the gallery. Nothing here may affect what a rendered PNG looks
+   like apart from the font faces.
+   ========================================================================= */
+
+@font-face { font-family: Poppins; font-weight: 300; font-style: normal;
+             src: url("fonts/Poppins-Light.ttf") format("truetype"); }
+@font-face { font-family: Poppins; font-weight: 400; font-style: normal;
+             src: url("fonts/Poppins-Regular.ttf") format("truetype"); }
+@font-face { font-family: Poppins; font-weight: 500; font-style: normal;
+             src: url("fonts/Poppins-Medium.ttf") format("truetype"); }
+@font-face { font-family: Poppins; font-weight: 600; font-style: normal;
+             src: url("fonts/Poppins-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: Poppins; font-weight: 700; font-style: normal;
+             src: url("fonts/Poppins-Bold.ttf") format("truetype"); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { font-family: Poppins, system-ui, sans-serif; }
+
+svg { display: block; }
+
+/* A rendered page holds one screen and nothing else, so what Chrome captures
+   is the artwork and its transparent margin. */
+body.shot { background: transparent; width: max-content; }
+
+body.gallery {
+  background: #f0eee9;
+  padding: 28px;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.gallery__bar { display: flex; gap: 10px; margin-bottom: 24px; }
+
+.gallery__bar a {
+  color: #14532d;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.gallery__bar a[aria-current="true"] { background: #178038; color: #fff; }
+
+.gallery__grid { display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start; }
+
+.gallery__item {
+  background: #e8ece8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.gallery__item figcaption {
+  margin-top: 8px;
+  font: 600 11px/1.3 Poppins, system-ui, sans-serif;
+  color: rgba(0, 0, 0, .55);
+}

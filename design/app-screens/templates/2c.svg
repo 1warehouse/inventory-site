@@ -1,0 +1,175 @@
+<svg viewBox="0 0 620 820" width="620" height="820" font-family="Poppins, system-ui, sans-serif" style="display:block">
+        <defs>
+          <filter id="sc-ph3" filterUnits="userSpaceOnUse" x="80" y="20" width="460" height="820">
+            <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#062E14" flood-opacity=".2"/>
+          </filter>
+        </defs>
+        <g fill="#DFEDE4">
+          <circle cx="152" cy="288" r="140"/>
+          <circle cx="310" cy="198" r="172"/>
+          <circle cx="468" cy="286" r="142"/>
+          <circle cx="500" cy="428" r="118"/>
+          <circle cx="118" cy="428" r="118"/>
+          <circle cx="160" cy="612" r="156"/>
+          <circle cx="458" cy="612" r="152"/>
+          <circle cx="310" cy="628" r="166"/>
+          <rect x="118" y="288" width="382" height="340"/>
+        </g>
+
+        <g transform="translate(56,196)">
+          <rect x="10" y="18" width="92" height="112" rx="10" fill="#E4DCC0"/>
+          <rect x="20" y="0" width="72" height="22" rx="5" fill="#2F5233"/>
+          <rect x="24" y="52" width="64" height="34" fill="#FBFAF6"/>
+          <g fill="#B6AC8C"><rect x="32" y="62" width="40" height="4" rx="2"/><rect x="32" y="72" width="26" height="4" rx="2"/></g>
+        </g>
+        <g transform="translate(56,330)">
+          <rect x="30" y="0" width="26" height="18" rx="4" fill="#C6A34A"/>
+          <rect x="34" y="14" width="18" height="22" fill="#2F5233"/>
+          <path d="M34 32 C28 44 12 54 12 76 V150 q0 16 16 16 h30 q16 0 16 -16 V76 c0-22-16-32-22-44 z" fill="#2F5233"/>
+          <rect x="12" y="84" width="62" height="46" fill="#E4DCC0"/>
+          <g fill="#8A7F5E"><rect x="22" y="96" width="40" height="4" rx="2"/><rect x="22" y="106" width="26" height="3.4" rx="1.7"/></g>
+          <rect x="12" y="120" width="62" height="10" fill="#2F5233"/>
+        </g>
+        <g transform="translate(48,452)">
+          <rect x="6" y="0" width="112" height="88" rx="7" fill="#E0C9A2"/>
+          <path d="M6 32h112" stroke="#C4A578" stroke-width="2"/>
+          <rect x="52" y="0" width="18" height="88" fill="#C9A87C"/>
+          <rect x="14" y="84" width="122" height="94" rx="7" fill="#D9BE93"/>
+          <path d="M14 118h122" stroke="#BE9E6E" stroke-width="2"/>
+          <rect x="66" y="84" width="20" height="94" fill="#BE9E6E"/>
+          <rect x="0" y="174" width="104" height="76" rx="7" fill="#C4A578"/>
+          <rect x="42" y="174" width="18" height="76" fill="#AE8F62"/>
+        </g>
+
+        <g transform="translate(444,192)">
+          <rect x="30" y="0" width="40" height="12" rx="6" fill="none" stroke="#B9C4BC" stroke-width="5"/>
+          <rect x="4" y="10" width="112" height="86" rx="10" fill="#FBFAF6"/>
+          <path d="M4 34h112" stroke="#E2E7E3" stroke-width="2"/>
+          <rect x="42" y="46" width="36" height="12" rx="2" fill="#C4453D"/>
+          <rect x="54" y="34" width="12" height="36" rx="2" fill="#C4453D"/>
+        </g>
+        <g transform="translate(448,304)">
+          <rect x="0" y="0" width="120" height="56" rx="8" fill="#E4EAE6"/>
+          <circle cx="23" cy="18" r="8.4" fill="#C4453D"/>
+          <circle cx="49" cy="18" r="8.4" fill="#F0EDE4"/>
+          <circle cx="75" cy="18" r="8.4" fill="#4A7C99"/>
+          <circle cx="101" cy="18" r="8.4" fill="#E0A32C"/>
+          <circle cx="23" cy="39" r="8.4" fill="#F0EDE4"/>
+          <circle cx="49" cy="39" r="8.4" fill="#7A3FA8"/>
+          <circle cx="75" cy="39" r="8.4" fill="#E0A32C"/>
+          <circle cx="101" cy="39" r="8.4" fill="#C4453D"/>
+        </g>
+        <g transform="translate(452,370)">
+          <g transform="rotate(-16 27 11)">
+            <rect x="0" y="0" width="56" height="22" rx="11" fill="#F0EDE4"/>
+            <path d="M11 0h17v22H11a11 11 0 0 1 0-22z" fill="#C4453D"/>
+          </g>
+          <g transform="translate(66,10) rotate(14 27 11)">
+            <rect x="0" y="0" width="52" height="20" rx="10" fill="#F0EDE4"/>
+            <path d="M10 0h16v20H10a10 10 0 0 1 0-20z" fill="#4A7C99"/>
+          </g>
+        </g>
+        <g transform="translate(452,442)">
+          <circle cx="56" cy="56" r="56" fill="#2B2B33"/>
+          <circle cx="56" cy="56" r="39" fill="none" stroke="#40404C" stroke-width="1.6"/>
+          <circle cx="56" cy="56" r="27" fill="none" stroke="#40404C" stroke-width="1.6"/>
+          <circle cx="56" cy="56" r="19" fill="#C6A34A"/>
+          <circle cx="56" cy="56" r="5" fill="#DFEDE4"/>
+        </g>
+        <g transform="translate(436,548)">
+          <rect x="0" y="0" width="122" height="26" rx="4" fill="#459960"/>
+          <rect x="10" y="8" width="52" height="4" rx="2" fill="#DDF1E3"/>
+          <rect x="6" y="30" width="122" height="26" rx="4" fill="#C1502E"/>
+          <rect x="16" y="38" width="42" height="4" rx="2" fill="#F6E3DA"/>
+          <rect x="0" y="60" width="122" height="26" rx="4" fill="#4A7C99"/>
+          <rect x="10" y="68" width="58" height="4" rx="2" fill="#DEEAF1"/>
+        </g>
+        <g transform="translate(438,592)">
+          <rect x="0" y="24" width="82" height="88" rx="8" fill="#C9A46E"/>
+          <rect x="0" y="50" width="82" height="32" fill="#F2E6CE"/>
+          <g fill="#B08F5E"><rect x="12" y="60" width="44" height="5" rx="2.5"/><rect x="12" y="71" width="28" height="4" rx="2"/></g>
+          <ellipse cx="41" cy="24" rx="41" ry="9" fill="#DCBE8C"/>
+        </g>
+        <g transform="translate(150,606)">
+          <rect x="0" y="30" width="68" height="82" rx="7" fill="#E9A97C"/>
+          <rect x="19" y="12" width="30" height="20" rx="4" fill="#C98457"/>
+          <rect x="0" y="54" width="68" height="30" fill="#FDE4D3"/>
+          <rect x="12" y="64" width="38" height="5" rx="2.5" fill="#D08F62"/>
+        </g>
+
+        <g fill="#CBE1D3"><circle cx="262" cy="92" r="7"/><circle cx="372" cy="82" r="5"/><circle cx="410" cy="700" r="7"/><circle cx="230" cy="712" r="5"/></g>
+
+        <rect x="136" y="50" width="348" height="721" rx="46" fill="#000" filter="url(#sc-ph3)"/>
+        <svg x="136" y="50" width="348" height="721" viewBox="0 0 348 721" style="overflow:visible">
+        <rect width="348" height="721" rx="46" fill="#000"/>
+        <g transform="translate(14,14)">
+        <rect width="320" height="693" rx="32" fill="#fff"/>
+        <g stroke="#16201A" stroke-width="2" stroke-linecap="round"><path d="M18 22h20M18 28h20M18 34h20"/></g>
+        <rect x="120" y="12" width="80" height="32" rx="16" fill="#F2F4F2"/>
+        <circle cx="140" cy="28" r="14.5" fill="#459960"/>
+        <g stroke="#fff" stroke-width="1.6" stroke-linecap="round"><path d="M135 24h10M135 28h10M135 32h10"/></g>
+        <path d="M173 22h4.5l1.6 2.2H187a1.6 1.6 0 0 1 1.6 1.6v7.6a1.6 1.6 0 0 1-1.6 1.6h-14a1.6 1.6 0 0 1-1.6-1.6v-9.8A1.6 1.6 0 0 1 173 22z" fill="none" stroke="#16201A" stroke-width="1.7" stroke-linejoin="round"/>
+        <g stroke="#16201A" stroke-width="1.8" stroke-linecap="round"><path d="M286 24h16M286 32h16"/></g>
+        <circle cx="297" cy="24" r="2.6" fill="#fff" stroke="#16201A" stroke-width="1.8"/>
+        <circle cx="291" cy="32" r="2.6" fill="#fff" stroke="#16201A" stroke-width="1.8"/>
+
+        <g transform="translate(0,62)">
+          <rect x="18" y="0" width="60" height="60" rx="11" fill="#FDE4D3"/>
+          <path d="M44 12h8v5l4 6v20a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3V23l4-6z" fill="#E9A97C"/><rect x="41" y="28" width="14" height="9" rx="1.5" fill="#FDE4D3"/>
+          <text x="88" y="17" font-size="15.5" font-weight="600" fill="#16201A">{{products.passata}}</text>
+          <g transform="translate(88,26)" fill="#9AA79E"><rect x="0" y="0" width="1.6" height="11" rx=".6"/><rect x="3.4" y="0" width="1" height="11" rx=".5"/><rect x="6" y="0" width="2.2" height="11" rx=".8"/><rect x="10" y="0" width="1" height="11" rx=".5"/><rect x="12.6" y="0" width="1.6" height="11" rx=".6"/></g>
+          <text x="108" y="36" font-size="12.5" fill="#6B7A70" letter-spacing=".4">8003530003000</text>
+          <text x="88" y="54" font-size="12" fill="#96A199">{{notes.passata}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">6</text>
+          <path d="M18 74h284" stroke="#EDF1EE" stroke-width="1"/>
+        </g>
+        <g transform="translate(0,146)">
+          <rect x="18" y="0" width="60" height="60" rx="11" fill="#FAF0C8"/>
+          <path d="M45 11h6v4l5 8v22a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3V23l5-8z" fill="#D9C173"/><rect x="41" y="29" width="14" height="8" rx="1.5" fill="#FAF0C8"/>
+          <text x="88" y="17" font-size="15.5" font-weight="600" fill="#16201A">{{products.oliveOil}}</text>
+          <g transform="translate(88,26)" fill="#9AA79E"><rect x="0" y="0" width="1.6" height="11" rx=".6"/><rect x="3.4" y="0" width="1" height="11" rx=".5"/><rect x="6" y="0" width="2.2" height="11" rx=".8"/><rect x="10" y="0" width="1" height="11" rx=".5"/><rect x="12.6" y="0" width="1.6" height="11" rx=".6"/></g>
+          <text x="108" y="36" font-size="12.5" fill="#6B7A70" letter-spacing=".4">8410010012047</text>
+          <text x="88" y="54" font-size="12" fill="#96A199">{{notes.oliveOil}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">2</text>
+          <path d="M18 74h284" stroke="#EDF1EE" stroke-width="1"/>
+        </g>
+        <g transform="translate(0,230)">
+          <rect x="18" y="0" width="60" height="60" rx="11" fill="#DDF1E3"/>
+          <g fill="#8CBE9E"><rect x="38" y="12" width="3" height="36" rx="1.5"/><rect x="44" y="12" width="3" height="36" rx="1.5"/><rect x="50" y="12" width="3" height="36" rx="1.5"/><rect x="56" y="12" width="3" height="36" rx="1.5"/></g>
+          <text x="88" y="17" font-size="15.5" font-weight="600" fill="#16201A">{{products.spaghetti}}</text>
+          <g transform="translate(88,26)" fill="#9AA79E"><rect x="0" y="0" width="1.6" height="11" rx=".6"/><rect x="3.4" y="0" width="1" height="11" rx=".5"/><rect x="6" y="0" width="2.2" height="11" rx=".8"/><rect x="10" y="0" width="1" height="11" rx=".5"/><rect x="12.6" y="0" width="1.6" height="11" rx=".6"/></g>
+          <text x="108" y="36" font-size="12.5" fill="#6B7A70" letter-spacing=".4">8076809513715</text>
+          <text x="88" y="54" font-size="12" fill="#96A199">{{notes.spaghetti}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">4</text>
+          <path d="M18 74h284" stroke="#EDF1EE" stroke-width="1"/>
+        </g>
+        <g transform="translate(0,314)">
+          <rect x="18" y="0" width="60" height="60" rx="11" fill="#DBEAF6"/>
+          <rect x="36" y="18" width="24" height="26" rx="3" fill="#8FB3CE"/><rect x="39" y="13" width="18" height="6" rx="2" fill="#8FB3CE"/>
+          <text x="88" y="17" font-size="15.5" font-weight="600" fill="#16201A">{{products.paprika}}</text>
+          <g transform="translate(88,26)" fill="#9AA79E"><rect x="0" y="0" width="1.6" height="11" rx=".6"/><rect x="3.4" y="0" width="1" height="11" rx=".5"/><rect x="6" y="0" width="2.2" height="11" rx=".8"/><rect x="10" y="0" width="1" height="11" rx=".5"/><rect x="12.6" y="0" width="1.6" height="11" rx=".6"/></g>
+          <text x="108" y="36" font-size="12.5" fill="#6B7A70" letter-spacing=".4">4008258001127</text>
+          <text x="88" y="54" font-size="12" fill="#96A199">{{notes.paprika}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">3</text>
+          <path d="M18 74h284" stroke="#EDF1EE" stroke-width="1"/>
+        </g>
+        <g transform="translate(0,398)">
+          <rect x="18" y="0" width="60" height="60" rx="11" fill="#F9DFE3"/>
+          <path d="M38 22h20v20a4 4 0 0 1-4 4h-12a4 4 0 0 1-4-4z" fill="#DEA6AF"/><rect x="36" y="14" width="24" height="7" rx="2" fill="#DEA6AF"/>
+          <text x="88" y="17" font-size="15.5" font-weight="600" fill="#16201A">{{products.honey}}</text>
+          <g transform="translate(88,26)" fill="#9AA79E"><rect x="0" y="0" width="1.6" height="11" rx=".6"/><rect x="3.4" y="0" width="1" height="11" rx=".5"/><rect x="6" y="0" width="2.2" height="11" rx=".8"/><rect x="10" y="0" width="1" height="11" rx=".5"/><rect x="12.6" y="0" width="1.6" height="11" rx=".6"/></g>
+          <text x="108" y="36" font-size="12.5" fill="#6B7A70" letter-spacing=".4">5010026503015</text>
+          <text x="88" y="54" font-size="12" fill="#96A199">{{notes.honey}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">1</text>
+          <path d="M18 74h284" stroke="#EDF1EE" stroke-width="1"/>
+        </g>
+
+        <g filter="url(#c-sh3)"><rect x="44" y="618" width="232" height="44" rx="22" fill="#fff"/></g>
+        <rect x="44" y="618" width="232" height="44" rx="22" fill="none" stroke="#EDF1EE"/>
+        <g stroke="#178038" stroke-width="2.2" stroke-linecap="round"><path d="M78 640h16M86 632v16"/></g>
+        <g stroke="#178038" stroke-width="2.2" fill="none"><circle cx="232" cy="638" r="7"/><path d="M237 643l5 5" stroke-linecap="round"/></g>
+        <circle cx="160" cy="640" r="32" fill="#459960"/>
+        <g fill="#fff"><rect x="147.2" y="631.5" width="2.6" height="17" rx="1"/><rect x="152.2" y="631.5" width="1.6" height="17" rx=".8"/><rect x="156.2" y="631.5" width="3.4" height="17" rx="1.2"/><rect x="162.2" y="631.5" width="1.6" height="17" rx=".8"/><rect x="166.2" y="631.5" width="2.6" height="17" rx="1"/><rect x="171.2" y="631.5" width="1.6" height="17" rx=".8"/></g>
+        <defs><filter id="c-sh3" filterUnits="userSpaceOnUse" x="0" y="590" width="320" height="110"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#092E18" flood-opacity=".13"/></filter></defs>
+        </g>
+      </svg>

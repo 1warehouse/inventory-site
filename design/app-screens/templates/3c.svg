@@ -1,0 +1,48 @@
+<svg viewBox="0 0 348 721" width="348" height="721" font-family="Poppins, system-ui, sans-serif" style="display:block;border-radius:46px">
+        <defs><clipPath id="s3-clip"><rect width="320" height="693" rx="32"/></clipPath></defs>
+        <rect width="348" height="721" rx="46" fill="#000"/>
+        <g transform="translate(14,14)">
+        <rect width="320" height="693" rx="32" fill="#111"/>
+        <g clip-path="url(#s3-clip)">
+          <rect y="56" width="320" height="637" fill="#C9D2C6"/>
+          <rect y="56" width="320" height="250" fill="#D6DDD2"/>
+          <rect x="144" y="150" width="32" height="28" rx="5" fill="#C6A34A"/>
+          <rect x="148" y="174" width="24" height="54" fill="#2F5233"/>
+          <path d="M148 224 C138 244 114 262 114 296 V552 q0 26 26 26 h40 q26 0 26 -26 V296 c0-34-24-52-34-72 z" fill="#2F5233"/>
+          <rect x="114" y="318" width="92" height="150" fill="#E4DCC0"/>
+          <rect y="56" width="320" height="637" fill="#000" fill-opacity=".82"/>
+          <rect width="320" height="56" fill="#000"/>
+          <path d="M28 22l-8 6 8 6" stroke="#4A4A4A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="160" y="34" font-size="16" font-weight="700" fill="#4A4A4A" text-anchor="middle">{{scan.title}}</text>
+          <rect x="78" y="74" width="164" height="40" rx="20" fill="#fff" fill-opacity=".14"/>
+          <rect x="105" y="85" width="12" height="18" rx="2.4" fill="none" stroke="#8A8A8A" stroke-width="1.8"/>
+          <path d="M155 89h-5v10h5l6 5V84z" fill="#8A8A8A"/>
+          <path d="M163 89a5 5 0 0 1 0 10" stroke="#8A8A8A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M205 83h10v5l-3 4h-4l-3-4z" fill="#8A8A8A"/><rect x="208.5" y="94" width="3" height="9" rx="1.5" fill="#8A8A8A"/>
+          <rect x="145" y="232" width="30" height="4" rx="2" fill="#fff"/>
+          <path d="M0 270 a20 20 0 0 1 20 -20 H300 a20 20 0 0 1 20 20 V693 H0 Z" fill="#fff"/>
+          <text x="160" y="292" font-size="15" font-weight="700" fill="#16201A" text-anchor="middle">{{scan.notFound}}</text>
+          <g font-size="15.5" font-weight="700" fill="#16201A" text-anchor="middle">
+            <text x="160" y="326">{{scan.productName.0}}</text>
+            <text x="160" y="347">{{scan.productName.1}}</text>
+          </g>
+          <g transform="translate(104,363)" fill="#9AA79E"><rect x="0" y="0" width="1.6" height="11" rx=".6"/><rect x="3.4" y="0" width="1" height="11" rx=".5"/><rect x="6" y="0" width="2.2" height="11" rx=".8"/><rect x="10" y="0" width="1" height="11" rx=".5"/><rect x="12.6" y="0" width="1.6" height="11" rx=".6"/></g>
+          <text x="124" y="373" font-size="13" fill="#6B7A70" letter-spacing=".4">8410010012047</text>
+          <g font-size="12.5" fill="#6B7A70" text-anchor="middle">
+            <text x="160" y="400">{{scan.productDesc.0}}</text>
+            <text x="160" y="418">{{scan.productDesc.1}}</text>
+            <text x="160" y="436">{{scan.productDesc.2}}</text>
+          </g>
+          <rect x="110" y="450" width="100" height="100" rx="8" fill="#fff" stroke="#EDF1EE"/>
+          <rect x="153" y="460" width="14" height="9" rx="2" fill="#C6A34A"/>
+          <rect x="155.5" y="467" width="9" height="13" fill="#2F5233"/>
+          <path d="M155.5 478 C153 484 146 490 146 501 V532 q0 7 7 7 h14 q7 0 7 -7 V501 c0-11-7-17-9.5-23 z" fill="#2F5233"/>
+          <rect x="146" y="504" width="28" height="19" fill="#E4DCC0"/>
+          <rect x="150" y="510" width="20" height="3" rx="1.5" fill="#8A7F5E"/>
+          <rect x="20" y="568" width="280" height="44" rx="22" fill="#178038"/>
+          <text x="160" y="596" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">{{common.add}}</text>
+          <rect x="20" y="624" width="280" height="44" rx="22" fill="#F0F1F0"/>
+          <text x="160" y="652" font-size="14.5" font-weight="600" fill="#16201A" text-anchor="middle">{{common.cancel}}</text>
+        </g>
+        </g>
+      </svg>

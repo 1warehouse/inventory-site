@@ -1,0 +1,170 @@
+{
+  "_note": "App chrome from inventory-mobile-app/assets/i18n/es.json; demo data and line breaks written for this site. Lines are literal: SVG does not wrap.",
+  "common": {
+    "add": "Agregar",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "scan": {
+    "title": "Escanear código de barras",
+    "notFound": "No en tu inventario",
+    "hint": [
+      "Escanea un código",
+      "para añadir un producto nuevo",
+      "o encontrar uno existente"
+    ],
+    "looking": [
+      "Buscando información del producto",
+      "en la base de datos global"
+    ],
+    "productName": [
+      "Aceite de oliva virgen extra,",
+      "primera prensada 1 L"
+    ],
+    "productDesc": [
+      "Primera prensada en frío de una única",
+      "cosecha, embotellado en vidrio oscuro",
+      "para proteger el sabor. Acidez 0,3 %."
+    ]
+  },
+  "quantity": {
+    "label": "Cantidad",
+    "apply": "Aplicar",
+    "edit": "Editar"
+  },
+  "locations": {
+    "without": "Sin ubicación",
+    "add": "Agregar ubicación",
+    "names": [
+      "Cocina",
+      "Despensa",
+      "Bodega",
+      "Estante del garaje"
+    ]
+  },
+  "dashboard": {
+    "title": "Panel",
+    "eyebrow": "INVENTARIO ACTUAL",
+    "overview": "Resumen",
+    "products": "Productos",
+    "locations": "Ubicaciones",
+    "customFields": "Campos personalizados",
+    "alertRules": "Reglas de alerta",
+    "stockHealth": "Estado del inventario",
+    "totalStock": "Stock total",
+    "lastActivity": "Última actividad",
+    "inventory": "Casa",
+    "activityMeta": "Anna Weber · hoy 10:44"
+  },
+  "fields": {
+    "title": "Editar campos",
+    "names": [
+      "Consumir antes de",
+      "Abierto el",
+      "Precio de compra",
+      "Proveedor",
+      "Cajón"
+    ],
+    "types": {
+      "date": "Fecha",
+      "number": "Número",
+      "text": "Texto",
+      "dropdown": "Lista · 6 opciones"
+    },
+    "subtitle": [
+      "Tus propios campos en cada producto —",
+      "precios, tallas, números de serie. Las",
+      "fechas pueden disparar alertas."
+    ]
+  },
+  "alert": {
+    "title": "Nueva regla de alerta",
+    "sectionRule": "Regla",
+    "nameLabel": "Nombre de la alerta",
+    "sectionWhen": "Cuándo alertar",
+    "targetField": "Campo objetivo",
+    "notifyMe": "Notificarme",
+    "before": "Antes de la fecha",
+    "after": "Después de la fecha",
+    "howManyDays": "Cuántos días",
+    "targetLocations": "Ubicaciones objetivo",
+    "sectionHow": "Cómo recibir notificaciones",
+    "time": "Hora",
+    "push": "Push",
+    "email": "Correo electrónico",
+    "nameValue": "Caduca pronto",
+    "locationsValue": "Cocina, Despensa"
+  },
+  "users": {
+    "title": "Usuarios",
+    "invite": "Invitar",
+    "active": "Usuarios activos",
+    "subtitle": [
+      "Invita a usuarios para colaborar y",
+      "gestionar este inventario"
+    ],
+    "owner": "Propietario",
+    "user": "Usuario"
+  },
+  "history": {
+    "title": "Historial",
+    "subtitle": [
+      "Cada cambio en tu inventario — qué cambió,",
+      "quién lo hizo y cuándo."
+    ],
+    "when": [
+      "3 ago 2026 10:44",
+      "3 ago 2026 09:12",
+      "2 ago 2026 18:05",
+      "2 ago 2026 17:40"
+    ]
+  },
+  "products": {
+    "passata": "Tomate triturado, 700 ml",
+    "oliveOil": "Aceite de oliva, 1 L",
+    "spaghetti": "Espaguetis, 500 g",
+    "paprika": "Pimentón ahumado, 75 g",
+    "honey": "Miel de acacia, 250 g",
+    "sugar": "Azúcar de caña, 1 kg"
+  },
+  "notes": {
+    "passata": "Botella de vidrio",
+    "oliveOil": "Virgen extra",
+    "spaghetti": "Corte de bronce",
+    "paprika": "Lata",
+    "honey": "Mercado local"
+  },
+  "people": [
+    {
+      "name": "Anna Weber",
+      "mail": "anna.weber@1inventory.io"
+    },
+    {
+      "name": "Marek Nowak",
+      "mail": "marek.nowak@1inventory.io"
+    },
+    {
+      "name": "Lisa Chen",
+      "mail": "lisa.chen@1inventory.io"
+    }
+  ],
+  "search": {
+    "query": "aceite",
+    "sunflower": "Aceite de girasol, 750 ml",
+    "sunflowerNote": "Prensado en frío",
+    "sesame": "Aceite de sésamo, 250 ml",
+    "sesameNote": "Tostado"
+  },
+  "sheet": {
+    "docTitle": "Inventario de casa",
+    "share": "Compartir",
+    "total": "Total",
+    "columns": [
+      "NOMBRE",
+      "CANTIDAD",
+      "CÓDIGO",
+      "UBICACIÓN",
+      "DESCRIPCIÓN"
+    ]
+  }
+}

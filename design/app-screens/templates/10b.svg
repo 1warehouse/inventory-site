@@ -1,0 +1,29 @@
+<svg viewBox="0 0 572 400" width="572" height="400" font-family="Poppins, system-ui, sans-serif" style="display:block">
+        <defs>
+          <filter id="sh-card" filterUnits="userSpaceOnUse" x="0" y="0" width="572" height="400">
+            <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0B3D1E" flood-opacity=".16"/>
+          </filter>
+        </defs>
+        <circle cx="486" cy="94" r="76" fill="#EEF5F0"/>
+        <circle cx="86" cy="308" r="58" fill="#EEF5F0"/>
+
+        <path d="M40 82h116l20 26h336a20 20 0 0 1 20 20v212a20 20 0 0 1-20 20H40a20 20 0 0 1-20-20V102a20 20 0 0 1 20-20z" fill="#DDF1E3"/>
+        <path d="M20 150h512v190a20 20 0 0 1-20 20H40a20 20 0 0 1-20-20z" fill="#CBE8D5"/>
+
+        <g filter="url(#sh-card)"><rect x="66" y="112" width="420" height="216" rx="12" fill="#fff"/></g>
+        <path d="M66 124a12 12 0 0 1 12-12h396a12 12 0 0 1 12 12v26H66z" fill="#178038"/>
+        <rect x="86" y="122" width="26" height="26" rx="6" fill="#fff" fill-opacity=".22"/>
+        <g stroke="#fff" stroke-width="1.6"><path d="M92 130h14M92 137h14M99 126v16"/></g>
+        <text x="124" y="139" font-size="13" font-weight="600" fill="#fff">{{sheet.docTitle}}</text>
+        <text x="466" y="139" font-size="11" fill="#BFE6CC" text-anchor="end">yours</text>
+
+        <g font-size="10.5" font-weight="600" fill="#7F8D84"><text x="86" y="172">{{sheet.columns.0}}</text><text x="230" y="172">{{sheet.columns.1}}</text><text x="298" y="172">{{sheet.columns.2}}</text><text x="400" y="172">{{sheet.columns.3}}</text></g>
+        <path d="M66 180h420" stroke="#EDF1EE"/>
+        <g font-size="12" fill="#16201A">
+          <text x="86" y="204">{{products.passata}}</text><text x="284" y="204" text-anchor="end">6</text><text x="298" y="204" font-size="11" fill="#6B7A70">8003530003000</text><text x="400" y="204" font-size="11.5" fill="#4A5851">{{locations.names.0}}</text>
+          <text x="86" y="236">{{products.oliveOil}}</text><text x="284" y="236" text-anchor="end">2</text><text x="298" y="236" font-size="11" fill="#6B7A70">8410010012047</text><text x="400" y="236" font-size="11.5" fill="#4A5851">{{locations.names.1}}</text>
+          <text x="86" y="268">{{products.spaghetti}}</text><text x="284" y="268" text-anchor="end">4</text><text x="298" y="268" font-size="11" fill="#6B7A70">8076809513715</text><text x="400" y="268" font-size="11.5" fill="#4A5851">{{locations.names.1}}</text>
+          <text x="86" y="300">{{products.paprika}}</text><text x="284" y="300" text-anchor="end">3</text><text x="298" y="300" font-size="11" fill="#6B7A70">4008258001127</text><text x="400" y="300" font-size="11.5" fill="#4A5851">{{locations.names.0}}</text>
+        </g>
+        <g stroke="#EDF1EE"><path d="M66 212h420M66 244h420M66 276h420M222 180v148M290 180v148M392 180v148"/></g>
+      </svg>

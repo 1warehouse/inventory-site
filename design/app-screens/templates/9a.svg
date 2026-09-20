@@ -1,0 +1,25 @@
+<svg viewBox="0 0 440 440" width="440" height="440" style="display:block">
+        <defs>
+          <radialGradient id="g9a" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#4FA96C" stop-opacity=".5"/>
+            <stop offset=".62" stop-color="#4FA96C" stop-opacity=".12"/>
+            <stop offset="1" stop-color="#4FA96C" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s9a" x1=".15" y1="0" x2=".8" y2="1">
+            <stop offset="0" stop-color="#2C6A3C"/><stop offset="1" stop-color="#194023"/>
+          </linearGradient>
+        </defs>
+        <circle cx="220" cy="220" r="200" fill="url(#g9a)"/>
+        <circle cx="220" cy="220" r="196" fill="none" stroke="#4FA96C" stroke-opacity=".16"/>
+        <circle cx="220" cy="220" r="164" fill="none" stroke="#4FA96C" stroke-opacity=".26"/>
+        <circle cx="220" cy="220" r="132" fill="none" stroke="#7FD69B" stroke-opacity=".34" stroke-dasharray="2 9" stroke-linecap="round"/>
+        <g fill="#92D59F">
+          <circle cx="220" cy="24" r="4.5"/><circle cx="358" cy="82" r="3.5" opacity=".8"/><circle cx="416" cy="220" r="4.5" opacity=".65"/>
+          <circle cx="358" cy="358" r="3.5" opacity=".8"/><circle cx="220" cy="416" r="4.5" opacity=".65"/><circle cx="82" cy="358" r="3.5" opacity=".8"/>
+          <circle cx="24" cy="220" r="4.5" opacity=".65"/><circle cx="82" cy="82" r="3.5" opacity=".8"/>
+        </g>
+        <g transform="translate(220,220) scale(9.4) translate(-12,-12)">
+          <path d="M12 2.5 3.5 6v6.3c0 4.9 3.5 8 8.5 9.2 5-1.2 8.5-4.3 8.5-9.2V6z" fill="url(#s9a)" stroke="#7FD69B" stroke-width=".34" stroke-linejoin="round"/>
+          <path d="M8.6 12.2 11 14.6l4.6-4.8" fill="none" stroke="#92D59F" stroke-width=".62" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>

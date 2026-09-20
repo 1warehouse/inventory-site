@@ -7,7 +7,8 @@ i18n/<lang>.json, then run this.
 Per language it rewrites, in the copy only:
   · <html lang>, the canonical and og:url, og:locale, and a full hreflang set
     (the four translations, English, and x-default pointing at English);
-  · asset paths to absolute (/css, /js, /img) since the copy sits one level down;
+  · asset paths to absolute (/css, /js, /img) since the copy sits one level down,
+    and any app screenshot that exists under img/<lang>/ to that translated copy;
   · page-to-page links stay relative, so they resolve inside the language folder;
   · the JSON-LD prose fields and inLanguage.
 HTML comments stay English on purpose — they are notes for whoever maintains
@@ -89,6 +90,14 @@ def build_page(page, lang, tr, report):
 
     # 5. assets absolute, absolute page links into the language folder
     out = re.sub(r'(?<=")(css/|js/|img/)', r'/\1', out)
+
+    # 5b. app screenshots carry words, so each language has its own set under
+    #     img/<lang>/ (design/app-screens/render.py writes them). A file that
+    #     has no translated version keeps pointing at the English one.
+    out = re.sub(r'/img/([A-Za-z0-9._-]+)',
+                 lambda m: (f'/img/{lang}/{m.group(1)}'
+                            if os.path.exists(f'img/{lang}/{m.group(1)}') else m.group(0)),
+                 out)
     out = re.sub(r'(?<=")/(?=(plans|faq|support|privacy|terms|impressum|index)\.html)', f'/{lang}/', out)
     # "/" and "/#anchor" both mean the home page — the language's home page here.
     out = out.replace('href="/"', f'href="/{lang}/"').replace('href="/#', f'href="/{lang}/#')

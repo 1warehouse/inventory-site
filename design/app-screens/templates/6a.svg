@@ -1,0 +1,74 @@
+<svg viewBox="0 0 348 721" width="348" height="721" font-family="Poppins, system-ui, sans-serif" style="display:block;border-radius:46px">
+        <rect width="348" height="721" rx="46" fill="#000"/>
+        <g transform="translate(14,14)">
+        <rect width="320" height="693" rx="32" fill="#fff"/>
+        <path d="M26 20l-8 8 8 8" stroke="#16201A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="160" y="34" font-size="17" font-weight="700" fill="#16201A" text-anchor="middle">{{dashboard.title}}</text>
+
+        <path d="M24 82l18-14.2 18 14.2v24a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z" fill="#EFE0C4" stroke="#C1502E" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M18 84l24-19 24 19" fill="none" stroke="#C1502E" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="36" y="92" width="12" height="18" rx="1.5" fill="#459960"/>
+        <text x="80" y="80" font-size="10" font-weight="600" fill="#96A199" letter-spacing=".1">{{dashboard.eyebrow}}</text>
+        <text x="80" y="103" font-size="19" font-weight="700" fill="#16201A">{{dashboard.inventory}}</text>
+
+        <text x="18" y="140" font-size="12.5" font-weight="500" fill="#96A199">{{dashboard.overview}}</text>
+
+        <g transform="translate(18,152)">
+          <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
+          <circle cx="30" cy="26" r="14" fill="#DDF1E3"/>
+          <path d="M30 19l7 4v8l-7 4-7-4v-8z" fill="none" stroke="#178038" stroke-width="1.8" stroke-linejoin="round"/>
+          <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">5</text>
+          <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.products}}</text>
+        </g>
+        <g transform="translate(164,152)">
+          <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
+          <circle cx="30" cy="26" r="14" fill="#DCE7EF"/>
+          <path d="M24 21h5l1.6 2H37a1.6 1.6 0 0 1 1.6 1.6v6.8A1.6 1.6 0 0 1 37 33H24a1.6 1.6 0 0 1-1.6-1.6v-8.8A1.6 1.6 0 0 1 24 21z" fill="none" stroke="#4A7C99" stroke-width="1.8" stroke-linejoin="round"/>
+          <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">4</text>
+          <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.locations}}</text>
+        </g>
+        <g transform="translate(18,230)">
+          <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
+          <circle cx="30" cy="26" r="14" fill="#FAEBCE"/>
+          <rect x="23" y="20" width="14" height="12" rx="2" fill="none" stroke="#C89A34" stroke-width="1.8"/>
+          <path d="M23 24.5h14" stroke="#C89A34" stroke-width="1.8"/>
+          <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">5</text>
+          <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.customFields}}</text>
+        </g>
+        <g transform="translate(164,230)">
+          <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
+          <circle cx="30" cy="26" r="14" fill="#E9EBE9"/>
+          <circle cx="30" cy="23" r="3.4" fill="none" stroke="#6E7A72" stroke-width="1.8"/>
+          <path d="M24 33a6 6 0 0 1 12 0" fill="none" stroke="#6E7A72" stroke-width="1.8" stroke-linecap="round"/>
+          <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">3</text>
+          <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{users.title}}</text>
+        </g>
+        <g transform="translate(18,308)">
+          <rect width="138" height="70" rx="12" fill="#F6F7F5"/>
+          <circle cx="30" cy="26" r="14" fill="#FADFDF"/>
+          <path d="M25 30v-5a5 5 0 0 1 10 0v5z" fill="none" stroke="#C4453D" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M23 30h14M28.5 33a2 2 0 0 0 3 0" stroke="#C4453D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <text x="54" y="33" font-size="19" font-weight="700" fill="#16201A">1</text>
+          <path d="M118 22l5 5-5 5" stroke="#B4BEB7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text data-fit="112" x="16" y="58" font-size="12.5" fill="#4A5851">{{dashboard.alertRules}}</text>
+        </g>
+
+        <text x="18" y="410" font-size="12.5" font-weight="500" fill="#96A199">{{dashboard.stockHealth}}</text>
+        <rect x="18" y="422" width="284" height="60" rx="12" fill="#F6F7F5"/>
+        <circle cx="50" cy="452" r="18" fill="#DDF1E3"/>
+        <g fill="none" stroke="#178038" stroke-width="1.8" stroke-linejoin="round"><path d="M50 444l9 5-9 5-9-5z"/><path d="M41 454l9 5 9-5"/></g>
+        <text x="80" y="458" font-size="15" font-weight="600" fill="#16201A">{{dashboard.totalStock}}</text>
+        <text x="286" y="460" font-size="20" font-weight="700" fill="#16201A" text-anchor="end">86</text>
+
+        <text x="18" y="514" font-size="12.5" font-weight="500" fill="#96A199">{{dashboard.lastActivity}}</text>
+        <rect x="18" y="526" width="284" height="70" rx="12" fill="#F6F7F5"/>
+        <g stroke="#178038" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 566v-18M36 554l6-6 6 6"/></g>
+        <text x="62" y="556" font-size="14" font-weight="600" fill="#16201A">{{products.oliveOil}}</text>
+        <text x="62" y="576" font-size="12" fill="#96A199">{{dashboard.activityMeta}}</text>
+        <text x="286" y="566" font-size="15" font-weight="600" fill="#178038" text-anchor="end">+1</text>
+        </g>
+      </svg>

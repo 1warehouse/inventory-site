@@ -1,0 +1,60 @@
+<svg viewBox="0 0 348 721" width="348" height="721" font-family="Poppins, system-ui, sans-serif" style="display:block;border-radius:46px">
+        <rect width="348" height="721" rx="46" fill="#000"/>
+        <g transform="translate(14,14)">
+        <rect width="320" height="693" rx="32" fill="#fff"/>
+        <g stroke="#16201A" stroke-width="2" stroke-linecap="round"><path d="M18 22h20M18 28h20M18 34h20"/></g>
+        <rect x="120" y="12" width="80" height="32" rx="16" fill="#F2F4F2"/>
+        <rect x="132" y="21" width="16" height="14" rx="2.6" fill="none" stroke="#16201A" stroke-width="1.7"/>
+        <g stroke="#16201A" stroke-width="1.5" stroke-linecap="round"><path d="M140 25h5M140 28.5h5M140 32h5"/></g>
+        <circle cx="136" cy="25" r="1.1" fill="#16201A"/><circle cx="136" cy="28.5" r="1.1" fill="#16201A"/><circle cx="136" cy="32" r="1.1" fill="#16201A"/>
+        <circle cx="180" cy="28" r="14.5" fill="#459960"/>
+        <path d="M173 23h4.5l1.6 2.2H187a1.6 1.6 0 0 1 1.6 1.6v6.4a1.6 1.6 0 0 1-1.6 1.6h-14a1.6 1.6 0 0 1-1.6-1.6v-8.6A1.6 1.6 0 0 1 173 23z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        <g stroke="#16201A" stroke-width="1.8" stroke-linecap="round"><path d="M286 24h16M286 32h16"/></g>
+        <circle cx="297" cy="24" r="2.6" fill="#fff" stroke="#16201A" stroke-width="1.8"/>
+        <circle cx="291" cy="32" r="2.6" fill="#fff" stroke="#16201A" stroke-width="1.8"/>
+
+        <g transform="translate(0,66)">
+          <path d="M18 4h15l4 5h17a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" transform="translate(4,0)" fill="#459960"/>
+          <text x="88" y="32" font-size="16" font-weight="500" fill="#16201A">{{locations.names.0}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">24</text>
+          <path d="M18 56h284" stroke="#EDF1EE"/>
+        </g>
+        <g transform="translate(0,128)">
+          <path d="M18 4h15l4 5h17a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" transform="translate(4,0)" fill="#459960"/>
+          <text x="88" y="32" font-size="16" font-weight="500" fill="#16201A">{{locations.names.1}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">38</text>
+          <path d="M18 56h284" stroke="#EDF1EE"/>
+        </g>
+        <g transform="translate(0,190)">
+          <path d="M18 4h15l4 5h17a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" transform="translate(4,0)" fill="#459960"/>
+          <text x="88" y="32" font-size="16" font-weight="500" fill="#16201A">{{locations.names.2}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">12</text>
+          <path d="M18 56h284" stroke="#EDF1EE"/>
+        </g>
+        <g transform="translate(0,252)">
+          <path d="M18 4h15l4 5h17a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" transform="translate(4,0)" fill="#459960"/>
+          <text x="88" y="32" font-size="16" font-weight="500" fill="#16201A">{{locations.names.3}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">9</text>
+          <path d="M18 56h284" stroke="#EDF1EE"/>
+        </g>
+        <g transform="translate(0,314)">
+          <path d="M18 4h15l4 5h17a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" transform="translate(4,0)" fill="#83838F"/>
+          <text x="88" y="32" font-size="16" font-weight="500" fill="#16201A">{{locations.without}}</text>
+          <text x="302" y="34" font-size="17" font-weight="500" fill="#16201A" text-anchor="end">3</text>
+          <path d="M18 56h284" stroke="#EDF1EE"/>
+        </g>
+        <g transform="translate(0,376)">
+          <rect x="18" y="4" width="44" height="39" rx="8" fill="#E8F4EC"/>
+          <g stroke="#178038" stroke-width="2.4" stroke-linecap="round"><path d="M31.5 23.5h17M40 15v17"/></g>
+          <text x="88" y="30" font-size="16" font-weight="500" fill="#178038">{{locations.add}}</text>
+        </g>
+
+        <g filter="url(#f-sh)"><rect x="44" y="618" width="232" height="44" rx="22" fill="#fff"/></g>
+        <rect x="44" y="618" width="232" height="44" rx="22" fill="none" stroke="#EDF1EE"/>
+        <g stroke="#178038" stroke-width="2.2" stroke-linecap="round"><path d="M78 640h16M86 632v16"/></g>
+        <g stroke="#178038" stroke-width="2.2" fill="none"><circle cx="232" cy="638" r="7"/><path d="M237 643l5 5" stroke-linecap="round"/></g>
+        <circle cx="160" cy="640" r="32" fill="#459960"/>
+        <g fill="#fff"><rect x="147.2" y="631.5" width="2.6" height="17" rx="1"/><rect x="152.2" y="631.5" width="1.6" height="17" rx=".8"/><rect x="156.2" y="631.5" width="3.4" height="17" rx="1.2"/><rect x="162.2" y="631.5" width="1.6" height="17" rx=".8"/><rect x="166.2" y="631.5" width="2.6" height="17" rx="1"/><rect x="171.2" y="631.5" width="1.6" height="17" rx=".8"/></g>
+        <defs><filter id="f-sh" filterUnits="userSpaceOnUse" x="0" y="590" width="320" height="110"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#092E18" flood-opacity=".13"/></filter></defs>
+        </g>
+      </svg>

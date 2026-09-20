@@ -1,0 +1,170 @@
+{
+  "_note": "English is the source of truth: these are the exact strings in the design doc the templates were exported from.",
+  "products": {
+    "passata": "Passata, 700 ml",
+    "oliveOil": "Olive oil, 1 L",
+    "spaghetti": "Spaghetti, 500 g",
+    "paprika": "Smoked paprika, 75 g",
+    "honey": "Acacia honey, 250 g",
+    "sugar": "Cane sugar, 1 kg"
+  },
+  "notes": {
+    "passata": "Glass bottle",
+    "oliveOil": "Extra virgin",
+    "spaghetti": "Bronze-cut",
+    "paprika": "Tin",
+    "honey": "Local market"
+  },
+  "scan": {
+    "title": "Scan Barcode",
+    "hint": [
+      "Scan a barcode",
+      "to add a new product",
+      "or find existing one"
+    ],
+    "notFound": "Not in your inventory",
+    "looking": [
+      "Searching global database for",
+      "product information"
+    ],
+    "productName": [
+      "Extra Virgin Olive Oil,",
+      "Cold Pressed 1 L"
+    ],
+    "productDesc": [
+      "First cold-pressed oil from a single",
+      "harvest, bottled in dark glass to",
+      "protect the flavour. Acidity 0.3%."
+    ]
+  },
+  "search": {
+    "query": "oil",
+    "sunflower": "Sunflower oil, 750 ml",
+    "sunflowerNote": "Cold pressed",
+    "sesame": "Sesame oil, 250 ml",
+    "sesameNote": "Toasted"
+  },
+  "alert": {
+    "locationsValue": "Kitchen, Pantry shelf",
+    "title": "New alert rule",
+    "sectionRule": "Rule",
+    "nameLabel": "ALERT NAME",
+    "nameValue": "Expiring soon",
+    "sectionWhen": "When to alert",
+    "targetField": "Target field",
+    "notifyMe": "Notify me",
+    "before": "Before the date",
+    "after": "After the date",
+    "howManyDays": "How many days",
+    "targetLocations": "Target locations",
+    "sectionHow": "How to receive notifications",
+    "time": "Time",
+    "push": "Push",
+    "email": "Email"
+  },
+  "locations": {
+    "names": [
+      "Kitchen",
+      "Pantry shelf",
+      "Cellar",
+      "Garage shelf"
+    ],
+    "without": "Without location",
+    "add": "Add location"
+  },
+  "quantity": {
+    "label": "Quantity",
+    "apply": "Apply",
+    "edit": "Edit"
+  },
+  "fields": {
+    "title": "Edit Fields",
+    "names": [
+      "Best before",
+      "Opened on",
+      "Purchase price",
+      "Supplier",
+      "Storage bin"
+    ],
+    "subtitle": [
+      "Your own fields on every product — prices,",
+      "sizes, serial numbers. Date fields can",
+      "trigger alerts."
+    ],
+    "types": {
+      "date": "Date",
+      "number": "Number",
+      "dropdown": "Dropdown · 6 options",
+      "text": "Text"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "eyebrow": "CURRENT INVENTORY",
+    "inventory": "Home inv",
+    "overview": "Overview",
+    "products": "Products",
+    "locations": "Locations",
+    "customFields": "Custom fields",
+    "alertRules": "Alert rules",
+    "stockHealth": "Stock health",
+    "totalStock": "Total stock",
+    "lastActivity": "Last activity",
+    "activityMeta": "Anna Weber · today 10:44"
+  },
+  "sheet": {
+    "docTitle": "Home inventory",
+    "share": "Share",
+    "columns": [
+      "NAME",
+      "QUANTITY",
+      "BARCODE",
+      "LOCATION",
+      "DESCRIPTION"
+    ],
+    "total": "Total"
+  },
+  "history": {
+    "title": "History",
+    "subtitle": [
+      "Every change in your inventory — what",
+      "changed, who did it and when."
+    ],
+    "when": [
+      "Aug 3, 2026 10:44",
+      "Aug 3, 2026 09:12",
+      "Aug 2, 2026 18:05",
+      "Aug 2, 2026 17:40"
+    ]
+  },
+  "common": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "users": {
+    "subtitle": [
+      "Invite users to collaborate and manage",
+      "this inventory"
+    ],
+    "invite": "Invite",
+    "active": "Active users",
+    "owner": "Owner",
+    "title": "Users",
+    "user": "User"
+  },
+  "people": [
+    {
+      "name": "Anna Weber",
+      "mail": "anna.weber@1inventory.io"
+    },
+    {
+      "name": "Marek Nowak",
+      "mail": "marek.nowak@1inventory.io"
+    },
+    {
+      "name": "Lisa Chen",
+      "mail": "lisa.chen@1inventory.io"
+    }
+  ]
+}

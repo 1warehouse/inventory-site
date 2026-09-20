@@ -1,0 +1,22 @@
+<svg viewBox="0 0 440 440" width="440" height="440" style="display:block">
+        <defs>
+          <radialGradient id="g9b" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#4FA96C" stop-opacity=".44"/>
+            <stop offset="1" stop-color="#4FA96C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="220" cy="220" r="190" fill="url(#g9b)"/>
+        <circle cx="220" cy="220" r="186" fill="none" stroke="#4FA96C" stroke-opacity=".14" stroke-dasharray="1 10" stroke-linecap="round"/>
+        <circle cx="220" cy="220" r="150" fill="none" stroke="#4FA96C" stroke-opacity=".22"/>
+        <g fill="none" stroke="#7FD69B" stroke-width="3" stroke-linecap="round">
+          <path d="M114 150v-22a14 14 0 0 1 14-14h22"/>
+          <path d="M326 150v-22a14 14 0 0 0-14-14h-22"/>
+          <path d="M114 290v22a14 14 0 0 0 14 14h22"/>
+          <path d="M326 290v22a14 14 0 0 1-14 14h-22"/>
+        </g>
+        <circle cx="220" cy="220" r="104" fill="#1B4526" stroke="#4FA96C" stroke-opacity=".55"/>
+        <path d="M182 196v-22a38 38 0 0 1 76 0v22" fill="none" stroke="#92D59F" stroke-width="12" stroke-linecap="round"/>
+        <rect x="164" y="196" width="112" height="88" rx="18" fill="#92D59F"/>
+        <circle cx="220" cy="232" r="13" fill="#17351B"/>
+        <path d="M220 240v18" stroke="#17351B" stroke-width="9" stroke-linecap="round"/>
+      </svg>

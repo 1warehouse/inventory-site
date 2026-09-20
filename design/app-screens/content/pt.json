@@ -1,0 +1,170 @@
+{
+  "_note": "App chrome from inventory-mobile-app/assets/i18n/pt.json; demo data and line breaks written for this site. Lines are literal: SVG does not wrap.",
+  "common": {
+    "add": "Adicionar",
+    "cancel": "Cancelar",
+    "save": "Salvar"
+  },
+  "scan": {
+    "title": "Escanear código de barras",
+    "notFound": "Não no seu inventário",
+    "hint": [
+      "Escaneie um código de barras",
+      "para adicionar um produto",
+      "ou encontrar um existente"
+    ],
+    "looking": [
+      "Procurando informações do produto",
+      "na base de dados global"
+    ],
+    "productName": [
+      "Azeite extra virgem,",
+      "prensado a frio 1 L"
+    ],
+    "productDesc": [
+      "Primeira prensagem a frio de uma única",
+      "colheita, em vidro escuro para proteger",
+      "o sabor. Acidez 0,3 %."
+    ]
+  },
+  "quantity": {
+    "label": "Quantidade",
+    "apply": "Aplicar",
+    "edit": "Editar"
+  },
+  "locations": {
+    "without": "Sem localização",
+    "add": "Adicionar localização",
+    "names": [
+      "Cozinha",
+      "Despensa",
+      "Adega",
+      "Prateleira da garagem"
+    ]
+  },
+  "dashboard": {
+    "title": "Painel",
+    "eyebrow": "INVENTÁRIO ATUAL",
+    "overview": "Visão geral",
+    "products": "Produtos",
+    "locations": "Localizações",
+    "customFields": "Campos personalizados",
+    "alertRules": "Regras de alerta",
+    "stockHealth": "Situação do estoque",
+    "totalStock": "Estoque total",
+    "lastActivity": "Última atividade",
+    "inventory": "Casa",
+    "activityMeta": "Anna Weber · hoje 10:44"
+  },
+  "fields": {
+    "title": "Editar campos",
+    "names": [
+      "Validade",
+      "Aberto em",
+      "Preço de compra",
+      "Fornecedor",
+      "Caixa"
+    ],
+    "types": {
+      "date": "Data",
+      "number": "Número",
+      "text": "Texto",
+      "dropdown": "Lista · 6 opções"
+    },
+    "subtitle": [
+      "Seus próprios campos em cada produto —",
+      "preços, tamanhos, números de série. Datas",
+      "podem disparar alertas."
+    ]
+  },
+  "alert": {
+    "title": "Nova regra de alerta",
+    "sectionRule": "Regra",
+    "nameLabel": "Nome do alerta",
+    "sectionWhen": "Quando alertar",
+    "targetField": "Campo alvo",
+    "notifyMe": "Notificar-me",
+    "before": "Antes da data",
+    "after": "Depois da data",
+    "howManyDays": "Quantos dias",
+    "targetLocations": "Locais-alvo",
+    "sectionHow": "Como receber notificações",
+    "time": "Horário",
+    "push": "Push",
+    "email": "E-mail",
+    "nameValue": "Vence em breve",
+    "locationsValue": "Cozinha, Despensa"
+  },
+  "users": {
+    "title": "Usuários",
+    "invite": "Convidar",
+    "active": "Usuários ativos",
+    "subtitle": [
+      "Convide usuários para colaborar e",
+      "gerenciar este inventário"
+    ],
+    "owner": "Proprietário",
+    "user": "Usuário"
+  },
+  "history": {
+    "title": "Histórico",
+    "subtitle": [
+      "Cada alteração no seu inventário — o que",
+      "mudou, quem fez e quando."
+    ],
+    "when": [
+      "3 ago 2026 10:44",
+      "3 ago 2026 09:12",
+      "2 ago 2026 18:05",
+      "2 ago 2026 17:40"
+    ]
+  },
+  "products": {
+    "passata": "Passata, 700 ml",
+    "oliveOil": "Azeite, 1 L",
+    "spaghetti": "Espaguete, 500 g",
+    "paprika": "Páprica defumada, 75 g",
+    "honey": "Mel de acácia, 250 g",
+    "sugar": "Açúcar mascavo, 1 kg"
+  },
+  "notes": {
+    "passata": "Garrafa de vidro",
+    "oliveOil": "Extra virgem",
+    "spaghetti": "Corte em bronze",
+    "paprika": "Lata",
+    "honey": "Mercado local"
+  },
+  "people": [
+    {
+      "name": "Anna Weber",
+      "mail": "anna.weber@1inventory.io"
+    },
+    {
+      "name": "Marek Nowak",
+      "mail": "marek.nowak@1inventory.io"
+    },
+    {
+      "name": "Lisa Chen",
+      "mail": "lisa.chen@1inventory.io"
+    }
+  ],
+  "search": {
+    "query": "óleo",
+    "sunflower": "Óleo de girassol, 750 ml",
+    "sunflowerNote": "Prensado a frio",
+    "sesame": "Óleo de gergelim, 250 ml",
+    "sesameNote": "Torrado"
+  },
+  "sheet": {
+    "docTitle": "Inventário de casa",
+    "share": "Compartilhar",
+    "total": "Total",
+    "columns": [
+      "NOME",
+      "QUANTIDADE",
+      "CÓDIGO DE BARRAS",
+      "LOCAL",
+      "DESCRIÇÃO"
+    ]
+  }
+}

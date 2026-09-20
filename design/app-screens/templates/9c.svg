@@ -1,0 +1,25 @@
+<svg viewBox="0 0 440 440" width="440" height="440" style="display:block">
+        <defs>
+          <radialGradient id="g9c" cx=".5" cy=".46" r=".5">
+            <stop offset="0" stop-color="#4FA96C" stop-opacity=".46"/>
+            <stop offset="1" stop-color="#4FA96C" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s9c" x1=".15" y1="0" x2=".8" y2="1">
+            <stop offset="0" stop-color="#2C6A3C"/><stop offset="1" stop-color="#194023"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="220" cy="212" rx="196" ry="188" fill="url(#g9c)"/>
+        <g fill="none" stroke="#7FD69B" stroke-linejoin="round">
+          <g transform="translate(220,214) scale(16.6) translate(-12,-12)"><path d="M12 2.5 3.5 6v6.3c0 4.9 3.5 8 8.5 9.2 5-1.2 8.5-4.3 8.5-9.2V6z" stroke-opacity=".14" stroke-width=".14"/></g>
+          <g transform="translate(220,214) scale(14) translate(-12,-12)"><path d="M12 2.5 3.5 6v6.3c0 4.9 3.5 8 8.5 9.2 5-1.2 8.5-4.3 8.5-9.2V6z" stroke-opacity=".24" stroke-width=".16"/></g>
+          <g transform="translate(220,214) scale(11.4) translate(-12,-12)"><path d="M12 2.5 3.5 6v6.3c0 4.9 3.5 8 8.5 9.2 5-1.2 8.5-4.3 8.5-9.2V6z" stroke-opacity=".38" stroke-width=".2"/></g>
+        </g>
+        <g transform="translate(220,214) scale(8.8) translate(-12,-12)">
+          <path d="M12 2.5 3.5 6v6.3c0 4.9 3.5 8 8.5 9.2 5-1.2 8.5-4.3 8.5-9.2V6z" fill="url(#s9c)" stroke="#7FD69B" stroke-width=".36" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(220,206)">
+          <path d="M-13 -4v-7a13 13 0 0 1 26 0v7" fill="none" stroke="#92D59F" stroke-width="5.4" stroke-linecap="round"/>
+          <rect x="-19" y="-4" width="38" height="30" rx="7" fill="#92D59F"/>
+          <circle cx="0" cy="8" r="4.6" fill="#194023"/>
+        </g>
+      </svg>

@@ -1,0 +1,170 @@
+{
+  "_note": "App chrome from inventory-mobile-app/assets/i18n/de.json; demo data and line breaks written for this site. Lines are literal: SVG does not wrap.",
+  "common": {
+    "add": "Hinzufügen",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
+  },
+  "scan": {
+    "title": "Barcode scannen",
+    "notFound": "Nicht in Ihrem Inventar",
+    "hint": [
+      "Barcode scannen,",
+      "um ein Produkt anzulegen",
+      "oder ein vorhandenes zu finden"
+    ],
+    "looking": [
+      "Globale Datenbank wird nach",
+      "Produktdaten durchsucht"
+    ],
+    "productName": [
+      "Natives Olivenöl Extra,",
+      "kaltgepresst 1 L"
+    ],
+    "productDesc": [
+      "Erste Kaltpressung einer einzigen Ernte,",
+      "in dunklem Glas abgefüllt, um das",
+      "Aroma zu schützen. Säuregehalt 0,3 %."
+    ]
+  },
+  "quantity": {
+    "label": "Menge",
+    "apply": "Anwenden",
+    "edit": "Bearbeiten"
+  },
+  "locations": {
+    "without": "Ohne Speicherort",
+    "add": "Speicherort hinzufügen",
+    "names": [
+      "Küche",
+      "Vorratsregal",
+      "Keller",
+      "Garagenregal"
+    ]
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "eyebrow": "AKTUELLES INVENTAR",
+    "overview": "Übersicht",
+    "products": "Produkte",
+    "locations": "Standorte",
+    "customFields": "Benutzerdefinierte Felder",
+    "alertRules": "Warnregeln",
+    "stockHealth": "Bestandszustand",
+    "totalStock": "Gesamtbestand",
+    "lastActivity": "Letzte Aktivität",
+    "inventory": "Zuhause",
+    "activityMeta": "Anna Weber · heute 10:44"
+  },
+  "fields": {
+    "title": "Felder bearbeiten",
+    "names": [
+      "Haltbar bis",
+      "Geöffnet am",
+      "Einkaufspreis",
+      "Lieferant",
+      "Lagerfach"
+    ],
+    "types": {
+      "date": "Datum",
+      "number": "Zahl",
+      "text": "Text",
+      "dropdown": "Auswahl · 6 Optionen"
+    },
+    "subtitle": [
+      "Eigene Felder für jedes Produkt — Preise,",
+      "Größen, Seriennummern. Datumsfelder",
+      "können Alarme auslösen."
+    ]
+  },
+  "alert": {
+    "title": "Neue Warnregel",
+    "sectionRule": "Regel",
+    "nameLabel": "Warnungsname",
+    "sectionWhen": "Wann benachrichtigen",
+    "targetField": "Zielfeld",
+    "notifyMe": "Benachrichtige mich",
+    "before": "Vor dem Datum",
+    "after": "Nach dem Datum",
+    "howManyDays": "Wie viele Tage",
+    "targetLocations": "Ziel-Standorte",
+    "sectionHow": "Wie du Benachrichtigungen erhältst",
+    "time": "Uhrzeit",
+    "push": "Push",
+    "email": "E-Mail",
+    "nameValue": "Läuft bald ab",
+    "locationsValue": "Küche, Vorratsregal"
+  },
+  "users": {
+    "title": "Benutzer",
+    "invite": "Einladen",
+    "active": "Aktive Benutzer",
+    "subtitle": [
+      "Laden Sie Benutzer ein, um gemeinsam an",
+      "diesem Inventar zu arbeiten"
+    ],
+    "owner": "Eigentümer",
+    "user": "Benutzer"
+  },
+  "history": {
+    "title": "Verlauf",
+    "subtitle": [
+      "Jede Änderung in Ihrem Inventar — was sich",
+      "geändert hat, von wem und wann."
+    ],
+    "when": [
+      "3. Aug. 2026 10:44",
+      "3. Aug. 2026 09:12",
+      "2. Aug. 2026 18:05",
+      "2. Aug. 2026 17:40"
+    ]
+  },
+  "products": {
+    "passata": "Passata, 700 ml",
+    "oliveOil": "Olivenöl, 1 L",
+    "spaghetti": "Spaghetti, 500 g",
+    "paprika": "Paprika geräuchert, 75 g",
+    "honey": "Akazienhonig, 250 g",
+    "sugar": "Rohrzucker, 1 kg"
+  },
+  "notes": {
+    "passata": "Glasflasche",
+    "oliveOil": "Nativ extra",
+    "spaghetti": "Bronzematrize",
+    "paprika": "Dose",
+    "honey": "Wochenmarkt"
+  },
+  "people": [
+    {
+      "name": "Anna Weber",
+      "mail": "anna.weber@1inventory.io"
+    },
+    {
+      "name": "Marek Nowak",
+      "mail": "marek.nowak@1inventory.io"
+    },
+    {
+      "name": "Lisa Chen",
+      "mail": "lisa.chen@1inventory.io"
+    }
+  ],
+  "search": {
+    "query": "öl",
+    "sunflower": "Sonnenblumenöl, 750 ml",
+    "sunflowerNote": "Kaltgepresst",
+    "sesame": "Sesamöl, 250 ml",
+    "sesameNote": "Geröstet"
+  },
+  "sheet": {
+    "docTitle": "Haushaltsinventar",
+    "share": "Freigeben",
+    "total": "Gesamt",
+    "columns": [
+      "NAME",
+      "MENGE",
+      "BARCODE",
+      "ORT",
+      "BESCHREIBUNG"
+    ]
+  }
+}
