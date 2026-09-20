@@ -12,7 +12,9 @@ screens.js          fills the tokens
 render.py           photographs each screen into img/
 ../fonts/           Poppins, so a render does not depend on the machine
 ../lib/fit.js       shrinks anything a translation made too wide
+../lib/audit.js     reports two texts whose ink collides
 ../lib/shoot.py     the headless Chrome capture
+../check.py         runs both over every screen in every language
 ```
 
 `../share-card/` is the site's Open Graph image, built the same way. Both are
@@ -104,6 +106,26 @@ Two things to know before editing them:
 Untranslated tokens are left visible in the artwork as `{{path}}` and reported
 in `document.body.dataset.missing`, so a half-translated language is obvious
 rather than silent.
+
+## Checking before you render
+
+```bash
+python3 design/check.py
+```
+
+It loads every screen in every language and reports three things: tokens with
+no string behind them, **texts whose ink overlaps**, and labels that had to
+shrink. It exits non-zero on the first two, so it can gate a render.
+
+Fitting keeps a string inside the box it was given; it cannot know that two
+boxes share a line. That is what the overlap check is for — it caught the
+alert screen's `Champ cible` running into `À consommer avant` in French and
+Spanish, which no amount of per-label fitting would have found. A row like
+that is marked `data-row-label` / `data-row-value`, and both sides then give
+way by the same proportion rather than one of them collapsing to the floor.
+
+Read the `shrunk` lines too: a label that lands on the 9.5 floor usually means
+the string wants a shorter translation, not a smaller size.
 
 ## Note on the 2026-09 refresh
 

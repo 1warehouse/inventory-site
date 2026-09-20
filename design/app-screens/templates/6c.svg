@@ -18,8 +18,8 @@
         <rect x="32" y="185" width="28" height="28" rx="7" fill="#C3E1CC"/>
         <rect x="39" y="192" width="14" height="14" rx="2.6" fill="none" stroke="#178038" stroke-width="1.8"/>
         <path d="M39 196h14M43 190v3M49 190v3" stroke="#178038" stroke-width="1.8" stroke-linecap="round"/>
-        <text x="70" y="204" font-size="14" font-weight="600" fill="#16201A">{{alert.targetField}}</text>
-        <text x="272" y="204" font-size="13.5" fill="#178038" text-anchor="end">{{fields.names.0}}</text>
+        <text data-row-label="target" x="70" y="204" font-size="14" font-weight="600" fill="#16201A">{{alert.targetField}}</text>
+        <text data-row-value="target" x="272" y="204" font-size="13.5" fill="#178038" text-anchor="end">{{fields.names.0}}</text>
         <path d="M280 194l5 5-5 5" stroke="#178038" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
         <text x="32" y="245" font-size="13" fill="#4A5851">{{alert.notifyMe}}</text>

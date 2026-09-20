@@ -9,6 +9,9 @@
      data-pill="saveBtn"  resize that rect around this text, right edge pinned
      data-bar-title /     an app bar: re-centre the title in whatever room the
      data-bar-action      action leaves it, shrinking only if that is not enough
+     data-row-label /     a row with a label on the left and a right-anchored
+     data-row-value       value: keep a gap between them, shrinking the value
+                          first and the label only if that was not enough
 
    fitAll() returns what it changed, so a caller can surface it.
    ========================================================================= */
@@ -60,10 +63,39 @@ function fitBar(svg) {
   return shrunk;
 }
 
+/* A label and a right-anchored value share one line: the label's left edge and
+   the value's right edge are both pinned, and between them is the room. When a
+   translation needs more than that, both give way by the same proportion —
+   shrinking only one of them leaves a 9.5pt value beside a 14pt label, which
+   reads as a mistake rather than as a tighter row. */
+function fitRow(label, value) {
+  const gap = 12;
+  const sizeOf = el => parseFloat(getComputedStyle(el).fontSize) ||
+                       parseFloat(el.getAttribute('font-size'));
+  const startLabel = sizeOf(label), startValue = sizeOf(value);
+  const room = (value.getBBox().x + value.getBBox().width) - label.getBBox().x - gap;
+  const tooWide = () => label.getBBox().width + value.getBBox().width > room;
+
+  let scale = 1;
+  while (scale > 0.55 && tooWide()) {
+    scale -= 0.02;
+    label.setAttribute('font-size', Math.round(startLabel * scale * 100) / 100);
+    value.setAttribute('font-size', Math.round(startValue * scale * 100) / 100);
+  }
+  if (scale === 1) return [];
+  return [{ text: `${label.textContent.trim()} / ${value.textContent.trim()}`,
+            from: `${startLabel}/${startValue}`,
+            to: `${sizeOf(label)}/${sizeOf(value)}` }];
+}
+
 function fitAll(root) {
   const notes = [];
   root.querySelectorAll('svg').forEach(svg => {
     svg.querySelectorAll('[data-pill]').forEach(fitPill);
+    svg.querySelectorAll('[data-row-value]').forEach(value => {
+      const label = svg.querySelector(`[data-row-label="${value.dataset.rowValue}"]`);
+      if (label) notes.push(...fitRow(label, value));
+    });
     const barred = fitBar(svg);
     if (barred) notes.push(barred);
     svg.querySelectorAll('[data-fit]:not([data-bar-title])').forEach(t => {
