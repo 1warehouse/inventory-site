@@ -372,6 +372,39 @@
     }
   }
 
+  /* ---------------------------------------------------------------------
+     LANGUAGE SWITCHER
+     The markup works on its own — <details> opens, the links navigate. Two
+     things are worth adding: remembering the choice, so the detector in
+     <head> stops sending this visitor anywhere on later pages, and closing
+     the panel when the click lands outside it.
+     --------------------------------------------------------------------- */
+  var langswitch = document.querySelector(".langswitch");
+  if (langswitch) {
+    var langLinks = langswitch.querySelectorAll("a[data-lang]");
+    Array.prototype.forEach.call(langLinks, function (a) {
+      a.addEventListener("click", function () {
+        try {
+          localStorage.setItem("lang", a.getAttribute("data-lang"));
+          // The auto-detect flag is per session; clearing it means the stored
+          // choice is what the next page reads, not a second guess.
+          sessionStorage.removeItem("langAuto");
+        } catch (e) {}
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (langswitch.open && !langswitch.contains(e.target)) langswitch.open = false;
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && langswitch.open) {
+        langswitch.open = false;
+        var s = langswitch.querySelector("summary");
+        if (s) s.focus();
+      }
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', reveal);
   } else {

@@ -82,3 +82,36 @@ follow them). Verify with
   store URLs when the apps are published.
 - The "Watch demo" button currently scrolls to the product section; point it at the demo
   video when available.
+
+## Languages
+
+The site is published in English (repo root) and German, Spanish, French and
+Portuguese (`/de/`, `/es/`, `/fr/`, `/pt/`).
+
+**The English pages in the root are the only source of truth.** Everything under
+the four language folders is generated — never edit a file there by hand, it
+will be overwritten.
+
+```bash
+# 1. edit the English page as usual, then:
+python3 tools/i18n_extract.py     # refresh i18n/strings.en.json (id -> English)
+# 2. add the new ids to i18n/de.json, es.json, fr.json, pt.json
+python3 tools/i18n_build.py       # regenerate /de /es /fr /pt
+python3 tools/i18n_check.py       # assert each copy matches English structurally
+python3 tools/i18n_heads.py       # refresh hreflang on the English pages + sitemap.xml
+```
+
+A string with no translation falls back to English and is reported by the build,
+so a half-translated release is visible rather than silent.
+
+- **Catalog:** `i18n/strings.en.json` maps a short id to each unique English
+  string; the shared header, footer and CTA are translated once for all pages.
+- **Language switcher:** a `<details>` in the header, generated per page by
+  `tools/i18n_lib.py` so the five copies cannot drift. It works without
+  JavaScript; `js/main.js` only remembers the choice and closes the panel.
+- **Detection:** an inline script in each `<head>` sends a first-time visitor to
+  the version their browser asks for, once per session. An explicit choice in
+  the switcher is stored in `localStorage` and always wins. Skipped for
+  `?mobile=1`, which is the app embedding a legal page.
+- **HTML comments are not translated** — they are notes for maintainers and stay
+  in English in every build.

@@ -1587,6 +1587,23 @@ h4, .h4 { font-size: var(--fs-h4); line-height: 1.3; }
   .nav-menu .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
   .nav-menu .nav-links a[aria-current="page"]::after { display: none; }
   .nav-menu .btn { width: 100%; }
+  /* In the sheet the switcher is a row like the nav links, and its menu
+     stops being a popup: it opens inline underneath. */
+  .nav-menu .langswitch { width: 100%; }
+  .nav-menu .langswitch > summary {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-menu .langswitch__menu {
+    position: static;
+    min-width: 0;
+    padding: 4px 0 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .nav-menu .langswitch__menu a { padding: 10px 0 10px 14px; }
 
   /* The header CTA stays in the bar (plan §0: brand left, button right,
      links behind a sheet). It shrinks rather than changing its label. */
@@ -3031,3 +3048,69 @@ h2 { line-height: 1.12; letter-spacing: -0.01em; }
   width: 100%;
   height: auto;
 }
+
+
+/* =========================================================================
+   19  LANGUAGE SWITCHER (.langswitch)
+
+   A <details> rather than a <select>: the five entries stay real links that a
+   crawler can follow and hreflang can corroborate, it opens with no
+   JavaScript, and it needs no popup code. It lives inside .nav-menu, so on a
+   phone it lands in the open sheet with the nav links instead of needing a
+   second mobile treatment. main.js only adds two conveniences: remembering
+   the click, and closing on an outside click.
+   ========================================================================= */
+
+.langswitch { position: relative; }
+.langswitch > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 4px;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  letter-spacing: .04em;
+  color: var(--body);
+  cursor: pointer;
+}
+.langswitch > summary::-webkit-details-marker { display: none; }
+/* The chevron is drawn rather than set in an icon font: two borders rotated,
+   which inherits colour and needs no extra request. */
+.langswitch > summary::after {
+  content: "";
+  width: 7px; height: 7px;
+  margin-top: -4px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: .5;
+}
+.langswitch > summary:hover { color: var(--green-700); }
+.langswitch[open] > summary { color: var(--green-700); }
+.langswitch[open] > summary::after { margin-top: 3px; transform: rotate(-135deg); }
+
+.langswitch__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 80;
+  min-width: 168px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-md);
+}
+.langswitch__menu a {
+  padding: 9px 12px;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-small);
+  color: var(--body);
+  white-space: nowrap;
+}
+.langswitch__menu a:hover { background: var(--bg-soft); color: var(--green-700); }
+.langswitch__menu a[aria-current="true"] { color: var(--green-700); font-weight: 600; }
