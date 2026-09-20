@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- EMBEDDED MODE — same flag as the FAQ. Adding ?mobile=1 to this URL
+       strips the site chrome (header, footer, skip link) so the app can show
+       this document inside its own webview without a second navigation bar.
+       The heading and every word of the legal text stay: this is a published
+       legal notice, not marketing, and the app is a second place it is served
+       rather than a different version of it. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <title>Términos y condiciones | 1inventory</title>
+  <meta name="description" content="Los términos y condiciones de uso de 1inventory, publicados por Sparkybit GmbH." />
+
+  <link rel="canonical" href="https://1inventory.io/es/terms.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/terms.html" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/terms.html" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/terms.html" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/terms.html" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/terms.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/terms.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://1inventory.io/es/terms.html" />
+  <meta property="og:title" content="Términos y condiciones | 1inventory" />
+  <meta property="og:description" content="Los términos y condiciones de uso de 1inventory, publicados por Sparkybit GmbH." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory: una app de inventario con código de barras que escribe en una hoja de Google en tu propio Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Términos y condiciones | 1inventory" />
+  <meta name="twitter:description" content="Los términos y condiciones de uso de 1inventory, publicados por Sparkybit GmbH." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+</head>
+<body>
+
+<!-- =====================================================================
+     TERMS AND CONDITIONS
+
+     The legal text below is lifted VERBATIM from /terms.html at the site root.
+     Not a word of it has been edited, reordered or reformatted — it is a
+     published legal document and only its owner may change it.
+
+     What changed is the chrome. The root copy loads the legacy stylesheet
+     and carries a different menu ("Home / How it works / Plans"), so a
+     reader following the footer link out of v7 landed on what looked like
+     a different website. This copy wears the same header, nav and footer
+     as every other v7 page.
+
+     ON PROMOTION: this replaces the root file, and the footer links go back
+     to being /terms.html rather than page-relative.
+     ===================================================================== -->
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — inicio">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Principal">
+        <a href="./">Cómo funciona</a>
+        <a href="plans.html">Planes</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Idioma"><span aria-hidden="true">ES</span></summary>
+        <div class="langswitch__menu">
+          <a href="/terms.html" hreflang="en" data-lang="en">English</a>
+          <a href="/de/terms.html" hreflang="de" data-lang="de">Deutsch</a>
+          <a href="/es/terms.html" hreflang="es" data-lang="es" aria-current="true">Español</a>
+          <a href="/fr/terms.html" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/terms.html" hreflang="pt" data-lang="pt">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="./#get-the-app" data-cta="header">Descargar la app</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose legal">
+      <h1>Términos y condiciones</h1>
+      <p class="updated">Última actualización: 20 de septiembre de 2026</p>
+
+      <p>
+        Bienvenido a 1inventory. Estos Términos del servicio («Términos») rigen su uso de la aplicación móvil 1inventory y de cualquier servicio relacionado (conjuntamente, el «Servicio») prestado por Sparkybit GmbH («nosotros» o «nuestro»).
+      </p>
+      <p>
+        Al acceder a nuestro Servicio o utilizarlo, acepta quedar vinculado por estos Términos y por nuestra Política de privacidad. Si utiliza el Servicio en nombre de una organización, acepta estos Términos en nombre de dicha organización y garantiza que tiene autoridad para vincularla a ellos. En tal caso, «usted» y «su» se referirán a esa organización.
+      </p>
+
+      <h2>1. Cambios en estos Términos</h2>
+      <p>
+        Nos reservamos el derecho de cambiar o modificar estos Términos en cualquier momento, a nuestra entera discreción. Si realizamos cambios, lo notificaremos, por ejemplo mediante un correo electrónico, un aviso en el Servicio o la actualización de la fecha de «Última actualización» al principio de estos Términos. El uso continuado del Servicio confirmará su aceptación de los Términos revisados. Le recomendamos revisar los Términos con frecuencia para conocer las condiciones aplicables a su uso del Servicio.
+      </p>
+
+      <h2>2. Privacidad</h2>
+      <p>
+        Su privacidad nos importa. Consulte nuestra Política de privacidad para saber cómo recogemos, utilizamos y revelamos su información personal. El uso del Servicio implica que conoce y acepta nuestra Política de privacidad. Si reside fuera de Alemania, entiende y acepta que almacenaremos y trataremos su información personal en servidores que pueden estar fuera de su país de residencia y, al facilitarnos cualquier información, consiente dichas transferencias.
+      </p>
+
+      <h2>3. Requisitos de edad y menores</h2>
+      <p>
+        Para utilizar nuestro Servicio debe tener al menos 18 años o la mayoría de edad legal en su jurisdicción. Al crear una cuenta y utilizar el Servicio, declara y garantiza que cumple este requisito. El Servicio no está destinado al uso por menores.
+      </p>
+
+      <h2>4. Su cuenta</h2>
+      <p>
+        Para utilizar el Servicio debe registrar una cuenta. Le exigimos crearla con su cuenta de Google existente. Al hacerlo, nos autoriza a acceder a determinada información de su cuenta de Google, según se describe en nuestra Política de privacidad.
+      </p>
+      <p>
+        Usted es el único responsable de toda la actividad que se produzca en su cuenta. Se compromete a mantener la seguridad de su cuenta y a informarnos de inmediato si descubre o sospecha cualquier uso no autorizado de la misma. Póngase en contacto con nuestro equipo de soporte en <a class="eml" data-u="&#115;&#117;&#112;&#112;&#111;&#114;&#116;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a> si tiene cualquier duda relacionada con su cuenta.
+      </p>
+
+      <h2>5. Sus contenidos</h2>
+      <p>
+        Nuestro Servicio le permite crear, gestionar y almacenar información de inventario, que incluye datos, textos, fotos y otros materiales («Contenidos»). Sus Contenidos se almacenan directamente en archivos de Google Sheets creados por el Servicio en su Google Drive personal.
+      </p>
+      <p>
+        Usted conserva la plena propiedad de sus Contenidos. No reclamamos ningún derecho de propiedad sobre ellos. Al utilizar el Servicio, nos concede una licencia limitada, no exclusiva, gratuita y mundial para acceder a sus Contenidos y utilizarlos, reproducirlos y modificarlos con el único fin de operar, prestar y mejorar el Servicio.
+      </p>
+      <p>
+        Usted es el único responsable de sus Contenidos y de disponer de todos los derechos necesarios para utilizarlos con nuestro Servicio. Declara y garantiza que sus Contenidos no infringen ninguna ley aplicable ni los derechos de terceros. Se compromete a no almacenar información personal ilegal, dañina o sensible que infrinja nuestra Política de uso aceptable (apartado 7).
+      </p>
+
+      <h2>6. Seguridad de los datos</h2>
+      <p>
+        Aplicamos medidas técnicas y organizativas sólidas diseñadas para proteger su información. Los tokens de la API de Google que almacenamos están cifrados, y la arquitectura de nuestro servidor está diseñada para proteger frente a accesos no autorizados.
+      </p>
+      <p>
+        No obstante, usted reconoce que los Contenidos de su inventario residen en su propia cuenta de Google Drive. Usted es responsable de mantener la seguridad de su cuenta de Google. No somos responsables de las prácticas de seguridad de Google ni de ningún acceso no autorizado a sus Contenidos derivado de que sus credenciales de Google se vean comprometidas. Usted es el único responsable de mantener copias de seguridad de sus Contenidos.
+      </p>
+
+      <h2>7. Política de uso aceptable</h2>
+      <p>Usted acepta que no hará lo siguiente, ni animará o ayudará a otros a hacerlo:</p>
+      <ul>
+        <li>Utilizar el Servicio con fines ilegales o no autorizados, o realizar, fomentar o promover cualquier actividad que infrinja estos Términos.</li>
+        <li>Dañar, deshabilitar, sobrecargar o perjudicar el Servicio o cualquier red conectada a él.</li>
+        <li>Sondear, escanear o probar la vulnerabilidad de cualquier sistema o red relacionados con el Servicio.</li>
+        <li>Utilizar el Servicio para almacenar o transmitir malware, virus u otro material dañino.</li>
+        <li>Distribuir, publicar o compartir Contenidos sobre los que no tenga derechos, que sean ilegales o que infrinjan los derechos de otros.</li>
+        <li>Vulnerar la privacidad de otras personas o utilizar el Servicio para acosar, amenazar o dañar a otros.</li>
+      </ul>
+      <p>
+        Nos reservamos el derecho de suspender o cancelar su cuenta si creemos razonablemente que ha infringido esta Política de uso aceptable.
+      </p>
+
+      <h2>8. Propiedad intelectual</h2>
+      <p>
+        El Servicio y todos los materiales que contiene, incluidos, entre otros, el logotipo de 1inventory y todos los diseños, textos, gráficos, imágenes, información, datos, software y su selección y disposición (conjuntamente, los «Materiales»), son propiedad de Sparkybit GmbH o de nuestros licenciantes y están protegidos por la legislación alemana e internacional sobre derechos de autor y marcas.
+      </p>
+      <p>
+        Le concedemos una licencia limitada, no exclusiva, no sublicenciable y revocable para utilizar el Servicio y los Materiales con fines personales o internos de su negocio. Esta licencia está sujeta a estos Términos y no incluye derecho alguno a revender el Servicio o los Materiales, a emplear minería de datos o métodos similares de recopilación, ni a utilizar el Servicio o los Materiales para un fin distinto del previsto.
+      </p>
+
+      <h2>9. Suscripciones, tarifas y pago</h2>
+      <p>
+        Podemos ofrecer versiones gratuitas y de pago del Servicio («Suscripciones»). Si contrata una Suscripción de pago, acepta abonar todas las tarifas que se le presenten en el momento de la compra («Tarifas»).
+      </p>
+      <p>
+        <strong>Renovación automática:</strong> las Suscripciones de pago pueden renovarse automáticamente al final del periodo correspondiente, salvo que cancele su Suscripción antes de que termine el periodo en curso. Puede gestionar y cancelar su Suscripción en la tienda de aplicaciones correspondiente (por ejemplo, Google Play Store o Apple App Store) o poniéndose en contacto con nosotros.
+      </p>
+      <p>
+        <strong>Cambios en las tarifas:</strong> nos reservamos el derecho de cambiar nuestras Tarifas en cualquier momento. Le avisaremos con antelación de cualquier cambio. Si no está de acuerdo con el cambio, debe cancelar su Suscripción antes de que entre en vigor.
+      </p>
+      <p>
+        <strong>Reembolsos:</strong> todas las Tarifas no son reembolsables, salvo que la ley lo exija o se indique otra cosa en el momento de la compra.
+      </p>
+
+      <h2>10. Resolución</h2>
+      <p>
+        Nos reservamos el derecho, sin previo aviso y a nuestra entera discreción, de poner fin a su derecho a utilizar el Servicio o cualquier parte de él, y de bloquear o impedir su acceso y uso futuros. Usted puede poner fin a estos Términos en cualquier momento dejando de utilizar el Servicio y eliminando su cuenta. Con la resolución, su derecho a utilizar el Servicio cesará de inmediato.
+      </p>
+
+      <h2>11. Exención de garantías</h2>
+      <p>
+        EL SERVICIO Y LOS MATERIALES SE PRESTAN «TAL CUAL» Y «SEGÚN DISPONIBILIDAD», SIN GARANTÍAS DE NINGÚN TIPO, EXPRESAS O IMPLÍCITAS. RECHAZAMOS TODAS LAS GARANTÍAS, EXPRESAS O IMPLÍCITAS, INCLUIDAS, ENTRE OTRAS, LAS GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN DETERMINADO, TITULARIDAD Y NO INFRACCIÓN. NO DECLARAMOS NI GARANTIZAMOS QUE EL SERVICIO VAYA A SER ININTERRUMPIDO, ESTAR LIBRE DE ERRORES O CARECER DE VIRUS U OTROS COMPONENTES DAÑINOS.
+      </p>
+
+      <h2>12. Limitación de responsabilidad</h2>
+      <p>
+        EN NINGÚN CASO SPARKYBIT GMBH NI SUS ADMINISTRADORES, EMPLEADOS O AGENTES SERÁN RESPONSABLES DE DAÑOS DIRECTOS, ESPECIALES, INDIRECTOS O CONSECUENTES, NI DE NINGÚN OTRO DAÑO DE CUALQUIER TIPO, INCLUIDOS, ENTRE OTROS, LA PÉRDIDA DE USO, LA PÉRDIDA DE BENEFICIOS O LA PÉRDIDA DE DATOS, YA SEA POR CONTRATO, POR RESPONSABILIDAD EXTRACONTRACTUAL (INCLUIDA, ENTRE OTRAS, LA NEGLIGENCIA) O POR CUALQUIER OTRA VÍA, QUE SE DERIVEN DEL USO O DE LA IMPOSIBILIDAD DE USO DEL SERVICIO O DE LOS MATERIALES O GUARDEN RELACIÓN CON ELLOS.
+      </p>
+      <p>
+        EN NINGÚN CASO LA RESPONSABILIDAD TOTAL DE SPARKYBIT GMBH, YA SEA CONTRACTUAL, POR GARANTÍA, EXTRACONTRACTUAL, POR RESPONSABILIDAD DE PRODUCTO, POR RESPONSABILIDAD OBJETIVA O POR CUALQUIER OTRA TEORÍA, DERIVADA DEL USO O DE LA IMPOSIBILIDAD DE USO DEL SERVICIO O RELACIONADA CON ELLOS, SUPERARÁ EL IMPORTE QUE USTED NOS HAYA PAGADO, EN SU CASO, POR EL ACCESO AL SERVICIO DURANTE LOS DOCE (12) MESES INMEDIATAMENTE ANTERIORES A LA FECHA DE LA RECLAMACIÓN, O CIEN EUROS (100 &euro;), LA CANTIDAD QUE SEA MAYOR.
+      </p>
+
+      <h2>13. Indemnización</h2>
+      <p>
+        Usted acepta defender, indemnizar y eximir de responsabilidad a Sparkybit GmbH, a sus filiales y a sus respectivos administradores, directivos, empleados y agentes frente a cualquier reclamación, daño, coste, responsabilidad y gasto (incluidos, entre otros, los honorarios razonables de abogados) que se deriven de su uso del Servicio, de sus Contenidos o de su incumplimiento de estos Términos, o guarden relación con ellos.
+      </p>
+
+      <h2>14. Legislación aplicable y jurisdicción</h2>
+      <p>
+        Estos Términos y su uso del Servicio se regirán e interpretarán conforme a la legislación de Alemania, sin recurrir a sus normas de conflicto de leyes. Usted acepta que cualquier acción judicial derivada de estos Términos o relacionada con ellos se presentará únicamente ante los tribunales de Paderborn, Alemania, y por la presente consiente y se somete irrevocable e incondicionalmente a la jurisdicción exclusiva de dichos tribunales para cualquier demanda, acción o procedimiento derivado de estos Términos.
+      </p>
+
+      <h2>15. Disposiciones varias</h2>
+      <p>
+        Estos Términos constituyen el acuerdo íntegro entre usted y Sparkybit GmbH en relación con su uso del Servicio y sustituyen todas las comunicaciones y propuestas anteriores o simultáneas. Si alguna disposición de estos Términos se considera ilegal, nula o inaplicable por cualquier motivo, dicha disposición se considerará separable de estos Términos y no afectará a la validez ni a la aplicabilidad de las demás.
+      </p>
+
+      <h2>16. Contacto</h2>
+      <p>Si tiene alguna pregunta sobre estos Términos del servicio, póngase en contacto con nosotros en:</p>
+      <address>
+        Sparkybit GmbH<br />
+        Im D&ouml;rener Feld 3<br />
+        33100 Paderborn<br />
+        Alemania<br />
+        Correo: <a class="eml" data-u="&#115;&#117;&#112;&#112;&#111;&#114;&#116;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a>
+      </address>
+    </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — inicio">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory: una app de inventario con código de barras para tu casa o tu negocio, en una hoja de Google que es tuya.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          La app está disponible en inglés, alemán, español, francés y portugués.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Producto</h2>
+        <nav class="footer-links" aria-label="Producto">
+          <a href="./">Cómo funciona</a>
+          <a href="plans.html">Planes</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Política de privacidad</a>
+          <a href="terms.html">Términos y condiciones</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contacto</h2>
+        <nav class="footer-links" aria-label="Contacto">
+          <a href="support.html">Soporte</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Alemania</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>

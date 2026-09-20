@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- EMBEDDED MODE — same flag as the FAQ. Adding ?mobile=1 to this URL
+       strips the site chrome (header, footer, skip link) so the app can show
+       this document inside its own webview without a second navigation bar.
+       The heading and every word of the legal text stay: this is a published
+       legal notice, not marketing, and the app is a second place it is served
+       rather than a different version of it. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <title>Impressum | 1inventory</title>
+  <meta name="description" content="Impressum für 1inventory, herausgegeben von der Sparkybit GmbH, Paderborn, Deutschland." />
+
+  <link rel="canonical" href="https://1inventory.io/de/impressum.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/impressum.html" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/impressum.html" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/impressum.html" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/impressum.html" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/impressum.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/impressum.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://1inventory.io/de/impressum.html" />
+  <meta property="og:title" content="Impressum | 1inventory" />
+  <meta property="og:description" content="Impressum für 1inventory, herausgegeben von der Sparkybit GmbH, Paderborn, Deutschland." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory – eine Barcode-Inventar-App, die in eine Google-Tabelle in Ihrem eigenen Drive schreibt." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Impressum | 1inventory" />
+  <meta name="twitter:description" content="Impressum für 1inventory, herausgegeben von der Sparkybit GmbH, Paderborn, Deutschland." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+</head>
+<body>
+
+<!-- =====================================================================
+     IMPRESSUM
+
+     Required of a German GmbH running a commercial site under § 5 TMG. The
+     site had none: v4's footer carried a non-linked "Impressum — coming" span,
+     and the v6 draft was built entirely from [TO BE SUPPLIED] placeholders.
+
+     EVERY VALUE BELOW IS REAL, taken from the publisher's own legal notice at
+     https://www.sparkybit.com/legal-notice (retrieved 2026-08-01). Nothing here
+     is invented and nothing is a placeholder. If any detail changes at
+     Sparkybit it must change here too — these two pages must not diverge.
+
+     One deliberate omission: Sparkybit publishes US and UK telephone numbers.
+     They are genuine company numbers but they are not a support channel for
+     this app, so they are not repeated here; support routes through
+     support.html. If counsel wants a telephone number on the Impressum
+     specifically, both numbers are on the source page above.
+     ===================================================================== -->
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory – Startseite">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="./">So funktioniert es</a>
+        <a href="plans.html">Tarife</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Sprache"><span aria-hidden="true">DE</span></summary>
+        <div class="langswitch__menu">
+          <a href="/impressum.html" hreflang="en" data-lang="en">English</a>
+          <a href="/de/impressum.html" hreflang="de" data-lang="de" aria-current="true">Deutsch</a>
+          <a href="/es/impressum.html" hreflang="es" data-lang="es">Español</a>
+          <a href="/fr/impressum.html" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/impressum.html" hreflang="pt" data-lang="pt">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="./#get-the-app" data-cta="header">App holen</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section" aria-labelledby="imp-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <span class="eyebrow">Impressum &middot; Angaben gem&auml;&szlig; &sect;&nbsp;5 TMG</span>
+        <h1 id="imp-title">Impressum</h1>
+      </div>
+
+      <div class="prose">
+        <h2>Anbieter</h2>
+        <p>
+          Sparkybit GmbH<br />
+          Im D&ouml;rener Feld 3<br />
+          33100 Paderborn<br />
+          Deutschland
+        </p>
+
+        <h2>Vertreten durch</h2>
+        <p>Alexey Nayda, Gesch&auml;ftsf&uuml;hrer</p>
+
+        <h2>Registereintrag</h2>
+        <p>
+          Eingetragen beim Amtsgericht Paderborn<br />
+          Handelsregisternummer: HRB 15083
+        </p>
+
+        <h2>Steuerangaben</h2>
+        <p>
+          Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect;&nbsp;27a Umsatzsteuergesetz: DE342201031<br />
+          Steuernummer: 339/5848/2882
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          Allgemeine Anfragen: <a class="eml" data-u="&#105;&#110;&#102;&#111;" data-d="&#115;&#112;&#97;&#114;&#107;&#121;&#98;&#105;&#116;" data-t="&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#115;&#112;&#97;&#114;&#107;&#121;&#98;&#105;&#116;&#46;&#99;&#111;&#109;</a><br />
+          Support für diese App: siehe die <a href="support.html">Supportseite</a>.
+        </p>
+
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Alexey Nayda, Anschrift wie oben, gemäß &sect;&nbsp;18 Absatz 2 MStV.</p>
+
+        <h2>Online-Streitbeilegung</h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr/">ec.europa.eu/consumers/odr</a>. Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2>Haftung für Inhalte und Links</h2>
+        <p>
+          Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt; eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich, und wir entfernen solche Inhalte umgehend.
+        </p>
+        <p>
+          Unsere Seiten enthalten Links zu externen Websites, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren nicht erkennbar. Eine dauerhafte inhaltliche Kontrolle ohne konkrete Anhaltspunkte einer Rechtsverletzung ist nicht zumutbar; bei Bekanntwerden von Rechtsverletzungen entfernen wir den Link umgehend.
+        </p>
+
+        <h2>Urheberrecht</h2>
+        <p>
+          Die von den Betreibern dieser Seiten erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+        </p>
+
+        <p class="note">
+          Apple und das Apple-Logo sind Marken von Apple Inc. Google Play, Google Sheets und Google Drive sind Marken von Google LLC. 1inventory steht in keiner Verbindung zu diesen Unternehmen und wird von ihnen weder unterstützt noch gesponsert.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory – Startseite">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory – eine Barcode-Inventar-App für Ihr Zuhause oder Ihren Betrieb, in einer Google-Tabelle, die Ihnen gehört.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          Die App gibt es auf Englisch, Deutsch, Spanisch, Französisch und Portugiesisch.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Produkt</h2>
+        <nav class="footer-links" aria-label="Produkt">
+          <a href="./">So funktioniert es</a>
+          <a href="plans.html">Tarife</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Rechtliches</h2>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="privacy.html">Datenschutzerklärung</a>
+          <a href="terms.html">Allgemeine Geschäftsbedingungen</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Kontakt</h2>
+        <nav class="footer-links" aria-label="Kontakt">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Deutschland</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>

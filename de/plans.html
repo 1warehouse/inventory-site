@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <title>Tarife und Preise | 1inventory</title>
+  <meta name="description" content="1inventory ist kostenlos für ein Inventar, einen Ort und eine Person. Premium kostet 0,99 EUR im Monat für fünf Inventare, fünf Personen und so viele Orte, wie Sie möchten, mit 7 Tagen Gratistest." />
+
+  <link rel="canonical" href="https://1inventory.io/de/plans.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/plans.html" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/plans.html" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/plans.html" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/plans.html" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/plans.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/plans.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://1inventory.io/de/plans.html" />
+  <meta property="og:title" content="Tarife und Preise | 1inventory" />
+  <meta property="og:description" content="Premium ist billiger, als dasselbe zweimal zu kaufen. 0,99 EUR im Monat für fünf Inventare, fünf Personen und unbegrenzt viele Orte. Der kostenlose Tarif läuft nie ab." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory – eine Barcode-Inventar-App, die in eine Google-Tabelle in Ihrem eigenen Drive schreibt." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tarife und Preise | 1inventory" />
+  <meta name="twitter:description" content="Premium ist billiger, als dasselbe zweimal zu kaufen. 0,99 EUR im Monat für fünf Inventare, fünf Personen und unbegrenzt viele Orte. Der kostenlose Tarif läuft nie ab." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+</head>
+<body>
+
+<!-- =====================================================================
+     PLANS
+
+     Promoted from a homepage section to its own page on client instruction:
+     "let's make Plans a separate page instead of a section that users scroll
+     to on the main page." The homepage no longer carries the table at all, so
+     this is the single place any price or quota is published — if a number
+     changes it changes here and nowhere else.
+
+     The table markup is unchanged from the homepage version the client
+     approved ("the table itself is fine"). What is new is the stop-paying
+     block, which used to be four separate cards on the v4 homepage and is now
+     three lines here, where someone weighing a subscription will actually
+     look for it.
+     ===================================================================== -->
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory – Startseite">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="./">So funktioniert es</a>
+        <a href="plans.html" aria-current="page">Tarife</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Sprache"><span aria-hidden="true">DE</span></summary>
+        <div class="langswitch__menu">
+          <a href="/plans.html" hreflang="en" data-lang="en">English</a>
+          <a href="/de/plans.html" hreflang="de" data-lang="de" aria-current="true">Deutsch</a>
+          <a href="/es/plans.html" hreflang="es" data-lang="es">Español</a>
+          <a href="/fr/plans.html" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/plans.html" hreflang="pt" data-lang="pt">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="#get-the-app" data-cta="header">App holen</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section section--major" id="top" aria-labelledby="plans-title">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Tarife</span>
+        <h1 id="plans-title">Premium ist billiger, als dasselbe<br /> zweimal zu kaufen.</h1>
+        <p>Sieben Tage gratis vorab, und der kostenlose Tarif läuft nie ab.</p>
+      </div>
+
+      <div class="plans-card">
+        <table class="plans-table">
+          <caption class="visually-hidden">Was im kostenlosen und im Premium-Tarif enthalten ist</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Leistung</span></th>
+              <th scope="col">Kostenlos</th>
+              <th scope="col" class="plans-col--premium"><span class="plans-star" aria-hidden="true">&#9733;</span>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Inventare</th><td>1</td><td class="plans-col--premium">Bis zu 5</td></tr>
+            <tr><th scope="row">Orte</th><td>1</td><td class="plans-col--premium">Unbegrenzt</td></tr>
+            <tr><th scope="row">Personen pro Inventar</th><td>Nur Sie</td><td class="plans-col--premium">Bis zu 5, Sie eingeschlossen</td></tr>
+            <tr><th scope="row">Ihre eigenen Felder</th><td>1</td><td class="plans-col--premium">Bis zu 15</td></tr>
+            <tr><th scope="row">Barcode-Abfragen pro Tag</th><td>5</td><td class="plans-col--premium">200</td></tr>
+            <tr><th scope="row">Erinnerungsregeln</th><td>1</td><td class="plans-col--premium">Bis zu 50</td></tr>
+            <tr>
+              <th scope="row">Änderungsverlauf</th>
+              <td><span aria-hidden="true">&mdash;</span><span class="visually-hidden">Nein</span></td>
+              <td class="plans-col--premium">Ja<span class="plans-note">In Inventaren, die Sie im Abo anlegen</span></td>
+            </tr>
+            <tr><th scope="row">Produkte pro Inventar</th><td>Unbegrenzt</td><td class="plans-col--premium">Unbegrenzt</td></tr>
+            <tr>
+              <th scope="row">Preis</th>
+              <td>Kostenlos</td>
+              <td class="plans-col--premium">0,99 &euro; / Monat<span class="plans-note">7 Tage gratis testen. Jederzeit kündbar.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- The mobile card set mirrors the table above by hand. Any row changed
+           in one must be changed in the other. -->
+      <div class="plans-cards">
+        <div class="plan-card">
+          <h2 class="plan-card__head">Kostenlos</h2>
+          <dl>
+            <div class="plan-card__row"><dt>Inventare</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>Orte</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>Personen pro Inventar</dt><dd>Nur Sie</dd></div>
+            <div class="plan-card__row"><dt>Ihre eigenen Felder</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>Barcode-Abfragen pro Tag</dt><dd>5</dd></div>
+            <div class="plan-card__row"><dt>Erinnerungsregeln</dt><dd>1</dd></div>
+            <div class="plan-card__row"><dt>Änderungsverlauf</dt><dd>Nein</dd></div>
+            <div class="plan-card__row"><dt>Produkte pro Inventar</dt><dd>Unbegrenzt</dd></div>
+            <div class="plan-card__row"><dt>Preis</dt><dd>Kostenlos</dd></div>
+          </dl>
+        </div>
+        <div class="plan-card plan-card--premium">
+          <h2 class="plan-card__head"><span class="plans-star" aria-hidden="true">&#9733;</span>Premium</h2>
+          <dl>
+            <div class="plan-card__row"><dt>Inventare</dt><dd>Bis zu 5</dd></div>
+            <div class="plan-card__row"><dt>Orte</dt><dd>Unbegrenzt</dd></div>
+            <div class="plan-card__row"><dt>Personen pro Inventar</dt><dd>Bis zu 5, Sie eingeschlossen</dd></div>
+            <div class="plan-card__row"><dt>Ihre eigenen Felder</dt><dd>Bis zu 15</dd></div>
+            <div class="plan-card__row"><dt>Barcode-Abfragen pro Tag</dt><dd>200</dd></div>
+            <div class="plan-card__row"><dt>Erinnerungsregeln</dt><dd>Bis zu 50</dd></div>
+            <div class="plan-card__row"><dt>Änderungsverlauf</dt><dd>Ja<span class="plans-note">In Inventaren, die Sie im Abo anlegen</span></dd></div>
+            <div class="plan-card__row"><dt>Produkte pro Inventar</dt><dd>Unbegrenzt</dd></div>
+            <div class="plan-card__row"><dt>Preis</dt><dd>0,99 &euro; / Monat<span class="plans-note">7 Tage gratis testen. Jederzeit kündbar.</span></dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <ul class="footnotes plans-footnotes">
+        <li>Erinnerungsregeln beobachten Datumsfelder, die Sie selbst anlegen. Sie beobachten keine Mengen.</li>
+        <li>Barcode-Abfragen gehören der Eigentümerin oder dem Eigentümer des Inventars und werden von allen darin geteilt. Der Zähler wird um Mitternacht UTC zurückgesetzt.</li>
+        <li>Abos laufen über den App Store und Google Play. Dort können Sie jederzeit kündigen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Stop paying. On the v4 homepage this was four cards; three lines do it. -->
+  <section class="section section--soft" id="stop-paying" aria-labelledby="stop-title">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <span class="eyebrow">Wenn Sie aufhören</span>
+        <h2 id="stop-title">Es wird nichts gelöscht.</h2>
+      </div>
+      <ul class="bullets bullets--green">
+        <li>Zusätzliche Inventare, Orte und Felder werden gesperrt, nicht entfernt, und kommen zurück, wenn Sie das Abo erneuern.</li>
+        <li>Löschen Sie die App, und Ihre Tabelle liegt weiter in Ihrem Google Drive.</li>
+        <li>Löschen Sie Ihr Konto, bleiben auch die Tabellen. Sie zu entfernen ist ein eigenes Häkchen, das standardmäßig aus ist.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--gradient section--major" id="get-the-app" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="final-cta">
+        <h2 id="cta-title">Fangen Sie im kostenlosen Tarif an.</h2>
+        <p class="final-cta__body">Ein Inventar, ein Ort, fünf Abfragen pro Tag. Genug, um ein Zimmer zu erfassen und zu entscheiden, ob es Ihnen gefällt.</p>
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="plans-ios">
+              <img src="/img/badge-appstore.svg?v=21" alt="Laden im App Store" width="150" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="plans-android">
+              <img src="/img/badge-googleplay.svg?v=21" alt="Jetzt bei Google Play" width="169" height="50" />
+            </a>
+          </div>
+          <p class="cta-strip"><span>Kostenloser Tarif, keine Karte</span><span>iPhone und Android</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory – Startseite">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory – eine Barcode-Inventar-App für Ihr Zuhause oder Ihren Betrieb, in einer Google-Tabelle, die Ihnen gehört.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          Die App gibt es auf Englisch, Deutsch, Spanisch, Französisch und Portugiesisch.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Produkt</h2>
+        <nav class="footer-links" aria-label="Produkt">
+          <a href="./">So funktioniert es</a>
+          <a href="plans.html">Tarife</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Rechtliches</h2>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="privacy.html">Datenschutzerklärung</a>
+          <a href="terms.html">Allgemeine Geschäftsbedingungen</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Kontakt</h2>
+        <nav class="footer-links" aria-label="Kontakt">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Deutschland</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="App holen">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">App holen</a>
+  <button class="sticky-cta__close" type="button" aria-label="Schließen" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>

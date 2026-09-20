@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- EMBEDDED MODE — same flag as the FAQ. Adding ?mobile=1 to this URL
+       strips the site chrome (header, footer, skip link) so the app can show
+       this document inside its own webview without a second navigation bar.
+       The heading and every word of the legal text stay: this is a published
+       legal notice, not marketing, and the app is a second place it is served
+       rather than a different version of it. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <title>Política de privacidade | 1inventory</title>
+  <meta name="description" content="A política de privacidade do 1inventory: o que recolhemos, como os seus dados são tratados e que direitos tem ao abrigo do RGPD." />
+
+  <link rel="canonical" href="https://1inventory.io/pt/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/privacy.html" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/privacy.html" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/privacy.html" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/privacy.html" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/privacy.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:url" content="https://1inventory.io/pt/privacy.html" />
+  <meta property="og:title" content="Política de privacidade | 1inventory" />
+  <meta property="og:description" content="A política de privacidade do 1inventory: o que recolhemos, como os seus dados são tratados e que direitos tem ao abrigo do RGPD." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — uma aplicação de inventário por código de barras que escreve numa folha do Google no seu próprio Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Política de privacidade | 1inventory" />
+  <meta name="twitter:description" content="A política de privacidade do 1inventory: o que recolhemos, como os seus dados são tratados e que direitos tem ao abrigo do RGPD." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+</head>
+<body>
+
+<!-- =====================================================================
+     PRIVACY POLICY
+
+     The legal text below is lifted VERBATIM from /privacy.html at the site root.
+     Not a word of it has been edited, reordered or reformatted — it is a
+     published legal document and only its owner may change it.
+
+     What changed is the chrome. The root copy loads the legacy stylesheet
+     and carries a different menu ("Home / How it works / Plans"), so a
+     reader following the footer link out of v7 landed on what looked like
+     a different website. This copy wears the same header, nav and footer
+     as every other v7 page.
+
+     ON PROMOTION: this replaces the root file, and the footer links go back
+     to being /privacy.html rather than page-relative.
+     ===================================================================== -->
+
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — início">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Principal">
+        <a href="./">Como funciona</a>
+        <a href="plans.html">Planos</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Idioma"><span aria-hidden="true">PT</span></summary>
+        <div class="langswitch__menu">
+          <a href="/privacy.html" hreflang="en" data-lang="en">English</a>
+          <a href="/de/privacy.html" hreflang="de" data-lang="de">Deutsch</a>
+          <a href="/es/privacy.html" hreflang="es" data-lang="es">Español</a>
+          <a href="/fr/privacy.html" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/privacy.html" hreflang="pt" data-lang="pt" aria-current="true">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="./#get-the-app" data-cta="header">Obter a aplicação</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose legal">
+      <h1>Política de privacidade</h1>
+      <p class="updated">Última atualização: 20 de setembro de 2026</p>
+
+      <p>
+        A Sparkybit GmbH («nós» ou «nosso») está empenhada em proteger os seus dados pessoais. Esta política de privacidade descreve as nossas práticas de recolha, conservação, utilização e proteção da sua informação quando utiliza a nossa aplicação móvel 1inventory, os nossos serviços de servidor e a interação destes com o seu Google Drive (em conjunto, os «Serviços»).
+      </p>
+      <p>
+        Enquanto «responsável pelo tratamento» na aceção do Regulamento Geral sobre a Proteção de Dados (RGPD), somos responsáveis por proteger os seus dados pessoais. A nossa equipa de proteção de dados terá todo o gosto em ajudar com qualquer questão sobre o tratamento de dados, os seus direitos ou esta política de privacidade. Pode contactá-la em: <a class="eml" data-u="&#103;&#100;&#112;&#114;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#103;&#100;&#112;&#114;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a>.
+      </p>
+
+      <h2>1. Informação que recolhemos</h2>
+      <p>Recolhemos informação para prestar e melhorar os nossos Serviços. Os tipos de informação que recolhemos são:</p>
+      <p><strong>Informação que nos fornece:</strong></p>
+      <ul>
+        <li>
+          <strong>Informação da conta:</strong> quando se regista nos nossos Serviços com a sua conta Google, recolhemos o seu nome próprio, apelido, endereço de e-mail e o URL da sua fotografia de perfil. A autenticação é inteiramente tratada pelo Google; não tratamos a sua palavra-passe do Google.
+        </li>
+      </ul>
+      <p><strong>Informação que conservamos:</strong></p>
+      <ul>
+        <li><strong>Dados de utilizador:</strong> conservamos o seu nome, e-mail, o URL da fotografia de perfil e as definições de quaisquer campos personalizados que crie na aplicação.</li>
+        <li><strong>Tokens da API do Google:</strong> para ligar à sua conta Google, conservamos tokens de acesso e de atualização. Estes tokens são guardados cifrados.</li>
+        <li><strong>Dados de inventário:</strong> os dados propriamente ditos dos seus inventários são guardados diretamente no Google Sheets, no seu Google Drive pessoal. Estes dados passam pelo nosso servidor, que funciona como proxy, mas não são aí guardados nem colocados em cache.</li>
+      </ul>
+      <p><strong>Informação que recolhemos automaticamente:</strong></p>
+      <ul>
+        <li><strong>Análise de utilização:</strong> usamos o Firebase Analytics para recolher estatísticas sobre a forma como os utilizadores interagem com a nossa aplicação móvel. Isto ajuda-nos a perceber padrões de utilização e a melhorar o serviço.</li>
+      </ul>
+
+      <h2>2. Como utilizamos a sua informação</h2>
+      <p>Utilizamos a informação que recolhemos para os seguintes fins:</p>
+      <ul>
+        <li><strong>Para prestar e manter o Serviço:</strong> usamos os seus tokens da API do Google para aceder às folhas do Google criadas pela nossa aplicação, permitindo-lhe gerir o seu inventário.</li>
+        <li><strong>Para personalizar a sua experiência:</strong> usamos a informação da sua conta para o identificar dentro da aplicação.</li>
+        <li><strong>Para melhorar o serviço:</strong> analisamos os dados de utilização através do Firebase Analytics para perceber que funcionalidades são mais usadas e orientar o desenvolvimento futuro.</li>
+        <li><strong>Para comunicar consigo:</strong> podemos usar o seu endereço de e-mail para lhe enviar informação importante sobre os Serviços.</li>
+      </ul>
+
+      <h2>3. Como partilhamos a sua informação</h2>
+      <p>Não vendemos a sua informação pessoal. Só podemos partilhar a sua informação nas seguintes circunstâncias:</p>
+      <ul>
+        <li><strong>Com prestadores de serviços:</strong> a nossa aplicação está alojada no Microsoft Azure. Usamos também o serviço Firebase do Google para análise. Estes prestadores acedem aos dados apenas na medida necessária ao desempenho das suas funções.</li>
+        <li><strong>Por motivos legais:</strong> podemos divulgar a sua informação se a lei o exigir ou em resposta a um processo legal válido.</li>
+        <li><strong>Transmissões empresariais:</strong> em caso de fusão, aquisição ou venda de ativos, a sua informação pode ser transferida para a nova entidade.</li>
+      </ul>
+
+      <h2>4. Segurança dos dados</h2>
+      <p>Aplicamos medidas de segurança fortes para proteger os seus dados.</p>
+      <ul>
+        <li>Os tokens de acesso e de atualização que conservamos estão cifrados na nossa base de dados com padrões de cifragem robustos como o AES 256.</li>
+        <li>Aceder aos dados de utilizador exige comprometer várias camadas de segurança, incluindo a base de dados, as chaves de decifragem e o client-id e o client-secret próprios da nossa aplicação.</li>
+        <li>As permissões concedidas à nossa aplicação não são sensíveis e limitam-se a aceder ao seu perfil e e-mail e a gerir apenas os ficheiros que a nossa aplicação cria no seu Google Drive. Para isso utilizamos a Google People API, a Drive API e a Sheets API.</li>
+      </ul>
+
+      <h2>5. Conservação dos dados</h2>
+      <p>
+        Não temos um prazo de conservação definido e guardaremos a sua informação enquanto a sua conta estiver ativa. Pode eliminar a sua conta a qualquer momento. Ao receber um pedido de eliminação, removeremos dos nossos servidores todos os dados pessoais associados à sua conta.
+      </p>
+      <p>
+        Tenha em conta que o Google pode revogar automaticamente um token de atualização da API se este não for usado durante seis meses, o que o obrigaria a autenticar-se de novo.
+      </p>
+
+      <h2>6. Os seus direitos ao abrigo do RGPD (residentes do Reino Unido e do EEE)</h2>
+      <p>
+        Cumprimos o RGPD. Se reside no Espaço Económico Europeu (EEE) ou no Reino Unido, tem os seguintes direitos relativamente aos seus dados pessoais:
+      </p>
+      <ul>
+        <li><strong>Direito de acesso:</strong> tem o direito de pedir uma cópia da informação que temos sobre si.</li>
+        <li><strong>Direito de retificação:</strong> tem o direito de corrigir quaisquer dados inexatos ou incompletos.</li>
+        <li><strong>Direito ao apagamento («direito a ser esquecido»):</strong> pode pedir a eliminação dos seus dados pessoais. Pode fazê-lo você mesmo a qualquer momento através da função «Eliminar a minha conta» no seu perfil, que remove todos os seus dados dos nossos sistemas.</li>
+        <li><strong>Direito à limitação do tratamento:</strong> tem o direito de pedir que limitemos o tratamento dos seus dados em determinadas condições.</li>
+        <li><strong>Direito à portabilidade dos dados:</strong> tem o direito de receber os seus dados num formato estruturado e legível por máquina.</li>
+        <li><strong>Direito de oposição:</strong> tem o direito de se opor ao nosso tratamento dos seus dados.</li>
+      </ul>
+      <p>
+        Para exercer qualquer um destes direitos, contacte a nossa equipa de proteção de dados em <a class="eml" data-u="&#103;&#100;&#112;&#114;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#103;&#100;&#112;&#114;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a>.
+      </p>
+
+      <h2>7. Transferências de dados para fora do país</h2>
+      <p>
+        Os nossos servidores estão na Europa e nos Estados Unidos. Por isso, os seus dados podem ser transferidos e guardados em países diferentes do da sua residência, incluindo fora do EEE. Garantimos que essas transferências cumprem a legislação aplicável e que os seus dados são protegidos ao nível exigido dentro do EEE.
+      </p>
+
+      <h2>8. Privacidade das crianças</h2>
+      <p>
+        Os nossos serviços não se destinam nem são dirigidos a crianças, e não recolhemos conscientemente qualquer informação pessoal delas.
+      </p>
+
+      <h2>9. Alterações a esta política de privacidade</h2>
+      <p>
+        Podemos atualizar esta política de privacidade de tempos a tempos. A data de «Última atualização» no topo desta política indica quando foram feitas as últimas revisões. Recomendamos que a reveja periodicamente.
+      </p>
+
+      <h2>10. Contacte-nos</h2>
+      <p>
+        Se tiver perguntas ou dúvidas sobre esta política de privacidade ou sobre as nossas práticas de dados, contacte-nos.
+      </p>
+      <address>
+        <strong>Empresa:</strong><br />
+        Sparkybit GmbH<br />
+        Im D&ouml;rener Feld 3<br />
+        33100 Paderborn<br />
+        Alemanha<br /><br />
+        Apoio geral: <a class="eml" data-u="&#115;&#117;&#112;&#112;&#111;&#114;&#116;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a><br />
+        Questões relativas ao RGPD: <a class="eml" data-u="&#103;&#100;&#112;&#114;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#103;&#100;&#112;&#114;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a>
+      </address>
+    </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — início">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — uma aplicação de inventário por código de barras para a sua casa ou o seu negócio, numa folha do Google que é sua.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          A aplicação está disponível em inglês, alemão, espanhol, francês e português.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Produto</h2>
+        <nav class="footer-links" aria-label="Produto">
+          <a href="./">Como funciona</a>
+          <a href="plans.html">Planos</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Política de privacidade</a>
+          <a href="terms.html">Termos e condições</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contacto</h2>
+        <nav class="footer-links" aria-label="Contacto">
+          <a href="support.html">Apoio</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Alemanha</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>

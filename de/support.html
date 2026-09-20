@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <!-- ===================================================================
+       WHY THIS PAGE EXISTS AT ALL.
+       Apple requires a working support URL for App Store submission and
+       1inventory does not have one (site brief §11.5). That makes this the
+       only page in the v6 set that is a compliance artefact before it is a
+       marketing one, and it changes the writing brief: an existing, annoyed
+       user is the primary reader, and a store reviewer is the second. Every
+       other page on the site is written for someone deciding whether to
+       install.
+
+       Consequences, all deliberate:
+         · No sales argument above the fold, and no store badge until the
+           final band — where it is attached to a genuine support answer
+           (reinstalling / new phone) rather than bolted on.
+         · The self-help list is the longest block on the page. It is the
+           part that actually reduces ticket volume.
+         · The disclosure section (§2) tells a user what the in-app form
+           silently attaches to their message. That is costly honesty in the
+           sense of brief §8.3 and it is also the truthful thing to do: the
+           form itself says nothing about it while you type.
+       =================================================================== -->
+  <title>Support | 1inventory</title>
+  <meta name="description" content="So erreichen Sie einen Menschen bei 1inventory: das Supportformular in der App, unsere E-Mail-Adresse, was in eine Meldung gehört und Lösungen für das, wozu die meisten schreiben." />
+
+  <link rel="canonical" href="https://1inventory.io/de/support.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/support.html" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/support.html" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/support.html" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/support.html" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/support.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/support.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://1inventory.io/de/support.html" />
+  <meta property="og:title" content="Support | 1inventory" />
+  <meta property="og:description" content="So erreichen Sie einen Menschen bei 1inventory: das Supportformular in der App, unsere E-Mail-Adresse und Lösungen für das, wozu die meisten schreiben." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory – eine Barcode-Inventar-App, die in eine Google-Tabelle in Ihrem eigenen Drive schreibt." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Support | 1inventory" />
+  <meta name="twitter:description" content="So erreichen Sie einen Menschen bei 1inventory: das Supportformular in der App, unsere E-Mail-Adresse und Lösungen für das, wozu die meisten schreiben." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="apple-touch-icon" href="/img/app-icon.svg?v=21" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+
+  <!-- ContactPage is the correct type here and it is cheap. It is kept
+       deliberately thin: NO ContactPoint block, because a ContactPoint needs
+       an email address and the address on this page is not confirmed yet
+       (see the NEEDS CONFIRMATION note beside the mailto below). Publishing
+       an unverified support address inside structured data is worse than
+       publishing it in body copy — aggregators and assistants copy it.
+       When the address is confirmed, add:
+         "contactPoint": { "@type": "ContactPoint",
+                           "contactType": "customer support",
+                           "email": "…", "availableLanguage": [...] }
+       aggregateRating and review are absent everywhere on this site because
+       no ratings and no reviews exist. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "1inventory Support",
+  "url": "https://1inventory.io/support.html",
+  "description": "So erreichen Sie einen Menschen bei 1inventory: das Supportformular in der App, unsere E-Mail-Adresse, was in eine Meldung gehört und Lösungen für häufige Probleme.",
+  "inLanguage": "de",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "1inventory",
+    "url": "https://1inventory.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sparkybit GmbH",
+    "url": "https://1inventory.io/"
+  }
+}
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<!-- =====================================================================
+     HEADER
+     Identical on all eight v6 pages. Class names (.site-header / .scrolled /
+     .nav-toggle / .nav-menu / .open) are the ones js/main.js binds to; do not
+     rename them. The CTA is a SIBLING of .nav-menu, not a child, so it stays
+     visible in the bar on mobile while the links go behind the toggle.
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory – Startseite">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="./">So funktioniert es</a>
+        <a href="plans.html">Tarife</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Sprache"><span aria-hidden="true">DE</span></summary>
+        <div class="langswitch__menu">
+          <a href="/support.html" hreflang="en" data-lang="en">English</a>
+          <a href="/de/support.html" hreflang="de" data-lang="de" aria-current="true">Deutsch</a>
+          <a href="/es/support.html" hreflang="es" data-lang="es">Español</a>
+          <a href="/fr/support.html" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/support.html" hreflang="pt" data-lang="pt">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="#get-the-app" data-cta="header">App holen</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================================
+       SECTION 1 — THE TWO ROUTES
+       Band: white, .section--major.
+
+       This is one of two --major bands on the page (the other is the
+       self-help list). It earns the extra padding because it carries the H1
+       and the whole reason a reader is here. Deliberately .container--narrow
+       and single-column: a support page that opens with a two-column
+       marketing composition reads as a brochure, and the reader has a
+       problem right now.
+
+       ⚠ ACCURACY — the in-app route is verified against the shipped app:
+         · The path is Settings → Support (setting_support_page.dart; the
+           string is settings_support). It is NOT a top-level menu item.
+         · Exactly four categories, in this order, with these exact labels:
+           Feature Request, Bug Report, Billing Question, General Question
+           (support_type_feature / _bug / _billing / _question).
+         · On submit the user sees support_success_title "Request Received"
+           and receives a SendGrid acknowledgement (template
+           d-512a759a6ae743b2b598bd7e1f69906a, no merge data). The request
+           also posts to a Slack channel the team reads (SupportService.cs).
+           "A channel people at Sparkybit read" is the honest description of
+           that; do not upgrade it to "a dedicated support desk".
+       =================================================================== -->
+  <section class="section section--major" id="top" aria-labelledby="support-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <!-- The page's one h1. Question plus its own answer — the reader
+             arriving here has already asked the question. -->
+        <h1 id="support-title">Etwas stimmt nicht? So erreichen Sie einen Menschen.</h1>
+        <p>Zwei Wege, und der in der App ist schneller, weil er schon die Angaben mitbringt, nach denen wir sonst zurückschreiben müssten.</p>
+      </div>
+
+      <div class="prose">
+        <p><strong>In der App:</strong> Einstellungen &rarr; Support. Wählen Sie eine von vier Kategorien: Funktionswunsch, Fehlermeldung, Frage zur Abrechnung, allgemeine Frage. Schreiben Sie, was passiert ist. Absenden.</p>
+        <p>Auf dem Bildschirm erscheint eine Bestätigung, und eine Eingangsbestätigung per E-Mail folgt. Die Anfrage selbst geht in einen Kanal, den Menschen bei Sparkybit lesen.</p>
+      </div>
+
+      <!-- The email route sits below a rule rather than beside the in-app
+           one, because the two are not equal and a 50/50 layout would claim
+           they are. .section__foot supplies the rule and the spacing. -->
+      <div class="section__foot">
+        <div class="card card--tint">
+          <!-- h2 for heading ORDER (it is a sibling beat of the in-app route
+               above, not a child of it), but sized with the existing .h3
+               utility: a full --fs-h2 inside a card outweighs the section
+               heading it sits under. Level and size are separate decisions. -->
+          <h2 id="email-title" class="h3">E-Mail geht auch.</h2>
+          <!-- ⚠ SUPPORT ADDRESS — one item still open.
+               The site is on .io everywhere: this page, and since 2026-09-20
+               the six addresses on privacy.html and terms.html too (client
+               decision, four gdpr@ / support@ on privacy, two support@ on
+               terms). The .com is gone from the site; ownership of it was
+               never confirmed in any repo, and a GDPR contact obligation on a
+               domain we may not control was the thing to avoid. The homepage
+               footer publishes no address at all — it links to this page —
+               so the old "update the footer" item is moot.
+
+               STILL OPEN: nobody has confirmed that support@1inventory.io and
+               gdpr@1inventory.io exist and are monitored. A support address
+               that bounces fails App Store review, and a GDPR address that
+               bounces is worse. Owner: legal + web. -->
+          <p><a class="eml" data-u="&#115;&#117;&#112;&#112;&#111;&#114;&#116;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a></p>
+          <p>Eine E-Mail bringt nichts von der Diagnose mit, die das Formular in der App anhängt – es lohnt sich also, das aufzuführen, was weiter unten auf dieser Seite steht.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION 2 — WHAT THE IN-APP FORM ATTACHES
+       Band: --soft, default padding. Layout: .grid--pair-uneven (1.35fr /
+       1fr), so the prose leads and the list sits beside it. This is the only
+       two-column band on the page.
+
+       WHY THIS SECTION EXISTS. The in-app form attaches a substantial
+       metadata blob and says nothing about it on screen
+       (setting_support_page.dart:375-463; site brief §6.11). Telling people
+       here is the difference between "diagnostics" and "surveillance" in the
+       mind of the privacy-minded reader this whole site is written for, and
+       that reader is exactly the person who would otherwise find out from a
+       teardown.
+
+       ⚠ ACCURACY — the nine bullets are a faithful GROUPING of the real
+         field list, not a rewrite of it. The real keys are:
+           appVersion, appBuildNumber, appName, userId, userEmail, userName,
+           inventoryId, inventoryName, totalInventories, subscriptionPlan,
+           subscriptionType, isSubscribed, subscriptionRenewalDate,
+           subscriptionWillRenew, productCount, locale, timezone,
+           timezoneOffset, isDarkMode, screenWidth, screenHeight,
+           devicePixelRatio
+         plus, on Android: platform, osVersion, sdkVersion, manufacturer,
+         model, device, brand, androidId, isPhysicalDevice, hardware,
+         supportedAbis
+         and, on iOS: platform, osVersion, model, device, isPhysicalDevice,
+         name, systemName, localizedModel, identifierForVendor.
+         Nothing may be dropped from the nine groups below without dropping
+         the corresponding keys from the app.
+         The iOS `name` field is the user-assigned device name, which for
+         most people contains their first name. That is why it is called out
+         separately in the .admission rather than buried in bullet nine.
+       =================================================================== -->
+  <section class="section section--soft" id="what-it-sends" aria-labelledby="sends-title">
+    <div class="container">
+
+      <div class="section__head">
+        <h2 id="sends-title">Was eine Anfrage aus der App mitschickt</h2>
+      </div>
+
+      <div class="grid grid--pair-uneven">
+
+        <div>
+          <div class="prose">
+            <p>Das Formular fragt Sie nach einer Sache: einer Beschreibung. Es sendet automatisch einiges mehr, damit eine Fehlermeldung in einem Zustand ankommt, in dem wir sie nachstellen können.</p>
+            <p>Nichts davon sind Produktdaten. Ihre Zeilen, Ihre Mengen und Ihre Fotos bleiben in Ihrem eigenen Google Drive, und eine Supportanfrage geht sie nicht lesen.</p>
+          </div>
+
+          <!-- .admission, not .card: this is a disclosure, and it must not be
+               styled like a feature. The quieter treatment is the point. -->
+          <div class="admission">
+            <p>Das Formular sagt Ihnen davon nichts, während Sie tippen – was es sollte. Es steht in der <a href="privacy.html">Datenschutzerklärung</a>, und jetzt auch hier. Eine Angabe verdient eine eigene Erwähnung &mdash; auf einem iPhone reist der Gerätename mit der Anfrage, und bei den meisten Menschen steckt der Vorname im Gerätenamen.</p>
+          </div>
+        </div>
+
+        <!-- Nine items. Not a rounded-off eight or ten: it is the number of
+             distinct groups the real payload falls into. -->
+        <div class="card">
+          <h3>An jede Anfrage aus der App angehängt</h3>
+          <ul class="bullets bullets--green bullets--tight">
+            <li>Die App-Version und der Build, den Sie nutzen</li>
+            <li>Kennungen für Ihr Konto und das Inventar, in dem Sie waren</li>
+            <li>Name und E-Mail-Adresse Ihres Google-Kontos</li>
+            <li>Ihr Abo-Status und das Verlängerungsdatum</li>
+            <li>Die Zahl der Produkte in diesem Inventar</li>
+            <li>Ihre Sprache und Zeitzone</li>
+            <li>Ihre Bildschirmgröße und Pixeldichte</li>
+            <li>Ob der Dunkelmodus eingeschaltet ist</li>
+            <li>Modell, Betriebssystemversion und Gerätekennung Ihres Handys</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION 3 — SELF-HELP
+       Band: white, .section--major. The second and last --major band, and the
+       longest block on the page. Padding here is doing what brief §9.4 asks:
+       importance, not turn-taking. This is the section that answers the
+       reader without an email, so it gets the room.
+
+       SIX items, and six is deliberate. Brief §9.3 forbids lists of exactly
+       three or four; permitted lengths are 2, 5, 6, 7, 9. The first four come
+       from the brief; items five and six were added because they are the two
+       questions the July release will generate most (barcode misses and
+       import behaviour) and because four would have broken the rule.
+
+       ⚠ ACCURACY, item by item:
+         1. The app's own error string is "Required columns are missing in
+            Google Sheet table Products. Please open the Google Sheet directly
+            and add or rename these columns: …" (SpreadsheetMapper.cs:159-170).
+            Note for a later pass: a column self-heal exists in code but is
+            PENDING RELEASE, so the manual instruction stays until it ships.
+         2. Tab recreation restores the tab, its headers, its formatting and
+            its frozen row. It does NOT restore the data. Copy may say "we
+            rebuild the tab"; it may never say "we recover your data". The
+            Info tab and the Alerts tab are not covered by the mechanism.
+         3. There is no offline mode. Every action needs a connection.
+         4. Changes reach other phones on refresh. The words "real-time" and
+            "sync" are banned site-wide precisely so nobody implies otherwise.
+         5. Free is 5 barcode lookups a day, Premium 200, counter resets at
+            midnight UTC, and the quota belongs to the inventory's OWNER and
+            is shared by everyone in it. Manual entry is always available.
+         6. CSV import is insert-only: duplicates are skipped and existing
+            products are never updated (settings_import_summary_duplicates).
+            Do not describe import as a merge or an update.
+       =================================================================== -->
+  <section class="section section--major" id="fix-it-yourself" aria-labelledby="fixes-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="fixes-title">Sechs Dinge, die das meiste beheben.</h2>
+        <p>Dreißig Sekunden wert, bevor Sie uns schreiben.</p>
+      </div>
+
+      <ul class="bullets bullets--green">
+        <li>
+          <strong>„Required columns are missing in Google Sheet table Products.“</strong> Jemand hat in der Tabelle eine Spalte umbenannt, verschoben oder gelöscht. Öffnen Sie die Tabelle und setzen Sie die Überschrift genau so zurück, wie die Meldung sie ausschreibt.
+        </li>
+        <li>
+          <strong>Ein ganzer Tab ist weg.</strong> Löschen Sie nichts weiter und ziehen Sie die Liste zum Aktualisieren herunter. Die App baut einen fehlenden Tab mit den richtigen Überschriften neu auf. Was darin stand, kann sie nicht zurückholen; dafür nutzen Sie Datei &rarr; Versionsverlauf in Google Sheets.
+        </li>
+        <li>
+          <strong>Es lädt überhaupt nichts.</strong> Jede Aktion braucht eine Verbindung. Einen Offline-Modus gibt es nicht.
+        </li>
+        <li>
+          <strong>Die Änderung einer anderen Person erscheint nicht.</strong> Ziehen Sie die Liste zum Aktualisieren herunter. Ihr Handy zeigt Ihnen, was es zuletzt gelesen hat, und das Aktualisieren ist es, was es erneut lesen lässt.
+        </li>
+        <li>
+          <strong>Ein Barcode kam leer zurück.</strong> Nicht jedes Produkt steht in den öffentlichen Datenbanken, und ein kostenloses Konto bekommt fünf Abfragen pro Tag gegenüber zweihundert mit Premium. Legen Sie den Artikel von Hand an, und er verhält sich von da an genau wie ein gescannter.
+        </li>
+        <li>
+          <strong>Ein Import hat Zeilen übersprungen.</strong> Ein Import fügt immer nur ein. Eine Zeile, die zu etwas passt, das schon in Ihrem Inventar steht, wird übersprungen, und das vorhandene Produkt bleibt unangetastet.
+        </li>
+      </ul>
+
+      <!-- .note, not a fifth bullet: it qualifies item two rather than adding
+           a seventh problem, and a seventh item would take the list past the
+           lengths brief §9.3 permits. -->
+      <p class="note">Datei &rarr; Versionsverlauf ist eine Funktion von Google Sheets. Sie liegt im Datei-Menü der Tabelle selbst, reicht weiter zurück, als die meisten erwarten, und ist der einzige Weg zu Daten, die in einem Tab standen, bevor der Tab verschwand.</p>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION 4 — WHAT TO PUT IN A REPORT
+       Band: --mint, default padding, single column.
+
+       Five items. This list is what the in-app form would have attached on
+       your behalf, translated into things a human can type into an email, so
+       it is the email route's missing half. It is deliberately NOT a
+       restatement of section 2's nine: those are machine facts, these are
+       observations only the person at the keyboard has.
+       =================================================================== -->
+  <section class="section section--mint" id="what-to-send" aria-labelledby="report-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="report-title">Eine Fehlermeldung schreiben, mit der wir etwas anfangen können</h2>
+        <p>Wenn Sie uns statt über das Formular eine E-Mail schreiben, sparen diese fünf Angaben eine Rückfrage.</p>
+      </div>
+
+      <ul class="bullets bullets--green">
+        <li>Was Sie angetippt haben und was stattdessen passiert ist.</li>
+        <li>Den genauen Wortlaut jeder Fehlermeldung. Machen Sie einen Screenshot, wenn sie lang ist.</li>
+        <li>Ihre App-Version. Sie steht ganz unten im Einstellungen-Bildschirm.</li>
+        <li>iPhone oder Android, und welche Version des Betriebssystems.</li>
+        <li>Ob es jedes Mal passiert oder einmal passiert ist.</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION 5 — RESPONSE TIME AND ONWARD LINKS
+       Band: white, .section--tight. A connector, and it is short enough that
+       full section padding would have made it look like an argument. This is
+       what --tight is for.
+
+       The .stat is used once on this page and once only. A response time in
+       running prose is the single most skimmed-past fact on any support page,
+       and it is the one a store reviewer looks for.
+       =================================================================== -->
+  <section class="section section--tight" id="response-time" aria-labelledby="wait-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="wait-title">Wie lange dauert das?</h2>
+      </div>
+
+      <!-- ⚠⚠ NEEDS CONFIRMATION — RESPONSE TIME. ⚠⚠
+           "2 working days" is NOT verified against anything. No SLA, no
+           staffing model and no historical response data exist in any repo:
+           the only shipped promise is support_success_message, "we will get
+           back to you soon", which is too vague to publish on a page a store
+           reviewer reads.
+
+           Two working days was chosen as the most conservative figure a
+           two-person support rota in Paderborn can hold in a holiday week,
+           on the principle that an overrun promise on this page is worse
+           than a slow one. THE CLIENT MUST CONFIRM OR REPLACE IT. If they
+           will not commit to a number, the honest fallback is to delete the
+           .stat and keep only the acknowledgement-email sentence below,
+           which is verified.
+
+           Everything after the stat IS verified: the acknowledgement is a
+           SendGrid template with no merge data (d-512a759a6ae743b2b598bd7e1f69906a),
+           it fires on submit, and it is a receipt rather than an answer. -->
+      <p class="mb-0">
+        <span class="stat">2 Tage</span>
+        <span class="stat-label">Das Längste, das Sie auf eine Antwort von einem Menschen warten sollten. Werktags, mitteleuropäische Zeit.</span>
+      </p>
+
+      <div class="section__foot">
+        <div class="prose">
+          <p>Die Eingangsbestätigung ist automatisch und kommt sofort. Sie ist eine Quittung. Die Antwort kommt getrennt davon.</p>
+          <p>Das meiste davon ist beantwortet, ohne dass jemand etwas schreiben muss: <a href="faq.html">im FAQ</a>, und besonders unter <a href="faq.html#limits">Grenzen, und woran wir arbeiten</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SECTION 6 — NEW PHONE / REINSTALL  (id="get-the-app")
+       Band: --gradient. Carries the two store badges.
+
+       WHY THERE IS A STORE BAND ON A SUPPORT PAGE AT ALL, AND WHY IT IS THIS
+       ONE. Every v6 page carries the same install band, and the header CTA on
+       this page needs a local #get-the-app target. Bolting "Get the app" onto
+       a support page for an existing user would be tone-deaf, so the band
+       answers a real support question instead — "I lost my phone / I
+       reinstalled / I switched to Android" — and the answer happens to be
+       "install it and sign in", which is what the badges do.
+
+       ⚠ ACCURACY: this is true because of where the data lives. The
+         spreadsheet and the product photos are in the user's own Google
+         Drive, and PostgreSQL holds the inventory record keyed to the user
+         (title, icon, spreadsheet id, folder id, owner). Signing in with the
+         same Google account reconnects both. It is NOT a backup service and
+         must never be called one.
+         One thing this band must not promise: the app does not move data
+         between two different Google accounts. Sign in with the same one.
+       =================================================================== -->
+  <section class="section section--gradient" id="get-the-app" aria-labelledby="reinstall-title">
+    <div class="container">
+      <div class="final-cta">
+
+        <img class="final-cta__icon" src="/img/app-icon.svg?v=21" alt="" width="64" height="64" />
+
+        <h2 id="reinstall-title">Melden Sie sich auf Ihrem Handy an. Es ist alles da.</h2>
+
+        <p class="final-cta__body">Ihr Inventar ist eine Google-Tabelle in Ihrem eigenen Drive – ein verlorenes Handy oder eine Neuinstallation kostet Sie also nichts. Installieren Sie die App, melden Sie sich mit demselben Google-Konto an, und die Liste ist da, wo Sie sie verlassen haben.</p>
+
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="support-ios">
+              <img src="/img/badge-appstore.svg?v=21" alt="Laden im App Store" width="160" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="support-android">
+              <img src="/img/badge-googleplay.svg?v=21" alt="Jetzt bei Google Play" width="160" height="50" />
+            </a>
+          </div>
+
+          <p class="cta-strip"><span>Anmeldung mit Google</span><span>iPhone und Android</span></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER
+     Identical on all eight v6 pages. Legal hrefs are ABSOLUTE (/privacy.html,
+     /terms.html): a relative href from inside /v6/ resolves to /v6/privacy.html
+     and 404s, because the legal pages live only at the site root.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory – Startseite">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory – eine Barcode-Inventar-App für Ihr Zuhause oder Ihren Betrieb, in einer Google-Tabelle, die Ihnen gehört.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          Die App gibt es auf Englisch, Deutsch, Spanisch, Französisch und Portugiesisch.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Produkt</h2>
+        <nav class="footer-links" aria-label="Produkt">
+          <a href="./">So funktioniert es</a>
+          <a href="plans.html">Tarife</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Rechtliches</h2>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="privacy.html">Datenschutzerklärung</a>
+          <a href="terms.html">Allgemeine Geschäftsbedingungen</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Kontakt</h2>
+        <nav class="footer-links" aria-label="Kontakt">
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Deutschland</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     STICKY MOBILE CTA BAR
+     Kept, for two unglamorous reasons rather than a persuasive one: the
+     stylesheet reserves body padding-bottom for it at ≤720px whether or not
+     the bar is present, so omitting it leaves a strip of dead space at the
+     foot of the page; and the label and behaviour must not vary across the
+     eight pages. It points at #get-the-app, which on this page is the
+     reinstall band — a legitimate destination for someone reading support on
+     a phone they have just set up. Dismissible, and js/main.js hides it while
+     that band is in view.
+     ===================================================================== -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="App holen">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">App holen</a>
+  <button class="sticky-cta__close" type="button" aria-label="Schließen" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>

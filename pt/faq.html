@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- EMBEDDED MODE.
+       The shipped app hard-links to 1inventory.io/faq. Adding ?mobile=1 renders
+       this same page without any site chrome so it can be shown inside the app's
+       own webview: no header, no nav, no footer, no install CTA, tighter
+       padding. One URL, one copy of the answers — an app-only FAQ would drift
+       out of sync with this one within a release or two.
+
+       The class is set here rather than on DOMContentLoaded so the header never
+       paints and then disappears. Accepts ?mobile, ?mobile=1 and ?mobile=true. -->
+  <script>
+    document.documentElement.className += " js";
+    if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) {
+      document.documentElement.className += " is-embedded";
+    }
+  </script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <!-- The title and description used to echo the "questions people actually
+       ask" line. That copy was cut from the page on client instruction, so the
+       metadata that mirrored it was cut too — metadata must not promise a
+       heading the page no longer has. -->
+  <title>FAQ — perguntas e respostas | 1inventory</title>
+  <meta name="description" content="Respostas sobre permissões do Google, uso offline, exportação, partilha, preços, e o que acontece à sua folha de cálculo se fecharmos." />
+
+  <link rel="canonical" href="https://1inventory.io/pt/faq.html" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/faq.html" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/faq.html" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/faq.html" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/faq.html" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/faq.html" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/faq.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:url" content="https://1inventory.io/pt/faq.html" />
+  <meta property="og:title" content="FAQ — perguntas e respostas | 1inventory" />
+  <meta property="og:description" content="Respostas sobre permissões do Google, uso offline, exportação, partilha, preços, e o que acontece à sua folha de cálculo se fecharmos." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — uma aplicação de inventário por código de barras que escreve numa folha do Google no seu próprio Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ — perguntas e respostas | 1inventory" />
+  <meta name="twitter:description" content="Respostas sobre permissões do Google, uso offline, exportação, partilha, preços, e o que acontece à sua folha de cálculo se fecharmos." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="apple-touch-icon" href="/img/app-icon.svg?v=21" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+
+  <!-- =====================================================================
+       FAQPage STRUCTURED DATA
+
+       BINDING RULE: this block describes ONLY questions that are visibly on
+       the page, and every answer below is the same text a reader sees, with
+       the markup stripped. Twenty-one entries, in page order. If a question
+       is added, moved or reworded in the body, edit it here in the same
+       commit — a mismatch between the two is a structured-data violation and
+       is the fastest way to lose rich-result eligibility for the whole site.
+
+       Nothing is collapsed on this page (brief §6.5): no accordion, no
+       details/summary. A hidden answer is one a crawler discounts and a
+       hurried reader never opens.
+
+       aggregateRating and review are deliberately absent here as they are on
+       every other page: zero ratings exist and inventing one is both false
+       and a store-policy violation.
+       ===================================================================== -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://1inventory.io/faq",
+  "inLanguage": "pt",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sparkybit GmbH",
+    "url": "https://1inventory.io/"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Porque não usar diretamente uma folha do Google?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o que está a fazer: é esse o desenho. O que a aplicação acrescenta é uma câmara, uma base de dados global de produtos, uma vista de pastas com uma contagem por prateleira, um seletor de quantidade que acerta com o polegar, e colunas que chegam já nomeadas e formatadas. Experimente escrever um código de barras de 13 dígitos numa célula no telemóvel. Foi essa a parte que removemos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso de uma conta Google? Posso registar-me com um e-mail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, e é o único início de sessão que a aplicação usa. A vantagem é que registar-se é um toque: não há formulário para preencher nem palavra-passe para inventar, e a sua primeira folha de cálculo existe antes de chegar ao ecrã inicial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Porque precisa uma aplicação de inventário de aceder ao meu Google Drive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pede drive.file, a permissão de Drive mais restrita que o Google oferece. Uma aplicação com essa permissão só pode tocar nos ficheiros que ela própria criou, por isso o 1inventory pode abrir a folha de cálculo e a pasta de fotografias que criou para si, e mais nada. O Google impõe esse limite. O Gmail, o Calendário e o resto da sua conta ficam fora de alcance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O leitor vai reconhecer as minhas coisas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os produtos de loja com código de barras comercial voltam com nome, descrição e fotografia: latas, frascos, medicamentos, livros com ISBN, jogos de tabuleiro, Lego, DVD, pilhas. As marcas próprias e as etiquetas de armazém também se leem bem, só que a consulta não tem nada para preencher, por isso escreve o nome. São suportados doze formatos de código de barras, e a leitura em si não tem limite; limitadas estão apenas as consultas à base de dados, a 5 por dia no plano gratuito e 200 no Premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Existe uma aplicação web? Funciona num iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os seus dados são plenamente utilizáveis num portátil: a folha de cálculo abre no Google Sheets como qualquer outro ficheiro, e aí pode ordenar, filtrar, fazer gráficos e imprimir. A aplicação em si é uma aplicação de telemóvel em vertical para iOS 15.6 ou posterior e Android 7.0 ou posterior, por isso hoje não há disposição para tablet nem cliente de navegador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Já tenho uma lista. Tenho de a escrever outra vez?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Importe um CSV e os cabeçalhos das suas colunas são associados aos campos pelo significado, por isso uma folha com os cabeçalhos Artigo / Qtd / Onde vai parar às colunas certas sem qualquer configuração. Limites: só CSV, 5 MB, 60 colunas, uma coluna de nome obrigatória. A associação é feita de uma vez e é-lhe mostrada depois. Os duplicados são ignorados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quantos produtos posso ter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tantos quantos quiser, no plano gratuito e no Premium por igual — o número de produtos nunca foi aquilo que se paga. O que o Premium acrescenta são mais inventários, mais pessoas neles, mais campos seus e o histórico de alterações."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Funciona offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ainda não, e está a caminho. Hoje cada ação é uma chamada de rede, por isso precisa de ligação para acrescentar ou alterar alguma coisa. O modo offline chega numa versão futura, e é onde mais falta faz: caves, garagens, arrecadações e carrinhas, que é precisamente onde um inventário costuma viver."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Avisa-me quando estiver a ficar sem alguma coisa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neste momento não. Os alertas de hoje vigiam datas e não quantidades: ponha uma validade, um fim de garantia ou uma data de manutenção num produto e recebe uma notificação ou um e-mail um determinado número de dias antes dessa data, ou depois. Os alertas por quantidade são uma extensão em que estamos a trabalhar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se precisar de mais de cinco pessoas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cinco pessoas é aquilo em torno do qual a aplicação foi construída: uma casa, uma oficina ou uma equipa pequena. As localizações não têm limite no Premium, mas ficam lado a lado em vez de encaixadas umas nas outras, e todas as pessoas que convida têm o mesmo nível de acesso. Se precisa de zonas de armazém dentro de zonas, permissões por localização ou um papel só de leitura, um sistema maior serve-o melhor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "É seguro deixar entrar o meu companheiro ou um colega?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Iniciam sessão com a própria conta Google e, onde o inventário tem separador de Histórico, cada alteração fica lá com o nome deles. Vale a pena saber: há dois papéis em vez de uma opção só de leitura, por isso quem convida pode editar e eliminar. Convidar exige Premium, o limite é de cinco pessoas incluindo você, e a folha de cálculo fica só no seu Drive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "As alterações deles aparecem logo no meu telemóvel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As alterações chegam à sua folha do Google assim que são guardadas. Noutro telemóvel aparecem quando se puxa a lista para baixo para atualizar, e não em direto enquanto está a olhar. Se duas pessoas contarem a mesma prateleira ao mesmo tempo, ganha quem guardar por último."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa o Premium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "0,99 € por mês, com 7 dias grátis. A faturação é mensal e não há plano anual, nem pacote, nem um segundo nível. A subscrição é gerida pela App Store ou pelo Google Play, por isso cancela-a aí, e a aplicação mostra o preço na sua própria moeda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que acontece se deixar de pagar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nada é eliminado. Os inventários, localizações e campos personalizados a mais, e as pessoas que convidou, ficam bloqueados, e tudo volta de uma vez se voltar a subscrever. Os seus produtos ficam intactos, porque vivem na sua folha do Google. Enquanto um inventário está bloqueado fica oculto na aplicação, e as pessoas que convidou perdem o acesso até voltar a subscrever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vale a pena pagar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comece grátis e descubra. Catalogue um quarto no plano gratuito e, em duas semanas, saberá se quer um segundo inventário, uma segunda localização, uma segunda pessoa, mais regras de alerta ou um histórico de alterações. Essas cinco coisas são o que o Premium acrescenta, e 0,99 € por mês é o preço inteiro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso exportar os meus dados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não há botão de exportação, porque não há nada para exportar. O seu inventário já é uma folha do Google no seu próprio Drive, e o Google guarda-lha como CSV, Excel ou PDF quando quiser. Uma ressalva: o ficheiro vive no Drive de quem é dono do inventário, por isso isto é algo que os proprietários podem fazer e as pessoas convidadas não."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se eliminar alguma coisa sem querer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O seu inventário é uma folha do Google, por isso herda o histórico de versões do Google Drive. O ecrã de Cópias de segurança da aplicação lista as revisões e guia-o para restaurar uma; o restauro em si acontece no Google Sheets, não na aplicação. Uma coisa a ter em conta: eliminar um campo personalizado remove essa coluna inteira da sua folha de cálculo, valores incluídos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que acontece se o 1inventory encerrar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A folha de cálculo, o seu separador de histórico e a pasta de fotografias estão no seu Google Drive e lá ficam, legíveis por tudo o que abra uma folha de cálculo. O que perderia era o leitor, a consulta de códigos de barras e a vista de pastas. Podemos prometer continuidade dos dados, não continuidade do serviço."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quem faz isto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Sparkybit GmbH, uma empresa de Paderborn, na Alemanha. Os dados de registo estão no nosso Impressum, e o mesmo nome de editor aparece nas fichas da App Store e do Google Play, por isso pode confirmar que a aplicação que está a instalar vem das pessoas cujo nome está nesta página."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mostram publicidade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não, em nenhum dos planos. Não há nenhum SDK de publicidade na aplicação, e ela nunca pediu um identificador de rastreio nem lhe mostrou um pedido de App Tracking Transparency. O plano gratuito é pago por quem passa a Premium, e é esse todo o modelo de negócio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Em que idiomas está?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inglês, alemão, espanhol, francês e português: a aplicação toda, e também os e-mails de alerta e os resultados da consulta de códigos de barras, que voltam no seu idioma. A sua definição de idioma pertence à sua conta, por isso acompanha-o quando muda de telemóvel."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
+
+<!-- Preview banner. Same inline-style treatment the other v6 pages use: it is
+     deployment furniture, not design, and it must not enter the shared
+     stylesheet. -->
+
+<!-- =====================================================================
+     HEADER — identical on all eight v6 pages.
+     Class names (.site-header/.scrolled/.nav-toggle/.nav-menu/.open) are the
+     ones js/main.js binds to. Do not rename.
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — início">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Principal">
+        <a href="./">Como funciona</a>
+        <a href="plans.html">Planos</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Idioma"><span aria-hidden="true">PT</span></summary>
+        <div class="langswitch__menu">
+          <a href="/faq.html" hreflang="en" data-lang="en">English</a>
+          <a href="/de/faq.html" hreflang="de" data-lang="de">Deutsch</a>
+          <a href="/es/faq.html" hreflang="es" data-lang="es">Español</a>
+          <a href="/fr/faq.html" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/faq.html" hreflang="pt" data-lang="pt" aria-current="true">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="#get-the-app" data-cta="header">Obter a aplicação</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================================
+       INTRO
+       Band: .section--major. This page is hard-linked from five places in
+       the shipped app, so a reader can land here cold with a specific
+       question and no context at all. The intro therefore does two jobs and
+       no more: say what the page is, and get out of the way with a jump
+       list.
+
+       Layout is stacked, not two columns. It was .grid--pair-uneven with the
+       heading left and the jump card right, which worked while an introductory
+       paragraph filled the left column. That copy was cut on client
+       instruction, leaving a heading beside a tall card and a large hole under
+       it. The card now sits directly beneath the heading, which is also where
+       the client asked for it.
+       =================================================================== -->
+  <section class="section section--major" id="top" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+
+        <div class="stack--sm">
+          <p class="eyebrow">FAQ</p>
+          <h1 id="faq-title">Perguntas e respostas</h1>
+        </div>
+
+        <!-- Jump list. Six entries, matching the six question groups below.
+             A real table of contents, not decoration: support sends people
+             here with one question in mind. -->
+        <div class="card card--tint" style="margin-top:22px">
+          <h2 class="h4 mb-0">Ir para</h2>
+          <nav aria-label="Secções desta página">
+            <ul class="bullets bullets--green bullets--tight" style="margin-top:14px">
+              <li><a href="#install">Antes de instalar</a></li>
+              <li><a href="#existing-list">A lista que já tem</a></li>
+              <li><a href="#limits">Limites e o que vem a seguir</a></li>
+              <li><a href="#sharing">Deixar entrar outra pessoa</a></li>
+              <li><a href="#price">Quanto custa</a></li>
+              <li><a href="#permanence">Se desaparecermos</a></li>
+            </ul>
+          </nav>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GROUP 1 — BEFORE YOU INSTALL  ·  five questions
+       The pre-install objection set, in the order a sceptic hits them:
+       why bother, what do I have to give you, what can you see, will it
+       work on my stuff, will it work on my hardware.
+
+       Group sizes across this page are 5 / 2 / 3 / 2 / 3 / 6 — deliberately
+       uneven. The v5 teardown's second structural finding was that five v4
+       blocks resolved to 4+4 or 3+3; a FAQ is the easiest page in the world
+       to accidentally build as six neat groups of three or four.
+       =================================================================== -->
+  <section class="section section--soft" id="install" aria-labelledby="install-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="install-title" class="mb-0">Antes de instalar</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Porque não usar diretamente uma folha do Google?</h3>
+          <p class="measure">
+            É o que está a fazer: é esse o desenho. O que a aplicação acrescenta é uma câmara, uma base de dados global de produtos, uma vista de pastas com uma contagem por prateleira, um seletor de quantidade que acerta com o polegar, e colunas que chegam já nomeadas e formatadas. Experimente escrever um código de barras de 13 dígitos numa célula no telemóvel. Foi essa a parte que removemos.
+          </p>
+        </div>
+
+        <div>
+          <h3>Preciso de uma conta Google? Posso registar-me com um e-mail?</h3>
+          <p class="measure">
+            Sim, e é o único início de sessão que a aplicação usa. A vantagem é que registar-se é um toque: não há formulário para preencher nem palavra-passe para inventar, e a sua primeira folha de cálculo existe antes de chegar ao ecrã inicial.
+          </p>
+        </div>
+
+        <div>
+          <h3>Porque precisa uma aplicação de inventário de aceder ao meu Google Drive?</h3>
+          <!-- The scope name is set as a .code-chip here, the same treatment the
+               homepage's permission band gives it. The full
+               https://www.googleapis.com/auth/drive.file URL is deliberately not
+               rendered anywhere on the site. -->
+          <p class="measure">
+            Pede <span class="code-chip">drive.file</span>, a permissão de Drive mais restrita que o Google oferece. Uma aplicação com essa permissão só pode tocar nos ficheiros que ela própria criou, por isso o 1inventory pode abrir a folha de cálculo e a pasta de fotografias que criou para si, e mais nada. O Google impõe esse limite. O Gmail, o Calendário e o resto da sua conta ficam fora de alcance.
+          </p>
+          <!-- Body copy has no inline link style in this system — a bare <a> in a
+               paragraph inherits its colour and loses its underline, so it reads as
+               plain text. .link-arrow is the foundation's standalone link primitive
+               (block 06) and is used for every cross-link on this page. -->
+        </div>
+
+        <div>
+          <h3>O leitor vai reconhecer as minhas coisas?</h3>
+          <!-- ⚠ "unlimited" is a banned word site-wide with exactly one exception:
+               barcode SCANNING, where it is literally true. The daily cap is on
+               lookups against the global database, and conflating the two is the
+               single most common way this claim goes wrong. -->
+          <p class="measure">
+            Os produtos de loja com código de barras comercial voltam com nome, descrição e fotografia: latas, frascos, medicamentos, livros com ISBN, jogos de tabuleiro, Lego, DVD, pilhas. As marcas próprias e as etiquetas de armazém também se leem bem, só que a consulta não tem nada para preencher, por isso escreve o nome. São suportados doze formatos de código de barras, e a leitura em si não tem limite; limitadas estão apenas as consultas à base de dados, a 5 por dia no plano gratuito e 200 no Premium.
+          </p>
+        </div>
+
+        <div>
+          <h3>Existe uma aplicação web? Funciona num iPad?</h3>
+          <p class="measure">
+            Os seus dados são plenamente utilizáveis num portátil: a folha de cálculo abre no Google Sheets como qualquer outro ficheiro, e aí pode ordenar, filtrar, fazer gráficos e imprimir. A aplicação em si é uma aplicação de telemóvel em vertical para iOS 15.6 ou posterior e Android 7.0 ou posterior, por isso hoje não há disposição para tablet nem cliente de navegador.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GROUP 2 — THE LIST YOU ALREADY KEEP  ·  two questions
+       Band: .section--tight. Two questions is not a section's worth of
+       argument and it should not be padded to look like one. The tight
+       band is exactly what --tight exists for.
+       =================================================================== -->
+  <section class="section section--tight" id="existing-list" aria-labelledby="existing-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="existing-title" class="mb-0">E a lista que já tem?</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Já tenho uma lista. Tenho de a escrever outra vez?</h3>
+          <!-- ⚠ ACCURACY, all four verified and none may be loosened:
+                 · CSV only. Not Excel, not .xlsx, not Numbers.
+                 · The mapping is automatic and is NOT reviewable beforehand. The
+                   app reports it after the run. Never imply a preview or a confirm
+                   step.
+                 · Import is insert-only. Duplicates are skipped and existing rows
+                   are never updated, so it is not a sync, a merge or an update.
+                 · 5 MB, 60 columns, name column required.
+               The header example is load-bearing: it is the one detail that proves
+               the matching is by meaning rather than by exact field name. The brief's
+               original was a German one (Bezeichnung / Menge / Lagerort); the client
+               replaced it with an English example on 2026-09-20, because on an English
+               site the German read as an aside rather than as proof. Keep whatever
+               example is here unofficial-looking — "Item / Qty / Where" works because
+               none of the three is the app's own field name. -->
+          <p class="measure">
+            Não. Importe um CSV e os cabeçalhos das suas colunas são associados aos campos pelo significado, por isso uma folha com os cabeçalhos <em>Artigo / Qtd / Onde</em> vai parar às colunas certas sem qualquer configuração. Limites: só CSV, 5&nbsp;MB, 60 colunas, uma coluna de nome obrigatória. A associação é feita de uma vez e é-lhe mostrada depois. Os duplicados são ignorados.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quantos produtos posso ter?</h3>
+          <!-- The 10,000-per-inventory ceiling this answer used to publish is gone
+               (client, 2026-09-20), so the page now says what the plans table and
+               the in-app paywall have always said. The old text also derived
+               "50,000 things in total" from that cap — with no cap there is no
+               such number, and it goes with it. If a ceiling ever comes back,
+               this answer names it: a limit somebody meets without warning is
+               the kind of thing they write to support about. -->
+          <p class="measure">
+            Tantos quantos quiser, no plano gratuito e no Premium por igual &mdash; o número de produtos nunca foi aquilo que se paga. O que o Premium acrescenta são mais inventários, mais pessoas neles, mais campos seus e o histórico de alterações.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
+       Band: .section--mint AND .section--major. This is the beat that earns
+       the page, so it gets the page's largest padding. §8.3 of the brief:
+       the costliest, most credible signal available to an unknown GmbH with
+       zero reviews is real page real estate spent on what the product
+       cannot do.
+
+       ⚠ THE LOW-STOCK ANSWER IS THE MOST IMPORTANT SENTENCE ON THIS PAGE.
+         The product has exactly ONE alert rule type (DateThreshold) and it
+         watches Date and Date/Time custom fields. There is no low-stock
+         alert, no reorder point and no par level, and nothing anywhere on
+         this site may imply otherwise.
+       =================================================================== -->
+  <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="limits-title" class="mb-0">Limites, e aquilo em que estamos a trabalhar</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Funciona offline?</h3>
+          <p class="measure">
+            Ainda não, e está a caminho. Hoje cada ação é uma chamada de rede, por isso precisa de ligação para acrescentar ou alterar alguma coisa. O modo offline chega numa versão futura, e é onde mais falta faz: caves, garagens, arrecadações e carrinhas, que é precisamente onde um inventário costuma viver.
+          </p>
+        </div>
+
+        <div>
+          <h3>Avisa-me quando estiver a ficar sem alguma coisa?</h3>
+          <p class="measure">
+            Neste momento não. Os alertas de hoje vigiam datas e não quantidades: ponha uma validade, um fim de garantia ou uma data de manutenção num produto e recebe uma notificação ou um e-mail um determinado número de dias antes dessa data, ou depois. Os alertas por quantidade são uma extensão em que estamos a trabalhar.
+          </p>
+        </div>
+
+        <div>
+          <h3>E se precisar de mais de cinco pessoas?</h3>
+          <p class="measure">
+            Cinco pessoas é aquilo em torno do qual a aplicação foi construída: uma casa, uma oficina ou uma equipa pequena. As localizações não têm limite no Premium, mas ficam lado a lado em vez de encaixadas umas nas outras, e todas as pessoas que convida têm o mesmo nível de acesso. Se precisa de zonas de armazém dentro de zonas, permissões por localização ou um papel só de leitura, um sistema maior serve-o melhor.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- .admission — the foundation's costly-honesty block (v6 additions). It is
+           quieter than a card on purpose: this must not look like a feature being
+           sold back to the reader. Used exactly once on this page. -->
+      <div class="admission">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GROUP 4 — LETTING SOMEONE ELSE IN  ·  two questions
+       Default band, default padding. After a --major band and a --dark
+       connector, an ordinary band reads as a return to normal service,
+       which is the point of having a three-step padding scale at all.
+
+       ⚠ Two accuracy traps, both handled below:
+         1. History is Premium AND only exists in inventories created while
+            subscribed, so "every change lands in your History tab" is only
+            true where a History tab exists. Hence the conditional clause.
+         2. Banned vocabulary includes "real-time" and "sync". The second
+            answer denies both ideas without using either word.
+       =================================================================== -->
+  <section class="section" id="sharing" aria-labelledby="sharing-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="sharing-title" class="mb-0">Deixar entrar outra pessoa</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>É seguro deixar entrar o meu companheiro ou um colega?</h3>
+          <p class="measure">
+            Sim. Iniciam sessão com a própria conta Google e, onde o inventário tem separador de Histórico, cada alteração fica lá com o nome deles. Vale a pena saber: há dois papéis em vez de uma opção só de leitura, por isso quem convida pode editar e eliminar. Convidar exige Premium, o limite é de cinco pessoas incluindo você, e a folha de cálculo fica só no seu Drive.
+          </p>
+        </div>
+
+        <div>
+          <h3>As alterações deles aparecem logo no meu telemóvel?</h3>
+          <p class="measure">
+            As alterações chegam à sua folha do Google assim que são guardadas. Noutro telemóvel aparecem quando se puxa a lista para baixo para atualizar, e não em direto enquanto está a olhar. Se duas pessoas contarem a mesma prateleira ao mesmo tempo, ganha quem guardar por último.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       GROUP 5 — WHAT IT COSTS  ·  three questions
+       PRICE IS NOW CONFIRMED AND PUBLISHABLE: EUR 0.99 per month, 7-day free
+       trial, monthly billing only. Earlier drafts of this site carried
+       "Price shown in the app" because no figure had been supplied. That
+       placeholder is dead; do not reinstate it.
+
+       At €0.99 the price is a proof point and not a disclosure, so it is set
+       as a .stat beside the questions instead of being buried in a sentence.
+       .grid--pair-uneven puts the three answers in the 1.35fr column and the
+       number in the 1fr column, which is the second deliberate asymmetry on
+       the page.
+       =================================================================== -->
+  <!-- ===================================================================
+       GROUP 5 — WHAT IT COSTS  ·  three questions
+
+       This band used to be the odd one out on the page in four ways, all now
+       corrected so it matches the other five groups:
+         · .container instead of .container--narrow, so its measure was wider
+           than every other answer on the page;
+         · a .grid--pair-uneven two-column layout where the rest go straight
+           from .section__head into a .stack;
+         · a .card--flat sidebar carrying the price as a large .stat. No other
+           group has a sidebar, and its text duplicated the first answer almost
+           word for word, so removing it loses nothing;
+         · the heading was the statement "It costs €0.99 a month." where the
+           other five are plain labels. It is now "What it costs", which also
+           matches what the Jump-to list has always called it — those two
+           disagreed before.
+       =================================================================== -->
+  <section class="section section--soft" id="price" aria-labelledby="price-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="price-title" class="mb-0">Quanto custa</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Quanto custa o Premium?</h3>
+          <p class="measure">
+            0,99 &euro; por mês, com 7 dias grátis. A faturação é mensal e não há plano anual, nem pacote, nem um segundo nível. A subscrição é gerida pela App Store ou pelo Google Play, por isso cancela-a aí, e a aplicação mostra o preço na sua própria moeda.
+          </p>
+        </div>
+
+        <div>
+          <h3>O que acontece se deixar de pagar?</h3>
+          <p class="measure">
+            Nada é eliminado. Os inventários, localizações e campos personalizados a mais, e as pessoas que convidou, ficam bloqueados, e tudo volta de uma vez se voltar a subscrever. Os seus produtos ficam intactos, porque vivem na sua folha do Google. Enquanto um inventário está bloqueado fica oculto na aplicação, e as pessoas que convidou perdem o acesso até voltar a subscrever.
+          </p>
+        </div>
+
+        <div>
+          <h3>Vale a pena pagar?</h3>
+          <!-- The five things named here are the five Free-plan caps that actually
+               bite: a second inventory, a second location, a second person, more
+               alert rules, and change history. The list is exact — every one of
+               them is a row in the plans table. -->
+          <p class="measure">
+            Comece grátis e descubra. Catalogue um quarto no plano gratuito e, em duas semanas, saberá se quer um segundo inventário, uma segunda localização, uma segunda pessoa, mais regras de alerta ou um histórico de alterações. Essas cinco coisas são o que o Premium acrescenta, e 0,99 &euro; por mês é o preço inteiro.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CONNECTOR — the page's one pull quote.
+       .quote-major is used once per page by design. It sits here because
+       the six questions below it share a single answer, and saying that
+       once in large type is shorter than saying it six times in small.
+
+       This is also the page's ONE sanctioned "X, not Y" antithesis budget
+       item's neighbour: the antithesis itself is "continuity of data, not
+       continuity of service" in the shutdown answer below. This quote is
+       deliberately NOT antithetical, so the two do not compete.
+
+       Plain <div>, not <section>: a band with no heading has nothing to
+       label, and an aria-labelledby pointing at a pull quote is noise.
+       =================================================================== -->
+  <div class="section section--mint section--tight">
+    <div class="container container--narrow">
+      <p class="quote-major">Quase tudo o que se segue tem a mesma resposta: o ficheiro já está no seu Drive.</p>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       GROUP 6 — IF WE DISAPPEAR  ·  six questions
+       The longest group on the page, which is why the heading is a
+       conditional fragment and the band is the plain default: the size of
+       the group is doing the emphasis, and stacking a --major band on top of
+       it would make the page end on two crescendos in a row.
+
+       Contains the page's one permitted antithesis ("continuity of data, not
+       continuity of service") and the brief's one sanctioned aphorism
+       ("There is no export button, because there is nothing to export").
+       Both are pre-assigned in §9.1. Nothing else on this page may use
+       either shape.
+       =================================================================== -->
+  <section class="section" id="permanence" aria-labelledby="permanence-title">
+    <div class="container container--narrow">
+
+      <div class="section__head">
+        <h2 id="permanence-title" class="mb-0">Se desaparecermos</h2>
+      </div>
+
+      <div class="stack">
+
+        <div>
+          <h3>Posso exportar os meus dados?</h3>
+          <p class="measure">
+            Não há botão de exportação, porque não há nada para exportar. O seu inventário já é uma folha do Google no seu próprio Drive, e o Google guarda-lha como CSV, Excel ou PDF quando quiser. Uma ressalva: o ficheiro vive no Drive de quem é dono do inventário, por isso isto é algo que os proprietários podem fazer e as pessoas convidadas não.
+          </p>
+        </div>
+
+        <div>
+          <h3>E se eliminar alguma coisa sem querer?</h3>
+          <!-- ⚠ There is genuinely no restore button in the app. The Backups screen
+               lists Drive revisions and hands you off to Google Sheets to do the
+               restore. Do not describe it as a restore feature. -->
+          <p class="measure">
+            O seu inventário é uma folha do Google, por isso herda o histórico de versões do Google Drive. O ecrã de Cópias de segurança da aplicação lista as revisões e guia-o para restaurar uma; o restauro em si acontece no Google Sheets, não na aplicação. Uma coisa a ter em conta: eliminar um campo personalizado remove essa coluna inteira da sua folha de cálculo, valores incluídos.
+          </p>
+        </div>
+
+        <div>
+          <h3>O que acontece se o 1inventory encerrar?</h3>
+          <p class="measure">
+            A folha de cálculo, o seu separador de histórico e a pasta de fotografias estão no seu Google Drive e lá ficam, legíveis por tudo o que abra uma folha de cálculo. O que perderia era o leitor, a consulta de códigos de barras e a vista de pastas. Podemos prometer continuidade dos dados, não continuidade do serviço.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quem faz isto?</h3>
+          <!-- The Impressum link is a standalone .link-arrow, never an inline <a>
+               inside the sentence: .link-arrow is inline-flex with a 44px minimum
+               height, so mid-paragraph it would blow the line box apart. Every
+               cross-link on this page sits on its own line for that reason. -->
+          <p class="measure">
+            A Sparkybit GmbH, uma empresa de Paderborn, na Alemanha. Os dados de registo estão no nosso Impressum, e o mesmo nome de editor aparece nas fichas da App Store e do Google Play, por isso pode confirmar que a aplicação que está a instalar vem das pessoas cujo nome está nesta página.
+          </p>
+        </div>
+
+        <div>
+          <h3>Mostram publicidade?</h3>
+          <p class="measure">
+            Não, em nenhum dos planos. Não há nenhum SDK de publicidade na aplicação, e ela nunca pediu um identificador de rastreio nem lhe mostrou um pedido de App Tracking Transparency. O plano gratuito é pago por quem passa a Premium, e é esse todo o modelo de negócio.
+          </p>
+        </div>
+
+        <div>
+          <h3>Em que idiomas está?</h3>
+          <p class="measure">
+            Inglês, alemão, espanhol, francês e português: a aplicação toda, e também os e-mails de alerta e os resultados da consulta de códigos de barras, que voltam no seu idioma. A sua definição de idioma pertence à sua conta, por isso acompanha-o quando muda de telemóvel.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Closes the question set and routes the leftover question somewhere a
+           human answers it. Support is a compliance-priority page in the brief's
+           URL map, and this is the highest-intent moment to link it. -->
+      <div class="section__foot">
+        <p class="measure">
+          Uma pergunta que não esteja aqui merece ser-nos enviada. O formulário de apoio na aplicação separa as mensagens em pedidos de funcionalidades, relatos de erros, faturação e tudo o resto, e o mesmo endereço funciona a partir de um portátil.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CLOSE — the offer block the brief requires on every page.
+       Same construction and the same store links as the homepage's final
+       band, so a reader who lands on this page from inside the app and
+       reads to the bottom converts without being sent back to /.
+       =================================================================== -->
+  <section class="section section--gradient section--major" id="get-the-app" aria-labelledby="close-title">
+    <div class="container">
+      <div class="final-cta">
+        <h2 id="close-title">Comece por uma prateleira.</h2>
+        <p class="final-cta__body">Inicie sessão com o Google, leia dez coisas e abra a folha de cálculo no seu portátil. Se não for para si, o ficheiro continua a ser seu.</p>
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="faq-ios">
+              <img src="/img/badge-appstore.svg?v=21" alt="Descarregar na App Store" width="150" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="faq-android">
+              <img src="/img/badge-googleplay.svg?v=21" alt="Disponível no Google Play" width="169" height="50" />
+            </a>
+          </div>
+          <p class="cta-strip"><span>Plano gratuito, sem cartão</span><span>iPhone e Android</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER — identical on all eight v6 pages.
+     Legal hrefs are ABSOLUTE (/privacy.html, /terms.html): those two files
+     live at the site root, and a relative link from inside /v6/ would 404.
+     Everything else is relative because it is a sibling page in this folder.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — início">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory — uma aplicação de inventário por código de barras para a sua casa ou o seu negócio, numa folha do Google que é sua.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          A aplicação está disponível em inglês, alemão, espanhol, francês e português.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Produto</h2>
+        <nav class="footer-links" aria-label="Produto">
+          <a href="./">Como funciona</a>
+          <a href="plans.html">Planos</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Política de privacidade</a>
+          <a href="terms.html">Termos e condições</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contacto</h2>
+        <nav class="footer-links" aria-label="Contacto">
+          <a href="support.html">Apoio</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Alemanha</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA. Same component and the same unvaried label as every
+     other page; js/main.js handles hide-on-scroll and dismissal. -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Obter a aplicação">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Obter a aplicação</a>
+  <button class="sticky-cta__close" type="button" aria-label="Fechar" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>

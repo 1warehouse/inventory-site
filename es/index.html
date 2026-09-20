@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.className += " js";</script>
+  <script>
+  /* Language. Sends a first-time visitor to the version their browser asks for,
+     once, and never again after that: an explicit choice in the switcher is
+     stored and wins, and the session flag stops a second guess inside one
+     visit. Skipped for ?mobile=1, which is the app embedding a legal page and
+     linking to the language it already knows the user is in. */
+  (function () {
+    try {
+      if (/[?&]mobile(=(1|true))?(&|$)/i.test(location.search)) return;
+      var SUP = ['de', 'es', 'fr', 'pt'];
+      var path = location.pathname;
+      var cur = (path.match(/^\/(de|es|fr|pt)\//) || [])[1] || 'en';
+      var go = function (l) {
+        var rest = path.replace(/^\/(de|es|fr|pt)\//, '/');
+        location.replace((l === 'en' ? rest : '/' + l + rest) + location.search + location.hash);
+      };
+      var stored = null;
+      try { stored = localStorage.getItem('lang'); } catch (e) {}
+      if (stored) { if (stored !== cur) go(stored); return; }
+      try { if (sessionStorage.getItem('langAuto')) return; sessionStorage.setItem('langAuto', '1'); } catch (e) {}
+      var want = null, langs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < langs.length && !want; i++) {
+        var base = String(langs[i]).toLowerCase().split('-')[0];
+        if (base === 'en') want = 'en';
+        else if (SUP.indexOf(base) > -1) want = base;
+      }
+      if (want && want !== cur) go(want);
+    } catch (e) {}
+  })();
+  </script>
+
+  <title>App de inventario con código de barras para tu propia hoja de Google | 1inventory</title>
+  <meta name="description" content="Tu inventario en el móvil, tus datos en tu Drive. Tres toques por artículo y ningún escáner que comprar. Gratis en iPhone y Android, Premium 0,99 EUR al mes." />
+
+  <link rel="canonical" href="https://1inventory.io/es/" />
+  <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
+  <link rel="alternate" hreflang="de" href="https://1inventory.io/de/" />
+  <link rel="alternate" hreflang="es" href="https://1inventory.io/es/" />
+  <link rel="alternate" hreflang="fr" href="https://1inventory.io/fr/" />
+  <link rel="alternate" hreflang="pt" href="https://1inventory.io/pt/" />
+  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://1inventory.io/es/" />
+  <meta property="og:title" content="Tu inventario en el móvil. Tus datos en tu Drive." />
+  <meta property="og:description" content="Tu móvil es el escáner de códigos de barras, así que no hay hardware que comprar. Tres toques por artículo, y la hoja de cálculo en la que escribe es tuya." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory: una app de inventario con código de barras que escribe en una hoja de Google en tu propio Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tu inventario en el móvil. Tus datos en tu Drive." />
+  <meta name="twitter:description" content="Tu móvil es el escáner de códigos de barras, así que no hay hardware que comprar. Tres toques por artículo, y la hoja de cálculo en la que escribe es tuya." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/app-icon.svg?v=21" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css?v=21" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "1inventory",
+  "url": "https://1inventory.io/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "iOS 15.6+, Android 7.0+",
+  "description": "Una app de inventario con código de barras para casa y para negocios pequeños. Tu móvil es el escáner y los datos viven en una hoja de Google en tu propio Google Drive.",
+  "inLanguage": "es",
+  "downloadUrl": "https://apps.apple.com/us/app/1inventory/id6747425128",
+  "sameAs": [
+    "https://apps.apple.com/us/app/1inventory/id6747425128",
+    "https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "name": "Gratis"
+    },
+    {
+      "@type": "Offer",
+      "price": "0.99",
+      "priceCurrency": "EUR",
+      "name": "Premium"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sparkybit GmbH"
+  }
+}
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="1inventory — inicio">
+      <img src="/img/app-icon.svg?v=21" alt="" width="32" height="32" />
+      <span>1inventory</span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Three links, identical on every page. Earlier builds grew per-page
+           nav items (The sheet / Your data / What it doesn't do) which made the
+           menu change shape as you moved around the site. -->
+      <nav class="nav-links" aria-label="Principal">
+        <a href="./" aria-current="page">Cómo funciona</a>
+        <a href="plans.html">Planes</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <!-- Language. A <details> so it opens with no JavaScript and the five
+           entries stay real links a crawler can follow; main.js stores the
+           click so the detector in <head> stops guessing on later pages.
+           Generated by tools/i18n_build.py — edit it there, not here. -->
+      <details class="langswitch">
+        <summary aria-label="Idioma"><span aria-hidden="true">ES</span></summary>
+        <div class="langswitch__menu">
+          <a href="/" hreflang="en" data-lang="en">English</a>
+          <a href="/de/" hreflang="de" data-lang="de">Deutsch</a>
+          <a href="/es/" hreflang="es" data-lang="es" aria-current="true">Español</a>
+          <a href="/fr/" hreflang="fr" data-lang="fr">Français</a>
+          <a href="/pt/" hreflang="pt" data-lang="pt">Português</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-cta">
+      <!-- btn--primary is the orange CTA. btn--green exists in the stylesheet
+           and must not be used here: the install button is orange sitewide. -->
+      <a class="btn btn--primary" href="#get-the-app" data-cta="header">Descargar la app</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="nav-menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- =================================================================
+       HERO
+       Rewritten for v7 on three explicit client instructions:
+         · the headline must be universal — it has to work for a kitchen
+           cupboard and a stockroom without picking a side;
+         · lead on the three taps AND on there being no hardware to buy;
+         · the "Built by Sparkybit GmbH, Paderborn" line that sat above the
+           v6 headline is gone. It was never a reason to install.
+       ================================================================= -->
+  <section class="section section--major" id="top" aria-labelledby="hero-title">
+    <div class="container split split--55 split--top">
+      <div class="split__copy">
+        <!-- NO EYEBROW, deliberately. It read "Barcode inventory app for iPhone
+             and Android." and repeated two of the headline's own words —
+             "inventory" and, with the subhead, "barcode" — while its only other
+             content, the platform, is stated by the two store badges forty
+             pixels below. Nothing was lost by cutting it.
+
+             The headline is fixed copy. Because it owns "your", "inventory",
+             "phone", "data" and "Drive", every line around it has to avoid
+             those words: the four "your"s are deliberate anaphora and only work
+             if nothing else nearby competes with them. -->
+        <h1 id="hero-title">Tu inventario en el móvil.<br /> <span class="u-marker">Tus datos en tu Drive.</span></h1>
+
+        <!-- The headline carries portability and ownership, so the subhead
+             carries the other three: no hardware, three taps, both audiences.
+             It opens on "The camera" rather than "Your phone" to keep off the
+             headline's words, and says "barcode" once instead of twice. -->
+        <div class="lead">
+          <p>
+            La cámara es el escáner, así que no hay hardware que comprar. Apúntala a cualquier cosa con un código de barras impreso y el nombre, la foto y la descripción se rellenan solos. Tres toques por cosa, tanto en un armario de cocina como en un almacén.
+          </p>
+        </div>
+
+        <div class="cta-block">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="hero-ios">
+              <img src="/img/badge-appstore.svg?v=21" alt="Descárgala en el App Store" width="150" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="hero-android">
+              <img src="/img/badge-googleplay.svg?v=21" alt="Disponible en Google Play" width="169" height="50" />
+            </a>
+          </div>
+          <p class="note">Instalación gratuita. Inicia sesión con Google. Sin formularios ni contraseñas.</p>
+        </div>
+      </div>
+
+      <!-- A real screenshot, supplied by the client, with the device frame
+           already in it — so no .phone wrapper, which would draw a second one.
+
+           The CSS mockup this replaced carried the page's one placeholder
+           disclosure ("App screens are representations…"). That line is gone
+           with it, because this screen is no longer a representation.
+
+           width and height are the intrinsic pixels: they reserve the box
+           before the file arrives, so the hero does not jump. fetchpriority
+           high because at this size it is the page's likely LCP element. -->
+      <div class="split__media">
+        <img class="hero-shot" src="/img/app-home.png?v=21"
+             width="1240" height="1640"
+             fetchpriority="high" decoding="async"
+             alt="La lista de productos de 1inventory en un móvil —passata, aceite de oliva, espaguetis, pimentón ahumado y miel de acacia, cada uno con miniatura, código de barras y cantidad— rodeada de las cosas que la gente cataloga: tarros, una botella, cajas apiladas, un botiquín, discos y libros." />
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       THE JOURNEY — the second thing on the page, and a map rather than a
+       feature list. Six beats covering what actually happens, from naming an
+       inventory to being warned about a date months later.
+
+       Two rows of three, not six across: at six columns each step gets about
+       160px, which is four words a line.
+
+       The pronoun switches on the last step, from "you" to "it", on purpose.
+       Every other beat is something the reader does; that one is the only
+       thing that happens while they are not looking, and it is the one with no
+       equivalent in a spreadsheet.
+
+       ⚠ Step 2 says "eight types" — that count is exact
+       (lib/models/enums/custom_field_type.dart: text, large text, number,
+       decimal, checkbox, dropdown, date, date/time). How MANY fields you get
+       is a plan limit, not a capability, and belongs on the plans page rather
+       than here. Same for locations in step 3.
+
+       Step 2 is the customise beat, so it carries the dropdown detail: the
+       options in a Dropdown field are written by the user, not picked from a
+       preset list (custom_field_form_section_options / custom_field_option_label
+       / settings_tooltip_custom_fields_remove_option). Nowhere else on the site
+       says this, and it is the difference between choosing a schema and
+       building one.
+
+       It must NOT reuse "each becomes a real column in the sheet" — that exact
+       clause is the payoff of the "Your own fields" card in the more-band
+       below, and the two were running it verbatim.
+       ================================================================= -->
+  <section class="section section--soft" id="how-it-goes" aria-labelledby="s0-title">
+    <div class="container">
+
+      <div class="section__head section__head--center">
+        <span class="eyebrow">El proceso</span>
+        <h2 id="s0-title" class="mb-0">Cómo funciona, de vacío a al día.</h2>
+      </div>
+
+      <ol class="flow">
+
+        <li class="flow__step">
+          <span class="flow__num" aria-hidden="true">1</span>
+          <svg class="flow__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <rect x="4" y="6" width="24" height="20" rx="2" />
+            <path d="M4 12h24M10 6v6" />
+          </svg>
+          <h3>Creas un inventario</h3>
+          <p>Ponle el nombre que quieras y la app crea una hoja de cálculo de Google para él en tu propio Drive.</p>
+        </li>
+
+        <li class="flow__step">
+          <span class="flow__num" aria-hidden="true">2</span>
+          <svg class="flow__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <path d="M5 9h3.8M13.2 9H27M5 16h8.8M18.2 16H27M5 23h5.8M15.2 23H27" />
+            <circle cx="11" cy="9" r="2.2" />
+            <circle cx="16" cy="16" r="2.2" />
+            <circle cx="13" cy="23" r="2.2" />
+          </svg>
+          <h3>Lo haces tuyo</h3>
+          <p>Una despensa necesita fechas de caducidad; un taller, números de serie. Añade los campos que tienen tus cosas, en ocho tipos, incluidas listas desplegables con tus propias opciones, y la hoja añade las columnas correspondientes.</p>
+        </li>
+
+        <li class="flow__step">
+          <span class="flow__num" aria-hidden="true">3</span>
+          <svg class="flow__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <path d="M4 10V6h4M28 10V6h-4M4 22v4h4M28 22v4h-4" />
+            <path d="M10 11v10M14 11v10M18 11v10M22 11v10" />
+          </svg>
+          <h3>Lo escaneas</h3>
+          <p>La cámara lee el código de barras y el nombre, la foto y la descripción llegan rellenados. Elige en qué ubicación vive, guarda y el producto existe.</p>
+        </li>
+
+        <li class="flow__step">
+          <span class="flow__num" aria-hidden="true">4</span>
+          <svg class="flow__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <circle cx="14" cy="14" r="9" />
+            <path d="M20.5 20.5 28 28" />
+          </svg>
+          <h3>Lo vuelves a encontrar</h3>
+          <p>Escanea el código de barras una segunda vez y se abre ese producto, o escribe cualquier parte del nombre.</p>
+        </li>
+
+        <li class="flow__step">
+          <span class="flow__num" aria-hidden="true">5</span>
+          <svg class="flow__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <circle cx="16" cy="16" r="12" />
+            <path d="M10 16h12M16 10v12" />
+          </svg>
+          <h3>Cambias la cantidad</h3>
+          <p>La cantidad que ya tiene aparece al instante. Súbela o bájala con el pulgar, guarda y sigue.</p>
+        </li>
+
+        <li class="flow__step">
+          <span class="flow__num" aria-hidden="true">6</span>
+          <svg class="flow__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true" focusable="false">
+            <path d="M16 5a8 8 0 0 0-8 8c0 6-3 8-3 8h22s-3-2-3-8a8 8 0 0 0-8-8z" />
+            <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
+          </svg>
+          <h3>Te avisa a tiempo</h3>
+          <p>Pon una fecha de caducidad, de garantía o de mantenimiento en un producto y la app te avisa por notificación o por correo antes de que pase. Este es el único paso en el que tú no haces nada.</p>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       WHO IT IS FOR — deliberately short.
+       v4 ran four bullets per card and v6 ran a 200-word essay. Three each
+       here, and the card headings answer the universality note: the same
+       product, two contexts.
+       ================================================================= -->
+  <section class="section section--mint section--tight" id="who" aria-labelledby="s1-title">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Para quién es</span>
+        <h2 id="s1-title" class="mb-0">La misma app, a los dos lados de la puerta.</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card card--tint">
+          <!-- Line art carried over from v4's own audience cards, which had
+               these before the v7 rebuild dropped them. Same .audience-card__glyph
+               class and the same stroke weight as the journey glyphs above, so
+               nothing new enters the design system. Decorative: the h3 says
+               "At home" and "At work" in words. -->
+          <svg class="audience-card__glyph" viewBox="0 0 44 44" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4 20 L22 6 L40 20" />
+            <path d="M8.5 17.5 V38 H35.5 V17.5" />
+            <path d="M17.5 38 V27 H26.5 V38" />
+          </svg>
+          <h3>En casa</h3>
+          <ul class="bullets bullets--green bullets--tight">
+            <li>Saber qué hay en el armario mientras estás en la tienda.</li>
+            <li>La comida y los medicamentos dejan de caducar sin que nadie se entere.</li>
+            <li>Una colección se vuelve buscable: libros, juegos de mesa, vino, herramientas.</li>
+            <li>El garaje, el desván y el trastero tienen cada uno su propia lista.</li>
+          </ul>
+        </div>
+        <div class="card card--tint">
+          <!-- Line art carried over from v4's own audience cards, which had
+               these before the v7 rebuild dropped them. Same .audience-card__glyph
+               class and the same stroke weight as the journey glyphs above, so
+               nothing new enters the design system. Decorative: the h3 says
+               "At home" and "At work" in words. -->
+          <svg class="audience-card__glyph" viewBox="0 0 44 44" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5.5 17 L9 7.5 H35 L38.5 17 Z" />
+            <path d="M9 17 V38 H35 V17" />
+            <path d="M13.5 22.5 H23 V31 H13.5 Z" />
+            <path d="M27.5 38 V22.5 H33 V38" />
+          </svg>
+          <h3>En el trabajo</h3>
+          <ul class="bullets bullets--green bullets--tight">
+            <li>El inventario es un paseo por la estantería con el móvil que ya llevas encima.</li>
+            <li>Decirle a un cliente qué tienes sin ir a mirar.</li>
+            <li>Proveedor, número de serie, fin de garantía: añade las columnas que tu oficio necesita.</li>
+            <li>Hasta cinco personas trabajan sobre la misma lista, y el historial muestra quién cambió qué.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="closing-line">Hecho para casas y negocios pequeños. No es un sistema de almacén, y preferimos decirlo ya.</p>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       THREE TAPS — the client's first priority.
+       The "no hardware" argument lives here as well as in the H1, because
+       it is the one thing a business reader is actively pricing up.
+       CSV import is one line at the foot rather than its own section: it
+       answers an objection, it is not a reason to install.
+       ================================================================= -->
+  <section class="section section--soft section--major" id="how-it-works" aria-labelledby="s2-title">
+    <div class="container">
+      <div class="split split--45 split--top">
+        <div class="split__copy stack--sm">
+          <p class="eyebrow">Cómo funciona</p>
+          <h2 id="s2-title">Apunta. Confirma. Siguiente.</h2>
+          <div class="prose">
+            <p>
+              Toca el círculo verde, apunta la cámara a un código de barras y la app busca en bases de datos globales de productos. El nombre, la descripción y la foto vuelven rellenados, en tu idioma. Toca <em>Guardar y escanear el siguiente</em> y la cámara ya está lista otra vez.
+            </p>
+            <p>
+              No hay hardware que comprar. Ni pistola de escaneo, ni nada que emparejar, ni nada que cargar. Lee doce formatos de código de barras, hace zoom solo cuando la letra es pequeña y pita para que puedas mantener la vista en la estantería.
+            </p>
+          </div>
+          <ul class="bullets bullets--green bullets--tight">
+            <li>¿Sin código de barras? Añádelo a mano en unos segundos.</li>
+            <li>Las marcas blancas y el género sin etiqueta se escanean igual de bien y vuelven en blanco, así que escribes el nombre.</li>
+            <li>Consultar un código de barras gasta una de las 5 consultas gratuitas al día, o de las 200 de Premium. Escanear nunca se contabiliza.</li>
+          </ul>
+        </div>
+
+        <div class="split__media">
+          <!-- Real screenshots, in the order the flow happens: aim, look up,
+               result. Each PNG carries its own device frame, so no .phone
+               wrapper — that would draw a second bezel.
+
+               .frame-row is the existing horizontal snap-scroll strip; below
+               960px it becomes one scrollable row rather than a stack, which
+               is why the group is focusable and labelled. Heights match the
+               CSS mockups these replaced (330px) so the section does not move.
+
+               These are not decorative: they are the demonstration this
+               section is making, so each carries real alt text rather than
+               aria-hidden. -->
+          <div class="frame-row" role="group" aria-label="Cómo es un escaneo, en tres pasos" tabindex="0">
+            <img class="frame-shot" src="/img/scan-barcode-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="El escáner apuntando a una botella, con el código de barras enmarcado por cuatro esquinas blancas y el mensaje: escanea un código de barras para añadir un producto nuevo o encontrar uno existente." />
+            <img class="frame-shot" src="/img/scan-search-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="Una hoja que dice No está en tu inventario, con un indicador de carga y la línea: buscando información del producto en la base de datos global." />
+            <img class="frame-shot" src="/img/scan-search-results-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="El resultado de la consulta: Aceite de oliva virgen extra, prensado en frío, 1 l, con su código de barras, una descripción y una foto del producto, y un botón para añadirlo." />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CSV import. One card, no section of its own. -->
+      <div class="section__foot">
+        <div class="card card--tint">
+          <h3>¿Ya llevas una lista en algún sitio?</h3>
+          <p class="measure">
+            Importa un CSV y los encabezados de tus columnas se asignan automáticamente a los campos correctos, así que no hay nada que emparejar a mano. Las filas que ya tienes se omiten en lugar de sobrescribirse.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- =================================================================
+       FIND IT AND FIX THE NUMBER — merged in v7 from two sections that were
+       telling one story. "Then find it again" and "The second scan is a
+       stocktake" both answer the same question: the list exists, now what?
+       Searching, browsing by location and re-scanning to recount are three
+       ways into the same product, so they belong in one band with the three
+       screens that show them.
+
+       The Alerts / History / Dashboard bullets that used to close the
+       stocktake section have moved to their own band below — they are not
+       part of this loop, and burying them here was underselling them.
+       ================================================================= -->
+  <section class="section" id="find-it-again" aria-labelledby="s3-title">
+    <div class="container">
+      <div class="split split--45 split--top">
+        <div class="split__copy stack--sm">
+          <p class="eyebrow">Cuando ya está todo dentro</p>
+          <h2 id="s3-title">Tres caminos de vuelta a una cosa.</h2>
+          <div class="prose">
+            <p>
+              <strong>Vuelve a escanearlo.</strong> El segundo escaneo es el recuento: la app muestra la cantidad que tenías y espera. Súbela o bájala con el pulgar, guarda y la cámara vuelve. Recorre la estantería y el recuento está hecho antes de que te sientes.
+            </p>
+            <p>
+              <strong>La búsqueda</strong> lee más que el nombre. Escribe medio código de barras, una palabra de la descripción o un proveedor que escribiste en un campo tuyo, y encuentra el artículo.
+            </p>
+            <p>
+              <strong>La vista de ubicaciones</strong> convierte cada lugar en una carpeta. Toca Despensa y ve qué hay en la despensa. Lo que no está asignado se queda en Sin ubicación, en vez de desaparecer.
+            </p>
+          </div>
+          <p class="note">Nada se descuenta solo. No hay conexión con la caja ni aviso de stock bajo, así que si vendes todo el día este recuento se irá desviando.</p>
+        </div>
+
+        <div class="split__media">
+          <div class="frame-row" role="group" aria-label="Volver a escanear, búsqueda y vista de ubicaciones" tabindex="0">
+            <img class="frame-shot" src="/img/edit-count-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="Al escanear un producto que ya está en la lista aparece su hoja de cantidad: Aceite de oliva virgen extra con su foto, un menos y un más a cada lado del número 2, y un botón para aplicar." />
+            <img class="frame-shot" src="/img/search-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="Una búsqueda de la palabra aceite, que encuentra tres productos por el nombre con la coincidencia resaltada: aceite de oliva, aceite de girasol y aceite de sésamo, cada uno con su código de barras y su cantidad." />
+            <img class="frame-shot" src="/img/locations-list-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+                 alt="La vista de ubicaciones muestra cada lugar con un recuento: Cocina 24, Estante de la despensa 38, Bodega 12, Estante del garaje 9 y Sin ubicación 3." />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       AND THERE'S MORE — new in v7. These three shipped in the July release
+       and were three bullets at the foot of the stocktake section, which
+       undersold them: alerts are the one thing here a spreadsheet cannot do
+       at all, and history and the dashboard are the two reasons a list stays
+       trustworthy.
+
+       Heading is the app's own ("And there's more", getting_started_more_title).
+
+       ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
+       the free plan gets one rule. Do not add a Premium tag to that bullet.
+       ================================================================= -->
+  <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow">Cada semana a partir de entonces</span>
+        <h2 id="s4-title" class="mb-0">Y hay más.</h2>
+      </div>
+
+      <div class="grid grid--5" style="margin-top:28px">
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/dashboard-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+               alt="El panel de un inventario llamado Home inv: 5 productos, 4 ubicaciones, 2 campos propios, 1 usuario, 1 regla de aviso, stock total 86 y la última actividad." />
+          <h3>Panel</h3>
+          <p>Productos, ubicaciones, stock total y lo último que cambió, en una pantalla.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/custom-fields-wt.png?v=21" width="696" height="1444" loading="lazy" decoding="async"
+               alt="La pantalla de edición de campos con cinco campos propios y sus tipos: Consumir antes de y Abierto el como fechas, Precio de compra como número, Proveedor como texto y Balda como lista desplegable con seis opciones." />
+          <h3>Tus propios campos</h3>
+          <p>Precios, fechas, números de serie. Ocho tipos, y cada uno se convierte en una columna real de la hoja.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/alert-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+               alt="La pantalla de nueva regla de aviso: una regla llamada Caduca pronto, que vigila el campo Consumir antes de, avisa siete días antes de la fecha a las 09:00, limitada a las ubicaciones Cocina y Estante de la despensa, con notificación y correo activados." />
+          <h3>Avisos</h3>
+          <p>Una fecha en un producto y te avisa días antes de que pase, por notificación o por correo.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/users-wt.png?v=21" width="696" height="1444" loading="lazy" decoding="async"
+               alt="La pantalla de usuarios de un inventario, con Anna Weber como propietaria y Marek Nowak y Lisa Chen como usuarios, cada uno con su correo, y una acción para invitar." />
+          <h3>Compartir <span class="pill">Premium</span></h3>
+          <p>Invita hasta a otras cuatro personas. Todas trabajan sobre la misma lista.</p>
+        </div>
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/history-wt.png?v=21" width="696" height="1442" loading="lazy" decoding="async"
+               alt="La pantalla de historial con cada cambio: fecha, producto, quién lo hizo y la cantidad antes y después: aceite de oliva subido de 1 a 2, passata bajada de 7 a 6, pimentón ahumado creado, azúcar de caña borrado." />
+          <h3>Historial <span class="pill">Premium</span></h3>
+          <p>Qué cambió, quién lo hizo y cuándo. Cada cantidad movida, cada producto añadido o borrado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       YOUR SHEET — shortened on client instruction. v4 ran ~210 words plus
+       a full column list plus four no-lock-in blocks; v6 ran over 600. The
+       argument survives in about 120 words because it was always one idea.
+       ================================================================= -->
+  <section class="section" id="your-sheet" aria-labelledby="s5-title">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <span class="eyebrow">Tus datos, no nuestra base de datos</span>
+        <h2 id="s5-title">Es una hoja de Google. En tu Drive.</h2>
+      </div>
+      <div class="prose">
+        <p>
+          La primera vez que inicias sesión, 1inventory crea una hoja de cálculo real en tu propio Google Drive. Cada producto que añades es una fila. Ábrela en un portátil, ordénala, haz gráficos o compártela con tu gestoría como compartirías cualquier archivo de Google.
+        </p>
+        <p>
+          Deja de pagar y no se borra nada. Borra la app y el archivo sigue en tu Drive. Si desapareciéramos mañana, seguirías teniéndolo todo, porque nunca fue nuestro.
+        </p>
+      </div>
+      <!-- The sheet itself, sitting between the claim and the closing line so
+           the reader sees the thing before being told there's nothing to
+           export. This alt is written out rather than left empty: unlike the
+           shield on the permissions band, the picture IS the argument here,
+           and a reader who can't see it should still get what it shows.
+
+           Lossless WebP, 28 KB. Flat UI with small text compresses better
+           lossless than lossy here (42 KB at q88) and the barcodes stay sharp
+           instead of ringing. -->
+      <figure class="sheet-shot">
+        <img src="/img/gsheet.webp?v=21" width="1144" height="800" loading="lazy" decoding="async"
+             alt="Una hoja de Google llamada Home inventory. Cada producto es una fila: nombre, código de barras, cantidad y ubicación, con un total acumulado debajo." />
+      </figure>
+      <p class="quote-major">No hay botón de exportar, porque no hay nada que exportar.</p>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PERMISSIONS — kept on client instruction ("useful"), trimmed. The
+       long explanation of what each OAuth scope does is gone; the two lists
+       carry it faster than prose did.
+       ================================================================= -->
+  <section class="section section--dark" id="permission" aria-labelledby="s6-title">
+    <div class="container split split--70">
+      <div class="split__copy">
+        <!-- The eyebrow's little shield-and-tick is GONE. It was doing the
+             badge job when this band had no artwork; beside the shield on the
+             right it was simply the same symbol twice, forty pixels apart.
+
+             The eyebrow was "In plain words", which described the writing style
+             rather than the subject. This band is the page's trust argument, so
+             it names it. -->
+        <div class="section__head">
+          <span class="eyebrow">Privacidad y seguridad</span>
+          <h2 id="s6-title" class="mb-0">El resto de tu Drive es invisible para nosotros.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Te pedimos tu nombre, tu correo y permiso para crear archivos en tu Drive. Ese último es el permiso más estrecho que ofrece Google, y Google lo impone: no es una promesa nuestra.
+          </p>
+        </div>
+        <div class="perm-cols">
+          <div class="perm-col">
+            <h3>A qué puede acceder</h3>
+            <ul class="perm-list perm-list--can">
+              <li>A la hoja de cálculo que creó para ti</li>
+              <li>A la carpeta de fotos que está al lado</li>
+            </ul>
+          </div>
+          <div class="perm-col">
+            <h3>Qué no puede ver nunca</h3>
+            <ul class="perm-list perm-list--cannot">
+              <li>Cualquier otro archivo de tu Drive</li>
+              <li>Gmail, Calendar y todo lo demás</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note scope-footnote">Tus productos pasan por nuestros servidores de camino a Google. No los guardamos. Técnicamente, es el ámbito <span class="code-chip">drive.file</span>.</p>
+      </div>
+
+      <!-- Decorative, hence the empty alt: the heading and the two lists carry
+           every bit of the meaning, and a screen reader announcing "shield"
+           here would add nothing.
+
+           WebP, not PNG. The artwork is a soft radial glow behind four faint
+           shield outlines, and that is almost all alpha gradient — palette PNG
+           quantises it to nothing (the glow and the rings disappear outright,
+           checked against the dark band), while full-colour PNG costs 328 KB.
+           WebP holds the gradient at 45 KB. -->
+      <div class="split__media">
+        <img class="shield-shot" src="/img/secure.webp?v=21" width="620" height="620"
+             loading="lazy" decoding="async" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <section class="section section--gradient section--major" id="get-the-app" aria-labelledby="s8-title">
+    <div class="container">
+      <div class="final-cta">
+        <h2 id="s8-title">Empieza por un estante.</h2>
+        <!-- The guided start is worth one clause, not three. An earlier draft
+             spelled out the step count, the duration and the fact that it can
+             be skipped; itemising how short something is makes it sound like a
+             chore being excused. The app walking you through it is the point,
+             and the risk reversal is what closes. -->
+        <p class="final-cta__body">Inicia sesión con Google y la app te guía por el resto. Si no es para ti, el archivo sigue siendo tuyo.</p>
+        <div class="cta-block cta-block--center">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="home-ios">
+              <img src="/img/badge-appstore.svg?v=21" alt="Descárgala en el App Store" width="150" height="50" />
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="home-android">
+              <img src="/img/badge-googleplay.svg?v=21" alt="Disponible en Google Play" width="169" height="50" />
+            </a>
+          </div>
+          <p class="cta-strip"><span>Plan gratuito, sin tarjeta</span><span>iPhone y Android</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a class="footer-brand" href="./" aria-label="1inventory — inicio">
+          <img src="/img/app-icon.svg?v=21" alt="" width="34" height="34" />
+          <span>1inventory</span>
+        </a>
+        <p class="footer-blurb">
+          1inventory: una app de inventario con código de barras para tu casa o tu negocio, en una hoja de Google que es tuya.
+        </p>
+        <p class="footer-blurb" style="margin-top:12px">
+          La app está disponible en inglés, alemán, español, francés y portugués.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2>Producto</h2>
+        <nav class="footer-links" aria-label="Producto">
+          <a href="./">Cómo funciona</a>
+          <a href="plans.html">Planes</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy.html">Política de privacidad</a>
+          <a href="terms.html">Términos y condiciones</a>
+          <!-- v7: v4 shipped a dead "Impressum — coming" span here. The page now
+               exists and carries Sparkybit's real registration details. -->
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h2>Contacto</h2>
+        <nav class="footer-links" aria-label="Contacto">
+          <a href="support.html">Soporte</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sparkybit GmbH &middot; Im Dörener Feld 3, 33100 Paderborn, Alemania</p>
+      <p>&copy; <span data-year>2026</span> Sparkybit GmbH &middot; HRB 15083</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Descargar la app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Descargar la app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Cerrar" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="/js/main.js?v=21" defer></script>
+</body>
+</html>
