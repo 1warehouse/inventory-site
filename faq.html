@@ -52,14 +52,14 @@
   <meta name="twitter:description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
   <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
 
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=18" />
-  <link rel="apple-touch-icon" href="img/app-icon.svg?v=18" />
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=19" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg?v=19" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=18" />
+  <link rel="stylesheet" href="css/style.css?v=19" />
 
   <!-- =====================================================================
        FAQPage STRUCTURED DATA
@@ -136,7 +136,7 @@
       "name": "I already have a list. Do I have to retype it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a German export headed Bezeichnung / Menge / Lagerort lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
+        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a sheet headed Item / Qty / Where lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
       }
     },
     {
@@ -165,10 +165,10 @@
     },
     {
       "@type": "Question",
-      "name": "What if I need more than five locations or five people?",
+      "name": "What if I need more than five people?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Five places and five people is what the app is built around: a household, a workshop, or a small crew. Locations sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones, per-location permissions or a read-only role, a larger system will serve you better."
+        "text": "Five people is what the app is built around: a household, a workshop, or a small crew. Places are not capped on Premium, but they sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones inside zones, per-location permissions or a read-only role, a larger system will serve you better."
       }
     },
     {
@@ -279,7 +279,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="./" aria-label="1inventory — home">
-      <img src="img/app-icon.svg?v=18" alt="" width="32" height="32" />
+      <img src="img/app-icon.svg?v=19" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
@@ -453,13 +453,17 @@
                  · Import is insert-only. Duplicates are skipped and existing rows
                    are never updated, so it is not a sync, a merge or an update.
                  · 5 MB, 60 columns, name column required.
-               The German header example is from the brief and is load-bearing: it
-               is the one detail that proves the matching is by meaning rather than
-               by exact English string. -->
+               The header example is load-bearing: it is the one detail that proves
+               the matching is by meaning rather than by exact field name. The brief's
+               original was a German one (Bezeichnung / Menge / Lagerort); the client
+               replaced it with an English example on 2026-09-20, because on an English
+               site the German read as an aside rather than as proof. Keep whatever
+               example is here unofficial-looking — "Item / Qty / Where" works because
+               none of the three is the app's own field name. -->
           <p class="measure">
             No. Import a CSV and your column headers are matched to fields by meaning, so a
-            German export headed <em>Bezeichnung / Menge / Lagerort</em> lands in the right
-            columns with no setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
+            sheet headed <em>Item / Qty / Where</em> lands in the right columns with no
+            setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
             required. The mapping runs in one pass and is shown to you afterwards.
             Duplicates are skipped.
           </p>
@@ -525,9 +529,9 @@
         </div>
 
         <div>
-          <h3>What if I need more than five locations or five people?</h3>
+          <h3>What if I need more than five people?</h3>
           <p class="measure">
-            Five places and five people is what the app is built around: a household, a workshop, or a small crew. Locations sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones, per-location permissions or a read-only role, a larger system will serve you better.
+            Five people is what the app is built around: a household, a workshop, or a small crew. Places are not capped on Premium, but they sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones inside zones, per-location permissions or a read-only role, a larger system will serve you better.
           </p>
         </div>
 
@@ -804,10 +808,10 @@
         <div class="cta-block cta-block--center">
           <div class="store-badges">
             <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="faq-ios">
-              <img src="img/badge-appstore.svg?v=18" alt="Download on the App Store" width="150" height="50" />
+              <img src="img/badge-appstore.svg?v=19" alt="Download on the App Store" width="150" height="50" />
             </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="faq-android">
-              <img src="img/badge-googleplay.svg?v=18" alt="Get it on Google Play" width="169" height="50" />
+              <img src="img/badge-googleplay.svg?v=19" alt="Get it on Google Play" width="169" height="50" />
             </a>
           </div>
           <p class="cta-strip"><span>Free plan, no card</span><span>iPhone and Android</span></p>
@@ -829,7 +833,7 @@
     <div class="footer-top">
       <div class="footer-col">
         <a class="footer-brand" href="./" aria-label="1inventory — home">
-          <img src="img/app-icon.svg?v=18" alt="" width="34" height="34" />
+          <img src="img/app-icon.svg?v=19" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
         <p class="footer-blurb">
@@ -879,6 +883,6 @@
   <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
 </div>
 
-<script src="js/main.js?v=18" defer></script>
+<script src="js/main.js?v=19" defer></script>
 </body>
 </html>
