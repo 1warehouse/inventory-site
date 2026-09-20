@@ -7,11 +7,17 @@ small sizes and can be produced in each language the site speaks.
 ```
 templates/*.svg     the design, one file per screen, with {{tokens}} for text
 content/<lang>.json the strings behind those tokens
-fonts/              Poppins, so a render does not depend on the machine
 index.html          browse it: ?lang=de, or ?lang=de&screen=6a for one screen
-screens.js          fills the tokens, then fits anything a translation made too wide
+screens.js          fills the tokens
 render.py           photographs each screen into img/
+../fonts/           Poppins, so a render does not depend on the machine
+../lib/fit.js       shrinks anything a translation made too wide
+../lib/shoot.py     the headless Chrome capture
 ```
+
+`../share-card/` is the site's Open Graph image, built the same way. Both are
+served from `design/` when rendering, so `../fonts` and `../lib` resolve — a
+static server will not follow a path out of its root.
 
 ## Where the design comes from
 
@@ -86,12 +92,14 @@ Two things to know before editing them:
 - **SVG does not wrap.** A paragraph is several `<text>` lines in the design, so
   those strings are arrays and the line breaks are yours to choose. Keep the
   same number of lines as English.
-- **Long words shrink rather than collide.** `screens.js` reads two annotations
-  in the templates: `data-fit="112"` shrinks a label until it fits that width,
-  and `data-pill="saveBtn"` grows a button's pill around its word. An app bar
-  marked `data-bar-title` / `data-bar-action` re-centres its title in whatever
-  room the action leaves. All of this is a no-op for English. The browser
-  console, and `document.body.dataset.shrunk`, lists anything that shrank.
+- **Long words shrink rather than collide.** `../lib/fit.js` reads two
+  annotations in the templates: `data-fit="112"` shrinks a label until it fits
+  that width, and `data-pill="saveBtn"` grows a button's pill around its word.
+  An app bar marked `data-bar-title` / `data-bar-action` re-centres its title in
+  whatever room the action leaves. All of this is a no-op for English. The
+  browser console, and `document.body.dataset.shrunk`, lists anything that
+  shrank. Fitting waits on `document.fonts.ready` — measuring before Poppins
+  lands sizes the text against a fallback font and gets the answer wrong.
 
 Untranslated tokens are left visible in the artwork as `{{path}}` and reported
 in `document.body.dataset.missing`, so a half-translated language is obvious

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1200 630" width="1200" height="630" xmlns="http://www.w3.org/2000/svg"
+     font-family="Poppins, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E4D22"/>
+      <stop offset="1" stop-color="#178038"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#178038"/>
+      <stop offset="1" stop-color="#0A5221"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- The app mark, the same drawing as img/app-icon.svg at 120px -->
+  <g transform="translate(60 60) scale(1.1215)">
+    <path fill="url(#tile)" d="M86.369.001H20.11C9.004.001 0 9.004 0 20.111v66.258c0 11.107 9.004 20.11 20.11 20.11h66.259c11.106 0 20.11-9.003 20.11-20.11V20.111c0-11.107-9.004-20.11-20.11-20.11"/>
+    <path fill="#ffffff" d="M62.919 52.272h-6.776v13.552h6.776z"/>
+    <path fill="#ffffff" d="M83.247 77.439H23.232V41.666L53.24 24.2l30.007 17.466zm-56.071-3.976h52.126v-29.5L53.24 28.789 27.176 43.962z"/>
+    <path fill="#ffffff" d="M52.272 65.824h-6.82v-17.05h-5.764l12.584-7.15z"/>
+    <path fill="#FFA100" d="M62.919 41.624h-6.776V48.4h6.776z"/>
+  </g>
+
+  <text x="189" y="129" font-size="44" font-weight="700" fill="#ffffff">1inventory</text>
+
+  <text data-fit="1020" x="88" y="317" font-size="62" font-weight="700"
+        fill="#ffffff">{{headline.0}}</text>
+  <text data-fit="1020" x="88" y="393" font-size="62" font-weight="700"
+        fill="#7FD79A">{{headline.1}}</text>
+
+  <!-- One text run, so the bullets sit wherever the words end -->
+  <text data-fit="1020" x="88" y="546" font-size="30" font-weight="400" fill="#D4E4D9">
+    <tspan>{{features.0}}</tspan><tspan fill="#FFA100" dx="14">&#8226;</tspan><tspan dx="14">{{features.1}}</tspan><tspan fill="#FFA100" dx="14">&#8226;</tspan><tspan dx="14">{{features.2}}</tspan>
+  </text>
+</svg>

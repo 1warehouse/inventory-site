@@ -1,0 +1,12 @@
+{
+  "_note": "headline is the site's own s081 (also og:title), split at the sentence break the design sets on two lines; features are this card's copy.",
+  "headline": [
+    "Votre inventaire dans votre téléphone.",
+    "Vos données dans votre Drive."
+  ],
+  "features": [
+    "Scan de codes-barres",
+    "Votre propre feuille Google",
+    "iPhone et Android"
+  ]
+}
