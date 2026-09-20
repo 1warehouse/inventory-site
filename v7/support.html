@@ -35,12 +35,35 @@
            sense of brief §8.3 and it is also the truthful thing to do: the
            form itself says nothing about it while you type.
        =================================================================== -->
-  <title>1inventory support</title>
+  <title>Support | 1inventory</title>
   <meta name="description" content="How to reach a person about 1inventory: the in-app support form, our email address, what a report should contain, and fixes for the things people write in about most." />
 
   <link rel="canonical" href="https://1inventory.io/support.html" />
-  <link rel="alternate" hreflang="en" href="https://1inventory.io/support.html" />
-  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/support.html" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b3d1e" />
+
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/support.html" />
+  <meta property="og:title" content="Support | 1inventory" />
+  <meta property="og:description" content="How to reach a person about 1inventory: the in-app support form, our email address, and fixes for the things people write in about most." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — a barcode inventory app that writes to a Google Sheet in your own Drive." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Support | 1inventory" />
+  <meta name="twitter:description" content="How to reach a person about 1inventory: the in-app support form, our email address, and fixes for the things people write in about most." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
   <!-- v6 is a PREVIEW folder. noindex keeps it out of search so it cannot
        compete with the live site; the canonical above already points at the
        eventual live URL. Both flip together on the day v6 is promoted to /.
@@ -48,37 +71,15 @@
        Connect must resolve and must not be noindexed. Whoever promotes this
        folder has to remove the robots tag on THIS page before the store
        listing points at it. -->
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#0b3d1e" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="1inventory" />
-  <meta property="og:locale" content="en" />
-  <meta property="og:url" content="https://1inventory.io/support.html" />
-  <meta property="og:title" content="1inventory support" />
-  <meta property="og:description" content="How to reach a person about 1inventory: the in-app support form, our email address, and fixes for the things people write in about most." />
-  <!-- TODO(asset): og-cover-1200x630.png does not exist yet. Same missing
-       asset the homepage references; listed once in the v6 asset log. -->
-  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="1inventory — a barcode inventory app that keeps your data in your own Google Sheet." />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="1inventory support" />
-  <meta name="twitter:description" content="How to reach a person about 1inventory: the in-app support form, our email address, and fixes for the things people write in about most." />
-  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
-
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=19" />
-  <link rel="apple-touch-icon" href="img/app-icon.svg?v=19" />
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=20" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg?v=20" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=19" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
 
   <!-- ContactPage is the correct type here and it is cheap. It is kept
        deliberately thin: NO ContactPoint block, because a ContactPoint needs
@@ -132,7 +133,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="./" aria-label="1inventory — home">
-      <img src="img/app-icon.svg?v=19" alt="" width="32" height="32" />
+      <img src="img/app-icon.svg?v=20" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
@@ -182,7 +183,7 @@
            "A channel people at Sparkybit read" is the honest description of
            that; do not upgrade it to "a dedicated support desk".
        =================================================================== -->
-  <section class="section section--major" id="reach-us" aria-labelledby="support-title">
+  <section class="section section--major" id="top" aria-labelledby="support-title">
     <div class="container container--narrow">
 
       <div class="section__head">
@@ -207,27 +208,20 @@
                utility: a full --fs-h2 inside a card outweighs the section
                heading it sits under. Level and size are separate decisions. -->
           <h2 id="email-title" class="h3">Email works too.</h2>
-          <!-- ⚠⚠ NEEDS CONFIRMATION — SUPPORT ADDRESS. ⚠⚠
-               This page publishes the .io support address. Nobody has confirmed
-               that this mailbox exists or is monitored.
+          <!-- ⚠ SUPPORT ADDRESS — one item still open.
+               The site is on .io everywhere: this page, and since 2026-09-20
+               the six addresses on privacy.html and terms.html too (client
+               decision, four gdpr@ / support@ on privacy, two support@ on
+               terms). The .com is gone from the site; ownership of it was
+               never confirmed in any repo, and a GDPR contact obligation on a
+               domain we may not control was the thing to avoid. The homepage
+               footer publishes no address at all — it links to this page —
+               so the old "update the footer" item is moot.
 
-               The conflict, in full (site brief §11.5): privacy.html and
-               terms.html publish six contact addresses on @1inventory.com,
-               and the v4 homepage footer does the same. Every other property
-               — the site, the canonical URLs, the brand — is on 1inventory.io,
-               and ownership of the .com is UNCONFIRMED in every repo.
-               Publishing the .com here would put a GDPR contact obligation on
-               a domain we may not control; publishing the .io here creates a
-               visible inconsistency with the legal pages until they are
-               updated.
-
-               The .io was chosen because it is the domain we know we own and
-               because a support address that bounces fails App Store review.
-               BEFORE THIS PAGE GOES LIVE, someone must: (1) create and monitor
-               that address, (2) change the six addresses on
-               privacy.html and terms.html to match, (3) update the v6 homepage
-               footer. Until all three are done this page is not shippable.
-               Owner: legal + web. -->
+               STILL OPEN: nobody has confirmed that support@1inventory.io and
+               gdpr@1inventory.io exist and are monitored. A support address
+               that bounces fails App Store review, and a GDPR address that
+               bounces is worse. Owner: legal + web. -->
           <p><a class="eml" data-u="&#115;&#117;&#112;&#112;&#111;&#114;&#116;" data-d="&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;" data-t="&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#49;&#105;&#110;&#118;&#101;&#110;&#116;&#111;&#114;&#121;&#46;&#105;&#111;</a></p>
           <p>An email carries none of the diagnostics the in-app form attaches, so it is worth including what is on the list further down this page.</p>
         </div>
@@ -235,7 +229,6 @@
 
     </div>
   </section>
-
 
   <!-- ===================================================================
        SECTION 2 — WHAT THE IN-APP FORM ATTACHES
@@ -312,7 +305,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- ===================================================================
        SECTION 3 — SELF-HELP
@@ -394,7 +386,6 @@
     </div>
   </section>
 
-
   <!-- ===================================================================
        SECTION 4 — WHAT TO PUT IN A REPORT
        Band: --mint, default padding, single column.
@@ -423,7 +414,6 @@
 
     </div>
   </section>
-
 
   <!-- ===================================================================
        SECTION 5 — RESPONSE TIME AND ONWARD LINKS
@@ -468,13 +458,12 @@
       <div class="section__foot">
         <div class="prose">
           <p>The acknowledgement email is automatic and arrives at once. That one is a receipt. The answer comes separately.</p>
-          <p>Two pages answer a good deal of this without anybody having to write anything: <a href="faq.html">the FAQ</a> and <a href="./#staying-current">what the app does not do</a>.</p>
+          <p>Most of this is answered without anybody having to write anything: <a href="faq.html">the FAQ</a>, and in particular <a href="faq.html#limits">the limits, and what we&rsquo;re working on</a>.</p>
         </div>
       </div>
 
     </div>
   </section>
-
 
   <!-- ===================================================================
        SECTION 6 — NEW PHONE / REINSTALL  (id="get-the-app")
@@ -501,7 +490,7 @@
     <div class="container">
       <div class="final-cta">
 
-        <img class="final-cta__icon" src="img/app-icon.svg?v=19" alt="" width="64" height="64" />
+        <img class="final-cta__icon" src="img/app-icon.svg?v=20" alt="" width="64" height="64" />
 
         <h2 id="reinstall-title">Sign in on your phone. It&rsquo;s all there.</h2>
 
@@ -509,11 +498,11 @@
 
         <div class="cta-block cta-block--center">
           <div class="store-badges">
-            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="store-ios">
-              <img src="img/badge-appstore.svg?v=19" alt="Download on the App Store" width="160" height="50" />
+            <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="support-ios">
+              <img src="img/badge-appstore.svg?v=20" alt="Download on the App Store" width="160" height="50" />
             </a>
-            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="store-android">
-              <img src="img/badge-googleplay.svg?v=19" alt="Get it on Google Play" width="160" height="50" />
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="support-android">
+              <img src="img/badge-googleplay.svg?v=20" alt="Get it on Google Play" width="160" height="50" />
             </a>
           </div>
 
@@ -537,7 +526,7 @@
     <div class="footer-top">
       <div class="footer-col">
         <a class="footer-brand" href="./" aria-label="1inventory — home">
-          <img src="img/app-icon.svg?v=19" alt="" width="34" height="34" />
+          <img src="img/app-icon.svg?v=20" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
         <p class="footer-blurb">
@@ -596,6 +585,6 @@
   <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
 </div>
 
-<script src="js/main.js?v=19" defer></script>
+<script src="js/main.js?v=20" defer></script>
 </body>
 </html>

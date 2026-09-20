@@ -16,19 +16,38 @@
 
   <title>Plans and pricing | 1inventory</title>
   <meta name="description" content="1inventory is free for one inventory, one location and one person. Premium is EUR 0.99 a month for five inventories, five people and as many places as you like, with a 7-day free trial." />
+
+  <link rel="canonical" href="https://1inventory.io/plans.html" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#0b3d1e" />
 
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="1inventory" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://1inventory.io/plans.html" />
   <meta property="og:title" content="Plans and pricing | 1inventory" />
   <meta property="og:description" content="Premium is cheaper than buying the same thing twice. EUR 0.99 a month for five inventories, five people and unlimited places. The free plan never expires." />
+  <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1inventory — a barcode inventory app that writes to a Google Sheet in your own Drive." />
 
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=19" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plans and pricing | 1inventory" />
+  <meta name="twitter:description" content="Premium is cheaper than buying the same thing twice. EUR 0.99 a month for five inventories, five people and unlimited places. The free plan never expires." />
+  <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=20" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=19" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
 </head>
 <body>
 
@@ -50,11 +69,10 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="./" aria-label="1inventory — home">
-      <img src="img/app-icon.svg?v=19" alt="" width="32" height="32" />
+      <img src="img/app-icon.svg?v=20" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
@@ -148,7 +166,7 @@
             <div class="plan-card__row"><dt>Alert rules</dt><dd>Up to 50</dd></div>
             <div class="plan-card__row"><dt>Change history</dt><dd>Yes<span class="plans-note">In inventories you create while subscribed</span></dd></div>
             <div class="plan-card__row"><dt>Products per inventory</dt><dd>Unlimited</dd></div>
-            <div class="plan-card__row"><dt>Price</dt><dd>&euro;0.99 / month<span class="plans-note">7-day free trial</span></dd></div>
+            <div class="plan-card__row"><dt>Price</dt><dd>&euro;0.99 / month<span class="plans-note">7-day free trial. Cancel any time.</span></dd></div>
           </dl>
         </div>
       </div>
@@ -184,10 +202,10 @@
         <div class="cta-block cta-block--center">
           <div class="store-badges">
             <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="plans-ios">
-              <img src="img/badge-appstore.svg?v=19" alt="Download on the App Store" width="150" height="50" />
+              <img src="img/badge-appstore.svg?v=20" alt="Download on the App Store" width="150" height="50" />
             </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="plans-android">
-              <img src="img/badge-googleplay.svg?v=19" alt="Get it on Google Play" width="169" height="50" />
+              <img src="img/badge-googleplay.svg?v=20" alt="Get it on Google Play" width="169" height="50" />
             </a>
           </div>
           <p class="cta-strip"><span>Free plan, no card</span><span>iPhone and Android</span></p>
@@ -203,7 +221,7 @@
     <div class="footer-top">
       <div class="footer-col">
         <a class="footer-brand" href="./" aria-label="1inventory — home">
-          <img src="img/app-icon.svg?v=19" alt="" width="34" height="34" />
+          <img src="img/app-icon.svg?v=20" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
         <p class="footer-blurb">
@@ -244,6 +262,11 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=19"></script>
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Get the app">
+  <a class="btn btn--primary btn--sm" href="#get-the-app" data-cta="sticky">Get the app</a>
+  <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
+</div>
+
+<script src="js/main.js?v=20" defer></script>
 </body>
 </html>

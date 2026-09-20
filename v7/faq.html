@@ -35,24 +35,21 @@
   <title>FAQ — questions and answers | 1inventory</title>
   <meta name="description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
 
-  <link rel="canonical" href="https://1inventory.io/faq" />
-  <link rel="alternate" hreflang="en" href="https://1inventory.io/faq" />
-  <link rel="alternate" hreflang="x-default" href="https://1inventory.io/faq" />
-  <!-- v7 is a PREVIEW folder. noindex keeps it out of search so it cannot
-       compete with the live page for its own long-tail question queries. It
-       flips together with the canonical on promotion day. -->
+  <link rel="canonical" href="https://1inventory.io/faq.html" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#0b3d1e" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph. Identical shape on every page: what differs is the URL,
+       the title and the description. One share image serves the whole site
+       (img/og-cover-1200x630.png, built 2026-09-20 from the dark band's
+       gradient, the app icon and the hero lines); a per-page set can replace
+       it later without touching any of this markup. -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="1inventory" />
   <meta property="og:locale" content="en" />
-  <meta property="og:url" content="https://1inventory.io/faq" />
+  <meta property="og:url" content="https://1inventory.io/faq.html" />
   <meta property="og:title" content="FAQ — questions and answers | 1inventory" />
   <meta property="og:description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
-  <!-- TODO(asset): og-cover-1200x630.png does not exist yet. Same missing asset
-       the homepage flags; one image serves every page until a per-page set exists. -->
   <meta property="og:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -64,14 +61,18 @@
   <meta name="twitter:description" content="Answers on Google permissions, offline use, exporting, sharing, pricing, and what happens to your spreadsheet if we shut down." />
   <meta name="twitter:image" content="https://1inventory.io/img/og-cover-1200x630.png" />
 
-  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=19" />
-  <link rel="apple-touch-icon" href="img/app-icon.svg?v=19" />
+  <!-- v7 is a PREVIEW folder. noindex keeps it out of search so it cannot
+       compete with the live page for its own long-tail question queries. It
+       flips together with the canonical on promotion day. -->
+
+  <link rel="icon" type="image/svg+xml" href="img/app-icon.svg?v=20" />
+  <link rel="apple-touch-icon" href="img/app-icon.svg?v=20" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=19" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
 
   <!-- =====================================================================
        FAQPage STRUCTURED DATA
@@ -156,7 +157,7 @@
       "name": "How many products can I have?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Up to 10,000 per inventory, on the free plan and on Premium alike; the cap has nothing to do with paying. Premium gives you up to five separate inventories, which is 50,000 things in total. The ceiling is enforced: at 10,000 the app returns an error, so you will know you have reached it."
+        "text": "As many as you like, on the free plan and on Premium alike — the number of products has never been what you pay for. What Premium adds is more inventories, more people on them, more of your own fields and the change history."
       }
     },
     {
@@ -204,7 +205,7 @@
       "name": "What does Premium cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "€0.99 a month, with a seven-day free trial. Billing is monthly and there is no annual plan, no bundle and no second tier. The subscription is handled by the App Store or Google Play, so you cancel it there, and the app shows the price in your own currency."
+        "text": "€0.99 a month, with a 7-day free trial. Billing is monthly and there is no annual plan, no bundle and no second tier. The subscription is handled by the App Store or Google Play, so you cancel it there, and the app shows the price in your own currency."
       }
     },
     {
@@ -291,7 +292,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="./" aria-label="1inventory — home">
-      <img src="img/app-icon.svg?v=19" alt="" width="32" height="32" />
+      <img src="img/app-icon.svg?v=20" alt="" width="32" height="32" />
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
@@ -359,7 +360,6 @@
 
     </div>
   </section>
-
 
   <!-- ===================================================================
        GROUP 1 — BEFORE YOU INSTALL  ·  five questions
@@ -439,7 +439,6 @@
     </div>
   </section>
 
-
   <!-- ===================================================================
        GROUP 2 — THE LIST YOU ALREADY KEEP  ·  two questions
        Band: .section--tight. Two questions is not a section's worth of
@@ -483,17 +482,17 @@
 
         <div>
           <h3>How many products can I have?</h3>
-          <!-- ⚠ 10,000 per inventory is a single global cap and is NOT split by
-               tier. The plans table on the homepage still reads "Unlimited" in both
-               columns to match the in-app paywall (client decision 7); this page
-               publishes the real number, which is the more useful answer to
-               somebody who is asking it directly. Both are true statements about
-               the same cap; only this one is specific. -->
+          <!-- The 10,000-per-inventory ceiling this answer used to publish is gone
+               (client, 2026-09-20), so the page now says what the plans table and
+               the in-app paywall have always said. The old text also derived
+               "50,000 things in total" from that cap — with no cap there is no
+               such number, and it goes with it. If a ceiling ever comes back,
+               this answer names it: a limit somebody meets without warning is
+               the kind of thing they write to support about. -->
           <p class="measure">
-            Up to 10,000 per inventory, on the free plan and on Premium alike; the cap has
-            nothing to do with paying. Premium gives you up to five separate inventories,
-            which is 50,000 things in total. The ceiling is enforced: at 10,000 the app
-            returns an error, so you will know you have reached it.
+            As many as you like, on the free plan and on Premium alike &mdash; the number of
+            products has never been what you pay for. What Premium adds is more inventories,
+            more people on them, more of your own fields and the change history.
           </p>
         </div>
 
@@ -501,7 +500,6 @@
 
     </div>
   </section>
-
 
   <!-- ===================================================================
        GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
@@ -558,9 +556,6 @@
     </div>
   </section>
 
-
-
-
   <!-- ===================================================================
        GROUP 4 — LETTING SOMEONE ELSE IN  ·  two questions
        Default band, default padding. After a --major band and a --dark
@@ -600,7 +595,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- ===================================================================
        GROUP 5 — WHAT IT COSTS  ·  three questions
@@ -644,7 +638,7 @@
         <div>
           <h3>What does Premium cost?</h3>
           <p class="measure">
-            &euro;0.99 a month, with a seven-day free trial. Billing is monthly and there
+            &euro;0.99 a month, with a 7-day free trial. Billing is monthly and there
             is no annual plan, no bundle and no second tier. The subscription is handled
             by the App Store or Google Play, so you cancel it there, and the app shows the
             price in your own currency.
@@ -680,7 +674,6 @@
     </div>
   </section>
 
-
   <!-- ===================================================================
        CONNECTOR — the page's one pull quote.
        .quote-major is used once per page by design. It sits here because
@@ -700,7 +693,6 @@
       <p class="quote-major">Most of what follows has the same answer: the file is already in your Drive.</p>
     </div>
   </div>
-
 
   <!-- ===================================================================
        GROUP 6 — IF WE DISAPPEAR  ·  six questions
@@ -805,7 +797,6 @@
     </div>
   </section>
 
-
   <!-- ===================================================================
        CLOSE — the offer block the brief requires on every page.
        Same construction and the same store links as the homepage's final
@@ -820,10 +811,10 @@
         <div class="cta-block cta-block--center">
           <div class="store-badges">
             <a class="store-badge" href="https://apps.apple.com/us/app/1inventory/id6747425128" data-cta="faq-ios">
-              <img src="img/badge-appstore.svg?v=19" alt="Download on the App Store" width="150" height="50" />
+              <img src="img/badge-appstore.svg?v=20" alt="Download on the App Store" width="150" height="50" />
             </a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.sparkybit.oneinventory" data-cta="faq-android">
-              <img src="img/badge-googleplay.svg?v=19" alt="Get it on Google Play" width="169" height="50" />
+              <img src="img/badge-googleplay.svg?v=20" alt="Get it on Google Play" width="169" height="50" />
             </a>
           </div>
           <p class="cta-strip"><span>Free plan, no card</span><span>iPhone and Android</span></p>
@@ -845,7 +836,7 @@
     <div class="footer-top">
       <div class="footer-col">
         <a class="footer-brand" href="./" aria-label="1inventory — home">
-          <img src="img/app-icon.svg?v=19" alt="" width="34" height="34" />
+          <img src="img/app-icon.svg?v=20" alt="" width="34" height="34" />
           <span>1inventory</span>
         </a>
         <p class="footer-blurb">
@@ -895,6 +886,6 @@
   <button class="sticky-cta__close" type="button" aria-label="Dismiss" data-sticky-dismiss>&times;</button>
 </div>
 
-<script src="js/main.js?v=19" defer></script>
+<script src="js/main.js?v=20" defer></script>
 </body>
 </html>
