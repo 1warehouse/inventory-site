@@ -86,6 +86,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css?v=22" />
+  <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
+       Must stay after the language detector above: a page the detector
+       is about to redirect away from should not report a page view. -->
+  <script src="/js/analytics.js?v=1"></script>
 </head>
 <body>
 
@@ -154,7 +158,7 @@
     <div class="container container--narrow">
       <div class="prose legal">
       <h1>Politique de confidentialité</h1>
-      <p class="updated">Dernière mise à jour : 20 septembre 2026</p>
+      <p class="updated">Dernière mise à jour : 21 septembre 2026</p>
 
       <p>
         Sparkybit GmbH (« nous », « notre ») s'engage à protéger vos données personnelles. La présente politique de confidentialité expose nos pratiques de collecte, de conservation, d'utilisation et de protection de vos informations lorsque vous utilisez notre application mobile 1inventory, nos services côté serveur et leurs interactions avec votre Google Drive (ensemble, les « Services »).
@@ -246,7 +250,42 @@
         Nous pouvons mettre à jour la présente politique de confidentialité de temps à autre. La date de « Dernière mise à jour » en haut de cette politique indique quand les dernières révisions ont été faites. Nous vous invitons à la relire régulièrement.
       </p>
 
-      <h2>10. Nous contacter</h2>
+      <h2>10. Ce site web (1inventory.io)</h2>
+      <p>
+        Les sections précédentes décrivent l’application mobile 1inventory. La présente section porte sur le site web lui-même, exploité séparément et qui collecte nettement moins de données.
+      </p>
+      <p><strong>Mesure d’audience sans cookies :</strong></p>
+      <ul>
+        <li>
+          Nous utilisons Google Analytics 4 pour comprendre comment le site est utilisé : quelles pages sont lues, quels liens sont suivis et jusqu’où les visiteurs descendent dans une page. L’outil fonctionne en <strong>mode sans cookies</strong> : les paramètres de consentement de Google sont réglés pour refuser tout stockage avant le chargement du code de mesure, de sorte qu’aucun cookie de mesure n’est écrit et que rien n’est stocké sur votre appareil. C’est la raison pour laquelle ce site ne vous demande pas d’accepter des cookies.
+        </li>
+        <li>
+          Comme aucun élément identifiant n’est stocké sur votre appareil, nous ne pouvons pas vous reconnaître d’une visite à l’autre. Les chiffres de visiteurs et de sessions sont donc des estimations et non un décompte de personnes.
+        </li>
+        <li>
+          <strong>Ce qui est transmis :</strong> l’adresse de la page et sa langue, le type de votre appareil et de votre navigateur, une localisation approximative déduite de votre adresse IP, ainsi que les interactions décrites ci-dessus : suivre un lien vers l’App Store ou Google Play, changer de langue, sauter à une section et jusqu’où vous avez fait défiler la page. L’adresse IP sert à déduire la localisation approximative et n’est pas conservée par Google Analytics.
+        </li>
+        <li>
+          <strong>Ce qui n’est pas transmis :</strong> votre nom, votre adresse e-mail ou la moindre donnée d’inventaire. Le site web ne comporte ni compte, ni formulaire, ni connexion.
+        </li>
+      </ul>
+      <p><strong>Stockage strictement nécessaire :</strong></p>
+      <ul>
+        <li>
+          Si vous choisissez une langue dans le sélecteur, ce choix est enregistré dans le stockage local de votre navigateur afin que les pages suivantes s’ouvrent dans la langue retenue, et une entrée temporaire distincte empêche le site de deviner votre langue deux fois au cours d’une même visite. Ni l’une ni l’autre ne sert au suivi, aucune ne quitte votre navigateur, et l’effacement de vos données de navigation supprime les deux.
+        </li>
+      </ul>
+      <p>
+        <strong>Base légale et sous-traitant.</strong> Dans la mesure où rien n’est stocké sur votre appareil ni lu depuis celui-ci à des fins de mesure d’audience, ce traitement ne requiert pas votre consentement au titre du §25 de la TTDSG. Il repose sur notre intérêt légitime à comprendre et à améliorer le site, conformément à l’art. 6, §1, f) du RGPD. Google agit en qualité de sous-traitant et les données de mesure sont conservées pendant 14 mois.
+      </p>
+      <p>
+        <strong>Pages légales affichées dans l’application.</strong> Lorsque l’application 1inventory affiche la présente politique, les conditions ou la FAQ au sein de l’application elle-même, la mesure d’audience n’est pas chargée du tout.
+      </p>
+      <p>
+        Vous pouvez vous opposer à tout moment à ce traitement en utilisant les coordonnées indiquées ci-dessous ; par ailleurs, la plupart des navigateurs proposent des réglages ou des extensions qui bloquent entièrement la mesure d’audience.
+      </p>
+
+      <h2>11. Nous contacter</h2>
       <p>
         Si vous avez des questions ou des inquiétudes concernant la présente politique ou nos pratiques en matière de données, contactez-nous.
       </p>
@@ -311,6 +350,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=22" defer></script>
+<script src="/js/main.js?v=23" defer></script>
 </body>
 </html>

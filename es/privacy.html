@@ -86,6 +86,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css?v=22" />
+  <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
+       Must stay after the language detector above: a page the detector
+       is about to redirect away from should not report a page view. -->
+  <script src="/js/analytics.js?v=1"></script>
 </head>
 <body>
 
@@ -154,7 +158,7 @@
     <div class="container container--narrow">
       <div class="prose legal">
       <h1>Política de privacidad</h1>
-      <p class="updated">Última actualización: 20 de septiembre de 2026</p>
+      <p class="updated">Última actualización: 21 de septiembre de 2026</p>
 
       <p>
         Sparkybit GmbH («nosotros» o «nuestro») se compromete a proteger sus datos personales. Esta Política de privacidad describe nuestras prácticas de recogida, almacenamiento, uso y protección de su información cuando utiliza nuestra aplicación móvil 1inventory, nuestros servicios de servidor y su interacción con su Google Drive (conjuntamente, los «Servicios»).
@@ -246,7 +250,42 @@
         Podemos actualizar esta Política de privacidad cada cierto tiempo. La fecha de «Última actualización» que figura al principio indica cuándo se hicieron las últimas revisiones. Le recomendamos revisar esta política periódicamente.
       </p>
 
-      <h2>10. Contacto</h2>
+      <h2>10. Este sitio web (1inventory.io)</h2>
+      <p>
+        Las secciones anteriores describen la aplicación móvil 1inventory. Esta sección se refiere al sitio web en sí, que se gestiona por separado y recopila bastante menos.
+      </p>
+      <p><strong>Analítica sin cookies:</strong></p>
+      <ul>
+        <li>
+          Utilizamos Google Analytics 4 para entender cómo se usa el sitio: qué páginas se leen, qué enlaces se siguen y hasta qué punto de la página llegan las visitas. Funciona en <strong>modo sin cookies</strong>: la configuración de consentimiento de Google está ajustada para denegar todo almacenamiento antes de que se cargue el código de analítica, de modo que no se escriben cookies de analítica ni se guarda nada en su dispositivo. Por eso este sitio no le pide que acepte cookies.
+        </li>
+        <li>
+          Como no se almacena nada identificativo en su dispositivo, no podemos reconocerle de una visita a otra. Por tanto, las cifras de visitantes y sesiones son estimaciones y no recuentos de personas.
+        </li>
+        <li>
+          <strong>Qué se envía:</strong> la dirección de la página y su idioma, el tipo de dispositivo y navegador, una ubicación aproximada derivada de su dirección IP y las interacciones descritas arriba: seguir un enlace a la App Store o a Google Play, cambiar de idioma, saltar a una sección y hasta dónde se ha desplazado. La dirección IP se emplea para derivar la ubicación aproximada y Google Analytics no la almacena.
+        </li>
+        <li>
+          <strong>Qué no se envía:</strong> su nombre, su dirección de correo electrónico ni dato alguno de inventario. El sitio web no tiene cuentas, ni formularios, ni inicio de sesión.
+        </li>
+      </ul>
+      <p><strong>Almacenamiento estrictamente necesario:</strong></p>
+      <ul>
+        <li>
+          Si elige un idioma en el selector, esa elección se guarda en el almacenamiento local de su navegador para que las páginas siguientes se abran en el idioma escogido, y una entrada temporal aparte evita que el sitio adivine su idioma dos veces en una misma visita. Ninguna de las dos se utiliza para seguimiento, ninguna sale de su navegador y borrar los datos de navegación elimina ambas.
+        </li>
+      </ul>
+      <p>
+        <strong>Base jurídica y encargado del tratamiento.</strong> Dado que con fines analíticos no se almacena nada en su dispositivo ni se lee de él, este tratamiento no requiere su consentimiento conforme al §25 de la TTDSG. Se basa, en cambio, en nuestro interés legítimo en comprender y mejorar el sitio, con arreglo al art. 6.1.f) del RGPD. Google actúa como nuestro encargado del tratamiento y los datos analíticos se conservan durante 14 meses.
+      </p>
+      <p>
+        <strong>Páginas legales mostradas dentro de la app.</strong> Cuando la aplicación 1inventory muestra esta política, los términos o las preguntas frecuentes dentro de la propia aplicación, la analítica no se carga en absoluto.
+      </p>
+      <p>
+        Puede oponerse a este tratamiento en cualquier momento a través de los datos de contacto que figuran más abajo; además, la mayoría de los navegadores ofrecen ajustes o extensiones que bloquean por completo la analítica.
+      </p>
+
+      <h2>11. Contacto</h2>
       <p>
         Si tiene preguntas o dudas sobre esta Política de privacidad o sobre nuestras prácticas de datos, póngase en contacto con nosotros.
       </p>
@@ -311,6 +350,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=22" defer></script>
+<script src="/js/main.js?v=23" defer></script>
 </body>
 </html>
