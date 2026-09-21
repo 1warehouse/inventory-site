@@ -111,6 +111,10 @@
   }
 }
   </script>
+  <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
+       Must stay after the language detector above: a page the detector
+       is about to redirect away from should not report a page view. -->
+  <script src="/js/analytics.js?v=1"></script>
 </head>
 <body>
 
@@ -744,6 +748,6 @@
   <button class="sticky-cta__close" type="button" aria-label="Fermer" data-sticky-dismiss>&times;</button>
 </div>
 
-<script src="/js/main.js?v=22" defer></script>
+<script src="/js/main.js?v=23" defer></script>
 </body>
 </html>

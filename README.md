@@ -13,6 +13,7 @@ Sparkybit GmbH. Migrated from Wix Studio to a plain static site hosted on **GitH
 ├── 404.html            # Not-found page
 ├── css/style.css       # Design system + all styles
 ├── js/main.js          # Header, mobile menu, scroll reveals
+├── js/analytics.js     # Cookieless GA4 — no cookies, so no consent banner
 ├── img/                # Optimised, clean-named images & icons
 ├── data/1inv_faq.json  # Bilingual FAQ data (en/es)
 ├── assets/             # Original raw asset download from Wix (source of truth)
