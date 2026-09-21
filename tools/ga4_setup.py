@@ -57,6 +57,8 @@ ACCOUNT = "alexander.minko@1inventory.io"
 PROPERTY = "493431840"
 MEASUREMENT_ID = "G-96ZNX5D52Q"
 BASE = "https://analyticsadmin.googleapis.com/v1beta"
+# Enhanced Measurement is only exposed on v1alpha. Same scope, same auth.
+ALPHA = "https://analyticsadmin.googleapis.com/v1alpha"
 
 # Event-scoped. parameterName must match exactly what analytics.js sends.
 DIMENSIONS = [
@@ -176,12 +178,12 @@ def check_token(tok):
                  "setup.")
 
 
-def api(tok, method, path, body=None, params="", ok_if_exists=False):
+def api(tok, method, path, body=None, params="", ok_if_exists=False, base=None):
     """ok_if_exists swallows 409. Listing then creating is not atomic — two
     runs at once, or a half-finished earlier run, will race — and for a
     create that is idempotent by intent, "someone already made it" is the
     outcome we wanted, not an error worth dying on."""
-    url = "%s/%s%s" % (BASE, path, params)
+    url = "%s/%s%s" % (base or BASE, path, params)
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(url, data=data, method=method)
     req.add_header("Authorization", "Bearer " + tok)
@@ -266,10 +268,31 @@ def main():
             {"eventDataRetention": RETENTION}, "?updateMask=eventDataRetention")
         print("  retention  %-16s %s -> %s" % ("", now, RETENTION))
 
-    print("\nStill needs the GA4 UI (no API resource exists for it):")
+    # 4. Enhanced Measurement. GA4's built-in outbound-click and scroll
+    #    tracking duplicate what analytics.js already sends, with less
+    #    detail: its click event carries no placement, and its scroll fires
+    #    only at 90%. Leaving both on means every store click is counted
+    #    twice by two events that disagree.
+    for s_ in web:
+        if s_.get("webStreamData", {}).get("measurementId") != MEASUREMENT_ID:
+            continue
+        ems = api(tok, "GET", s_["name"] + "/enhancedMeasurementSettings", base=ALPHA)
+        off = [f for f in ("outboundClicksEnabled", "scrollsEnabled") if ems.get(f)]
+        label = {"outboundClicksEnabled": "outbound clicks", "scrollsEnabled": "scroll"}
+        if not off:
+            print("  enhanced   %-16s outbound clicks + scroll already off" % "")
+        elif not apply:
+            print("  enhanced   %-16s WOULD DISABLE %s"
+                  % ("", ", ".join(label[f] for f in off)))
+        else:
+            api(tok, "PATCH", s_["name"] + "/enhancedMeasurementSettings",
+                {f: False for f in off},
+                "?updateMask=" + ",".join(off), base=ALPHA)
+            print("  enhanced   %-16s disabled %s"
+                  % ("", ", ".join(label[f] for f in off)))
+
+    print("\nStill needs the GA4 UI (no API resource exists in v1beta or v1alpha):")
     print("  · Internal traffic filter for your own IP")
-    print("  · Enhanced Measurement: turn off 'Outbound clicks' and 'Scroll',")
-    print("    now that analytics.js measures both with more detail")
 
 
 if __name__ == "__main__":
