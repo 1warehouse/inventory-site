@@ -42,7 +42,7 @@
  "s041": "<strong>Scannen Sie es erneut.</strong> Der zweite Scan ist die Inventur: Die App zeigt die Menge, die Sie hatten, und wartet. Mit dem Daumen hoch oder runter, speichern, und die Kamera ist zurück. Gehen Sie das Regal ab, und die Zählung ist fertig, bevor Sie sich hinsetzen.",
  "s042": "<strong>Die Suche</strong> liest mehr als den Namen. Tippen Sie einen halben Barcode, ein Wort aus der Beschreibung oder einen Lieferanten, den Sie in ein eigenes Feld geschrieben haben – sie findet den Artikel.",
  "s043": "<strong>Die Orte-Ansicht</strong> macht aus jedem Ort einen Ordner. Tippen Sie auf Speisekammer und sehen Sie, was in der Speisekammer ist. Alles ohne Zuordnung liegt unter „Ohne Ort“, statt zu verschwinden.",
- "s044": "Nichts zählt sich von selbst herunter. Es gibt keine Kassenanbindung und keine Warnung bei niedrigem Bestand – wenn Sie den ganzen Tag verkaufen, läuft dieser Bestand auseinander.",
+ "s044": "Ja. Setzen Sie eine Untergrenze für die Menge oder für ein eigenes Zahlenfeld, und die App meldet sich per Push oder E-Mail, wenn der Wert darunter fällt: Olivenöl unter 2, zum Beispiel. Datums-Erinnerungen laufen daneben weiter: Bei einem Ablaufdatum, einem Garantieende oder einem Wartungstermin bekommen Sie eine Push-Nachricht oder eine E-Mail eine festgelegte Zahl von Tagen davor oder danach. Kostenlos ist eine Erinnerungsregel enthalten, in Premium bis zu 50, und beide Arten teilen sich dieses Kontingent. Die Menge ändert sich weiterhin nur, wenn jemand sie ändert – die Erinnerung ist also so aktuell wie Ihre letzte Zählung.",
  "s045": "Und da ist noch mehr.",
  "s046": "Übersicht",
  "s047": "Produkte, Orte, Gesamtbestand und die letzte Änderung, auf einem Bildschirm.",

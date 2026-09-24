@@ -42,7 +42,7 @@
  "s041": "<strong>Scannez-le à nouveau.</strong> Le deuxième scan, c'est l'inventaire : l'application affiche la quantité que vous aviez et attend. Montez ou descendez avec le pouce, enregistrez, et l'appareil photo revient. Parcourez l'étagère et le comptage est fini avant que vous ne vous asseyiez.",
  "s042": "<strong>La recherche</strong> lit plus que le nom. Tapez la moitié d'un code-barres, un mot de la description ou un fournisseur que vous avez saisi dans un champ à vous : elle trouve l'article.",
  "s043": "<strong>La vue Emplacements</strong> transforme chaque lieu en dossier. Touchez Garde-manger et voyez ce qu'il y a dans le garde-manger. Ce qui n'est pas classé reste dans Sans emplacement, plutôt que de disparaître.",
- "s044": "Rien ne se décrémente tout seul. Il n'y a ni lien avec la caisse ni alerte de stock bas : si vous vendez toute la journée, ce comptage va dériver.",
+ "s044": "Oui. Fixez un seuil à la quantité, ou à un champ numérique à vous, et l'application vous prévient par notification ou par e-mail quand la valeur passe en dessous : de l'huile d'olive sous 2, par exemple. Les alertes de date restent en place : une péremption, une fin de garantie ou une date d'entretien vous vaut une notification ou un e-mail un nombre de jours défini avant ou après. Le plan gratuit comprend une règle d'alerte et Premium jusqu'à 50, et les deux types partagent ce quota. La quantité ne change toujours que quand quelqu'un la change : l'alerte est donc aussi à jour que votre dernier comptage.",
  "s045": "Et ce n'est pas tout.",
  "s046": "Tableau de bord",
  "s047": "Produits, emplacements, stock total et le dernier changement, sur un seul écran.",

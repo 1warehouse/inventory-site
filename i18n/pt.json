@@ -42,7 +42,7 @@
  "s041": "<strong>Leia-o outra vez.</strong> A segunda leitura é o inventário: a aplicação mostra a quantidade que tinha e espera. Suba ou desça com o polegar, guarde, e a câmara volta. Percorra a prateleira e a contagem fica feita antes de se sentar.",
  "s042": "<strong>A pesquisa</strong> lê mais do que o nome. Escreva meio código de barras, uma palavra da descrição ou um fornecedor que escreveu num campo seu, e ela encontra o artigo.",
  "s043": "<strong>A vista de localizações</strong> transforma cada lugar numa pasta. Toque em Despensa e veja o que está na despensa. O que não está atribuído fica em Sem localização, em vez de desaparecer.",
- "s044": "Nada é descontado sozinho. Não há ligação à caixa nem alerta de stock baixo, por isso, se vende o dia inteiro, esta contagem vai desviar-se.",
+ "s044": "Sim. Ponha um mínimo na quantidade, ou num campo numérico seu, e a aplicação avisa-o por notificação ou por e-mail quando o valor fica abaixo dele: azeite abaixo de 2, por exemplo. Os alertas por data continuam lá: uma validade, um fim de garantia ou uma data de manutenção dá-lhe uma notificação ou um e-mail um determinado número de dias antes ou depois. O plano gratuito inclui uma regra de alerta e o Premium até 50, e ambos os tipos partilham esse limite. A quantidade continua a mudar só quando alguém a muda, por isso o alerta está tão atualizado como a sua última contagem.",
  "s045": "E há mais.",
  "s046": "Painel",
  "s047": "Produtos, localizações, stock total e a última coisa que mudou, num só ecrã.",

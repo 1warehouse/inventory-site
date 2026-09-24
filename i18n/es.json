@@ -42,7 +42,7 @@
  "s041": "<strong>Vuelve a escanearlo.</strong> El segundo escaneo es el recuento: la app muestra la cantidad que tenías y espera. Súbela o bájala con el pulgar, guarda y la cámara vuelve. Recorre la estantería y el recuento está hecho antes de que te sientes.",
  "s042": "<strong>La búsqueda</strong> lee más que el nombre. Escribe medio código de barras, una palabra de la descripción o un proveedor que escribiste en un campo tuyo, y encuentra el artículo.",
  "s043": "<strong>La vista de ubicaciones</strong> convierte cada lugar en una carpeta. Toca Despensa y ve qué hay en la despensa. Lo que no está asignado se queda en Sin ubicación, en vez de desaparecer.",
- "s044": "Nada se descuenta solo. No hay conexión con la caja ni aviso de stock bajo, así que si vendes todo el día este recuento se irá desviando.",
+ "s044": "Sí. Pon un mínimo a la cantidad, o a un campo numérico tuyo, y la app te avisa por notificación o por correo cuando el valor baja de él: aceite de oliva por debajo de 2, por ejemplo. Los avisos por fecha siguen ahí: una caducidad, un fin de garantía o una fecha de mantenimiento te trae una notificación o un correo un número de días antes o después. El plan gratis incluye una regla de aviso y Premium hasta 50, y ambos tipos comparten ese cupo. La cantidad sigue cambiando solo cuando alguien la cambia, así que el aviso está tan al día como tu último recuento.",
  "s045": "Y hay más.",
  "s046": "Panel",
  "s047": "Productos, ubicaciones, stock total y lo último que cambió, en una pantalla.",
