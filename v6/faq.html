@@ -124,7 +124,7 @@
         "name": "I already have a list. Do I have to retype it?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a German export headed Bezeichnung / Menge / Lagerort lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
+          "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a German export headed Bezeichnung / Menge / Lagerort, which means Name / Quantity / Location, lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
         }
       },
       {
@@ -469,12 +469,15 @@
                  · 5 MB, 60 columns, name column required.
                The German header example is from the brief and is load-bearing: it
                is the one detail that proves the matching is by meaning rather than
-               by exact English string. -->
+               by exact English string. The English gloss after it is required:
+               without it only a German reader can tell the headers mean
+               Name / Quantity / Location. -->
           <p class="measure">
             No. Import a CSV and your column headers are matched to fields by meaning, so a
-            German export headed <em>Bezeichnung / Menge / Lagerort</em> lands in the right
-            columns with no setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
-            required. The mapping runs in one pass and is shown to you afterwards.
+            German export headed <em>Bezeichnung / Menge / Lagerort</em>, which means
+            Name / Quantity / Location, lands in the right columns with no setup. Limits:
+            CSV only, 5&nbsp;MB, 60 columns, a name column required. The mapping runs in
+            one pass and is shown to you afterwards.
             Duplicates are skipped.
           </p>
         </div>
