@@ -1322,15 +1322,17 @@ h4, .h4 { font-size: var(--fs-h4); line-height: 1.3; }
 .plans-table tbody th { font-weight: 500; color: var(--body); width: 42%; }
 /* Value columns. */
 .plans-table td { color: var(--ink); font-weight: 500; text-align: center; }
+/* The head carries no band of its own: each head cell takes its column's
+   colour, so Free stays white and the Premium tint runs unbroken from the
+   head to the last row. A thead background would outrank .plans-col--premium
+   and cut the column off under its heading. */
 .plans-table thead th {
-  background: var(--bg-soft);
   color: var(--ink);
   font-weight: 600;
   font-size: var(--fs-body);
   text-align: center;
   border-bottom: 1px solid var(--line);
 }
-.plans-table thead th:first-child { background: #fff; }
 
 /* The Premium column is tinted. The star glyph is orange; orange TEXT
    would fail contrast, so the word "Premium" stays --ink. */
