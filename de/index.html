@@ -36,7 +36,7 @@
   </script>
 
   <title>Barcode-Inventar-App für Ihre eigene Google-Tabelle | 1inventory</title>
-  <meta name="description" content="Ihr Inventar auf dem Handy, Ihre Daten in Ihrem Drive. Drei Fingertipps pro Artikel, kein Scanner nötig. Kostenlos für iPhone und Android, Premium 0,99 EUR im Monat oder 9,99 EUR im Jahr." />
+  <meta name="description" content="Ihr Inventar auf dem Handy, Ihre Daten in Ihrem Drive. Kein Scanner nötig. Kostenlos für iPhone und Android, Premium 0,99 EUR im Monat oder 9,99 EUR im Jahr." />
 
   <link rel="canonical" href="https://1inventory.io/de/" />
   <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
@@ -346,7 +346,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Es sagt Ihnen rechtzeitig Bescheid</h3>
-          <p>Hinterlegen Sie ein Ablauf-, Garantie- oder Wartungsdatum bei einem Produkt, und die App meldet sich per Push oder E-Mail, bevor es so weit ist. Das ist der eine Schritt, für den Sie nichts tun.</p>
+          <p>Hinterlegen Sie ein Ablauf-, Garantie- oder Wartungsdatum bei einem Produkt, und die App meldet sich per Push oder E-Mail, bevor es so weit ist. Setzen Sie eine Untergrenze für eine Menge, und sie meldet sich, wenn Sie darunter fallen. Das ist der eine Schritt, für den Sie nichts tun.</p>
         </li>
 
       </ol>
@@ -382,7 +382,7 @@
           <h3>Zu Hause</h3>
           <ul class="bullets bullets--green bullets--tight">
             <li>Wissen, was im Schrank steht, während Sie im Laden stehen.</li>
-            <li>Lebensmittel und Medikamente laufen nicht mehr unbemerkt ab.</li>
+            <li>Lebensmittel und Medikamente gehen nicht mehr unbemerkt aus oder über das Datum.</li>
             <li>Eine Sammlung wird durchsuchbar: Bücher, Brettspiele, Wein, Werkzeug.</li>
             <li>Garage, Dachboden und Schuppen bekommen jeweils ihre eigene Liste.</li>
           </ul>
@@ -508,7 +508,7 @@
               <strong>Die Orte-Ansicht</strong> macht aus jedem Ort einen Ordner. Tippen Sie auf Speisekammer und sehen Sie, was in der Speisekammer ist. Alles ohne Zuordnung liegt unter „Ohne Ort“, statt zu verschwinden.
             </p>
           </div>
-          <p class="note">Nichts zählt sich von selbst herunter. Es gibt keine Kassenanbindung und keine Warnung bei niedrigem Bestand – wenn Sie den ganzen Tag verkaufen, läuft dieser Bestand auseinander.</p>
+          <p class="note">Nichts zählt sich von selbst herunter. Es gibt keine Kassenanbindung – wenn Sie den ganzen Tag verkaufen, läuft dieser Bestand auseinander. Eine Erinnerung bei niedrigem Bestand geht von der Zahl aus, die Sie zuletzt gespeichert haben, nicht von dem, was seither das Regal verlassen hat.</p>
         </div>
 
         <div class="split__media">
@@ -536,6 +536,13 @@
 
        ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
        the free plan gets one rule. Do not add a Premium tag to that bullet.
+
+       ⚠ What an alert rule can watch (app enum AlertRuleOperator, verified
+       2026-09-24): days BEFORE or AFTER a date field, or a value BELOW a number
+       — the quantity or a Number/Decimal custom field. There is no "above"
+       operator, no reorder point and nothing decrements on its own. Do not
+       write "above", "rises past" or anything implying automatic stock
+       movement. Push and email are one per-user setting for every rule.
        ================================================================= -->
   <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
     <div class="container">
@@ -561,7 +568,7 @@
           <img class="frame-shot frame-shot--card" src="/img/de/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="Der Bildschirm für eine neue Erinnerungsregel: eine Regel namens Läuft bald ab, die das Feld Mindestens haltbar bis beobachtet, sieben Tage vor dem Datum um 09:00 Uhr benachrichtigt, begrenzt auf die Orte Küche und Speisekammerregal, mit Push und E-Mail beide eingeschaltet." />
           <h3>Erinnerungen</h3>
-          <p>Ein Datum bei einem Produkt, und die App meldet sich Tage vorher, per Push oder E-Mail.</p>
+          <p>Ein Datum bei einem Produkt, und die App meldet sich Tage vorher, per Push oder E-Mail. Eine Untergrenze bei einer Menge, und sie meldet sich, wenn der Bestand darunter fällt.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/de/users-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"

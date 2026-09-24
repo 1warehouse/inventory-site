@@ -36,7 +36,7 @@
   </script>
 
   <title>Aplicação de inventário por código de barras na sua própria folha do Google | 1inventory</title>
-  <meta name="description" content="O seu inventário no telemóvel, os seus dados no seu Drive. Três toques por artigo e nenhum leitor para comprar. Gratuito em iPhone e Android, Premium 0,99 EUR por mês ou 9,99 EUR por ano." />
+  <meta name="description" content="O seu inventário no telemóvel, os seus dados no seu Drive. Gratuito em iPhone e Android; Premium 0,99 EUR por mês ou 9,99 EUR por ano." />
 
   <link rel="canonical" href="https://1inventory.io/pt/" />
   <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
@@ -346,7 +346,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Avisa-o a tempo</h3>
-          <p>Ponha uma data de validade, de garantia ou de manutenção num produto e a aplicação avisa-o por notificação ou por e-mail antes de passar. Este é o único passo em que não faz nada.</p>
+          <p>Ponha uma data de validade, de garantia ou de manutenção num produto e a aplicação avisa-o por notificação ou por e-mail antes de passar. Ponha um mínimo numa quantidade e avisa-o quando ficar abaixo dele. Este é o único passo em que não faz nada.</p>
         </li>
 
       </ol>
@@ -382,7 +382,7 @@
           <h3>Em casa</h3>
           <ul class="bullets bullets--green bullets--tight">
             <li>Saber o que está no armário enquanto está na loja.</li>
-            <li>A comida e os medicamentos deixam de expirar sem que ninguém dê por isso.</li>
+            <li>A comida e os medicamentos deixam de acabar ou expirar sem que ninguém dê por isso.</li>
             <li>Uma coleção passa a ser pesquisável: livros, jogos de tabuleiro, vinho, ferramentas.</li>
             <li>A garagem, o sótão e o arrumo ficam cada um com a sua lista.</li>
           </ul>
@@ -508,7 +508,7 @@
               <strong>A vista de localizações</strong> transforma cada lugar numa pasta. Toque em Despensa e veja o que está na despensa. O que não está atribuído fica em Sem localização, em vez de desaparecer.
             </p>
           </div>
-          <p class="note">Nada é descontado sozinho. Não há ligação à caixa nem alerta de stock baixo, por isso, se vende o dia inteiro, esta contagem vai desviar-se.</p>
+          <p class="note">Nada é descontado sozinho. Não há ligação à caixa, por isso, se vende o dia inteiro, esta contagem vai desviar-se. Um alerta de stock baixo parte do número que guardou da última vez, não do que saiu da prateleira desde então.</p>
         </div>
 
         <div class="split__media">
@@ -536,6 +536,13 @@
 
        ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
        the free plan gets one rule. Do not add a Premium tag to that bullet.
+
+       ⚠ What an alert rule can watch (app enum AlertRuleOperator, verified
+       2026-09-24): days BEFORE or AFTER a date field, or a value BELOW a number
+       — the quantity or a Number/Decimal custom field. There is no "above"
+       operator, no reorder point and nothing decrements on its own. Do not
+       write "above", "rises past" or anything implying automatic stock
+       movement. Push and email are one per-user setting for every rule.
        ================================================================= -->
   <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
     <div class="container">
@@ -561,7 +568,7 @@
           <img class="frame-shot frame-shot--card" src="/img/pt/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="O ecrã de nova regra de alerta: uma regra chamada A expirar em breve, que vigia o campo Consumir até, avisa sete dias antes da data às 09:00, limitada às localizações Cozinha e Prateleira da despensa, com notificação e e-mail ambos ativados." />
           <h3>Alertas</h3>
-          <p>Uma data num produto, e avisa-o dias antes de passar, por notificação ou por e-mail.</p>
+          <p>Uma data num produto, e avisa-o dias antes de passar, por notificação ou por e-mail. Um mínimo numa quantidade, e avisa-o quando o stock fica abaixo dele.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/pt/users-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
