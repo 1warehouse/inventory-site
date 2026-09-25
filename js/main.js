@@ -315,9 +315,16 @@
   "use strict";
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!("IntersectionObserver" in window)) return;
+  // ?mobile=1 is the app showing a document to read, not a landing page to
+  // scroll through: nothing there animates in.
+  if (document.documentElement.classList.contains("is-embedded")) return;
+  // A container already on screen has been painted by the time this deferred
+  // script runs. Hiding it would make it flash away, and if the fade-in then
+  // never came the reader was left with a blank page — so leave it alone.
+  var vh = window.innerHeight || document.documentElement.clientHeight;
   var targets = Array.prototype.slice.call(
     document.querySelectorAll("main > section:not(.hero) > .container")
-  );
+  ).filter(function (el) { return el.getBoundingClientRect().top >= vh; });
   targets.forEach(function (el) { el.classList.add("reveal"); });
   // threshold 0, not a fraction of the element: a container taller than ten
   // viewports (terms and privacy are one ~8,400px container each) can never
