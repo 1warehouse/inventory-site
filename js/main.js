@@ -319,6 +319,9 @@
     document.querySelectorAll("main > section:not(.hero) > .container")
   );
   targets.forEach(function (el) { el.classList.add("reveal"); });
+  // threshold 0, not a fraction of the element: a container taller than ten
+  // viewports (terms and privacy are one ~8,400px container each) can never
+  // be 10% on screen, so it stayed at opacity 0 and the page looked blank.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -326,7 +329,7 @@
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+  }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
   targets.forEach(function (el) { io.observe(el); });
 })();
 
