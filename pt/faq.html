@@ -196,7 +196,7 @@
       "name": "Avisa-me quando estiver a ficar sem alguma coisa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neste momento não. Os alertas de hoje vigiam datas e não quantidades: ponha uma validade, um fim de garantia ou uma data de manutenção num produto e recebe uma notificação ou um e-mail um determinado número de dias antes dessa data, ou depois. Os alertas por quantidade são uma extensão em que estamos a trabalhar."
+        "text": "Sim. Ponha um mínimo na quantidade, ou num campo numérico seu, e a aplicação avisa-o por notificação ou por e-mail quando o valor fica abaixo dele: azeite abaixo de 2, por exemplo. Os alertas por data continuam lá: uma validade, um fim de garantia ou uma data de manutenção dá-lhe uma notificação ou um e-mail um determinado número de dias antes ou depois. O plano gratuito inclui uma regra de alerta e o Premium até 50, e ambos os tipos partilham esse limite. A quantidade continua a mudar só quando alguém a muda, por isso o alerta está tão atualizado como a sua última contagem."
       }
     },
     {
@@ -537,11 +537,15 @@
        zero reviews is real page real estate spent on what the product
        cannot do.
 
-       ⚠ THE LOW-STOCK ANSWER IS THE MOST IMPORTANT SENTENCE ON THIS PAGE.
-         The product has exactly ONE alert rule type (DateThreshold) and it
-         watches Date and Date/Time custom fields. There is no low-stock
-         alert, no reorder point and no par level, and nothing anywhere on
-         this site may imply otherwise.
+       ⚠ THE LOW-STOCK ANSWER IS STILL THE MOST SENSITIVE ONE ON THIS PAGE.
+         Since app release ef91117 (2026-08-23) a rule watches one field with
+         one operator: days BEFORE or AFTER a date, or a value BELOW a number
+         (the quantity, or a Number/Decimal custom field). There is no "above"
+         operator, no reorder point, no par level, and nothing decrements on
+         its own. Free 1 rule / Premium 50, one shared quota for both kinds;
+         push and email are a per-user setting that covers every rule. Do not
+         write "above", "rises past" or anything implying automatic stock
+         movement. Verified against the app source on 2026-09-24.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -562,7 +566,7 @@
         <div>
           <h3>Avisa-me quando estiver a ficar sem alguma coisa?</h3>
           <p class="measure">
-            Neste momento não. Os alertas de hoje vigiam datas e não quantidades: ponha uma validade, um fim de garantia ou uma data de manutenção num produto e recebe uma notificação ou um e-mail um determinado número de dias antes dessa data, ou depois. Os alertas por quantidade são uma extensão em que estamos a trabalhar.
+            Sim. Ponha um mínimo na quantidade, ou num campo numérico seu, e a aplicação avisa-o por notificação ou por e-mail quando o valor fica abaixo dele: azeite abaixo de 2, por exemplo. Os alertas por data continuam lá: uma validade, um fim de garantia ou uma data de manutenção dá-lhe uma notificação ou um e-mail um determinado número de dias antes ou depois. O plano gratuito inclui uma regra de alerta e o Premium até 50, e ambos os tipos partilham esse limite. A quantidade continua a mudar só quando alguém a muda, por isso o alerta está tão atualizado como a sua última contagem.
           </p>
         </div>
 

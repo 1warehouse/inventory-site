@@ -196,7 +196,7 @@
       "name": "Sagt sie mir, wenn etwas zur Neige geht?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Im Moment nicht. Die heutigen Erinnerungen beobachten Daten statt Mengen: Hinterlegen Sie bei einem Produkt ein Ablaufdatum, ein Garantieende oder einen Wartungstermin, und Sie bekommen eine Push-Nachricht oder eine E-Mail, eine festgelegte Zahl von Tagen vor diesem Datum – oder danach. Mengenbasierte Erinnerungen sind eine Erweiterung, an der wir arbeiten."
+        "text": "Ja. Setzen Sie eine Untergrenze für die Menge oder für ein eigenes Zahlenfeld, und die App meldet sich per Push oder E-Mail, wenn der Wert darunter fällt: Olivenöl unter 2, zum Beispiel. Datums-Erinnerungen laufen daneben weiter: Bei einem Ablaufdatum, einem Garantieende oder einem Wartungstermin bekommen Sie eine Push-Nachricht oder eine E-Mail eine festgelegte Zahl von Tagen davor oder danach. Kostenlos ist eine Erinnerungsregel enthalten, in Premium bis zu 50, und beide Arten teilen sich dieses Kontingent. Die Menge ändert sich weiterhin nur, wenn jemand sie ändert – die Erinnerung ist also so aktuell wie Ihre letzte Zählung."
       }
     },
     {
@@ -537,11 +537,15 @@
        zero reviews is real page real estate spent on what the product
        cannot do.
 
-       ⚠ THE LOW-STOCK ANSWER IS THE MOST IMPORTANT SENTENCE ON THIS PAGE.
-         The product has exactly ONE alert rule type (DateThreshold) and it
-         watches Date and Date/Time custom fields. There is no low-stock
-         alert, no reorder point and no par level, and nothing anywhere on
-         this site may imply otherwise.
+       ⚠ THE LOW-STOCK ANSWER IS STILL THE MOST SENSITIVE ONE ON THIS PAGE.
+         Since app release ef91117 (2026-08-23) a rule watches one field with
+         one operator: days BEFORE or AFTER a date, or a value BELOW a number
+         (the quantity, or a Number/Decimal custom field). There is no "above"
+         operator, no reorder point, no par level, and nothing decrements on
+         its own. Free 1 rule / Premium 50, one shared quota for both kinds;
+         push and email are a per-user setting that covers every rule. Do not
+         write "above", "rises past" or anything implying automatic stock
+         movement. Verified against the app source on 2026-09-24.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -562,7 +566,7 @@
         <div>
           <h3>Sagt sie mir, wenn etwas zur Neige geht?</h3>
           <p class="measure">
-            Im Moment nicht. Die heutigen Erinnerungen beobachten Daten statt Mengen: Hinterlegen Sie bei einem Produkt ein Ablaufdatum, ein Garantieende oder einen Wartungstermin, und Sie bekommen eine Push-Nachricht oder eine E-Mail, eine festgelegte Zahl von Tagen vor diesem Datum – oder danach. Mengenbasierte Erinnerungen sind eine Erweiterung, an der wir arbeiten.
+            Ja. Setzen Sie eine Untergrenze für die Menge oder für ein eigenes Zahlenfeld, und die App meldet sich per Push oder E-Mail, wenn der Wert darunter fällt: Olivenöl unter 2, zum Beispiel. Datums-Erinnerungen laufen daneben weiter: Bei einem Ablaufdatum, einem Garantieende oder einem Wartungstermin bekommen Sie eine Push-Nachricht oder eine E-Mail eine festgelegte Zahl von Tagen davor oder danach. Kostenlos ist eine Erinnerungsregel enthalten, in Premium bis zu 50, und beide Arten teilen sich dieses Kontingent. Die Menge ändert sich weiterhin nur, wenn jemand sie ändert – die Erinnerung ist also so aktuell wie Ihre letzte Zählung.
           </p>
         </div>
 

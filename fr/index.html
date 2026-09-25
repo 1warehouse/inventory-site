@@ -36,7 +36,7 @@
   </script>
 
   <title>Application d'inventaire par code-barres dans votre propre feuille Google | 1inventory</title>
-  <meta name="description" content="Votre inventaire dans votre téléphone, vos données dans votre Drive. Trois gestes par article et aucun scanner à acheter. Gratuit sur iPhone et Android, Premium 0,99 EUR par mois ou 9,99 EUR par an." />
+  <meta name="description" content="Votre inventaire dans votre téléphone, vos données dans votre Drive. Gratuit sur iPhone et Android ; Premium 0,99 EUR par mois ou 9,99 EUR par an." />
 
   <link rel="canonical" href="https://1inventory.io/fr/" />
   <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
@@ -346,7 +346,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Elle vous prévient à temps</h3>
-          <p>Mettez une date de péremption, de garantie ou d'entretien sur un produit et l'application vous prévient par notification ou par e-mail avant l'échéance. C'est la seule étape où vous n'avez rien à faire.</p>
+          <p>Mettez une date de péremption, de garantie ou d'entretien sur un produit et l'application vous prévient par notification ou par e-mail avant l'échéance. Fixez un seuil à une quantité et elle vous prévient quand vous passez en dessous. C'est la seule étape où vous n'avez rien à faire.</p>
         </li>
 
       </ol>
@@ -382,7 +382,7 @@
           <h3>À la maison</h3>
           <ul class="bullets bullets--green bullets--tight">
             <li>Savoir ce qu'il y a dans le placard pendant que vous êtes au magasin.</li>
-            <li>Les aliments et les médicaments ne périment plus sans qu'on s'en aperçoive.</li>
+            <li>Les aliments et les médicaments ne s'épuisent plus et ne périment plus sans qu'on s'en aperçoive.</li>
             <li>Une collection devient consultable : livres, jeux de société, vin, outils.</li>
             <li>Le garage, le grenier et l'abri de jardin ont chacun leur liste.</li>
           </ul>
@@ -508,7 +508,7 @@
               <strong>La vue Emplacements</strong> transforme chaque lieu en dossier. Touchez Garde-manger et voyez ce qu'il y a dans le garde-manger. Ce qui n'est pas classé reste dans Sans emplacement, plutôt que de disparaître.
             </p>
           </div>
-          <p class="note">Rien ne se décrémente tout seul. Il n'y a ni lien avec la caisse ni alerte de stock bas : si vous vendez toute la journée, ce comptage va dériver.</p>
+          <p class="note">Rien ne se décrémente tout seul. Il n'y a pas de lien avec la caisse : si vous vendez toute la journée, ce comptage va dériver. Une alerte de stock bas part du nombre que vous avez enregistré en dernier, pas de ce qui a quitté le rayon depuis.</p>
         </div>
 
         <div class="split__media">
@@ -536,6 +536,13 @@
 
        ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
        the free plan gets one rule. Do not add a Premium tag to that bullet.
+
+       ⚠ What an alert rule can watch (app enum AlertRuleOperator, verified
+       2026-09-24): days BEFORE or AFTER a date field, or a value BELOW a number
+       — the quantity or a Number/Decimal custom field. There is no "above"
+       operator, no reorder point and nothing decrements on its own. Do not
+       write "above", "rises past" or anything implying automatic stock
+       movement. Push and email are one per-user setting for every rule.
        ================================================================= -->
   <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
     <div class="container">
@@ -561,7 +568,7 @@
           <img class="frame-shot frame-shot--card" src="/img/fr/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="L'écran de nouvelle règle d'alerte : une règle nommée Bientôt périmé, qui surveille le champ À consommer avant, prévient sept jours avant la date à 09h00, limitée aux emplacements Cuisine et Étagère du garde-manger, avec notification et e-mail tous deux activés." />
           <h3>Alertes</h3>
-          <p>Une date sur un produit, et elle vous prévient quelques jours avant l'échéance, par notification ou par e-mail.</p>
+          <p>Une date sur un produit, et elle vous prévient quelques jours avant l'échéance, par notification ou par e-mail. Un seuil sur une quantité, et elle vous prévient quand le stock passe en dessous.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/fr/users-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"

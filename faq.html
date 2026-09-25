@@ -196,7 +196,7 @@
       "name": "Will it tell me when I’m running low?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not right now. Today’s alerts watch dates rather than quantities: put an expiry, a warranty end or a service date on a product and you get a push notification or an email a set number of days before that date, or after it. Quantity-based alerts are an extension we’re working on."
+        "text": "Yes. Set a floor on the quantity, or on a number field of your own, and the app tells you by push or email when the value drops below it: olive oil below 2, say. Date alerts sit alongside, so an expiry, a warranty end or a service date gets you a push notification or an email a set number of days before or after it. Free includes one alert rule and Premium up to 50, and both kinds share that allowance. The quantity still changes only when someone changes it, so the alert is as current as your last count."
       }
     },
     {
@@ -550,11 +550,15 @@
        zero reviews is real page real estate spent on what the product
        cannot do.
 
-       ⚠ THE LOW-STOCK ANSWER IS THE MOST IMPORTANT SENTENCE ON THIS PAGE.
-         The product has exactly ONE alert rule type (DateThreshold) and it
-         watches Date and Date/Time custom fields. There is no low-stock
-         alert, no reorder point and no par level, and nothing anywhere on
-         this site may imply otherwise.
+       ⚠ THE LOW-STOCK ANSWER IS STILL THE MOST SENSITIVE ONE ON THIS PAGE.
+         Since app release ef91117 (2026-08-23) a rule watches one field with
+         one operator: days BEFORE or AFTER a date, or a value BELOW a number
+         (the quantity, or a Number/Decimal custom field). There is no "above"
+         operator, no reorder point, no par level, and nothing decrements on
+         its own. Free 1 rule / Premium 50, one shared quota for both kinds;
+         push and email are a per-user setting that covers every rule. Do not
+         write "above", "rises past" or anything implying automatic stock
+         movement. Verified against the app source on 2026-09-24.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -575,7 +579,7 @@
         <div>
           <h3>Will it tell me when I&rsquo;m running low?</h3>
           <p class="measure">
-            Not right now. Today&rsquo;s alerts watch dates rather than quantities: put an expiry, a warranty end or a service date on a product and you get a push notification or an email a set number of days before that date, or after it. Quantity-based alerts are an extension we&rsquo;re working on.
+            Yes. Set a floor on the quantity, or on a number field of your own, and the app tells you by push or email when the value drops below it: olive oil below 2, say. Date alerts sit alongside, so an expiry, a warranty end or a service date gets you a push notification or an email a set number of days before or after it. Free includes one alert rule and Premium up to 50, and both kinds share that allowance. The quantity still changes only when someone changes it, so the alert is as current as your last count.
           </p>
         </div>
 

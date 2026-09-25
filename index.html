@@ -36,7 +36,7 @@
   </script>
 
   <title>Barcode inventory app for your own Google Sheet | 1inventory</title>
-  <meta name="description" content="Your inventory in your phone, your data in your Drive. Three taps per item and no scanner to buy. Free on iPhone and Android, Premium EUR 0.99 a month or EUR 9.99 a year." />
+  <meta name="description" content="Your inventory in your phone, your data in your Drive. No scanner to buy. Free on iPhone and Android; Premium EUR 0.99 a month or EUR 9.99 a year." />
 
   <link rel="canonical" href="https://1inventory.io/" />
   <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
@@ -330,7 +330,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>It tells you in time</h3>
-          <p>Put an expiry, warranty or service date on a product and the app pushes or emails you before it passes. This is the one step you do nothing for.</p>
+          <p>Put an expiry, warranty or service date on a product and the app pushes or emails you before it passes. Set a floor on a quantity and it tells you when you go below it. This is the one step you do nothing for.</p>
         </li>
 
       </ol>
@@ -366,7 +366,7 @@
           <h3>At home</h3>
           <ul class="bullets bullets--green bullets--tight">
             <li>Know what is in the cupboard while you are standing in the shop.</li>
-            <li>Food and medicine stop going out of date unnoticed.</li>
+            <li>Food and medicine stop running out or going out of date unnoticed.</li>
             <li>A collection becomes searchable: books, board games, wine, tools.</li>
             <li>The garage, the loft and the shed each get their own list.</li>
           </ul>
@@ -503,7 +503,7 @@
               is in Pantry. Anything unfiled sits in Without location rather than disappearing.
             </p>
           </div>
-          <p class="note">Nothing decrements on its own. There is no till feed and no low-stock alert, so if you sell things all day this count will drift.</p>
+          <p class="note">Nothing decrements on its own. There is no till feed, so if you sell things all day this count will drift. A low-stock alert works from the number you last saved, not from what has left the shelf since.</p>
         </div>
 
         <div class="split__media">
@@ -531,6 +531,13 @@
 
        ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
        the free plan gets one rule. Do not add a Premium tag to that bullet.
+
+       ⚠ What an alert rule can watch (app enum AlertRuleOperator, verified
+       2026-09-24): days BEFORE or AFTER a date field, or a value BELOW a number
+       — the quantity or a Number/Decimal custom field. There is no "above"
+       operator, no reorder point and nothing decrements on its own. Do not
+       write "above", "rises past" or anything implying automatic stock
+       movement. Push and email are one per-user setting for every rule.
        ================================================================= -->
   <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
     <div class="container">
@@ -556,7 +563,7 @@
           <img class="frame-shot frame-shot--card" src="img/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="The new alert rule screen: a rule named Expiring soon, watching the Best before field, notifying seven days before the date at 09:00, limited to the Kitchen and Pantry shelf locations, with push and email both switched on." />
           <h3>Alerts</h3>
-          <p>A date on a product, and it tells you days before it passes, by push or email.</p>
+          <p>A date on a product, and it tells you days before it passes, by push or email. A floor on a quantity, and it tells you when stock drops below it.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="img/users-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"

@@ -36,7 +36,7 @@
   </script>
 
   <title>App de inventario con código de barras para tu propia hoja de Google | 1inventory</title>
-  <meta name="description" content="Tu inventario en el móvil, tus datos en tu Drive. Tres toques por artículo y ningún escáner que comprar. Gratis en iPhone y Android, Premium 0,99 EUR al mes o 9,99 EUR al año." />
+  <meta name="description" content="Tu inventario en el móvil, tus datos en tu Drive. Ningún escáner que comprar. Gratis en iPhone y Android; Premium 0,99 EUR al mes o 9,99 EUR al año." />
 
   <link rel="canonical" href="https://1inventory.io/es/" />
   <link rel="alternate" hreflang="en" href="https://1inventory.io/" />
@@ -346,7 +346,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Te avisa a tiempo</h3>
-          <p>Pon una fecha de caducidad, de garantía o de mantenimiento en un producto y la app te avisa por notificación o por correo antes de que pase. Este es el único paso en el que tú no haces nada.</p>
+          <p>Pon una fecha de caducidad, de garantía o de mantenimiento en un producto y la app te avisa por notificación o por correo antes de que pase. Pon un mínimo a una cantidad y te avisa cuando bajas de él. Este es el único paso en el que tú no haces nada.</p>
         </li>
 
       </ol>
@@ -382,7 +382,7 @@
           <h3>En casa</h3>
           <ul class="bullets bullets--green bullets--tight">
             <li>Saber qué hay en el armario mientras estás en la tienda.</li>
-            <li>La comida y los medicamentos dejan de caducar sin que nadie se entere.</li>
+            <li>La comida y los medicamentos dejan de agotarse o caducar sin que nadie se entere.</li>
             <li>Una colección se vuelve buscable: libros, juegos de mesa, vino, herramientas.</li>
             <li>El garaje, el desván y el trastero tienen cada uno su propia lista.</li>
           </ul>
@@ -508,7 +508,7 @@
               <strong>La vista de ubicaciones</strong> convierte cada lugar en una carpeta. Toca Despensa y ve qué hay en la despensa. Lo que no está asignado se queda en Sin ubicación, en vez de desaparecer.
             </p>
           </div>
-          <p class="note">Nada se descuenta solo. No hay conexión con la caja ni aviso de stock bajo, así que si vendes todo el día este recuento se irá desviando.</p>
+          <p class="note">Nada se descuenta solo. No hay conexión con la caja, así que si vendes todo el día este recuento se irá desviando. Un aviso de stock bajo parte del número que guardaste la última vez, no de lo que ha salido del estante desde entonces.</p>
         </div>
 
         <div class="split__media">
@@ -536,6 +536,13 @@
 
        ⚠ History is Premium and is labelled so. Alerts are NOT Premium-only —
        the free plan gets one rule. Do not add a Premium tag to that bullet.
+
+       ⚠ What an alert rule can watch (app enum AlertRuleOperator, verified
+       2026-09-24): days BEFORE or AFTER a date field, or a value BELOW a number
+       — the quantity or a Number/Decimal custom field. There is no "above"
+       operator, no reorder point and nothing decrements on its own. Do not
+       write "above", "rises past" or anything implying automatic stock
+       movement. Push and email are one per-user setting for every rule.
        ================================================================= -->
   <section class="section section--soft section--major" id="more" aria-labelledby="s4-title">
     <div class="container">
@@ -561,7 +568,7 @@
           <img class="frame-shot frame-shot--card" src="/img/es/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="La pantalla de nueva regla de aviso: una regla llamada Caduca pronto, que vigila el campo Consumir antes de, avisa siete días antes de la fecha a las 09:00, limitada a las ubicaciones Cocina y Estante de la despensa, con notificación y correo activados." />
           <h3>Avisos</h3>
-          <p>Una fecha en un producto y te avisa días antes de que pase, por notificación o por correo.</p>
+          <p>Una fecha en un producto y te avisa días antes de que pase, por notificación o por correo. Un mínimo en una cantidad y te avisa cuando el stock baja de él.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/es/users-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
