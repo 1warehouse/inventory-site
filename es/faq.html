@@ -201,6 +201,22 @@
     },
     {
       "@type": "Question",
+      "name": "¿Cuándo me llegan los avisos y con qué frecuencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hacia la hora que elijas en los ajustes de notificaciones de la app, una vez al día y en tu propia zona horaria. Todo lo que necesita atención en un inventario llega junto, en un solo correo o notificación en lugar de uno por producto, y el correo enumera cada regla con los productos que ha detectado, los más urgentes primero. Un producto se avisa una vez y luego no vuelve a aparecer: solo vuelve si su valor cambia de nuevo, o si recupera el mínimo y más tarde vuelve a bajar de él. Todas las personas con las que compartes el inventario también reciben los avisos, cada una a su hora, por correo, notificación o ambos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué campos puede vigilar un aviso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La cantidad, o un campo propio de tipo Número, Decimal, Fecha o Fecha/Hora. Un campo numérico lleva un mínimo, por debajo de 10, por ejemplo; un campo de fecha, un número de días antes o después de la fecha. Los campos de texto no se pueden vigilar. Una regla también puede limitarse a ciertas ubicaciones, para que un mínimo se aplique en la despensa pero no en el garaje. Cada aviso queda guardado en la app, en Avisos, y en la pestaña «Alerts» de tu hoja de cálculo."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Y si necesito más de cinco personas?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -408,7 +424,7 @@
        why bother, what do I have to give you, what can you see, will it
        work on my stuff, will it work on my hardware.
 
-       Group sizes across this page are 5 / 2 / 3 / 2 / 3 / 6 — deliberately
+       Group sizes across this page are 5 / 2 / 5 / 2 / 3 / 6 — deliberately
        uneven. The v5 teardown's second structural finding was that five v4
        blocks resolved to 4+4 or 3+3; a FAQ is the easiest page in the world
        to accidentally build as six neat groups of three or four.
@@ -530,7 +546,7 @@
   </section>
 
   <!-- ===================================================================
-       GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
+       GROUP 3 — THREE THINGS IT WON'T DO  ·  five questions
        Band: .section--mint AND .section--major. This is the beat that earns
        the page, so it gets the page's largest padding. §8.3 of the brief:
        the costliest, most credible signal available to an unknown GmbH with
@@ -546,6 +562,13 @@
          push and email are a per-user setting that covers every rule. Do not
          write "above", "rises past" or anything implying automatic stock
          movement. Verified against the app source on 2026-09-24.
+
+       The two alert follow-ups (when and how often; which fields) sit right
+       after it because that is where the reader's next question lands.
+       Delivery is once a day around the user's chosen time, one message per
+       inventory, a product reported once until its value changes or it
+       recovers and drops again. Watchable: quantity, Number, Decimal, Date,
+       Date/Time. Verified against the app and API source on 2026-09-26.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -567,6 +590,20 @@
           <h3>¿Me avisará cuando me esté quedando sin algo?</h3>
           <p class="measure">
             Sí. Pon un mínimo a la cantidad, o a un campo numérico tuyo, y la app te avisa por notificación o por correo cuando el valor baja de él: aceite de oliva por debajo de 2, por ejemplo. Los avisos por fecha siguen ahí: una caducidad, un fin de garantía o una fecha de mantenimiento te trae una notificación o un correo un número de días antes o después. El plan gratis incluye una regla de aviso y Premium hasta 50, y ambos tipos comparten ese cupo. La cantidad sigue cambiando solo cuando alguien la cambia, así que el aviso está tan al día como tu último recuento.
+          </p>
+        </div>
+
+        <div>
+          <h3>¿Cuándo me llegan los avisos y con qué frecuencia?</h3>
+          <p class="measure">
+            Hacia la hora que elijas en los ajustes de notificaciones de la app, una vez al día y en tu propia zona horaria. Todo lo que necesita atención en un inventario llega junto, en un solo correo o notificación en lugar de uno por producto, y el correo enumera cada regla con los productos que ha detectado, los más urgentes primero. Un producto se avisa una vez y luego no vuelve a aparecer: solo vuelve si su valor cambia de nuevo, o si recupera el mínimo y más tarde vuelve a bajar de él. Todas las personas con las que compartes el inventario también reciben los avisos, cada una a su hora, por correo, notificación o ambos.
+          </p>
+        </div>
+
+        <div>
+          <h3>¿Qué campos puede vigilar un aviso?</h3>
+          <p class="measure">
+            La cantidad, o un campo propio de tipo Número, Decimal, Fecha o Fecha/Hora. Un campo numérico lleva un mínimo, por debajo de 10, por ejemplo; un campo de fecha, un número de días antes o después de la fecha. Los campos de texto no se pueden vigilar. Una regla también puede limitarse a ciertas ubicaciones, para que un mínimo se aplique en la despensa pero no en el garaje. Cada aviso queda guardado en la app, en Avisos, y en la pestaña «Alerts» de tu hoja de cálculo.
           </p>
         </div>
 
