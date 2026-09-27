@@ -3,11 +3,11 @@
   "common": {
     "add": "Adicionar",
     "cancel": "Cancelar",
-    "save": "Salvar"
+    "save": "Guardar"
   },
   "scan": {
-    "title": "Escanear código de barras",
-    "notFound": "Não no seu inventário",
+    "title": "Ler código de barras",
+    "notFound": "Não está no seu inventário",
     "hint": [
       "Escaneie um código de barras",
       "para adicionar um produto",
@@ -50,8 +50,8 @@
     "locations": "Localizações",
     "customFields": "Campos próprios",
     "alertRules": "Regras de alerta",
-    "stockHealth": "Situação do estoque",
-    "totalStock": "Estoque total",
+    "stockHealth": "Estado do stock",
+    "totalStock": "Stock total",
     "lastActivity": "Última atividade",
     "inventory": "Casa",
     "activityMeta": "Anna Weber · hoje 10:44"
@@ -72,39 +72,47 @@
       "dropdown": "Lista · 6 opções"
     },
     "subtitle": [
-      "Seus próprios campos em cada produto —",
-      "preços, tamanhos, números de série. Datas",
-      "podem disparar alertas."
+      "Os seus próprios campos em cada produto —",
+      "preços, tamanhos, números de série. Os",
+      "campos de data podem acionar alertas."
     ]
   },
   "alert": {
     "title": "Nova regra de alerta",
     "sectionRule": "Regra",
     "nameLabel": "Nome do alerta",
-    "sectionWhen": "Quando alertar",
-    "targetField": "Campo alvo",
-    "notifyMe": "Notificar-me",
+    "sectionWhen": "Quando avisar",
+    "targetField": "Campo a vigiar",
+    "notifyMe": "Avisar-me",
     "before": "Antes da data",
     "after": "Depois da data",
     "howManyDays": "Quantos dias",
-    "targetLocations": "Locais-alvo",
-    "sectionHow": "Como receber notificações",
-    "time": "Horário",
-    "push": "Push",
-    "email": "E-mail",
+    "targetLocations": "Localizações abrangidas",
     "nameValue": "Vence em breve",
-    "locationsValue": "Cozinha, Despensa"
+    "locationsValue": "Cozinha, Despensa",
+    "fieldNote": [
+      "Os alertas podem vigiar a Quantidade ou",
+      "um campo personalizado do tipo Número,",
+      "Decimal, Data ou Data/Hora."
+    ],
+    "locationsLabel": "Localizações",
+    "sectionNotify": "Notificações",
+    "notifyTitle": "Notificações",
+    "notifyDesc": [
+      "Os canais e a hora de envio",
+      "aplicam-se a todos os seus alertas"
+    ]
   },
   "users": {
-    "title": "Usuários",
+    "title": "Utilizadores",
     "invite": "Convidar",
-    "active": "Usuários ativos",
+    "active": "Utilizadores ativos",
     "subtitle": [
-      "Convide usuários para colaborar e",
-      "gerenciar este inventário"
+      "Convide utilizadores para colaborarem",
+      "na gestão deste inventário"
     ],
     "owner": "Proprietário",
-    "user": "Usuário"
+    "user": "Utilizador"
   },
   "history": {
     "title": "Histórico",

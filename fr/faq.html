@@ -201,6 +201,22 @@
     },
     {
       "@type": "Question",
+      "name": "Quand les alertes m'arrivent-elles, et à quelle fréquence ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vers l'heure que vous choisissez dans les réglages de notification de l'application, une fois par jour et dans votre propre fuseau horaire. Tout ce qui demande votre attention dans un inventaire arrive en même temps, en un seul e-mail ou une seule notification plutôt qu'un par produit, et l'e-mail liste chaque règle avec les produits concernés, les plus urgents d'abord. Un produit est signalé une fois, puis ne revient plus : il ne réapparaît que si sa valeur change de nouveau, ou s'il revient au seuil puis retombe en dessous plus tard. Toutes les personnes qui partagent l'inventaire reçoivent aussi les alertes, chacune à son heure, par e-mail, par notification ou les deux."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels champs une alerte peut-elle surveiller ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La quantité, ou un champ à vous de type Nombre, Décimal, Date ou Date/Heure. Un champ numérique prend un seuil, sous 10 par exemple ; un champ de date, un nombre de jours avant ou après la date. Les champs texte ne peuvent pas être surveillés. Une règle peut aussi être limitée à certains emplacements, pour qu'un seuil s'applique au cellier mais pas au garage. Chaque alerte est conservée dans l'application, sous Alertes, et dans l'onglet « Alerts » de votre feuille de calcul."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Et s'il me faut plus de cinq personnes ?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -408,7 +424,7 @@
        why bother, what do I have to give you, what can you see, will it
        work on my stuff, will it work on my hardware.
 
-       Group sizes across this page are 5 / 2 / 3 / 2 / 3 / 6 — deliberately
+       Group sizes across this page are 5 / 2 / 5 / 2 / 3 / 6 — deliberately
        uneven. The v5 teardown's second structural finding was that five v4
        blocks resolved to 4+4 or 3+3; a FAQ is the easiest page in the world
        to accidentally build as six neat groups of three or four.
@@ -530,7 +546,7 @@
   </section>
 
   <!-- ===================================================================
-       GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
+       GROUP 3 — THREE THINGS IT WON'T DO  ·  five questions
        Band: .section--mint AND .section--major. This is the beat that earns
        the page, so it gets the page's largest padding. §8.3 of the brief:
        the costliest, most credible signal available to an unknown GmbH with
@@ -546,6 +562,13 @@
          push and email are a per-user setting that covers every rule. Do not
          write "above", "rises past" or anything implying automatic stock
          movement. Verified against the app source on 2026-09-24.
+
+       The two alert follow-ups (when and how often; which fields) sit right
+       after it because that is where the reader's next question lands.
+       Delivery is once a day around the user's chosen time, one message per
+       inventory, a product reported once until its value changes or it
+       recovers and drops again. Watchable: quantity, Number, Decimal, Date,
+       Date/Time. Verified against the app and API source on 2026-09-26.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -567,6 +590,20 @@
           <h3>Me préviendra-t-elle quand je serai bientôt à court ?</h3>
           <p class="measure">
             Oui. Fixez un seuil à la quantité, ou à un champ numérique à vous, et l'application vous prévient par notification ou par e-mail quand la valeur passe en dessous : de l'huile d'olive sous 2, par exemple. Les alertes de date restent en place : une péremption, une fin de garantie ou une date d'entretien vous vaut une notification ou un e-mail un nombre de jours défini avant ou après. Le plan gratuit comprend une règle d'alerte et Premium jusqu'à 50, et les deux types partagent ce quota. La quantité ne change toujours que quand quelqu'un la change : l'alerte est donc aussi à jour que votre dernier comptage.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quand les alertes m'arrivent-elles, et à quelle fréquence ?</h3>
+          <p class="measure">
+            Vers l'heure que vous choisissez dans les réglages de notification de l'application, une fois par jour et dans votre propre fuseau horaire. Tout ce qui demande votre attention dans un inventaire arrive en même temps, en un seul e-mail ou une seule notification plutôt qu'un par produit, et l'e-mail liste chaque règle avec les produits concernés, les plus urgents d'abord. Un produit est signalé une fois, puis ne revient plus : il ne réapparaît que si sa valeur change de nouveau, ou s'il revient au seuil puis retombe en dessous plus tard. Toutes les personnes qui partagent l'inventaire reçoivent aussi les alertes, chacune à son heure, par e-mail, par notification ou les deux.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quels champs une alerte peut-elle surveiller ?</h3>
+          <p class="measure">
+            La quantité, ou un champ à vous de type Nombre, Décimal, Date ou Date/Heure. Un champ numérique prend un seuil, sous 10 par exemple ; un champ de date, un nombre de jours avant ou après la date. Les champs texte ne peuvent pas être surveillés. Une règle peut aussi être limitée à certains emplacements, pour qu'un seuil s'applique au cellier mais pas au garage. Chaque alerte est conservée dans l'application, sous Alertes, et dans l'onglet « Alerts » de votre feuille de calcul.
           </p>
         </div>
 

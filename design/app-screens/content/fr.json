@@ -7,7 +7,7 @@
   },
   "scan": {
     "title": "Scanner un code-barres",
-    "notFound": "Pas dans votre inventaire",
+    "notFound": "Absent de votre inventaire",
     "hint": [
       "Scannez un code-barres",
       "pour ajouter un produit",
@@ -33,8 +33,8 @@
     "edit": "Modifier"
   },
   "locations": {
-    "without": "Sans localisation",
-    "add": "Ajouter une localisation",
+    "without": "Sans emplacement",
+    "add": "Ajouter un emplacement",
     "names": [
       "Cuisine",
       "Garde-manger",
@@ -73,8 +73,8 @@
     },
     "subtitle": [
       "Vos propres champs sur chaque produit —",
-      "prix, tailles, numéros de série. Les dates",
-      "peuvent déclencher des alertes."
+      "prix, tailles, numéros de série. Les champs",
+      "de date peuvent déclencher des alertes."
     ]
   },
   "alert": {
@@ -83,24 +83,32 @@
     "nameLabel": "Nom de l'alerte",
     "sectionWhen": "Quand alerter",
     "targetField": "Champ cible",
-    "notifyMe": "Me notifier",
+    "notifyMe": "Me prévenir",
     "before": "Avant la date",
     "after": "Après la date",
     "howManyDays": "Combien de jours",
     "targetLocations": "Emplacements ciblés",
-    "sectionHow": "Comment recevoir les notifications",
-    "time": "Heure",
-    "push": "Push",
-    "email": "E-mail",
     "nameValue": "Bientôt périmé",
-    "locationsValue": "Cuisine, Garde-manger"
+    "locationsValue": "Cuisine, Garde-manger",
+    "fieldNote": [
+      "Les alertes peuvent surveiller la Quantité",
+      "ou un champ personnalisé de type Nombre,",
+      "Décimal, Date ou Date/Heure."
+    ],
+    "locationsLabel": "Emplacements",
+    "sectionNotify": "Notifications",
+    "notifyTitle": "Notifications",
+    "notifyDesc": [
+      "Les canaux et l'heure d'envoi",
+      "s'appliquent à toutes vos alertes"
+    ]
   },
   "users": {
     "title": "Utilisateurs",
     "invite": "Inviter",
     "active": "Utilisateurs actifs",
     "subtitle": [
-      "Invitez des utilisateurs à collaborer et",
+      "Invitez des personnes à collaborer et à",
       "gérer cet inventaire"
     ],
     "owner": "Propriétaire",

@@ -201,6 +201,22 @@
     },
     {
       "@type": "Question",
+      "name": "When will alerts reach me, and how often?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Around the time you choose in the app’s notification settings, once a day and in your own time zone. Everything that needs attention in an inventory arrives together, as one email or push notification rather than one per product, and the email lists each rule with the products it caught, most urgent first. A product is reported once and then stays quiet: it comes back only if its value changes again, or if it recovers and later drops below the floor. Everyone who shares the inventory gets alerts too, each at their own time, by email, push or both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which fields can an alert watch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The quantity, or a field of your own whose type is Number, Decimal, Date or Date/Time. A number field takes a floor, below 10 say; a date field takes a number of days before or after the date. Text fields can’t be watched. A rule can also be kept to certain places, so a floor applies in the pantry but not the garage. Every alert is kept in the app under Alerts, and in the Alerts tab of your spreadsheet."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What if I need more than five people?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -408,7 +424,7 @@
        why bother, what do I have to give you, what can you see, will it
        work on my stuff, will it work on my hardware.
 
-       Group sizes across this page are 5 / 2 / 3 / 2 / 3 / 6 — deliberately
+       Group sizes across this page are 5 / 2 / 5 / 2 / 3 / 6 — deliberately
        uneven. The v5 teardown's second structural finding was that five v4
        blocks resolved to 4+4 or 3+3; a FAQ is the easiest page in the world
        to accidentally build as six neat groups of three or four.
@@ -543,7 +559,7 @@
   </section>
 
   <!-- ===================================================================
-       GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
+       GROUP 3 — THREE THINGS IT WON'T DO  ·  five questions
        Band: .section--mint AND .section--major. This is the beat that earns
        the page, so it gets the page's largest padding. §8.3 of the brief:
        the costliest, most credible signal available to an unknown GmbH with
@@ -559,6 +575,13 @@
          push and email are a per-user setting that covers every rule. Do not
          write "above", "rises past" or anything implying automatic stock
          movement. Verified against the app source on 2026-09-24.
+
+       The two alert follow-ups (when and how often; which fields) sit right
+       after it because that is where the reader's next question lands.
+       Delivery is once a day around the user's chosen time, one message per
+       inventory, a product reported once until its value changes or it
+       recovers and drops again. Watchable: quantity, Number, Decimal, Date,
+       Date/Time. Verified against the app and API source on 2026-09-26.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -580,6 +603,20 @@
           <h3>Will it tell me when I&rsquo;m running low?</h3>
           <p class="measure">
             Yes. Set a floor on the quantity, or on a number field of your own, and the app tells you by push or email when the value drops below it: olive oil below 2, say. Date alerts sit alongside, so an expiry, a warranty end or a service date gets you a push notification or an email a set number of days before or after it. Free includes one alert rule and Premium up to 50, and both kinds share that allowance. The quantity still changes only when someone changes it, so the alert is as current as your last count.
+          </p>
+        </div>
+
+        <div>
+          <h3>When will alerts reach me, and how often?</h3>
+          <p class="measure">
+            Around the time you choose in the app&rsquo;s notification settings, once a day and in your own time zone. Everything that needs attention in an inventory arrives together, as one email or push notification rather than one per product, and the email lists each rule with the products it caught, most urgent first. A product is reported once and then stays quiet: it comes back only if its value changes again, or if it recovers and later drops below the floor. Everyone who shares the inventory gets alerts too, each at their own time, by email, push or both.
+          </p>
+        </div>
+
+        <div>
+          <h3>Which fields can an alert watch?</h3>
+          <p class="measure">
+            The quantity, or a field of your own whose type is Number, Decimal, Date or Date/Time. A number field takes a floor, below 10 say; a date field takes a number of days before or after the date. Text fields can&rsquo;t be watched. A rule can also be kept to certain places, so a floor applies in the pantry but not the garage. Every alert is kept in the app under Alerts, and in the Alerts tab of your spreadsheet.
           </p>
         </div>
 

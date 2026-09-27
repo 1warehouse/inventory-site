@@ -201,6 +201,22 @@
     },
     {
       "@type": "Question",
+      "name": "Wann erreichen mich Erinnerungen, und wie oft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Etwa zu der Uhrzeit, die Sie in den Benachrichtigungseinstellungen der App wählen, einmal am Tag und in Ihrer eigenen Zeitzone. Alles, was in einem Inventar Aufmerksamkeit braucht, kommt gesammelt an, als eine E-Mail oder Push-Nachricht statt einer pro Produkt, und die E-Mail listet jede Regel mit den betroffenen Produkten auf, die dringendsten zuerst. Ein Produkt wird einmal gemeldet und bleibt dann still: Es meldet sich erst wieder, wenn sich sein Wert erneut ändert oder wenn es die Untergrenze wieder erreicht hat und später erneut darunter fällt. Alle, mit denen Sie das Inventar teilen, bekommen die Erinnerungen ebenfalls, jeweils zu ihrer eigenen Uhrzeit, per E-Mail, Push oder beidem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Felder kann eine Erinnerung beobachten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Menge oder ein eigenes Feld vom Typ Zahl, Dezimalzahl, Datum oder Datum/Uhrzeit. Ein Zahlenfeld bekommt eine Untergrenze, etwa unter 10; ein Datumsfeld eine Zahl von Tagen vor oder nach dem Datum. Textfelder lassen sich nicht beobachten. Eine Regel lässt sich außerdem auf bestimmte Orte beschränken, sodass eine Untergrenze in der Speisekammer gilt, aber nicht in der Garage. Jede Erinnerung wird in der App unter Erinnerungen festgehalten und im Tab „Alerts“ Ihrer Tabelle."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Was, wenn ich mehr als fünf Personen brauche?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -408,7 +424,7 @@
        why bother, what do I have to give you, what can you see, will it
        work on my stuff, will it work on my hardware.
 
-       Group sizes across this page are 5 / 2 / 3 / 2 / 3 / 6 — deliberately
+       Group sizes across this page are 5 / 2 / 5 / 2 / 3 / 6 — deliberately
        uneven. The v5 teardown's second structural finding was that five v4
        blocks resolved to 4+4 or 3+3; a FAQ is the easiest page in the world
        to accidentally build as six neat groups of three or four.
@@ -530,7 +546,7 @@
   </section>
 
   <!-- ===================================================================
-       GROUP 3 — THREE THINGS IT WON'T DO  ·  three questions
+       GROUP 3 — THREE THINGS IT WON'T DO  ·  five questions
        Band: .section--mint AND .section--major. This is the beat that earns
        the page, so it gets the page's largest padding. §8.3 of the brief:
        the costliest, most credible signal available to an unknown GmbH with
@@ -546,6 +562,13 @@
          push and email are a per-user setting that covers every rule. Do not
          write "above", "rises past" or anything implying automatic stock
          movement. Verified against the app source on 2026-09-24.
+
+       The two alert follow-ups (when and how often; which fields) sit right
+       after it because that is where the reader's next question lands.
+       Delivery is once a day around the user's chosen time, one message per
+       inventory, a product reported once until its value changes or it
+       recovers and drops again. Watchable: quantity, Number, Decimal, Date,
+       Date/Time. Verified against the app and API source on 2026-09-26.
        =================================================================== -->
   <section class="section section--mint section--major" id="limits" aria-labelledby="limits-title">
     <div class="container container--narrow">
@@ -567,6 +590,20 @@
           <h3>Sagt sie mir, wenn etwas zur Neige geht?</h3>
           <p class="measure">
             Ja. Setzen Sie eine Untergrenze für die Menge oder für ein eigenes Zahlenfeld, und die App meldet sich per Push oder E-Mail, wenn der Wert darunter fällt: Olivenöl unter 2, zum Beispiel. Datums-Erinnerungen laufen daneben weiter: Bei einem Ablaufdatum, einem Garantieende oder einem Wartungstermin bekommen Sie eine Push-Nachricht oder eine E-Mail eine festgelegte Zahl von Tagen davor oder danach. Kostenlos ist eine Erinnerungsregel enthalten, in Premium bis zu 50, und beide Arten teilen sich dieses Kontingent. Die Menge ändert sich weiterhin nur, wenn jemand sie ändert – die Erinnerung ist also so aktuell wie Ihre letzte Zählung.
+          </p>
+        </div>
+
+        <div>
+          <h3>Wann erreichen mich Erinnerungen, und wie oft?</h3>
+          <p class="measure">
+            Etwa zu der Uhrzeit, die Sie in den Benachrichtigungseinstellungen der App wählen, einmal am Tag und in Ihrer eigenen Zeitzone. Alles, was in einem Inventar Aufmerksamkeit braucht, kommt gesammelt an, als eine E-Mail oder Push-Nachricht statt einer pro Produkt, und die E-Mail listet jede Regel mit den betroffenen Produkten auf, die dringendsten zuerst. Ein Produkt wird einmal gemeldet und bleibt dann still: Es meldet sich erst wieder, wenn sich sein Wert erneut ändert oder wenn es die Untergrenze wieder erreicht hat und später erneut darunter fällt. Alle, mit denen Sie das Inventar teilen, bekommen die Erinnerungen ebenfalls, jeweils zu ihrer eigenen Uhrzeit, per E-Mail, Push oder beidem.
+          </p>
+        </div>
+
+        <div>
+          <h3>Welche Felder kann eine Erinnerung beobachten?</h3>
+          <p class="measure">
+            Die Menge oder ein eigenes Feld vom Typ Zahl, Dezimalzahl, Datum oder Datum/Uhrzeit. Ein Zahlenfeld bekommt eine Untergrenze, etwa unter 10; ein Datumsfeld eine Zahl von Tagen vor oder nach dem Datum. Textfelder lassen sich nicht beobachten. Eine Regel lässt sich außerdem auf bestimmte Orte beschränken, sodass eine Untergrenze in der Speisekammer gilt, aber nicht in der Garage. Jede Erinnerung wird in der App unter Erinnerungen festgehalten und im Tab „Alerts“ Ihrer Tabelle.
           </p>
         </div>
 

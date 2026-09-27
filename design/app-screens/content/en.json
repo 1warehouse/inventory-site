@@ -57,10 +57,18 @@
     "after": "After the date",
     "howManyDays": "How many days",
     "targetLocations": "Target locations",
-    "sectionHow": "How to receive notifications",
-    "time": "Time",
-    "push": "Push",
-    "email": "Email"
+    "fieldNote": [
+      "Alerts can watch Quantity or a custom",
+      "field of type Number, Decimal, Date",
+      "or Date/Time."
+    ],
+    "locationsLabel": "Locations",
+    "sectionNotify": "Notifications",
+    "notifyTitle": "Notifications",
+    "notifyDesc": [
+      "Channels and delivery time apply",
+      "to all your alerts"
+    ]
   },
   "locations": {
     "names": [
