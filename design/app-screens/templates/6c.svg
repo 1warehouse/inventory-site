@@ -39,7 +39,7 @@
 
         <rect x="32" y="410" width="28" height="28" rx="7" fill="#DDF1E3"/>
         <path d="M39 419h5l1.4 2h8a1.4 1.4 0 0 1 1.4 1.4v6a1.4 1.4 0 0 1-1.4 1.4H39a1.4 1.4 0 0 1-1.4-1.4v-8A1.4 1.4 0 0 1 39 419z" fill="none" stroke="#178038" stroke-width="1.6" stroke-linejoin="round"/>
-        <text x="70" y="421" font-size="14" font-weight="600" fill="#16201A">{{alert.targetLocations}}</text>
+        <text data-fit="164" x="70" y="421" font-size="14" font-weight="600" fill="#16201A">{{alert.targetLocations}}</text>
         <text x="70" y="438" font-size="12" fill="#96A199">{{alert.locationsValue}}</text>
         <rect x="244" y="412" width="44" height="24" rx="12" fill="#178038"/>
         <circle cx="276" cy="424" r="9" fill="#fff"/>

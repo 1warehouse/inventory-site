@@ -1,13 +1,13 @@
 {
   "_note": "App chrome from inventory-mobile-app/assets/i18n/es.json; demo data and line breaks written for this site. Lines are literal: SVG does not wrap.",
   "common": {
-    "add": "Agregar",
+    "add": "Añadir",
     "cancel": "Cancelar",
     "save": "Guardar"
   },
   "scan": {
     "title": "Escanear código de barras",
-    "notFound": "No en tu inventario",
+    "notFound": "No está en tu inventario",
     "hint": [
       "Escanea un código",
       "para añadir un producto nuevo",
@@ -34,7 +34,7 @@
   },
   "locations": {
     "without": "Sin ubicación",
-    "add": "Agregar ubicación",
+    "add": "Añadir ubicación",
     "names": [
       "Cocina",
       "Despensa",
@@ -49,8 +49,8 @@
     "products": "Productos",
     "locations": "Ubicaciones",
     "customFields": "Campos propios",
-    "alertRules": "Reglas de alerta",
-    "stockHealth": "Estado del inventario",
+    "alertRules": "Reglas de aviso",
+    "stockHealth": "Estado del stock",
     "totalStock": "Stock total",
     "lastActivity": "Última actividad",
     "inventory": "Casa",
@@ -72,25 +72,25 @@
       "dropdown": "Lista · 6 opciones"
     },
     "subtitle": [
-      "Tus propios campos en cada producto —",
-      "precios, tallas, números de serie. Las",
-      "fechas pueden disparar alertas."
+      "Tus propios campos en cada producto:",
+      "precios, tallas, números de serie. Los",
+      "campos de fecha pueden activar avisos."
     ]
   },
   "alert": {
-    "title": "Nueva regla de alerta",
+    "title": "Nueva regla de aviso",
     "sectionRule": "Regla",
-    "nameLabel": "Nombre de la alerta",
-    "sectionWhen": "Cuándo alertar",
-    "targetField": "Campo objetivo",
-    "notifyMe": "Notificarme",
+    "nameLabel": "Nombre del aviso",
+    "sectionWhen": "Cuándo avisar",
+    "targetField": "Campo vigilado",
+    "notifyMe": "Avísame",
     "before": "Antes de la fecha",
     "after": "Después de la fecha",
     "howManyDays": "Cuántos días",
-    "targetLocations": "Ubicaciones objetivo",
+    "targetLocations": "Limitar a ubicaciones",
     "sectionHow": "Cómo recibir notificaciones",
     "time": "Hora",
-    "push": "Push",
+    "push": "Notificación push",
     "email": "Correo electrónico",
     "nameValue": "Caduca pronto",
     "locationsValue": "Cocina, Despensa"

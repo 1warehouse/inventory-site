@@ -29,12 +29,12 @@
   },
   "quantity": {
     "label": "Menge",
-    "apply": "Anwenden",
+    "apply": "Übernehmen",
     "edit": "Bearbeiten"
   },
   "locations": {
-    "without": "Ohne Speicherort",
-    "add": "Speicherort hinzufügen",
+    "without": "Ohne Ort",
+    "add": "Ort hinzufügen",
     "names": [
       "Küche",
       "Vorratsregal",
@@ -43,14 +43,14 @@
     ]
   },
   "dashboard": {
-    "title": "Dashboard",
+    "title": "Übersicht",
     "eyebrow": "AKTUELLES INVENTAR",
-    "overview": "Übersicht",
+    "overview": "Auf einen Blick",
     "products": "Produkte",
-    "locations": "Standorte",
+    "locations": "Orte",
     "customFields": "Eigene Felder",
-    "alertRules": "Warnregeln",
-    "stockHealth": "Bestandszustand",
+    "alertRules": "Erinnerungsregeln",
+    "stockHealth": "Bestandslage",
     "totalStock": "Gesamtbestand",
     "lastActivity": "Letzte Aktivität",
     "inventory": "Zuhause",
@@ -72,22 +72,22 @@
       "dropdown": "Auswahl · 6 Optionen"
     },
     "subtitle": [
-      "Eigene Felder für jedes Produkt — Preise,",
-      "Größen, Seriennummern. Datumsfelder",
-      "können Alarme auslösen."
+      "Ihre eigenen Felder für jedes Produkt –",
+      "Preise, Größen, Seriennummern. Datums-",
+      "felder können Erinnerungen auslösen."
     ]
   },
   "alert": {
-    "title": "Neue Warnregel",
+    "title": "Neue Erinnerungsregel",
     "sectionRule": "Regel",
-    "nameLabel": "Warnungsname",
-    "sectionWhen": "Wann benachrichtigen",
+    "nameLabel": "Name der Erinnerung",
+    "sectionWhen": "Wann erinnern",
     "targetField": "Zielfeld",
-    "notifyMe": "Benachrichtige mich",
+    "notifyMe": "Benachrichtigen",
     "before": "Vor dem Datum",
     "after": "Nach dem Datum",
     "howManyDays": "Wie viele Tage",
-    "targetLocations": "Ziel-Standorte",
+    "targetLocations": "Betroffene Orte",
     "sectionHow": "Wie du Benachrichtigungen erhältst",
     "time": "Uhrzeit",
     "push": "Push",
@@ -96,15 +96,15 @@
     "locationsValue": "Küche, Vorratsregal"
   },
   "users": {
-    "title": "Benutzer",
+    "title": "Nutzer",
     "invite": "Einladen",
-    "active": "Aktive Benutzer",
+    "active": "Aktive Personen",
     "subtitle": [
-      "Laden Sie Benutzer ein, um gemeinsam an",
+      "Laden Sie Personen ein, um gemeinsam an",
       "diesem Inventar zu arbeiten"
     ],
     "owner": "Eigentümer",
-    "user": "Benutzer"
+    "user": "Nutzer"
   },
   "history": {
     "title": "Verlauf",
