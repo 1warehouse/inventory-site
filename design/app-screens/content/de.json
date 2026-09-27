@@ -88,12 +88,20 @@
     "after": "Nach dem Datum",
     "howManyDays": "Wie viele Tage",
     "targetLocations": "Betroffene Orte",
-    "sectionHow": "Wie du Benachrichtigungen erhältst",
-    "time": "Uhrzeit",
-    "push": "Push",
-    "email": "E-Mail",
     "nameValue": "Läuft bald ab",
-    "locationsValue": "Küche, Vorratsregal"
+    "locationsValue": "Küche, Vorratsregal",
+    "fieldNote": [
+      "Erinnerungen können die Menge oder ein",
+      "eigenes Feld vom Typ Zahl, Dezimalzahl,",
+      "Datum oder Datum/Uhrzeit beobachten."
+    ],
+    "locationsLabel": "Orte",
+    "sectionNotify": "Benachrichtigungen",
+    "notifyTitle": "Benachrichtigungen",
+    "notifyDesc": [
+      "Kanäle und Uhrzeit gelten für",
+      "alle Ihre Erinnerungen"
+    ]
   },
   "users": {
     "title": "Nutzer",

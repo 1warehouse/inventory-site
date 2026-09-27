@@ -88,12 +88,20 @@
     "after": "Après la date",
     "howManyDays": "Combien de jours",
     "targetLocations": "Emplacements ciblés",
-    "sectionHow": "Comment recevoir les notifications",
-    "time": "Heure",
-    "push": "Notification push",
-    "email": "E-mail",
     "nameValue": "Bientôt périmé",
-    "locationsValue": "Cuisine, Garde-manger"
+    "locationsValue": "Cuisine, Garde-manger",
+    "fieldNote": [
+      "Les alertes peuvent surveiller la Quantité",
+      "ou un champ personnalisé de type Nombre,",
+      "Décimal, Date ou Date/Heure."
+    ],
+    "locationsLabel": "Emplacements",
+    "sectionNotify": "Notifications",
+    "notifyTitle": "Notifications",
+    "notifyDesc": [
+      "Les canaux et l'heure d'envoi",
+      "s'appliquent à toutes vos alertes"
+    ]
   },
   "users": {
     "title": "Utilisateurs",

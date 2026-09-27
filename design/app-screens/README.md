@@ -155,3 +155,13 @@ all deliberate:
   the real check digits (`…3000`, `…2047`, `…3015`);
 - the sheet shows the columns the app actually writes — Name, Quantity,
   Barcode, Location, Description — instead of a tidied-up four.
+
+## Note on the 2026-09-27 alert screen
+
+`6c` was changed here rather than in the design document, to match the app's alert-rule form
+as it now is: notification channels and delivery time moved to the global Notifications settings in
+August, so the rule's last card is a single "Notifications" link, not Time / Push / Email. The form
+also shows which fields an alert can watch under "Target field", and, with locations switched on, a
+separate "Locations" row. Every word is the app's own (`assets/i18n`). **Carry the same change into
+the Claude Design document** before the next export, or it will overwrite this one.
+

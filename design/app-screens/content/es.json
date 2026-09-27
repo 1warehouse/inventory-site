@@ -88,12 +88,20 @@
     "after": "Después de la fecha",
     "howManyDays": "Cuántos días",
     "targetLocations": "Limitar a ubicaciones",
-    "sectionHow": "Cómo recibir notificaciones",
-    "time": "Hora",
-    "push": "Notificación push",
-    "email": "Correo electrónico",
     "nameValue": "Caduca pronto",
-    "locationsValue": "Cocina, Despensa"
+    "locationsValue": "Cocina, Despensa",
+    "fieldNote": [
+      "Los avisos pueden vigilar la Cantidad",
+      "o un campo propio de tipo Número,",
+      "Decimal, Fecha o Fecha/Hora."
+    ],
+    "locationsLabel": "Ubicaciones",
+    "sectionNotify": "Notificaciones",
+    "notifyTitle": "Notificaciones",
+    "notifyDesc": [
+      "Los canales y la hora de envío se",
+      "aplican a todos tus avisos"
+    ]
   },
   "users": {
     "title": "Usuarios",
