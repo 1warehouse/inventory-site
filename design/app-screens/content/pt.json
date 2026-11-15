@@ -174,5 +174,43 @@
       "LOCAL",
       "DESCRIÇÃO"
     ]
+  },
+  "offline": {
+    "title": "Modo offline",
+    "state": "Está a trabalhar offline",
+    "intro": [
+      "Continue a trabalhar sem internet. As suas",
+      "alterações ficam neste telemóvel até passar",
+      "a online e sincronizá-las."
+    ],
+    "products": {
+      "title": "Produtos",
+      "desc": [
+        "Adicionar, editar e eliminar, alterar",
+        "quantidades, adicionar fotografias"
+      ]
+    },
+    "scan": {
+      "title": "Leitura e pesquisa",
+      "desc": [
+        "Encontrar produtos guardados",
+        "neste telemóvel"
+      ]
+    },
+    "locations": {
+      "title": "Localizações",
+      "desc": [
+        "Adicionar, mudar o nome e eliminar",
+        ""
+      ]
+    },
+    "fields": {
+      "title": "Campos personalizados",
+      "desc": [
+        "Adicionar campos, alterar opções",
+        "e moeda"
+      ]
+    },
+    "goOnline": "Passar a online"
   }
 }

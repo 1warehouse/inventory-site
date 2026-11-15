@@ -35,6 +35,7 @@ const SHOTS = {
   '7a':  { file: 'custom-fields-wt.png',      w: 348, h: 721 },
   '7b':  { file: 'users-wt.png',              w: 348, h: 721 },
   '10a': { file: 'gsheet.webp',               w: 572, h: 400 },
+  '11a': { file: 'offline-wt.png',            w: 348, h: 721 },
 };
 
 /* Drawn in the design doc but not used by the site today: the bare product

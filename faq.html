@@ -95,7 +95,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=23" />
+  <link rel="stylesheet" href="css/style.css?v=27" />
 
   <!-- =====================================================================
        FAQPage STRUCTURED DATA
@@ -137,6 +137,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I edit the spreadsheet directly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Change a cell in the Sheet, pull down the list in the app, and the change is there. It’s the quickest way to move thirty things to another shelf or fix a column of prices. Keep the column headers as they are: they’re how the app knows which field is which."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do I need a Google account? Can I sign up with an email address?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -172,7 +180,7 @@
       "name": "I already have a list. Do I have to retype it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a sheet headed Item / Qty / Where lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
+        "text": "No. Import a CSV and your column headers are matched to fields by meaning, so a sheet headed Item / Qty / Where lands in the right columns with no setup. Limits: CSV only, 5 MB, 60 columns, a name column required, and 3 imports a day on Free or 20 on Premium. The mapping runs in one pass and is shown to you afterwards. Duplicates are skipped."
       }
     },
     {
@@ -180,7 +188,7 @@
       "name": "How many products can I have?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Up to 100 in each inventory on the free plan, and up to 10,000 on Premium. If a subscription ends, nothing over 100 is removed: the inventory simply takes no new products until it is back under 100."
+        "text": "Up to 100 in each inventory on the free plan, and up to 10,000 on Premium. If a subscription ends, nothing is removed from your Sheet. The app shows the first 100 products and takes no new ones, and the rest reappear when you subscribe again."
       }
     },
     {
@@ -188,7 +196,7 @@
       "name": "Does it work offline?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not yet, and it’s on the way. Every action is a network call today, so you need a connection to add or change something. Offline is coming in a future release, and it matters most in cellars, garages, lock-ups and vans, which is exactly where an inventory tends to live."
+        "text": "On Premium, yes. If the connection drops, the app switches to offline mode by itself, so you can keep adding and editing products, photos included, scanning and searching. Your changes reach your Sheet when you’re back online. Some things still need a connection: barcode lookups, CSV import, inviting people and changing alert rules. A new item scanned in the cellar comes back blank, and you type its name. On the free plan, the app needs a connection."
       }
     },
     {
@@ -244,7 +252,7 @@
       "name": "What does Premium cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "€0.99 a month or €9.99 a year, with a 7-day free trial on either. The yearly plan costs less than twelve months at the monthly price, which come to €11.88. There is no bundle and no second tier. The subscription is handled by the App Store or Google Play, so you cancel it there, and the app shows the price in your own currency."
+        "text": "€0.99 a month or €9.99 a year, with a 7-day free trial on either. The yearly plan costs less than twelve months at the monthly price, which come to €11.88. There is no bundle and no second tier. The subscription is handled by the App Store or Google Play, so you cancel it there, or from the Subscription page in the app, which takes you straight to the store’s own screen. Monthly subscribers can switch to the yearly plan on the same page, and the store credits the unused part of the month. The app shows the price in your own currency."
       }
     },
     {
@@ -252,7 +260,7 @@
       "name": "What happens if I stop paying?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nothing is deleted. Extra inventories, locations, custom fields and the people you invited are locked, and all of it comes back in one pass if you resubscribe. Your products are untouched, because they live in your Google Sheet. While an inventory is locked it is hidden in the app, and the people you invited lose access until you subscribe again."
+        "text": "Nothing is deleted. Extra inventories, locations, custom fields, alert rules and the people you invited are locked, and all of it comes back in one pass if you resubscribe. Your products stay in your Google Sheet, and the app shows the first 100 of them. While an inventory is locked it is hidden in the app, and the people you invited lose access until you subscribe again."
       }
     },
     {
@@ -260,7 +268,7 @@
       "name": "Is it worth paying for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start free and find out. Catalogue a room on the free plan, and within a fortnight you will know whether you want a second inventory, a second place, a second person, room for more than 100 products, more alert rules, or a change history. Those six things are what Premium adds, and €0.99 a month, or €9.99 a year, is the whole price."
+        "text": "Start free and find out. Catalogue a room on the free plan, and within a fortnight you will know whether you want a second inventory, a second place, a second person, room for more than 100 products, more alert rules, a change history, or keeping going when the signal drops. Those seven things are what Premium adds, and €0.99 a month, or €9.99 a year, is the whole price."
       }
     },
     {
@@ -339,13 +347,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Primary">
         <a href="./">How it works</a>
         <a href="plans.html">Plans</a>
         <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="support.html">Support</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -398,19 +408,63 @@
           <h1 id="faq-title">Questions and answers</h1>
         </div>
 
-        <!-- Jump list. Six entries, matching the six question groups below.
+        <!-- Jump list. Six groups, matching the six question groups below, each
+             with its questions under it. Generated by hand from the h3s: a
+             question added or reworded below must be changed here too.
              A real table of contents, not decoration: support sends people
              here with one question in mind. -->
         <div class="card card--tint" style="margin-top:22px">
           <h2 class="h4 mb-0">Jump to</h2>
           <nav aria-label="Sections of this page">
-            <ul class="bullets bullets--green bullets--tight" style="margin-top:14px">
-              <li><a href="#install">Before you install</a></li>
-              <li><a href="#existing-list">The list you already keep</a></li>
-              <li><a href="#limits">Limits and what&rsquo;s next</a></li>
-              <li><a href="#sharing">Letting someone else in</a></li>
-              <li><a href="#price">What it costs</a></li>
-              <li><a href="#permanence">If we disappear</a></li>
+            <ul class="bullets bullets--tight jump-list" style="margin-top:14px">
+              <li><p class="jump-group"><a href="#install">Before you install</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-why-not-just-use-a-google-sheet-directly">Why not just use a Google Sheet directly?</a></li>
+                  <li><a href="#q-can-i-edit-the-spreadsheet-directly">Can I edit the spreadsheet directly?</a></li>
+                  <li><a href="#q-do-i-need-a-google-account-can-i-sign-up-with-an">Do I need a Google account? Can I sign up with an email address?</a></li>
+                  <li><a href="#q-why-does-an-inventory-app-need-access-to-my-goog">Why does an inventory app need access to my Google Drive?</a></li>
+                  <li><a href="#q-will-the-scanner-recognise-my-things">Will the scanner recognise my things?</a></li>
+                  <li><a href="#q-is-there-a-web-app-does-it-work-on-an-ipad">Is there a web app? Does it work on an iPad?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#existing-list">The list you already keep</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-i-already-have-a-list-do-i-have-to-retype-it">I already have a list. Do I have to retype it?</a></li>
+                  <li><a href="#q-how-many-products-can-i-have">How many products can I have?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#limits">Limits</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-does-it-work-offline">Does it work offline?</a></li>
+                  <li><a href="#q-will-it-tell-me-when-im-running-low">Will it tell me when I&rsquo;m running low?</a></li>
+                  <li><a href="#q-when-will-alerts-reach-me-and-how-often">When will alerts reach me, and how often?</a></li>
+                  <li><a href="#q-which-fields-can-an-alert-watch">Which fields can an alert watch?</a></li>
+                  <li><a href="#q-what-if-i-need-more-than-five-people">What if I need more than five people?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#sharing">Letting someone else in</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-is-it-safe-to-let-my-partner-or-a-colleague-in">Is it safe to let my partner or a colleague in?</a></li>
+                  <li><a href="#q-will-their-changes-appear-on-my-phone-straight-a">Will their changes appear on my phone straight away?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#price">What it costs</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-what-does-premium-cost">What does Premium cost?</a></li>
+                  <li><a href="#q-what-happens-if-i-stop-paying">What happens if I stop paying?</a></li>
+                  <li><a href="#q-is-it-worth-paying-for">Is it worth paying for?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#permanence">If we disappear</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-can-i-export-my-data">Can I export my data?</a></li>
+                  <li><a href="#q-what-if-i-delete-something-by-accident">What if I delete something by accident?</a></li>
+                  <li><a href="#q-what-happens-if-1inventory-shuts-down">What happens if 1inventory shuts down?</a></li>
+                  <li><a href="#q-who-makes-this">Who makes this?</a></li>
+                  <li><a href="#q-do-you-show-ads">Do you show ads?</a></li>
+                  <li><a href="#q-what-languages-is-it-in">What languages is it in?</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>
@@ -439,7 +493,7 @@
       <div class="stack">
 
         <div>
-          <h3>Why not just use a Google Sheet directly?</h3>
+          <h3 id="q-why-not-just-use-a-google-sheet-directly">Why not just use a Google Sheet directly?</h3>
           <p class="measure">
             You are: that&rsquo;s the design. What the app adds is a camera, a global product
             database, a folder view with a count per shelf, a quantity stepper you can hit
@@ -449,14 +503,26 @@
         </div>
 
         <div>
-          <h3>Do I need a Google account? Can I sign up with an email address?</h3>
+          <h3 id="q-can-i-edit-the-spreadsheet-directly">Can I edit the spreadsheet directly?</h3>
+          <!-- Verified against the API on 2026-11-15: every product read goes to
+               Google Sheets, so a cell changed there is in the app on the next
+               refresh. Columns are matched by exact header text; a renamed
+               built-in header is re-added empty and the renamed column is no
+               longer read. -->
+          <p class="measure">
+            Yes. Change a cell in the Sheet, pull down the list in the app, and the change is there. It&rsquo;s the quickest way to move thirty things to another shelf or fix a column of prices. Keep the column headers as they are: they&rsquo;re how the app knows which field is which.
+          </p>
+        </div>
+
+        <div>
+          <h3 id="q-do-i-need-a-google-account-can-i-sign-up-with-an">Do I need a Google account? Can I sign up with an email address?</h3>
           <p class="measure">
             Yes, and it is the only sign-in the app uses. The upside is that signing up takes one tap: there is no form to fill in and no password to invent, and your first spreadsheet exists before you reach the home screen.
           </p>
         </div>
 
         <div>
-          <h3>Why does an inventory app need access to my Google Drive?</h3>
+          <h3 id="q-why-does-an-inventory-app-need-access-to-my-goog">Why does an inventory app need access to my Google Drive?</h3>
           <!-- The scope name is set as a .code-chip here, the same treatment the
                homepage's permission band gives it. The full
                https://www.googleapis.com/auth/drive.file URL is deliberately not
@@ -475,7 +541,7 @@
         </div>
 
         <div>
-          <h3>Will the scanner recognise my things?</h3>
+          <h3 id="q-will-the-scanner-recognise-my-things">Will the scanner recognise my things?</h3>
           <!-- ⚠ "unlimited" is a banned word site-wide with exactly one exception:
                barcode SCANNING, where it is literally true. The daily cap is on
                lookups against the global database, and conflating the two is the
@@ -486,7 +552,7 @@
         </div>
 
         <div>
-          <h3>Is there a web app? Does it work on an iPad?</h3>
+          <h3 id="q-is-there-a-web-app-does-it-work-on-an-ipad">Is there a web app? Does it work on an iPad?</h3>
           <p class="measure">
             Your data is fully usable on a laptop: the spreadsheet opens in Google Sheets like any other file, where you can sort, filter, chart and print it. The app itself is a portrait phone app for iOS 15.6 and later and Android 7.0 and later, so there is no tablet layout or browser client today.
           </p>
@@ -512,7 +578,7 @@
       <div class="stack">
 
         <div>
-          <h3>I already have a list. Do I have to retype it?</h3>
+          <h3 id="q-i-already-have-a-list-do-i-have-to-retype-it">I already have a list. Do I have to retype it?</h3>
           <!-- ⚠ ACCURACY, all four verified and none may be loosened:
                  · CSV only. Not Excel, not .xlsx, not Numbers.
                  · The mapping is automatic and is NOT reviewable beforehand. The
@@ -521,6 +587,8 @@
                  · Import is insert-only. Duplicates are skipped and existing rows
                    are never updated, so it is not a sync, a merge or an update.
                  · 5 MB, 60 columns, name column required.
+                 · 3 imports a day on Free, 20 on Premium (ImportDailyLimit in
+                   the API's SubscriptionQuotas, read 2026-11-15).
                The header example is load-bearing: it is the one detail that proves
                the matching is by meaning rather than by exact field name. The brief's
                original was a German one (Bezeichnung / Menge / Lagerort); the client
@@ -532,17 +600,17 @@
             No. Import a CSV and your column headers are matched to fields by meaning, so a
             sheet headed <em>Item / Qty / Where</em> lands in the right columns with no
             setup. Limits: CSV only, 5&nbsp;MB, 60 columns, a name column
-            required. The mapping runs in one pass and is shown to you afterwards.
+            required, and 3 imports a day on Free or 20 on Premium. The mapping runs in one pass and is shown to you afterwards.
             Duplicates are skipped.
           </p>
         </div>
 
         <div>
-          <h3>How many products can I have?</h3>
+          <h3 id="q-how-many-products-can-i-have">How many products can I have?</h3>
           <p class="measure">
             Up to 100 in each inventory on the free plan, and up to 10,000 on Premium. If a
-            subscription ends, nothing over 100 is removed: the inventory simply takes no new
-            products until it is back under 100.
+            subscription ends, nothing is removed from your Sheet. The app shows the first 100
+            products and takes no new ones, and the rest reappear when you subscribe again.
           </p>
         </div>
 
@@ -580,41 +648,41 @@
     <div class="container container--narrow">
 
       <div class="section__head">
-        <h2 id="limits-title" class="mb-0">Limits, and what we&rsquo;re working on</h2>
+        <h2 id="limits-title" class="mb-0">Limits</h2>
       </div>
 
       <div class="stack">
 
         <div>
-          <h3>Does it work offline?</h3>
+          <h3 id="q-does-it-work-offline">Does it work offline?</h3>
           <p class="measure">
-            Not yet, and it&rsquo;s on the way. Every action is a network call today, so you need a connection to add or change something. Offline is coming in a future release, and it matters most in cellars, garages, lock-ups and vans, which is exactly where an inventory tends to live.
+            On Premium, yes. If the connection drops, the app switches to offline mode by itself, so you can keep adding and editing products, photos included, scanning and searching. Your changes reach your Sheet when you&rsquo;re back online. Some things still need a connection: barcode lookups, CSV import, inviting people and changing alert rules. A new item scanned in the cellar comes back blank, and you type its name. On the free plan, the app needs a connection.
           </p>
         </div>
 
         <div>
-          <h3>Will it tell me when I&rsquo;m running low?</h3>
+          <h3 id="q-will-it-tell-me-when-im-running-low">Will it tell me when I&rsquo;m running low?</h3>
           <p class="measure">
             Yes. Set a floor on the quantity, or on a number field of your own, and the app tells you by push or email when the value drops below it: olive oil below 2, say. Date alerts sit alongside, so an expiry, a warranty end or a service date gets you a push notification or an email a set number of days before or after it. Free includes one alert rule and Premium up to 50, and both kinds share that allowance. The quantity still changes only when someone changes it, so the alert is as current as your last count.
           </p>
         </div>
 
         <div>
-          <h3>When will alerts reach me, and how often?</h3>
+          <h3 id="q-when-will-alerts-reach-me-and-how-often">When will alerts reach me, and how often?</h3>
           <p class="measure">
             Around the time you choose in the app&rsquo;s notification settings, once a day and in your own time zone. Everything that needs attention in an inventory arrives together, as one email or push notification rather than one per product, and the email lists each rule with the products it caught, most urgent first. A product is reported once and then stays quiet: it comes back only if its value changes again, or if it recovers and later drops below the floor. Everyone who shares the inventory gets alerts too, each at their own time, by email, push or both.
           </p>
         </div>
 
         <div>
-          <h3>Which fields can an alert watch?</h3>
+          <h3 id="q-which-fields-can-an-alert-watch">Which fields can an alert watch?</h3>
           <p class="measure">
             The quantity, or a field of your own whose type is Number, Decimal, Date or Date/Time. A number field takes a floor, below 10 say; a date field takes a number of days before or after the date. Text fields can&rsquo;t be watched. A rule can also be kept to certain places, so a floor applies in the pantry but not the garage. Every alert is kept in the app under Alerts, and in the Alerts tab of your spreadsheet.
           </p>
         </div>
 
         <div>
-          <h3>What if I need more than five people?</h3>
+          <h3 id="q-what-if-i-need-more-than-five-people">What if I need more than five people?</h3>
           <p class="measure">
             Five people is what the app is built around: a household, a workshop, or a small crew. Places are not capped on Premium, but they sit side by side rather than nesting, and everyone you invite gets the same level of access. If you need warehouse zones inside zones, per-location permissions or a read-only role, a larger system will serve you better.
           </p>
@@ -654,14 +722,14 @@
       <div class="stack">
 
         <div>
-          <h3>Is it safe to let my partner or a colleague in?</h3>
+          <h3 id="q-is-it-safe-to-let-my-partner-or-a-colleague-in">Is it safe to let my partner or a colleague in?</h3>
           <p class="measure">
             Yes. They sign in with their own Google account, and where the inventory has a History tab every change lands there with their name on it. Worth knowing: there are two roles rather than a read-only option, so anyone you invite can edit and delete. Inviting needs Premium, the cap is five people including you, and the spreadsheet stays in your Drive alone.
           </p>
         </div>
 
         <div>
-          <h3>Will their changes appear on my phone straight away?</h3>
+          <h3 id="q-will-their-changes-appear-on-my-phone-straight-a">Will their changes appear on my phone straight away?</h3>
           <p class="measure">
             Changes reach your Google Sheet as soon as they are saved. On another phone they appear when the list is pulled down to refresh, rather than updating live while you are looking at it. If two people count the same shelf at the same moment, the last one saved wins.
           </p>
@@ -712,39 +780,44 @@
       <div class="stack">
 
         <div>
-          <h3>What does Premium cost?</h3>
+          <h3 id="q-what-does-premium-cost">What does Premium cost?</h3>
           <p class="measure">
             &euro;0.99 a month or &euro;9.99 a year, with a 7-day free trial on either.
             The yearly plan costs less than twelve months at the monthly price, which come
             to &euro;11.88. There is no bundle and no second tier. The subscription is handled
-            by the App Store or Google Play, so you cancel it there, and the app shows the
-            price in your own currency.
+            by the App Store or Google Play, so you cancel it there, or from the
+            Subscription page in the app, which takes you straight to the store&rsquo;s own
+            screen. Monthly subscribers can switch to the yearly plan on the same page, and the
+            store credits the unused part of the month. The app shows the price in your own
+            currency.
           </p>
         </div>
 
         <div>
-          <h3>What happens if I stop paying?</h3>
+          <h3 id="q-what-happens-if-i-stop-paying">What happens if I stop paying?</h3>
           <p class="measure">
-            Nothing is deleted. Extra inventories, locations, custom fields and the people
-            you invited are locked, and all of it comes back in one pass if you resubscribe.
-            Your products are untouched, because they live in your Google Sheet. While an
+            Nothing is deleted. Extra inventories, locations, custom fields, alert rules and
+            the people you invited are locked, and all of it comes back in one pass if you
+            resubscribe. Your products stay in your Google Sheet, and the app shows the first
+            100 of them. While an
             inventory is locked it is hidden in the app, and the people you invited lose
             access until you subscribe again.
           </p>
         </div>
 
         <div>
-          <h3>Is it worth paying for?</h3>
-          <!-- The six things named here are the six Free-plan caps that actually
+          <h3 id="q-is-it-worth-paying-for">Is it worth paying for?</h3>
+          <!-- The seven things named here are the seven Free-plan caps that actually
                bite: a second inventory, a second location, a second person, more
-               than 100 products, more alert rules, and change history. The list is
+               than 100 products, more alert rules, change history, and offline
+               mode (Premium since app 1.2.0). The list is
                exact — every one of them is a row in the plans table. -->
           <p class="measure">
             Start free and find out. Catalogue a room on the free plan, and within a
             fortnight you will know whether you want a second inventory, a second place, a
-            second person, room for more than 100 products, more alert rules, or a change
-            history. Those six things are what Premium adds, and &euro;0.99 a month, or
-            &euro;9.99 a year, is the whole price.
+            second person, room for more than 100 products, more alert rules, a change
+            history, or keeping going when the signal drops. Those seven things are what
+            Premium adds, and &euro;0.99 a month, or &euro;9.99 a year, is the whole price.
           </p>
         </div>
 
@@ -795,7 +868,7 @@
       <div class="stack">
 
         <div>
-          <h3>Can I export my data?</h3>
+          <h3 id="q-can-i-export-my-data">Can I export my data?</h3>
           <p class="measure">
             There is no export button, because there is nothing to export. Your inventory is
             already a Google Sheet in your own Drive, and Google will save it out as CSV,
@@ -806,7 +879,7 @@
         </div>
 
         <div>
-          <h3>What if I delete something by accident?</h3>
+          <h3 id="q-what-if-i-delete-something-by-accident">What if I delete something by accident?</h3>
           <!-- ⚠ There is genuinely no restore button in the app. The Backups screen
                lists Drive revisions and hands you off to Google Sheets to do the
                restore. Do not describe it as a restore feature. -->
@@ -816,7 +889,7 @@
         </div>
 
         <div>
-          <h3>What happens if 1inventory shuts down?</h3>
+          <h3 id="q-what-happens-if-1inventory-shuts-down">What happens if 1inventory shuts down?</h3>
           <p class="measure">
             The spreadsheet, its history tab and the photo folder are in your Google Drive
             and stay there, readable by anything that opens a spreadsheet. What you would
@@ -826,7 +899,7 @@
         </div>
 
         <div>
-          <h3>Who makes this?</h3>
+          <h3 id="q-who-makes-this">Who makes this?</h3>
           <!-- The Impressum link is a standalone .link-arrow, never an inline <a>
                inside the sentence: .link-arrow is inline-flex with a 44px minimum
                height, so mid-paragraph it would blow the line box apart. Every
@@ -840,7 +913,7 @@
         </div>
 
         <div>
-          <h3>Do you show ads?</h3>
+          <h3 id="q-do-you-show-ads">Do you show ads?</h3>
           <p class="measure">
             No, on either plan. There is no advertising SDK in the app, and it has never
             asked for a tracking identifier or shown you an App Tracking Transparency
@@ -850,7 +923,7 @@
         </div>
 
         <div>
-          <h3>What languages is it in?</h3>
+          <h3 id="q-what-languages-is-it-in">What languages is it in?</h3>
           <p class="measure">
             English, German, Spanish, French and Portuguese: the whole app, and also the
             alert emails and the barcode lookup results, which come back in your language.

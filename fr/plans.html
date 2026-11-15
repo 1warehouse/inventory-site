@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
   <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
        Must stay after the language detector above: a page the detector
        is about to redirect away from should not report a page view. -->
@@ -107,13 +107,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="./">Comment ça marche</a>
         <a href="plans.html" aria-current="page">Offres</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Assistance</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -175,6 +177,11 @@
             </tr>
             <tr><th scope="row">Produits par inventaire</th><td>100</td><td class="plans-col--premium">Jusqu'à 10&nbsp;000</td></tr>
             <tr>
+              <th scope="row">Mode hors connexion</th>
+              <td><span aria-hidden="true">&mdash;</span><span class="visually-hidden">Non</span></td>
+              <td class="plans-col--premium">Oui</td>
+            </tr>
+            <tr>
               <th scope="row">Prix</th>
               <td>Gratuit</td>
               <td class="plans-col--premium">0,99 &euro; / mois<br />ou 9,99 &euro; / an<span class="plans-note">7 jours d'essai gratuit sur les deux. Annulable à tout moment.</span></td>
@@ -197,6 +204,7 @@
             <div class="plan-card__row"><dt>Règles d'alerte</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Historique des modifications</dt><dd>Non</dd></div>
             <div class="plan-card__row"><dt>Produits par inventaire</dt><dd>100</dd></div>
+            <div class="plan-card__row"><dt>Mode hors connexion</dt><dd>Non</dd></div>
             <div class="plan-card__row"><dt>Prix</dt><dd>Gratuit</dd></div>
           </dl>
         </div>
@@ -211,6 +219,7 @@
             <div class="plan-card__row"><dt>Règles d'alerte</dt><dd>Jusqu'à 50</dd></div>
             <div class="plan-card__row"><dt>Historique des modifications</dt><dd>Oui<span class="plans-note">Dans les inventaires créés pendant l'abonnement</span></dd></div>
             <div class="plan-card__row"><dt>Produits par inventaire</dt><dd>Jusqu'à 10&nbsp;000</dd></div>
+            <div class="plan-card__row"><dt>Mode hors connexion</dt><dd>Oui</dd></div>
             <div class="plan-card__row"><dt>Prix</dt><dd>0,99 &euro; / mois<br />ou 9,99 &euro; / an<span class="plans-note">7 jours d'essai gratuit sur les deux. Annulable à tout moment.</span></dd></div>
           </dl>
         </div>
@@ -219,7 +228,7 @@
       <ul class="footnotes plans-footnotes">
         <li>Les règles d'alerte surveillent la quantité et tout champ de date ou de nombre que vous ajoutez vous-même : des jours avant ou après une date, ou sous un nombre que vous fixez. Les deux types relèvent du même quota.</li>
         <li>Les recherches de codes-barres appartiennent au propriétaire de l'inventaire et sont partagées par toutes les personnes qui s'y trouvent. Le compteur est remis à zéro à minuit UTC.</li>
-        <li>Les abonnements sont gérés par l'App Store et Google Play. Vous y résiliez quand vous voulez.</li>
+        <li>Les abonnements sont gérés par l'App Store et Google Play. Vous y résiliez, ou depuis la page Abonnement de l'application, quand vous voulez.</li>
       </ul>
     </div>
   </section>

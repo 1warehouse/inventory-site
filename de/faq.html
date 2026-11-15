@@ -95,7 +95,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
 
   <!-- =====================================================================
        FAQPage STRUCTURED DATA
@@ -137,6 +137,14 @@
     },
     {
       "@type": "Question",
+      "name": "Kann ich die Tabelle direkt bearbeiten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Ändern Sie eine Zelle in der Tabelle, ziehen Sie die Liste in der App herunter, und die Änderung ist da. Das ist der schnellste Weg, dreißig Dinge in ein anderes Regal zu verschieben oder eine Spalte mit Preisen zu korrigieren. Lassen Sie die Spaltenüberschriften, wie sie sind: An ihnen erkennt die App, welches Feld welches ist."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Brauche ich ein Google-Konto? Kann ich mich mit einer E-Mail-Adresse anmelden?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -172,7 +180,7 @@
       "name": "Ich habe schon eine Liste. Muss ich sie neu eintippen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Importieren Sie eine CSV-Datei, und Ihre Spaltenüberschriften werden ihrer Bedeutung nach den Feldern zugeordnet – eine Tabelle mit den Überschriften Artikel / Menge / Wo landet ohne Einrichtung in den richtigen Spalten. Grenzen: nur CSV, 5 MB, 60 Spalten, eine Namensspalte ist Pflicht. Die Zuordnung läuft in einem Durchgang und wird Ihnen danach gezeigt. Dubletten werden übersprungen."
+        "text": "Nein. Importieren Sie eine CSV-Datei, und Ihre Spaltenüberschriften werden ihrer Bedeutung nach den Feldern zugeordnet – eine Tabelle mit den Überschriften Artikel / Menge / Wo landet ohne Einrichtung in den richtigen Spalten. Grenzen: nur CSV, 5 MB, 60 Spalten, eine Namensspalte ist Pflicht, und 3 Importe pro Tag im kostenlosen Tarif oder 20 mit Premium. Die Zuordnung läuft in einem Durchgang und wird Ihnen danach gezeigt. Dubletten werden übersprungen."
       }
     },
     {
@@ -180,7 +188,7 @@
       "name": "Wie viele Produkte kann ich haben?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bis zu 100 pro Inventar im kostenlosen Tarif und bis zu 10.000 mit Premium. Endet ein Abo, wird nichts über 100 gelöscht: Das Inventar nimmt nur keine neuen Produkte mehr auf, bis es wieder unter 100 liegt."
+        "text": "Bis zu 100 pro Inventar im kostenlosen Tarif und bis zu 10.000 mit Premium. Endet ein Abo, wird nichts aus Ihrer Tabelle entfernt. Die App zeigt die ersten 100 Produkte und nimmt keine neuen auf; die übrigen erscheinen wieder, sobald Sie erneut abonnieren."
       }
     },
     {
@@ -188,7 +196,7 @@
       "name": "Funktioniert sie offline?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Noch nicht, aber es kommt. Heute ist jede Aktion ein Netzwerkaufruf, Sie brauchen also eine Verbindung, um etwas hinzuzufügen oder zu ändern. Offline kommt in einer künftigen Version, und es zählt am meisten in Kellern, Garagen, Lagerboxen und Transportern – also genau dort, wo ein Inventar zu Hause ist."
+        "text": "Mit Premium ja. Bricht die Verbindung ab, wechselt die App von selbst in den Offline-Modus, und Sie können weiter Produkte hinzufügen und bearbeiten, Fotos eingeschlossen, scannen und suchen. Ihre Änderungen erreichen Ihre Tabelle, sobald Sie wieder online sind. Einiges braucht weiterhin eine Verbindung: Barcode-Abfragen, der CSV-Import, das Einladen von Personen und Änderungen an Erinnerungsregeln. Ein neuer Artikel, im Keller gescannt, kommt leer zurück, und Sie tippen seinen Namen ein. Im kostenlosen Tarif braucht die App eine Verbindung."
       }
     },
     {
@@ -244,7 +252,7 @@
       "name": "Was kostet Premium?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "0,99 € im Monat oder 9,99 € im Jahr, jeweils mit 7 Tagen Gratistest. Der Jahrestarif kostet weniger als zwölf Monate zum Monatspreis, die zusammen 11,88 € ergeben. Es gibt kein Paket und keine zweite Stufe. Das Abo läuft über den App Store oder Google Play, Sie kündigen es also dort, und die App zeigt den Preis in Ihrer eigenen Währung."
+        "text": "0,99 € im Monat oder 9,99 € im Jahr, jeweils mit 7 Tagen Gratistest. Der Jahrestarif kostet weniger als zwölf Monate zum Monatspreis, die zusammen 11,88 € ergeben. Es gibt kein Paket und keine zweite Stufe. Das Abo läuft über den App Store oder Google Play, Sie kündigen es also dort oder über die Seite Abo in der App, die Sie direkt zum Bildschirm des Stores führt. Wer monatlich zahlt, kann auf derselben Seite zum Jahrestarif wechseln, und der Store rechnet den ungenutzten Teil des Monats an. Die App zeigt den Preis in Ihrer eigenen Währung."
       }
     },
     {
@@ -252,7 +260,7 @@
       "name": "Was passiert, wenn ich aufhöre zu zahlen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es wird nichts gelöscht. Zusätzliche Inventare, Orte, eigene Felder und die Personen, die Sie eingeladen haben, werden gesperrt, und alles kommt in einem Durchgang zurück, wenn Sie das Abo erneuern. Ihre Produkte bleiben unangetastet, weil sie in Ihrer Google-Tabelle liegen. Solange ein Inventar gesperrt ist, wird es in der App ausgeblendet, und die eingeladenen Personen verlieren den Zugang, bis Sie wieder abonnieren."
+        "text": "Es wird nichts gelöscht. Zusätzliche Inventare, Orte, eigene Felder, Erinnerungsregeln und die Personen, die Sie eingeladen haben, werden gesperrt, und alles kommt in einem Durchgang zurück, wenn Sie das Abo erneuern. Ihre Produkte bleiben in Ihrer Google-Tabelle, und die App zeigt die ersten 100 davon. Solange ein Inventar gesperrt ist, wird es in der App ausgeblendet, und die eingeladenen Personen verlieren den Zugang, bis Sie wieder abonnieren."
       }
     },
     {
@@ -260,7 +268,7 @@
       "name": "Lohnt es sich zu zahlen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fangen Sie kostenlos an und finden Sie es heraus. Erfassen Sie ein Zimmer im kostenlosen Tarif, und binnen zweier Wochen wissen Sie, ob Sie ein zweites Inventar, einen zweiten Ort, eine zweite Person, Platz für mehr als 100 Produkte, mehr Erinnerungsregeln oder einen Änderungsverlauf möchten. Diese sechs Dinge sind es, die Premium hinzufügt, und 0,99 € im Monat oder 9,99 € im Jahr ist der ganze Preis."
+        "text": "Fangen Sie kostenlos an und finden Sie es heraus. Erfassen Sie ein Zimmer im kostenlosen Tarif, und binnen zweier Wochen wissen Sie, ob Sie ein zweites Inventar, einen zweiten Ort, eine zweite Person, Platz für mehr als 100 Produkte, mehr Erinnerungsregeln, einen Änderungsverlauf oder Weiterarbeiten ohne Empfang möchten. Diese sieben Dinge sind es, die Premium hinzufügt, und 0,99 € im Monat oder 9,99 € im Jahr ist der ganze Preis."
       }
     },
     {
@@ -339,13 +347,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="./">So funktioniert es</a>
         <a href="plans.html">Tarife</a>
         <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="support.html">Support</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -398,19 +408,63 @@
           <h1 id="faq-title">Fragen und Antworten</h1>
         </div>
 
-        <!-- Jump list. Six entries, matching the six question groups below.
+        <!-- Jump list. Six groups, matching the six question groups below, each
+             with its questions under it. Generated by hand from the h3s: a
+             question added or reworded below must be changed here too.
              A real table of contents, not decoration: support sends people
              here with one question in mind. -->
         <div class="card card--tint" style="margin-top:22px">
           <h2 class="h4 mb-0">Direkt zu</h2>
           <nav aria-label="Abschnitte dieser Seite">
-            <ul class="bullets bullets--green bullets--tight" style="margin-top:14px">
-              <li><a href="#install">Bevor Sie installieren</a></li>
-              <li><a href="#existing-list">Die Liste, die Sie schon führen</a></li>
-              <li><a href="#limits">Grenzen und was als Nächstes kommt</a></li>
-              <li><a href="#sharing">Jemanden dazuholen</a></li>
-              <li><a href="#price">Was es kostet</a></li>
-              <li><a href="#permanence">Wenn wir verschwinden</a></li>
+            <ul class="bullets bullets--tight jump-list" style="margin-top:14px">
+              <li><p class="jump-group"><a href="#install">Bevor Sie installieren</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-why-not-just-use-a-google-sheet-directly">Warum nicht einfach direkt eine Google-Tabelle nehmen?</a></li>
+                  <li><a href="#q-can-i-edit-the-spreadsheet-directly">Kann ich die Tabelle direkt bearbeiten?</a></li>
+                  <li><a href="#q-do-i-need-a-google-account-can-i-sign-up-with-an">Brauche ich ein Google-Konto? Kann ich mich mit einer E-Mail-Adresse anmelden?</a></li>
+                  <li><a href="#q-why-does-an-inventory-app-need-access-to-my-goog">Warum braucht eine Inventar-App Zugriff auf mein Google Drive?</a></li>
+                  <li><a href="#q-will-the-scanner-recognise-my-things">Erkennt der Scanner meine Sachen?</a></li>
+                  <li><a href="#q-is-there-a-web-app-does-it-work-on-an-ipad">Gibt es eine Web-App? Läuft sie auf einem iPad?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#existing-list">Die Liste, die Sie schon führen</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-i-already-have-a-list-do-i-have-to-retype-it">Ich habe schon eine Liste. Muss ich sie neu eintippen?</a></li>
+                  <li><a href="#q-how-many-products-can-i-have">Wie viele Produkte kann ich haben?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#limits">Grenzen</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-does-it-work-offline">Funktioniert sie offline?</a></li>
+                  <li><a href="#q-will-it-tell-me-when-im-running-low">Sagt sie mir, wenn etwas zur Neige geht?</a></li>
+                  <li><a href="#q-when-will-alerts-reach-me-and-how-often">Wann erreichen mich Erinnerungen, und wie oft?</a></li>
+                  <li><a href="#q-which-fields-can-an-alert-watch">Welche Felder kann eine Erinnerung beobachten?</a></li>
+                  <li><a href="#q-what-if-i-need-more-than-five-people">Was, wenn ich mehr als fünf Personen brauche?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#sharing">Jemanden dazuholen</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-is-it-safe-to-let-my-partner-or-a-colleague-in">Ist es sicher, meine Partnerin oder einen Kollegen dazuzuholen?</a></li>
+                  <li><a href="#q-will-their-changes-appear-on-my-phone-straight-a">Erscheinen ihre Änderungen sofort auf meinem Handy?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#price">Was es kostet</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-what-does-premium-cost">Was kostet Premium?</a></li>
+                  <li><a href="#q-what-happens-if-i-stop-paying">Was passiert, wenn ich aufhöre zu zahlen?</a></li>
+                  <li><a href="#q-is-it-worth-paying-for">Lohnt es sich zu zahlen?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#permanence">Wenn wir verschwinden</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-can-i-export-my-data">Kann ich meine Daten exportieren?</a></li>
+                  <li><a href="#q-what-if-i-delete-something-by-accident">Was, wenn ich aus Versehen etwas lösche?</a></li>
+                  <li><a href="#q-what-happens-if-1inventory-shuts-down">Was passiert, wenn 1inventory eingestellt wird?</a></li>
+                  <li><a href="#q-who-makes-this">Wer steckt dahinter?</a></li>
+                  <li><a href="#q-do-you-show-ads">Zeigen Sie Werbung?</a></li>
+                  <li><a href="#q-what-languages-is-it-in">In welchen Sprachen gibt es sie?</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>
@@ -439,21 +493,33 @@
       <div class="stack">
 
         <div>
-          <h3>Warum nicht einfach direkt eine Google-Tabelle nehmen?</h3>
+          <h3 id="q-why-not-just-use-a-google-sheet-directly">Warum nicht einfach direkt eine Google-Tabelle nehmen?</h3>
           <p class="measure">
             Genau das tun Sie – so ist es gedacht. Was die App hinzufügt, sind eine Kamera, eine weltweite Produktdatenbank, eine Ordneransicht mit einer Anzahl pro Regal, ein Mengenschalter, den Sie mit dem Daumen treffen, und Spalten, die schon benannt und formatiert ankommen. Versuchen Sie einmal, einen 13-stelligen Barcode auf dem Handy in eine Zelle zu tippen. Genau das haben wir entfernt.
           </p>
         </div>
 
         <div>
-          <h3>Brauche ich ein Google-Konto? Kann ich mich mit einer E-Mail-Adresse anmelden?</h3>
+          <h3 id="q-can-i-edit-the-spreadsheet-directly">Kann ich die Tabelle direkt bearbeiten?</h3>
+          <!-- Verified against the API on 2026-11-15: every product read goes to
+               Google Sheets, so a cell changed there is in the app on the next
+               refresh. Columns are matched by exact header text; a renamed
+               built-in header is re-added empty and the renamed column is no
+               longer read. -->
+          <p class="measure">
+            Ja. Ändern Sie eine Zelle in der Tabelle, ziehen Sie die Liste in der App herunter, und die Änderung ist da. Das ist der schnellste Weg, dreißig Dinge in ein anderes Regal zu verschieben oder eine Spalte mit Preisen zu korrigieren. Lassen Sie die Spaltenüberschriften, wie sie sind: An ihnen erkennt die App, welches Feld welches ist.
+          </p>
+        </div>
+
+        <div>
+          <h3 id="q-do-i-need-a-google-account-can-i-sign-up-with-an">Brauche ich ein Google-Konto? Kann ich mich mit einer E-Mail-Adresse anmelden?</h3>
           <p class="measure">
             Ja, und es ist die einzige Anmeldung, die die App nutzt. Der Vorteil: Die Registrierung ist ein einziger Fingertipp – kein Formular, kein Passwort, das Sie sich ausdenken müssen, und Ihre erste Tabelle existiert, bevor Sie den Startbildschirm erreichen.
           </p>
         </div>
 
         <div>
-          <h3>Warum braucht eine Inventar-App Zugriff auf mein Google Drive?</h3>
+          <h3 id="q-why-does-an-inventory-app-need-access-to-my-goog">Warum braucht eine Inventar-App Zugriff auf mein Google Drive?</h3>
           <!-- The scope name is set as a .code-chip here, the same treatment the
                homepage's permission band gives it. The full
                https://www.googleapis.com/auth/drive.file URL is deliberately not
@@ -468,7 +534,7 @@
         </div>
 
         <div>
-          <h3>Erkennt der Scanner meine Sachen?</h3>
+          <h3 id="q-will-the-scanner-recognise-my-things">Erkennt der Scanner meine Sachen?</h3>
           <!-- ⚠ "unlimited" is a banned word site-wide with exactly one exception:
                barcode SCANNING, where it is literally true. The daily cap is on
                lookups against the global database, and conflating the two is the
@@ -479,7 +545,7 @@
         </div>
 
         <div>
-          <h3>Gibt es eine Web-App? Läuft sie auf einem iPad?</h3>
+          <h3 id="q-is-there-a-web-app-does-it-work-on-an-ipad">Gibt es eine Web-App? Läuft sie auf einem iPad?</h3>
           <p class="measure">
             Ihre Daten sind am Laptop voll nutzbar: Die Tabelle öffnet sich in Google Sheets wie jede andere Datei, und dort können Sie sortieren, filtern, Diagramme erstellen und drucken. Die App selbst ist eine Hochformat-App fürs Handy, für iOS ab 15.6 und Android ab 7.0 – eine Tablet-Ansicht oder einen Browser-Client gibt es heute nicht.
           </p>
@@ -505,7 +571,7 @@
       <div class="stack">
 
         <div>
-          <h3>Ich habe schon eine Liste. Muss ich sie neu eintippen?</h3>
+          <h3 id="q-i-already-have-a-list-do-i-have-to-retype-it">Ich habe schon eine Liste. Muss ich sie neu eintippen?</h3>
           <!-- ⚠ ACCURACY, all four verified and none may be loosened:
                  · CSV only. Not Excel, not .xlsx, not Numbers.
                  · The mapping is automatic and is NOT reviewable beforehand. The
@@ -514,6 +580,8 @@
                  · Import is insert-only. Duplicates are skipped and existing rows
                    are never updated, so it is not a sync, a merge or an update.
                  · 5 MB, 60 columns, name column required.
+                 · 3 imports a day on Free, 20 on Premium (ImportDailyLimit in
+                   the API's SubscriptionQuotas, read 2026-11-15).
                The header example is load-bearing: it is the one detail that proves
                the matching is by meaning rather than by exact field name. The brief's
                original was a German one (Bezeichnung / Menge / Lagerort); the client
@@ -522,14 +590,14 @@
                example is here unofficial-looking — "Item / Qty / Where" works because
                none of the three is the app's own field name. -->
           <p class="measure">
-            Nein. Importieren Sie eine CSV-Datei, und Ihre Spaltenüberschriften werden ihrer Bedeutung nach den Feldern zugeordnet – eine Tabelle mit den Überschriften <em>Artikel / Menge / Wo</em> landet ohne Einrichtung in den richtigen Spalten. Grenzen: nur CSV, 5&nbsp;MB, 60 Spalten, eine Namensspalte ist Pflicht. Die Zuordnung läuft in einem Durchgang und wird Ihnen danach gezeigt. Dubletten werden übersprungen.
+            Nein. Importieren Sie eine CSV-Datei, und Ihre Spaltenüberschriften werden ihrer Bedeutung nach den Feldern zugeordnet – eine Tabelle mit den Überschriften <em>Artikel / Menge / Wo</em> landet ohne Einrichtung in den richtigen Spalten. Grenzen: nur CSV, 5&nbsp;MB, 60 Spalten, eine Namensspalte ist Pflicht, und 3 Importe pro Tag im kostenlosen Tarif oder 20 mit Premium. Die Zuordnung läuft in einem Durchgang und wird Ihnen danach gezeigt. Dubletten werden übersprungen.
           </p>
         </div>
 
         <div>
-          <h3>Wie viele Produkte kann ich haben?</h3>
+          <h3 id="q-how-many-products-can-i-have">Wie viele Produkte kann ich haben?</h3>
           <p class="measure">
-            Bis zu 100 pro Inventar im kostenlosen Tarif und bis zu 10.000 mit Premium. Endet ein Abo, wird nichts über 100 gelöscht: Das Inventar nimmt nur keine neuen Produkte mehr auf, bis es wieder unter 100 liegt.
+            Bis zu 100 pro Inventar im kostenlosen Tarif und bis zu 10.000 mit Premium. Endet ein Abo, wird nichts aus Ihrer Tabelle entfernt. Die App zeigt die ersten 100 Produkte und nimmt keine neuen auf; die übrigen erscheinen wieder, sobald Sie erneut abonnieren.
           </p>
         </div>
 
@@ -567,41 +635,41 @@
     <div class="container container--narrow">
 
       <div class="section__head">
-        <h2 id="limits-title" class="mb-0">Grenzen, und woran wir arbeiten</h2>
+        <h2 id="limits-title" class="mb-0">Grenzen</h2>
       </div>
 
       <div class="stack">
 
         <div>
-          <h3>Funktioniert sie offline?</h3>
+          <h3 id="q-does-it-work-offline">Funktioniert sie offline?</h3>
           <p class="measure">
-            Noch nicht, aber es kommt. Heute ist jede Aktion ein Netzwerkaufruf, Sie brauchen also eine Verbindung, um etwas hinzuzufügen oder zu ändern. Offline kommt in einer künftigen Version, und es zählt am meisten in Kellern, Garagen, Lagerboxen und Transportern – also genau dort, wo ein Inventar zu Hause ist.
+            Mit Premium ja. Bricht die Verbindung ab, wechselt die App von selbst in den Offline-Modus, und Sie können weiter Produkte hinzufügen und bearbeiten, Fotos eingeschlossen, scannen und suchen. Ihre Änderungen erreichen Ihre Tabelle, sobald Sie wieder online sind. Einiges braucht weiterhin eine Verbindung: Barcode-Abfragen, der CSV-Import, das Einladen von Personen und Änderungen an Erinnerungsregeln. Ein neuer Artikel, im Keller gescannt, kommt leer zurück, und Sie tippen seinen Namen ein. Im kostenlosen Tarif braucht die App eine Verbindung.
           </p>
         </div>
 
         <div>
-          <h3>Sagt sie mir, wenn etwas zur Neige geht?</h3>
+          <h3 id="q-will-it-tell-me-when-im-running-low">Sagt sie mir, wenn etwas zur Neige geht?</h3>
           <p class="measure">
             Ja. Setzen Sie eine Untergrenze für die Menge oder für ein eigenes Zahlenfeld, und die App meldet sich per Push oder E-Mail, wenn der Wert darunter fällt: Olivenöl unter 2, zum Beispiel. Datums-Erinnerungen laufen daneben weiter: Bei einem Ablaufdatum, einem Garantieende oder einem Wartungstermin bekommen Sie eine Push-Nachricht oder eine E-Mail eine festgelegte Zahl von Tagen davor oder danach. Kostenlos ist eine Erinnerungsregel enthalten, in Premium bis zu 50, und beide Arten teilen sich dieses Kontingent. Die Menge ändert sich weiterhin nur, wenn jemand sie ändert – die Erinnerung ist also so aktuell wie Ihre letzte Zählung.
           </p>
         </div>
 
         <div>
-          <h3>Wann erreichen mich Erinnerungen, und wie oft?</h3>
+          <h3 id="q-when-will-alerts-reach-me-and-how-often">Wann erreichen mich Erinnerungen, und wie oft?</h3>
           <p class="measure">
             Etwa zu der Uhrzeit, die Sie in den Benachrichtigungseinstellungen der App wählen, einmal am Tag und in Ihrer eigenen Zeitzone. Alles, was in einem Inventar Aufmerksamkeit braucht, kommt gesammelt an, als eine E-Mail oder Push-Nachricht statt einer pro Produkt, und die E-Mail listet jede Regel mit den betroffenen Produkten auf, die dringendsten zuerst. Ein Produkt wird einmal gemeldet und bleibt dann still: Es meldet sich erst wieder, wenn sich sein Wert erneut ändert oder wenn es die Untergrenze wieder erreicht hat und später erneut darunter fällt. Alle, mit denen Sie das Inventar teilen, bekommen die Erinnerungen ebenfalls, jeweils zu ihrer eigenen Uhrzeit, per E-Mail, Push oder beidem.
           </p>
         </div>
 
         <div>
-          <h3>Welche Felder kann eine Erinnerung beobachten?</h3>
+          <h3 id="q-which-fields-can-an-alert-watch">Welche Felder kann eine Erinnerung beobachten?</h3>
           <p class="measure">
             Die Menge oder ein eigenes Feld vom Typ Zahl, Dezimalzahl, Datum oder Datum/Uhrzeit. Ein Zahlenfeld bekommt eine Untergrenze, etwa unter 10; ein Datumsfeld eine Zahl von Tagen vor oder nach dem Datum. Textfelder lassen sich nicht beobachten. Eine Regel lässt sich außerdem auf bestimmte Orte beschränken, sodass eine Untergrenze in der Speisekammer gilt, aber nicht in der Garage. Jede Erinnerung wird in der App unter Erinnerungen festgehalten und im Tab „Alerts“ Ihrer Tabelle.
           </p>
         </div>
 
         <div>
-          <h3>Was, wenn ich mehr als fünf Personen brauche?</h3>
+          <h3 id="q-what-if-i-need-more-than-five-people">Was, wenn ich mehr als fünf Personen brauche?</h3>
           <p class="measure">
             Fünf Personen sind das, worum herum die App gebaut ist: ein Haushalt, eine Werkstatt oder ein kleines Team. Orte sind mit Premium nicht gedeckelt, aber sie stehen nebeneinander statt ineinander, und alle, die Sie einladen, bekommen dieselben Rechte. Wenn Sie Lagerzonen innerhalb von Zonen, Rechte pro Ort oder eine Nur-Lese-Rolle brauchen, ist Ihnen mit einem größeren System besser gedient.
           </p>
@@ -641,14 +709,14 @@
       <div class="stack">
 
         <div>
-          <h3>Ist es sicher, meine Partnerin oder einen Kollegen dazuzuholen?</h3>
+          <h3 id="q-is-it-safe-to-let-my-partner-or-a-colleague-in">Ist es sicher, meine Partnerin oder einen Kollegen dazuzuholen?</h3>
           <p class="measure">
             Ja. Sie melden sich mit ihrem eigenen Google-Konto an, und wo das Inventar einen Verlauf-Tab hat, landet dort jede Änderung mit ihrem Namen. Gut zu wissen: Es gibt zwei Rollen statt einer Nur-Lese-Option, wer eingeladen ist, kann also bearbeiten und löschen. Einladen setzt Premium voraus, die Grenze liegt bei fünf Personen einschließlich Ihnen, und die Tabelle bleibt allein in Ihrem Drive.
           </p>
         </div>
 
         <div>
-          <h3>Erscheinen ihre Änderungen sofort auf meinem Handy?</h3>
+          <h3 id="q-will-their-changes-appear-on-my-phone-straight-a">Erscheinen ihre Änderungen sofort auf meinem Handy?</h3>
           <p class="measure">
             Änderungen erreichen Ihre Google-Tabelle, sobald sie gespeichert sind. Auf einem anderen Handy erscheinen sie, wenn die Liste zum Aktualisieren heruntergezogen wird – sie ändert sich nicht live, während Sie hinsehen. Zählen zwei Personen im selben Moment dasselbe Regal, gewinnt, wer zuletzt speichert.
           </p>
@@ -699,27 +767,28 @@
       <div class="stack">
 
         <div>
-          <h3>Was kostet Premium?</h3>
+          <h3 id="q-what-does-premium-cost">Was kostet Premium?</h3>
           <p class="measure">
-            0,99 &euro; im Monat oder 9,99 &euro; im Jahr, jeweils mit 7 Tagen Gratistest. Der Jahrestarif kostet weniger als zwölf Monate zum Monatspreis, die zusammen 11,88 &euro; ergeben. Es gibt kein Paket und keine zweite Stufe. Das Abo läuft über den App Store oder Google Play, Sie kündigen es also dort, und die App zeigt den Preis in Ihrer eigenen Währung.
+            0,99 &euro; im Monat oder 9,99 &euro; im Jahr, jeweils mit 7 Tagen Gratistest. Der Jahrestarif kostet weniger als zwölf Monate zum Monatspreis, die zusammen 11,88 &euro; ergeben. Es gibt kein Paket und keine zweite Stufe. Das Abo läuft über den App Store oder Google Play, Sie kündigen es also dort oder über die Seite Abo in der App, die Sie direkt zum Bildschirm des Stores führt. Wer monatlich zahlt, kann auf derselben Seite zum Jahrestarif wechseln, und der Store rechnet den ungenutzten Teil des Monats an. Die App zeigt den Preis in Ihrer eigenen Währung.
           </p>
         </div>
 
         <div>
-          <h3>Was passiert, wenn ich aufhöre zu zahlen?</h3>
+          <h3 id="q-what-happens-if-i-stop-paying">Was passiert, wenn ich aufhöre zu zahlen?</h3>
           <p class="measure">
-            Es wird nichts gelöscht. Zusätzliche Inventare, Orte, eigene Felder und die Personen, die Sie eingeladen haben, werden gesperrt, und alles kommt in einem Durchgang zurück, wenn Sie das Abo erneuern. Ihre Produkte bleiben unangetastet, weil sie in Ihrer Google-Tabelle liegen. Solange ein Inventar gesperrt ist, wird es in der App ausgeblendet, und die eingeladenen Personen verlieren den Zugang, bis Sie wieder abonnieren.
+            Es wird nichts gelöscht. Zusätzliche Inventare, Orte, eigene Felder, Erinnerungsregeln und die Personen, die Sie eingeladen haben, werden gesperrt, und alles kommt in einem Durchgang zurück, wenn Sie das Abo erneuern. Ihre Produkte bleiben in Ihrer Google-Tabelle, und die App zeigt die ersten 100 davon. Solange ein Inventar gesperrt ist, wird es in der App ausgeblendet, und die eingeladenen Personen verlieren den Zugang, bis Sie wieder abonnieren.
           </p>
         </div>
 
         <div>
-          <h3>Lohnt es sich zu zahlen?</h3>
-          <!-- The six things named here are the six Free-plan caps that actually
+          <h3 id="q-is-it-worth-paying-for">Lohnt es sich zu zahlen?</h3>
+          <!-- The seven things named here are the seven Free-plan caps that actually
                bite: a second inventory, a second location, a second person, more
-               than 100 products, more alert rules, and change history. The list is
+               than 100 products, more alert rules, change history, and offline
+               mode (Premium since app 1.2.0). The list is
                exact — every one of them is a row in the plans table. -->
           <p class="measure">
-            Fangen Sie kostenlos an und finden Sie es heraus. Erfassen Sie ein Zimmer im kostenlosen Tarif, und binnen zweier Wochen wissen Sie, ob Sie ein zweites Inventar, einen zweiten Ort, eine zweite Person, Platz für mehr als 100 Produkte, mehr Erinnerungsregeln oder einen Änderungsverlauf möchten. Diese sechs Dinge sind es, die Premium hinzufügt, und 0,99 &euro; im Monat oder 9,99 &euro; im Jahr ist der ganze Preis.
+            Fangen Sie kostenlos an und finden Sie es heraus. Erfassen Sie ein Zimmer im kostenlosen Tarif, und binnen zweier Wochen wissen Sie, ob Sie ein zweites Inventar, einen zweiten Ort, eine zweite Person, Platz für mehr als 100 Produkte, mehr Erinnerungsregeln, einen Änderungsverlauf oder Weiterarbeiten ohne Empfang möchten. Diese sieben Dinge sind es, die Premium hinzufügt, und 0,99 &euro; im Monat oder 9,99 &euro; im Jahr ist der ganze Preis.
           </p>
         </div>
 
@@ -770,14 +839,14 @@
       <div class="stack">
 
         <div>
-          <h3>Kann ich meine Daten exportieren?</h3>
+          <h3 id="q-can-i-export-my-data">Kann ich meine Daten exportieren?</h3>
           <p class="measure">
             Es gibt keinen Export-Knopf, weil es nichts zu exportieren gibt. Ihr Inventar ist bereits eine Google-Tabelle in Ihrem eigenen Drive, und Google speichert sie Ihnen jederzeit als CSV, Excel oder PDF heraus. Eine Einschränkung: Die Datei liegt im Drive der Person, der das Inventar gehört – das können also Eigentümerinnen und Eigentümer tun, eingeladene Personen nicht.
           </p>
         </div>
 
         <div>
-          <h3>Was, wenn ich aus Versehen etwas lösche?</h3>
+          <h3 id="q-what-if-i-delete-something-by-accident">Was, wenn ich aus Versehen etwas lösche?</h3>
           <!-- ⚠ There is genuinely no restore button in the app. The Backups screen
                lists Drive revisions and hands you off to Google Sheets to do the
                restore. Do not describe it as a restore feature. -->
@@ -787,14 +856,14 @@
         </div>
 
         <div>
-          <h3>Was passiert, wenn 1inventory eingestellt wird?</h3>
+          <h3 id="q-what-happens-if-1inventory-shuts-down">Was passiert, wenn 1inventory eingestellt wird?</h3>
           <p class="measure">
             Die Tabelle, ihr Verlauf-Tab und der Fotoordner liegen in Ihrem Google Drive und bleiben dort, lesbar von allem, was eine Tabelle öffnet. Verlieren würden Sie den Scanner, die Barcode-Abfrage und die Ordneransicht. Wir können Kontinuität der Daten versprechen, nicht Kontinuität des Dienstes.
           </p>
         </div>
 
         <div>
-          <h3>Wer steckt dahinter?</h3>
+          <h3 id="q-who-makes-this">Wer steckt dahinter?</h3>
           <!-- The Impressum link is a standalone .link-arrow, never an inline <a>
                inside the sentence: .link-arrow is inline-flex with a 44px minimum
                height, so mid-paragraph it would blow the line box apart. Every
@@ -805,14 +874,14 @@
         </div>
 
         <div>
-          <h3>Zeigen Sie Werbung?</h3>
+          <h3 id="q-do-you-show-ads">Zeigen Sie Werbung?</h3>
           <p class="measure">
             Nein, in keinem der beiden Tarife. In der App steckt kein Werbe-SDK, und sie hat nie nach einer Tracking-Kennung gefragt oder Ihnen eine App-Tracking-Transparency-Abfrage gezeigt. Der kostenlose Tarif wird von denen bezahlt, die upgraden – das ist das gesamte Geschäftsmodell.
           </p>
         </div>
 
         <div>
-          <h3>In welchen Sprachen gibt es sie?</h3>
+          <h3 id="q-what-languages-is-it-in">In welchen Sprachen gibt es sie?</h3>
           <p class="measure">
             Englisch, Deutsch, Spanisch, Französisch und Portugiesisch: die ganze App, und auch die Erinnerungs-E-Mails und die Ergebnisse der Barcode-Abfrage, die in Ihrer Sprache zurückkommen. Ihre Spracheinstellung gehört zu Ihrem Konto, sie folgt Ihnen also beim Handywechsel.
           </p>

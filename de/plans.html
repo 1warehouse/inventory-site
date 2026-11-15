@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
   <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
        Must stay after the language detector above: a page the detector
        is about to redirect away from should not report a page view. -->
@@ -107,13 +107,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="./">So funktioniert es</a>
         <a href="plans.html" aria-current="page">Tarife</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -175,6 +177,11 @@
             </tr>
             <tr><th scope="row">Produkte pro Inventar</th><td>100</td><td class="plans-col--premium">Bis zu 10.000</td></tr>
             <tr>
+              <th scope="row">Offline-Modus</th>
+              <td><span aria-hidden="true">&mdash;</span><span class="visually-hidden">Nein</span></td>
+              <td class="plans-col--premium">Ja</td>
+            </tr>
+            <tr>
               <th scope="row">Preis</th>
               <td>Kostenlos</td>
               <td class="plans-col--premium">0,99 &euro; / Monat<br />oder 9,99 &euro; / Jahr<span class="plans-note">7 Tage gratis testen, bei beiden. Jederzeit kündbar.</span></td>
@@ -197,6 +204,7 @@
             <div class="plan-card__row"><dt>Erinnerungsregeln</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Änderungsverlauf</dt><dd>Nein</dd></div>
             <div class="plan-card__row"><dt>Produkte pro Inventar</dt><dd>100</dd></div>
+            <div class="plan-card__row"><dt>Offline-Modus</dt><dd>Nein</dd></div>
             <div class="plan-card__row"><dt>Preis</dt><dd>Kostenlos</dd></div>
           </dl>
         </div>
@@ -211,6 +219,7 @@
             <div class="plan-card__row"><dt>Erinnerungsregeln</dt><dd>Bis zu 50</dd></div>
             <div class="plan-card__row"><dt>Änderungsverlauf</dt><dd>Ja<span class="plans-note">In Inventaren, die Sie im Abo anlegen</span></dd></div>
             <div class="plan-card__row"><dt>Produkte pro Inventar</dt><dd>Bis zu 10.000</dd></div>
+            <div class="plan-card__row"><dt>Offline-Modus</dt><dd>Ja</dd></div>
             <div class="plan-card__row"><dt>Preis</dt><dd>0,99 &euro; / Monat<br />oder 9,99 &euro; / Jahr<span class="plans-note">7 Tage gratis testen, bei beiden. Jederzeit kündbar.</span></dd></div>
           </dl>
         </div>
@@ -219,7 +228,7 @@
       <ul class="footnotes plans-footnotes">
         <li>Erinnerungsregeln beobachten die Menge und jedes Datums- oder Zahlenfeld, das Sie selbst anlegen: Tage vor oder nach einem Datum, oder unter einer Zahl, die Sie festlegen. Beide Arten zählen zum selben Kontingent.</li>
         <li>Barcode-Abfragen gehören der Eigentümerin oder dem Eigentümer des Inventars und werden von allen darin geteilt. Der Zähler wird um Mitternacht UTC zurückgesetzt.</li>
-        <li>Abos laufen über den App Store und Google Play. Dort können Sie jederzeit kündigen.</li>
+        <li>Abos laufen über den App Store und Google Play. Kündigen können Sie dort oder über die Seite Abo in der App, jederzeit.</li>
       </ul>
     </div>
   </section>

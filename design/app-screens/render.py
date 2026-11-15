@@ -40,6 +40,7 @@ SCREENS = {
     "7a":  ("custom-fields-wt.png", 348, 721),
     "7b":  ("users-wt.png", 348, 721),
     "10a": ("gsheet.webp", 572, 400),
+    "11a": ("offline-wt.png", 348, 721),
 }
 
 

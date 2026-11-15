@@ -174,5 +174,43 @@
       "UBICACIÓN",
       "DESCRIPCIÓN"
     ]
+  },
+  "offline": {
+    "title": "Modo sin conexión",
+    "state": "Estás trabajando sin conexión",
+    "intro": [
+      "Sigue trabajando sin internet. Tus",
+      "cambios se quedan en este móvil hasta",
+      "que te conectes y los sincronices."
+    ],
+    "products": {
+      "title": "Productos",
+      "desc": [
+        "Añadir, editar y eliminar, cambiar",
+        "cantidades, añadir fotos"
+      ]
+    },
+    "scan": {
+      "title": "Escáner y búsqueda",
+      "desc": [
+        "Encontrar productos guardados",
+        "en este móvil"
+      ]
+    },
+    "locations": {
+      "title": "Ubicaciones",
+      "desc": [
+        "Añadir, renombrar y eliminar",
+        ""
+      ]
+    },
+    "fields": {
+      "title": "Campos propios",
+      "desc": [
+        "Añadir campos, cambiar opciones",
+        "y moneda"
+      ]
+    },
+    "goOnline": "Conectarse"
   }
 }

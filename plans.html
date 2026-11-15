@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=23" />
+  <link rel="stylesheet" href="css/style.css?v=27" />
   <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
        Must stay after the language detector above: a page the detector
        is about to redirect away from should not report a page view. -->
@@ -107,13 +107,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Primary">
         <a href="./">How it works</a>
         <a href="plans.html" aria-current="page">Plans</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -175,6 +177,11 @@
             </tr>
             <tr><th scope="row">Products per inventory</th><td>100</td><td class="plans-col--premium">Up to 10,000</td></tr>
             <tr>
+              <th scope="row">Offline mode</th>
+              <td><span aria-hidden="true">&mdash;</span><span class="visually-hidden">No</span></td>
+              <td class="plans-col--premium">Yes</td>
+            </tr>
+            <tr>
               <th scope="row">Price</th>
               <td>Free</td>
               <td class="plans-col--premium">&euro;0.99 / month<br />or &euro;9.99 / year<span class="plans-note">7-day free trial on either. Cancel any time.</span></td>
@@ -197,6 +204,7 @@
             <div class="plan-card__row"><dt>Alert rules</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Change history</dt><dd>No</dd></div>
             <div class="plan-card__row"><dt>Products per inventory</dt><dd>100</dd></div>
+            <div class="plan-card__row"><dt>Offline mode</dt><dd>No</dd></div>
             <div class="plan-card__row"><dt>Price</dt><dd>Free</dd></div>
           </dl>
         </div>
@@ -211,6 +219,7 @@
             <div class="plan-card__row"><dt>Alert rules</dt><dd>Up to 50</dd></div>
             <div class="plan-card__row"><dt>Change history</dt><dd>Yes<span class="plans-note">In inventories you create while subscribed</span></dd></div>
             <div class="plan-card__row"><dt>Products per inventory</dt><dd>Up to 10,000</dd></div>
+            <div class="plan-card__row"><dt>Offline mode</dt><dd>Yes</dd></div>
             <div class="plan-card__row"><dt>Price</dt><dd>&euro;0.99 / month<br />or &euro;9.99 / year<span class="plans-note">7-day free trial on either. Cancel any time.</span></dd></div>
           </dl>
         </div>
@@ -219,7 +228,7 @@
       <ul class="footnotes plans-footnotes">
         <li>Alert rules watch the quantity and any date or number field you add yourself: days before or after a date, or below a number you set. Both kinds come out of the same allowance.</li>
         <li>Barcode lookups belong to the inventory&rsquo;s owner and are shared by everyone in it. The counter resets at midnight UTC.</li>
-        <li>Subscriptions are handled by the App Store and Google Play. Cancel there, any time.</li>
+        <li>Subscriptions are handled by the App Store and Google Play. Cancel there or from the Subscription page in the app, any time.</li>
       </ul>
     </div>
   </section>

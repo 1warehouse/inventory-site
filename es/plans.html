@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
   <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
        Must stay after the language detector above: a page the detector
        is about to redirect away from should not report a page view. -->
@@ -107,13 +107,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Principal">
         <a href="./">Cómo funciona</a>
         <a href="plans.html" aria-current="page">Planes</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Soporte</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -175,6 +177,11 @@
             </tr>
             <tr><th scope="row">Productos por inventario</th><td>100</td><td class="plans-col--premium">Hasta 10.000</td></tr>
             <tr>
+              <th scope="row">Modo sin conexión</th>
+              <td><span aria-hidden="true">&mdash;</span><span class="visually-hidden">No</span></td>
+              <td class="plans-col--premium">Sí</td>
+            </tr>
+            <tr>
               <th scope="row">Precio</th>
               <td>Gratis</td>
               <td class="plans-col--premium">0,99 &euro; / mes<br />o 9,99 &euro; / año<span class="plans-note">7 días de prueba gratis en ambos. Cancela cuando quieras.</span></td>
@@ -197,6 +204,7 @@
             <div class="plan-card__row"><dt>Reglas de aviso</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Historial de cambios</dt><dd>No</dd></div>
             <div class="plan-card__row"><dt>Productos por inventario</dt><dd>100</dd></div>
+            <div class="plan-card__row"><dt>Modo sin conexión</dt><dd>No</dd></div>
             <div class="plan-card__row"><dt>Precio</dt><dd>Gratis</dd></div>
           </dl>
         </div>
@@ -211,6 +219,7 @@
             <div class="plan-card__row"><dt>Reglas de aviso</dt><dd>Hasta 50</dd></div>
             <div class="plan-card__row"><dt>Historial de cambios</dt><dd>Sí<span class="plans-note">En los inventarios que crees mientras estés suscrito</span></dd></div>
             <div class="plan-card__row"><dt>Productos por inventario</dt><dd>Hasta 10.000</dd></div>
+            <div class="plan-card__row"><dt>Modo sin conexión</dt><dd>Sí</dd></div>
             <div class="plan-card__row"><dt>Precio</dt><dd>0,99 &euro; / mes<br />o 9,99 &euro; / año<span class="plans-note">7 días de prueba gratis en ambos. Cancela cuando quieras.</span></dd></div>
           </dl>
         </div>
@@ -219,7 +228,7 @@
       <ul class="footnotes plans-footnotes">
         <li>Las reglas de aviso vigilan la cantidad y cualquier campo de fecha o numérico que añades tú: días antes o después de una fecha, o por debajo de un número que fijas. Ambos tipos salen del mismo cupo.</li>
         <li>Las consultas de código de barras pertenecen a quien posee el inventario y las comparten todas las personas que están en él. El contador se reinicia a medianoche UTC.</li>
-        <li>Las suscripciones se gestionan en el App Store y en Google Play. Cancélalas allí cuando quieras.</li>
+        <li>Las suscripciones se gestionan en el App Store y en Google Play. Cancélalas allí o desde la página Suscripción de la app, cuando quieras.</li>
       </ul>
     </div>
   </section>

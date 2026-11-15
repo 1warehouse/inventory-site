@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
   <!-- Analytics. Cookieless GA4 (no cookies, no consent banner needed).
        Must stay after the language detector above: a page the detector
        is about to redirect away from should not report a page view. -->
@@ -107,13 +107,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Principal">
         <a href="./">Como funciona</a>
         <a href="plans.html" aria-current="page">Planos</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Apoio</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -175,6 +177,11 @@
             </tr>
             <tr><th scope="row">Produtos por inventário</th><td>100</td><td class="plans-col--premium">Até 10&nbsp;000</td></tr>
             <tr>
+              <th scope="row">Modo offline</th>
+              <td><span aria-hidden="true">&mdash;</span><span class="visually-hidden">Não</span></td>
+              <td class="plans-col--premium">Sim</td>
+            </tr>
+            <tr>
               <th scope="row">Preço</th>
               <td>Gratuito</td>
               <td class="plans-col--premium">0,99 &euro; / mês<br />ou 9,99 &euro; / ano<span class="plans-note">7 dias grátis em qualquer um. Cancele quando quiser.</span></td>
@@ -197,6 +204,7 @@
             <div class="plan-card__row"><dt>Regras de alerta</dt><dd>1</dd></div>
             <div class="plan-card__row"><dt>Histórico de alterações</dt><dd>Não</dd></div>
             <div class="plan-card__row"><dt>Produtos por inventário</dt><dd>100</dd></div>
+            <div class="plan-card__row"><dt>Modo offline</dt><dd>Não</dd></div>
             <div class="plan-card__row"><dt>Preço</dt><dd>Gratuito</dd></div>
           </dl>
         </div>
@@ -211,6 +219,7 @@
             <div class="plan-card__row"><dt>Regras de alerta</dt><dd>Até 50</dd></div>
             <div class="plan-card__row"><dt>Histórico de alterações</dt><dd>Sim<span class="plans-note">Nos inventários que criar enquanto estiver subscrito</span></dd></div>
             <div class="plan-card__row"><dt>Produtos por inventário</dt><dd>Até 10&nbsp;000</dd></div>
+            <div class="plan-card__row"><dt>Modo offline</dt><dd>Sim</dd></div>
             <div class="plan-card__row"><dt>Preço</dt><dd>0,99 &euro; / mês<br />ou 9,99 &euro; / ano<span class="plans-note">7 dias grátis em qualquer um. Cancele quando quiser.</span></dd></div>
           </dl>
         </div>
@@ -219,7 +228,7 @@
       <ul class="footnotes plans-footnotes">
         <li>As regras de alerta vigiam a quantidade e qualquer campo de data ou numérico que acrescenta você: dias antes ou depois de uma data, ou abaixo de um número que define. Ambos os tipos saem do mesmo limite.</li>
         <li>As consultas de código de barras pertencem a quem é dono do inventário e são partilhadas por todas as pessoas que estão nele. O contador reinicia à meia-noite UTC.</li>
-        <li>As subscrições são geridas pela App Store e pelo Google Play. Cancele aí, quando quiser.</li>
+        <li>As subscrições são geridas pela App Store e pelo Google Play. Cancele aí ou na página Subscrição da aplicação, quando quiser.</li>
       </ul>
     </div>
   </section>
