@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
 
   <script type="application/ld+json">
 {
@@ -133,13 +133,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="./" aria-current="page">Comment ça marche</a>
         <a href="plans.html">Offres</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Assistance</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -212,7 +214,7 @@
               <img src="/img/badge-googleplay.svg?v=22" alt="Disponible sur Google Play" width="169" height="50" />
             </a>
           </div>
-          <p class="note">Installation gratuite. Connexion avec Google. Sans formulaire, sans mot de passe.</p>
+          <p class="note">Installation gratuite, Premium à partir de 0,99 &euro; par mois. Connexion avec Google. Sans formulaire, sans mot de passe.</p>
         </div>
       </div>
 
@@ -248,9 +250,12 @@
        thing that happens while they are not looking, and it is the one with no
        equivalent in a spreadsheet.
 
-       ⚠ Step 2 says "eight types" — that count is exact
-       (lib/models/enums/custom_field_type.dart: text, large text, number,
-       decimal, checkbox, dropdown, date, date/time). How MANY fields you get
+       ⚠ The "Your own fields" card in the more-band says "nine types" (step 2
+       carried the count until 2026-11-15, when it was trimmed to match its
+       neighbours' length) — that count is exact
+       (lib/models/enums/custom_field_type.dart: text, large text, barcode,
+       number, decimal, checkbox, dropdown, date, date/time; Barcode arrived
+       in app 1.2.1). How MANY fields you get
        is a plan limit, not a capability, and belongs on the plans page rather
        than here. Same for locations in step 3.
 
@@ -298,7 +303,7 @@
             <circle cx="13" cy="23" r="2.2" />
           </svg>
           <h3>Vous le faites vôtre</h3>
-          <p>Un garde-manger a besoin de dates de péremption, un atelier de numéros de série. Ajoutez les champs qu'ont vos objets, en huit types dont des listes déroulantes avec vos propres options, et la feuille gagne les colonnes correspondantes.</p>
+          <p>Ajoutez les champs qu'ont vos objets : dates de péremption, numéros de série, listes déroulantes avec vos propres options. La feuille gagne les colonnes correspondantes.</p>
         </li>
 
         <li class="flow__step">
@@ -346,7 +351,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Elle vous prévient à temps</h3>
-          <p>Mettez une date de péremption, de garantie ou d'entretien sur un produit et l'application vous prévient par notification ou par e-mail avant l'échéance. Fixez un seuil à une quantité et elle vous prévient quand vous passez en dessous. C'est la seule étape où vous n'avez rien à faire.</p>
+          <p>Mettez une date ou un seuil sur un produit et l'application vous prévient avant la date, ou quand le stock passe sous le seuil.</p>
         </li>
 
       </ol>
@@ -429,7 +434,7 @@
           <h2 id="s2-title">Visez. Confirmez. Suivant.</h2>
           <div class="prose">
             <p>
-              Touchez le cercle vert, pointez l'appareil photo sur un code-barres et l'application interroge des bases de données mondiales de produits. Le nom, la description et la photo reviennent remplis, dans votre langue. Touchez <em>Enregistrer et scanner le suivant</em> et l'appareil photo est déjà revenu.
+              Touchez le cercle vert, pointez l'appareil photo sur un code-barres et l'application interroge une base de données mondiale de produits. Le nom, la description et la photo reviennent remplis, dans votre langue. Touchez <em>Enregistrer et scanner le suivant</em> et l'appareil photo est déjà revenu.
             </p>
             <p>
               Il n'y a aucun matériel à acheter. Pas de douchette, rien à appairer, rien à recharger. L'application lit douze formats de codes-barres, zoome d'elle-même sur les petits caractères et émet un bip pour que vous puissiez garder les yeux sur l'étagère.
@@ -551,10 +556,10 @@
         <h2 id="s4-title" class="mb-0">Et ce n'est pas tout.</h2>
       </div>
 
-      <div class="grid grid--5" style="margin-top:28px">
+      <div class="grid grid--6" style="margin-top:28px">
         <div>
           <img class="frame-shot frame-shot--card" src="/img/fr/dashboard-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="Le tableau de bord d'un inventaire nommé Home inv : 5 produits, 4 emplacements, 2 champs personnalisés, 1 utilisateur, 1 règle d'alerte, stock total 86, et la dernière activité." />
+               alt="Le tableau de bord d'un inventaire nommé Home inv : 5 produits, 4 emplacements, 5 champs personnalisés, 3 utilisateurs, 1 règle d'alerte, stock total 86, et la dernière activité." />
           <h3>Tableau de bord</h3>
           <p>Produits, emplacements, stock total et le dernier changement, sur un seul écran.</p>
         </div>
@@ -562,11 +567,11 @@
           <img class="frame-shot frame-shot--card" src="/img/fr/custom-fields-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="L'écran de modification des champs listant cinq champs personnalisés avec leur type : À consommer avant et Ouvert le en dates, Prix d'achat en nombre, Fournisseur en texte, et Casier de rangement en liste déroulante avec six options." />
           <h3>Vos propres champs</h3>
-          <p>Prix, dates, numéros de série. Huit types, et chacun devient une vraie colonne dans la feuille.</p>
+          <p>Prix, dates, numéros de série. Neuf types, et chacun devient une vraie colonne dans la feuille.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/fr/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="L'écran de nouvelle règle d'alerte : une règle nommée Bientôt périmé, qui surveille le champ À consommer avant, prévient sept jours avant la date à 09h00, limitée aux emplacements Cuisine et Étagère du garde-manger, avec notification et e-mail tous deux activés." />
+               alt="L'écran de nouvelle règle d'alerte : une règle nommée Bientôt périmé, qui surveille le champ À consommer avant, prévient sept jours avant la date, limitée aux emplacements Cuisine et Étagère du garde-manger, avec un lien vers les réglages de notification." />
           <h3>Alertes</h3>
           <p>Une date sur un produit, et elle vous prévient quelques jours avant l'échéance, par notification ou par e-mail. Un seuil sur une quantité, et elle vous prévient quand le stock passe en dessous.</p>
         </div>
@@ -581,6 +586,17 @@
                alt="L'écran d'historique listant chaque changement avec la date, le produit, son auteur et la quantité avant et après : huile d'olive passée de 1 à 2, passata passée de 7 à 6, paprika fumé créé, sucre de canne supprimé." />
           <h3>Historique <span class="pill">Premium</span></h3>
           <p>Ce qui a changé, qui l'a fait et quand. Chaque quantité déplacée, chaque produit ajouté ou supprimé.</p>
+        </div>
+        <!-- Offline mode: Premium, shipped in app 1.2.0; 1.2.1 fixed the return
+             online after a restart. Barcode lookups, CSV import, inviting people
+             and alert-rule changes still need a connection, so the card names
+             the one a reader meets first. The screen quotes the app, which says
+             "sync"; the site's own copy still does not. -->
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/fr/offline-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
+               alt="L'écran du mode hors connexion : l'état Vous travaillez hors connexion, la liste de ce qui fonctionne encore — produits, scanner et recherche, emplacements, champs personnalisés — et un bouton Passer en ligne." />
+          <h3>Mode hors connexion <span class="pill">Premium</span></h3>
+          <p>Pas de réseau à la cave ? Continuez à ajouter, modifier et scanner. Vos modifications arrivent dans votre feuille dès que vous êtes de nouveau en ligne ; les recherches de codes-barres attendent jusque-là.</p>
         </div>
       </div>
     </div>
@@ -599,7 +615,7 @@
       </div>
       <div class="prose">
         <p>
-          À votre première connexion, 1inventory crée une vraie feuille de calcul dans votre propre Google Drive. Chaque produit que vous ajoutez y est une ligne. Ouvrez-la sur un ordinateur portable, triez-la, faites-en des graphiques, ou partagez-la avec votre comptable comme n'importe quel fichier Google.
+          À votre première connexion, 1inventory crée une vraie feuille de calcul dans votre propre Google Drive. Chaque produit que vous ajoutez y est une ligne. Ouvrez-la sur un ordinateur portable, triez-la, faites-en des graphiques, ou partagez-la avec votre comptable comme n'importe quel fichier Google. Modifiez-la là aussi : l'application reprend vos changements à la prochaine actualisation.
         </p>
         <p>
           Arrêtez de payer et rien n'est supprimé. Supprimez l'application et le fichier est toujours dans votre Drive. Si nous disparaissions demain, vous auriez encore tout, parce que cela n'a jamais été à nous.

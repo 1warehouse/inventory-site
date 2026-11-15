@@ -54,6 +54,12 @@ not use it, so it is not vendored.
 | `7a`  | `img/custom-fields-wt.png`       | edit fields |
 | `7b`  | `img/users-wt.png`               | users |
 | `10a` | `img/gsheet.webp`                | the Google Sheet |
+| `11a` | `img/offline-wt.png`             | offline mode, switched on |
+
+`11a` is the exception to the rule above: it was drawn in this repo on
+2026-11-15, from the app's Offline mode page, because the design project could
+not be reached. Add it to the design document before the next export, or the
+export will not contain it.
 
 `2a`, `2b`, `8a`, `8b`, `9a`–`9c` and `10b` are drawn in the design doc but not
 used by the site. They stay in `templates/` and show up in the gallery so the

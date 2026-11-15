@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=23" />
+  <link rel="stylesheet" href="css/style.css?v=27" />
 
   <script type="application/ld+json">
   {
@@ -115,13 +115,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Primary">
         <a href="./" aria-current="page">How it works</a>
         <a href="plans.html">Plans</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -196,7 +198,7 @@
               <img src="img/badge-googleplay.svg?v=22" alt="Get it on Google Play" width="169" height="50" />
             </a>
           </div>
-          <p class="note">Free to install. Sign in with Google. No form, no password.</p>
+          <p class="note">Free to install, Premium from &euro;0.99 a month. Sign in with Google. No form, no password.</p>
         </div>
       </div>
 
@@ -232,9 +234,12 @@
        thing that happens while they are not looking, and it is the one with no
        equivalent in a spreadsheet.
 
-       ⚠ Step 2 says "eight types" — that count is exact
-       (lib/models/enums/custom_field_type.dart: text, large text, number,
-       decimal, checkbox, dropdown, date, date/time). How MANY fields you get
+       ⚠ The "Your own fields" card in the more-band says "nine types" (step 2
+       carried the count until 2026-11-15, when it was trimmed to match its
+       neighbours' length) — that count is exact
+       (lib/models/enums/custom_field_type.dart: text, large text, barcode,
+       number, decimal, checkbox, dropdown, date, date/time; Barcode arrived
+       in app 1.2.1). How MANY fields you get
        is a plan limit, not a capability, and belongs on the plans page rather
        than here. Same for locations in step 3.
 
@@ -282,7 +287,7 @@
             <circle cx="13" cy="23" r="2.2" />
           </svg>
           <h3>You make it your own</h3>
-          <p>A pantry needs expiry dates, a workshop serial numbers. Add the fields your things have, in eight types including dropdowns with your own options, and the sheet grows columns to match.</p>
+          <p>Add the fields your things have: expiry dates, serial numbers, dropdowns with your own options. The sheet grows columns to match.</p>
         </li>
 
         <li class="flow__step">
@@ -330,7 +335,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>It tells you in time</h3>
-          <p>Put an expiry, warranty or service date on a product and the app pushes or emails you before it passes. Set a floor on a quantity and it tells you when you go below it. This is the one step you do nothing for.</p>
+          <p>Set a date or a minimum on a product and the app tells you before the date, or when stock drops below.</p>
         </li>
 
       </ol>
@@ -413,8 +418,8 @@
           <h2 id="s2-title">Point. Confirm. Next.</h2>
           <div class="prose">
             <p>
-              Tap the green circle, point the camera at a barcode, and the app searches global
-              product databases. The name, description and photo come back filled in, in your
+              Tap the green circle, point the camera at a barcode, and the app searches a global
+              product database. The name, description and photo come back filled in, in your
               language. Tap <em>Save &amp; scan next</em> and the camera is already back up.
             </p>
             <p>
@@ -546,10 +551,10 @@
         <h2 id="s4-title" class="mb-0">And there&rsquo;s more.</h2>
       </div>
 
-      <div class="grid grid--5" style="margin-top:28px">
+      <div class="grid grid--6" style="margin-top:28px">
         <div>
           <img class="frame-shot frame-shot--card" src="img/dashboard-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="The dashboard for an inventory called Home inv: 5 products, 4 locations, 2 custom fields, 1 user, 1 alert rule, total stock 86, and the last activity." />
+               alt="The dashboard for an inventory called Home inv: 5 products, 4 locations, 5 custom fields, 3 users, 1 alert rule, total stock 86, and the last activity." />
           <h3>Dashboard</h3>
           <p>Products, locations, total stock and the last thing that changed, on one screen.</p>
         </div>
@@ -557,11 +562,11 @@
           <img class="frame-shot frame-shot--card" src="img/custom-fields-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="The edit fields screen listing five custom fields with their types: Best before and Opened on as dates, Purchase price as a number, Supplier as text, and Storage bin as a dropdown with six options." />
           <h3>Your own fields</h3>
-          <p>Prices, dates, serial numbers. Eight types, and each becomes a real column in the sheet.</p>
+          <p>Prices, dates, serial numbers. Nine types, and each becomes a real column in the sheet.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="img/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="The new alert rule screen: a rule named Expiring soon, watching the Best before field, notifying seven days before the date at 09:00, limited to the Kitchen and Pantry shelf locations, with push and email both switched on." />
+               alt="The new alert rule screen: a rule named Expiring soon, watching the Best before field, notifying seven days before the date, limited to the Kitchen and Pantry shelf locations, with a link to the notification settings." />
           <h3>Alerts</h3>
           <p>A date on a product, and it tells you days before it passes, by push or email. A floor on a quantity, and it tells you when stock drops below it.</p>
         </div>
@@ -576,6 +581,17 @@
                alt="The history screen listing every change with a date, the product, who made it and the quantity before and after: olive oil raised from 1 to 2, passata lowered from 7 to 6, smoked paprika created, cane sugar deleted." />
           <h3>History <span class="pill">Premium</span></h3>
           <p>What changed, who did it and when. Every quantity moved, every product added or deleted.</p>
+        </div>
+        <!-- Offline mode: Premium, shipped in app 1.2.0; 1.2.1 fixed the return
+             online after a restart. Barcode lookups, CSV import, inviting people
+             and alert-rule changes still need a connection, so the card names
+             the one a reader meets first. The screen quotes the app, which says
+             "sync"; the site's own copy still does not. -->
+        <div>
+          <img class="frame-shot frame-shot--card" src="img/offline-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
+               alt="The offline mode screen: the state You&rsquo;re working offline, a list of what still works &mdash; products, scanner and search, locations, custom fields &mdash; and a Go online button." />
+          <h3>Offline mode <span class="pill">Premium</span></h3>
+          <p>No signal in the cellar? Keep adding, editing and scanning. Your changes reach your Sheet when you&rsquo;re back online; barcode lookups wait until then.</p>
         </div>
       </div>
     </div>
@@ -596,7 +612,8 @@
         <p>
           The first time you sign in, 1inventory creates a real spreadsheet in your own Google Drive.
           Every product you add is a row in it. Open it on a laptop, sort it, chart it, or share it
-          with your accountant the way you&rsquo;d share any Google file.
+          with your accountant the way you&rsquo;d share any Google file. Edit it there too: the
+          app picks up your changes the next time you refresh.
         </p>
         <p>
           Stop paying and nothing is deleted. Delete the app and the file is still in your Drive. If

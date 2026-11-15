@@ -98,7 +98,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
 
   <!-- ContactPage is the correct type here and it is cheap. It is kept
        deliberately thin: NO ContactPoint block, because a ContactPoint needs
@@ -155,13 +155,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="./">Comment ça marche</a>
         <a href="plans.html">Offres</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html" aria-current="page">Assistance</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -361,7 +363,9 @@
             its frozen row. It does NOT restore the data. Copy may say "we
             rebuild the tab"; it may never say "we recover your data". The
             Info tab and the Alerts tab are not covered by the mechanism.
-         3. There is no offline mode. Every action needs a connection.
+         3. Offline mode exists since app 1.2.0 and is Premium only. On Free
+            every action needs a connection. Offline, these still need one:
+            barcode lookups, CSV import, inviting people, changing alert rules.
          4. Changes reach other phones on refresh. The words "real-time" and
             "sync" are banned site-wide precisely so nobody implies otherwise.
          5. Free is 5 barcode lookups a day, Premium 200, counter resets at
@@ -387,7 +391,7 @@
           <strong>Un onglet entier a disparu.</strong> Ne supprimez rien d'autre, puis tirez la liste vers le bas pour l'actualiser. L'application reconstruit un onglet manquant avec les bons en-têtes. Elle ne peut pas ramener ce qu'il contenait ; pour cela, utilisez Fichier &rarr; Historique des versions dans Google Sheets.
         </li>
         <li>
-          <strong>Rien ne se charge du tout.</strong> Chaque action nécessite une connexion. Il n'y a pas de mode hors connexion.
+          <strong>Rien ne se charge du tout.</strong> Vérifiez votre connexion. En Premium, l'application passe en mode hors connexion et continue de fonctionner ; avec l'offre gratuite, chaque action nécessite une connexion.
         </li>
         <li>
           <strong>La modification de quelqu'un d'autre n'apparaît pas.</strong> Tirez la liste vers le bas pour l'actualiser. Votre téléphone vous montre ce qu'il a lu la dernière fois, et actualiser est ce qui le fait relire.

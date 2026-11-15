@@ -174,5 +174,43 @@
       "EMPLACEMENT",
       "DESCRIPTION"
     ]
+  },
+  "offline": {
+    "title": "Mode hors connexion",
+    "state": "Vous travaillez hors connexion",
+    "intro": [
+      "Continuez à travailler sans internet. Vos",
+      "modifications restent sur ce téléphone jusqu'à ce",
+      "que vous repassiez en ligne et les synchronisiez."
+    ],
+    "products": {
+      "title": "Produits",
+      "desc": [
+        "Ajouter, modifier et supprimer, changer",
+        "les quantités, ajouter des photos"
+      ]
+    },
+    "scan": {
+      "title": "Scanner et recherche",
+      "desc": [
+        "Trouver les produits enregistrés",
+        "sur ce téléphone"
+      ]
+    },
+    "locations": {
+      "title": "Emplacements",
+      "desc": [
+        "Ajouter, renommer et supprimer",
+        ""
+      ]
+    },
+    "fields": {
+      "title": "Champs personnalisés",
+      "desc": [
+        "Ajouter des champs, modifier options",
+        "et devise"
+      ]
+    },
+    "goOnline": "Passer en ligne"
   }
 }

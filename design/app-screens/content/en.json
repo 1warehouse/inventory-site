@@ -174,5 +174,43 @@
       "name": "Lisa Chen",
       "mail": "lisa.chen@1inventory.io"
     }
-  ]
+  ],
+  "offline": {
+    "title": "Offline mode",
+    "state": "You’re working offline",
+    "intro": [
+      "Keep working without internet. Your",
+      "changes stay on this phone until you go",
+      "online and sync them."
+    ],
+    "products": {
+      "title": "Products",
+      "desc": [
+        "Add, edit and delete, change quantities,",
+        "add photos"
+      ]
+    },
+    "scan": {
+      "title": "Scanner and search",
+      "desc": [
+        "Find products saved on this phone",
+        ""
+      ]
+    },
+    "locations": {
+      "title": "Locations",
+      "desc": [
+        "Add, rename and delete",
+        ""
+      ]
+    },
+    "fields": {
+      "title": "Custom fields",
+      "desc": [
+        "Add fields, change options and currency",
+        ""
+      ]
+    },
+    "goOnline": "Go online"
+  }
 }

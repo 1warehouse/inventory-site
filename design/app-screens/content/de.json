@@ -174,5 +174,43 @@
       "ORT",
       "BESCHREIBUNG"
     ]
+  },
+  "offline": {
+    "title": "Offline-Modus",
+    "state": "Sie arbeiten offline",
+    "intro": [
+      "Arbeiten Sie ohne Internet weiter. Ihre",
+      "Änderungen bleiben auf diesem Handy, bis",
+      "Sie online gehen und sie synchronisieren."
+    ],
+    "products": {
+      "title": "Produkte",
+      "desc": [
+        "Hinzufügen, bearbeiten und löschen,",
+        "Mengen ändern, Fotos hinzufügen"
+      ]
+    },
+    "scan": {
+      "title": "Scanner und Suche",
+      "desc": [
+        "Auf diesem Handy gespeicherte",
+        "Produkte finden"
+      ]
+    },
+    "locations": {
+      "title": "Orte",
+      "desc": [
+        "Hinzufügen, umbenennen und löschen",
+        ""
+      ]
+    },
+    "fields": {
+      "title": "Eigene Felder",
+      "desc": [
+        "Felder hinzufügen, Optionen und",
+        "Währung ändern"
+      ]
+    },
+    "goOnline": "Online gehen"
   }
 }

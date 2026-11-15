@@ -95,7 +95,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
 
   <!-- =====================================================================
        FAQPage STRUCTURED DATA
@@ -137,6 +137,14 @@
     },
     {
       "@type": "Question",
+      "name": "Posso editar a folha de cálculo diretamente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Altere uma célula na folha, puxe a lista para baixo na aplicação, e a alteração está lá. É a forma mais rápida de passar trinta coisas para outra prateleira ou de corrigir uma coluna de preços. Mantenha os cabeçalhos das colunas como estão: é por eles que a aplicação sabe que campo é qual."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Preciso de uma conta Google? Posso registar-me com um e-mail?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -172,7 +180,7 @@
       "name": "Já tenho uma lista. Tenho de a escrever outra vez?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Importe um CSV e os cabeçalhos das suas colunas são associados aos campos pelo significado, por isso uma folha com os cabeçalhos Artigo / Qtd / Onde vai parar às colunas certas sem qualquer configuração. Limites: só CSV, 5 MB, 60 colunas, uma coluna de nome obrigatória. A associação é feita de uma vez e é-lhe mostrada depois. Os duplicados são ignorados."
+        "text": "Não. Importe um CSV e os cabeçalhos das suas colunas são associados aos campos pelo significado, por isso uma folha com os cabeçalhos Artigo / Qtd / Onde vai parar às colunas certas sem qualquer configuração. Limites: só CSV, 5 MB, 60 colunas, uma coluna de nome obrigatória, e 3 importações por dia no plano gratuito ou 20 no Premium. A associação é feita de uma vez e é-lhe mostrada depois. Os duplicados são ignorados."
       }
     },
     {
@@ -180,7 +188,7 @@
       "name": "Quantos produtos posso ter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Até 100 em cada inventário no plano gratuito, e até 10 000 no Premium. Se a subscrição terminar, nada acima de 100 é removido: o inventário apenas deixa de aceitar produtos novos até voltar a ficar abaixo de 100."
+        "text": "Até 100 em cada inventário no plano gratuito, e até 10 000 no Premium. Se a subscrição terminar, nada é removido da sua folha. A aplicação mostra os primeiros 100 produtos e não aceita novos; os restantes voltam a aparecer quando subscrever de novo."
       }
     },
     {
@@ -188,7 +196,7 @@
       "name": "Funciona offline?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ainda não, e está a caminho. Hoje cada ação é uma chamada de rede, por isso precisa de ligação para acrescentar ou alterar alguma coisa. O modo offline chega numa versão futura, e é onde mais falta faz: caves, garagens, arrecadações e carrinhas, que é precisamente onde um inventário costuma viver."
+        "text": "No Premium, sim. Se a ligação cair, a aplicação passa sozinha para o modo offline, e pode continuar a acrescentar e editar produtos, fotografias incluídas, a ler códigos e a pesquisar. As suas alterações chegam à sua folha quando voltar a estar online. Algumas coisas continuam a precisar de ligação: as consultas de códigos de barras, a importação de CSV, convidar pessoas e alterar regras de alerta. Um artigo novo lido na cave volta em branco, e escreve o nome. No plano gratuito, a aplicação precisa de ligação."
       }
     },
     {
@@ -244,7 +252,7 @@
       "name": "Quanto custa o Premium?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "0,99 € por mês ou 9,99 € por ano, com 7 dias grátis em qualquer um. O plano anual custa menos do que doze meses ao preço mensal, que somam 11,88 €. Não há pacote nem um segundo nível. A subscrição é gerida pela App Store ou pelo Google Play, por isso cancela-a aí, e a aplicação mostra o preço na sua própria moeda."
+        "text": "0,99 € por mês ou 9,99 € por ano, com 7 dias grátis em qualquer um. O plano anual custa menos do que doze meses ao preço mensal, que somam 11,88 €. Não há pacote nem um segundo nível. A subscrição é gerida pela App Store ou pelo Google Play, por isso cancela-a aí, ou na página Subscrição da aplicação, que o leva diretamente ao ecrã da loja. Quem paga ao mês pode mudar para o plano anual na mesma página, e a loja credita a parte do mês não utilizada. A aplicação mostra o preço na sua própria moeda."
       }
     },
     {
@@ -252,7 +260,7 @@
       "name": "O que acontece se deixar de pagar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nada é eliminado. Os inventários, localizações e campos personalizados a mais, e as pessoas que convidou, ficam bloqueados, e tudo volta de uma vez se voltar a subscrever. Os seus produtos ficam intactos, porque vivem na sua folha do Google. Enquanto um inventário está bloqueado fica oculto na aplicação, e as pessoas que convidou perdem o acesso até voltar a subscrever."
+        "text": "Nada é eliminado. Os inventários, localizações, campos personalizados e regras de alerta a mais, e as pessoas que convidou, ficam bloqueados, e tudo volta de uma vez se voltar a subscrever. Os seus produtos continuam na sua folha do Google, e a aplicação mostra os primeiros 100. Enquanto um inventário está bloqueado fica oculto na aplicação, e as pessoas que convidou perdem o acesso até voltar a subscrever."
       }
     },
     {
@@ -260,7 +268,7 @@
       "name": "Vale a pena pagar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Comece grátis e descubra. Catalogue um quarto no plano gratuito e, em duas semanas, saberá se quer um segundo inventário, uma segunda localização, uma segunda pessoa, espaço para mais de 100 produtos, mais regras de alerta ou um histórico de alterações. Essas seis coisas são o que o Premium acrescenta, e 0,99 € por mês, ou 9,99 € por ano, é o preço inteiro."
+        "text": "Comece grátis e descubra. Catalogue um quarto no plano gratuito e, em duas semanas, saberá se quer um segundo inventário, uma segunda localização, uma segunda pessoa, espaço para mais de 100 produtos, mais regras de alerta, um histórico de alterações, ou continuar a trabalhar quando a rede falha. Essas sete coisas são o que o Premium acrescenta, e 0,99 € por mês, ou 9,99 € por ano, é o preço inteiro."
       }
     },
     {
@@ -339,13 +347,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Principal">
         <a href="./">Como funciona</a>
         <a href="plans.html">Planos</a>
         <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="support.html">Apoio</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -398,19 +408,63 @@
           <h1 id="faq-title">Perguntas e respostas</h1>
         </div>
 
-        <!-- Jump list. Six entries, matching the six question groups below.
+        <!-- Jump list. Six groups, matching the six question groups below, each
+             with its questions under it. Generated by hand from the h3s: a
+             question added or reworded below must be changed here too.
              A real table of contents, not decoration: support sends people
              here with one question in mind. -->
         <div class="card card--tint" style="margin-top:22px">
           <h2 class="h4 mb-0">Ir para</h2>
           <nav aria-label="Secções desta página">
-            <ul class="bullets bullets--green bullets--tight" style="margin-top:14px">
-              <li><a href="#install">Antes de instalar</a></li>
-              <li><a href="#existing-list">A lista que já tem</a></li>
-              <li><a href="#limits">Limites e o que vem a seguir</a></li>
-              <li><a href="#sharing">Deixar entrar outra pessoa</a></li>
-              <li><a href="#price">Quanto custa</a></li>
-              <li><a href="#permanence">Se desaparecermos</a></li>
+            <ul class="bullets bullets--tight jump-list" style="margin-top:14px">
+              <li><p class="jump-group"><a href="#install">Antes de instalar</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-why-not-just-use-a-google-sheet-directly">Porque não usar diretamente uma folha do Google?</a></li>
+                  <li><a href="#q-can-i-edit-the-spreadsheet-directly">Posso editar a folha de cálculo diretamente?</a></li>
+                  <li><a href="#q-do-i-need-a-google-account-can-i-sign-up-with-an">Preciso de uma conta Google? Posso registar-me com um e-mail?</a></li>
+                  <li><a href="#q-why-does-an-inventory-app-need-access-to-my-goog">Porque precisa uma aplicação de inventário de aceder ao meu Google Drive?</a></li>
+                  <li><a href="#q-will-the-scanner-recognise-my-things">O leitor vai reconhecer as minhas coisas?</a></li>
+                  <li><a href="#q-is-there-a-web-app-does-it-work-on-an-ipad">Existe uma aplicação web? Funciona num iPad?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#existing-list">A lista que já tem</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-i-already-have-a-list-do-i-have-to-retype-it">Já tenho uma lista. Tenho de a escrever outra vez?</a></li>
+                  <li><a href="#q-how-many-products-can-i-have">Quantos produtos posso ter?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#limits">Limites</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-does-it-work-offline">Funciona offline?</a></li>
+                  <li><a href="#q-will-it-tell-me-when-im-running-low">Avisa-me quando estiver a ficar sem alguma coisa?</a></li>
+                  <li><a href="#q-when-will-alerts-reach-me-and-how-often">Quando me chegam os alertas, e com que frequência?</a></li>
+                  <li><a href="#q-which-fields-can-an-alert-watch">Que campos pode um alerta vigiar?</a></li>
+                  <li><a href="#q-what-if-i-need-more-than-five-people">E se precisar de mais de cinco pessoas?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#sharing">Deixar entrar outra pessoa</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-is-it-safe-to-let-my-partner-or-a-colleague-in">É seguro deixar entrar o meu companheiro ou um colega?</a></li>
+                  <li><a href="#q-will-their-changes-appear-on-my-phone-straight-a">As alterações deles aparecem logo no meu telemóvel?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#price">Quanto custa</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-what-does-premium-cost">Quanto custa o Premium?</a></li>
+                  <li><a href="#q-what-happens-if-i-stop-paying">O que acontece se deixar de pagar?</a></li>
+                  <li><a href="#q-is-it-worth-paying-for">Vale a pena pagar?</a></li>
+                </ul>
+              </li>
+              <li><p class="jump-group"><a href="#permanence">Se desaparecermos</a></p>
+                <ul class="jump-qs">
+                  <li><a href="#q-can-i-export-my-data">Posso exportar os meus dados?</a></li>
+                  <li><a href="#q-what-if-i-delete-something-by-accident">E se eliminar alguma coisa sem querer?</a></li>
+                  <li><a href="#q-what-happens-if-1inventory-shuts-down">O que acontece se o 1inventory encerrar?</a></li>
+                  <li><a href="#q-who-makes-this">Quem faz isto?</a></li>
+                  <li><a href="#q-do-you-show-ads">Mostram publicidade?</a></li>
+                  <li><a href="#q-what-languages-is-it-in">Em que idiomas está?</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>
@@ -439,21 +493,33 @@
       <div class="stack">
 
         <div>
-          <h3>Porque não usar diretamente uma folha do Google?</h3>
+          <h3 id="q-why-not-just-use-a-google-sheet-directly">Porque não usar diretamente uma folha do Google?</h3>
           <p class="measure">
             É o que está a fazer: é esse o desenho. O que a aplicação acrescenta é uma câmara, uma base de dados global de produtos, uma vista de pastas com uma contagem por prateleira, um seletor de quantidade que acerta com o polegar, e colunas que chegam já nomeadas e formatadas. Experimente escrever um código de barras de 13 dígitos numa célula no telemóvel. Foi essa a parte que removemos.
           </p>
         </div>
 
         <div>
-          <h3>Preciso de uma conta Google? Posso registar-me com um e-mail?</h3>
+          <h3 id="q-can-i-edit-the-spreadsheet-directly">Posso editar a folha de cálculo diretamente?</h3>
+          <!-- Verified against the API on 2026-11-15: every product read goes to
+               Google Sheets, so a cell changed there is in the app on the next
+               refresh. Columns are matched by exact header text; a renamed
+               built-in header is re-added empty and the renamed column is no
+               longer read. -->
+          <p class="measure">
+            Sim. Altere uma célula na folha, puxe a lista para baixo na aplicação, e a alteração está lá. É a forma mais rápida de passar trinta coisas para outra prateleira ou de corrigir uma coluna de preços. Mantenha os cabeçalhos das colunas como estão: é por eles que a aplicação sabe que campo é qual.
+          </p>
+        </div>
+
+        <div>
+          <h3 id="q-do-i-need-a-google-account-can-i-sign-up-with-an">Preciso de uma conta Google? Posso registar-me com um e-mail?</h3>
           <p class="measure">
             Sim, e é o único início de sessão que a aplicação usa. A vantagem é que registar-se é um toque: não há formulário para preencher nem palavra-passe para inventar, e a sua primeira folha de cálculo existe antes de chegar ao ecrã inicial.
           </p>
         </div>
 
         <div>
-          <h3>Porque precisa uma aplicação de inventário de aceder ao meu Google Drive?</h3>
+          <h3 id="q-why-does-an-inventory-app-need-access-to-my-goog">Porque precisa uma aplicação de inventário de aceder ao meu Google Drive?</h3>
           <!-- The scope name is set as a .code-chip here, the same treatment the
                homepage's permission band gives it. The full
                https://www.googleapis.com/auth/drive.file URL is deliberately not
@@ -468,7 +534,7 @@
         </div>
 
         <div>
-          <h3>O leitor vai reconhecer as minhas coisas?</h3>
+          <h3 id="q-will-the-scanner-recognise-my-things">O leitor vai reconhecer as minhas coisas?</h3>
           <!-- ⚠ "unlimited" is a banned word site-wide with exactly one exception:
                barcode SCANNING, where it is literally true. The daily cap is on
                lookups against the global database, and conflating the two is the
@@ -479,7 +545,7 @@
         </div>
 
         <div>
-          <h3>Existe uma aplicação web? Funciona num iPad?</h3>
+          <h3 id="q-is-there-a-web-app-does-it-work-on-an-ipad">Existe uma aplicação web? Funciona num iPad?</h3>
           <p class="measure">
             Os seus dados são plenamente utilizáveis num portátil: a folha de cálculo abre no Google Sheets como qualquer outro ficheiro, e aí pode ordenar, filtrar, fazer gráficos e imprimir. A aplicação em si é uma aplicação de telemóvel em vertical para iOS 15.6 ou posterior e Android 7.0 ou posterior, por isso hoje não há disposição para tablet nem cliente de navegador.
           </p>
@@ -505,7 +571,7 @@
       <div class="stack">
 
         <div>
-          <h3>Já tenho uma lista. Tenho de a escrever outra vez?</h3>
+          <h3 id="q-i-already-have-a-list-do-i-have-to-retype-it">Já tenho uma lista. Tenho de a escrever outra vez?</h3>
           <!-- ⚠ ACCURACY, all four verified and none may be loosened:
                  · CSV only. Not Excel, not .xlsx, not Numbers.
                  · The mapping is automatic and is NOT reviewable beforehand. The
@@ -514,6 +580,8 @@
                  · Import is insert-only. Duplicates are skipped and existing rows
                    are never updated, so it is not a sync, a merge or an update.
                  · 5 MB, 60 columns, name column required.
+                 · 3 imports a day on Free, 20 on Premium (ImportDailyLimit in
+                   the API's SubscriptionQuotas, read 2026-11-15).
                The header example is load-bearing: it is the one detail that proves
                the matching is by meaning rather than by exact field name. The brief's
                original was a German one (Bezeichnung / Menge / Lagerort); the client
@@ -522,14 +590,14 @@
                example is here unofficial-looking — "Item / Qty / Where" works because
                none of the three is the app's own field name. -->
           <p class="measure">
-            Não. Importe um CSV e os cabeçalhos das suas colunas são associados aos campos pelo significado, por isso uma folha com os cabeçalhos <em>Artigo / Qtd / Onde</em> vai parar às colunas certas sem qualquer configuração. Limites: só CSV, 5&nbsp;MB, 60 colunas, uma coluna de nome obrigatória. A associação é feita de uma vez e é-lhe mostrada depois. Os duplicados são ignorados.
+            Não. Importe um CSV e os cabeçalhos das suas colunas são associados aos campos pelo significado, por isso uma folha com os cabeçalhos <em>Artigo / Qtd / Onde</em> vai parar às colunas certas sem qualquer configuração. Limites: só CSV, 5&nbsp;MB, 60 colunas, uma coluna de nome obrigatória, e 3 importações por dia no plano gratuito ou 20 no Premium. A associação é feita de uma vez e é-lhe mostrada depois. Os duplicados são ignorados.
           </p>
         </div>
 
         <div>
-          <h3>Quantos produtos posso ter?</h3>
+          <h3 id="q-how-many-products-can-i-have">Quantos produtos posso ter?</h3>
           <p class="measure">
-            Até 100 em cada inventário no plano gratuito, e até 10&nbsp;000 no Premium. Se a subscrição terminar, nada acima de 100 é removido: o inventário apenas deixa de aceitar produtos novos até voltar a ficar abaixo de 100.
+            Até 100 em cada inventário no plano gratuito, e até 10&nbsp;000 no Premium. Se a subscrição terminar, nada é removido da sua folha. A aplicação mostra os primeiros 100 produtos e não aceita novos; os restantes voltam a aparecer quando subscrever de novo.
           </p>
         </div>
 
@@ -567,41 +635,41 @@
     <div class="container container--narrow">
 
       <div class="section__head">
-        <h2 id="limits-title" class="mb-0">Limites, e aquilo em que estamos a trabalhar</h2>
+        <h2 id="limits-title" class="mb-0">Limites</h2>
       </div>
 
       <div class="stack">
 
         <div>
-          <h3>Funciona offline?</h3>
+          <h3 id="q-does-it-work-offline">Funciona offline?</h3>
           <p class="measure">
-            Ainda não, e está a caminho. Hoje cada ação é uma chamada de rede, por isso precisa de ligação para acrescentar ou alterar alguma coisa. O modo offline chega numa versão futura, e é onde mais falta faz: caves, garagens, arrecadações e carrinhas, que é precisamente onde um inventário costuma viver.
+            No Premium, sim. Se a ligação cair, a aplicação passa sozinha para o modo offline, e pode continuar a acrescentar e editar produtos, fotografias incluídas, a ler códigos e a pesquisar. As suas alterações chegam à sua folha quando voltar a estar online. Algumas coisas continuam a precisar de ligação: as consultas de códigos de barras, a importação de CSV, convidar pessoas e alterar regras de alerta. Um artigo novo lido na cave volta em branco, e escreve o nome. No plano gratuito, a aplicação precisa de ligação.
           </p>
         </div>
 
         <div>
-          <h3>Avisa-me quando estiver a ficar sem alguma coisa?</h3>
+          <h3 id="q-will-it-tell-me-when-im-running-low">Avisa-me quando estiver a ficar sem alguma coisa?</h3>
           <p class="measure">
             Sim. Ponha um mínimo na quantidade, ou num campo numérico seu, e a aplicação avisa-o por notificação ou por e-mail quando o valor fica abaixo dele: azeite abaixo de 2, por exemplo. Os alertas por data continuam lá: uma validade, um fim de garantia ou uma data de manutenção dá-lhe uma notificação ou um e-mail um determinado número de dias antes ou depois. O plano gratuito inclui uma regra de alerta e o Premium até 50, e ambos os tipos partilham esse limite. A quantidade continua a mudar só quando alguém a muda, por isso o alerta está tão atualizado como a sua última contagem.
           </p>
         </div>
 
         <div>
-          <h3>Quando me chegam os alertas, e com que frequência?</h3>
+          <h3 id="q-when-will-alerts-reach-me-and-how-often">Quando me chegam os alertas, e com que frequência?</h3>
           <p class="measure">
             Por volta da hora que escolher nas definições de notificações da aplicação, uma vez por dia e no seu próprio fuso horário. Tudo o que precisa de atenção num inventário chega junto, num só e-mail ou notificação em vez de um por produto, e o e-mail lista cada regra com os produtos que apanhou, os mais urgentes primeiro. Um produto é assinalado uma vez e depois fica em silêncio: só volta se o seu valor mudar outra vez, ou se voltar ao mínimo e mais tarde descer abaixo dele. Todas as pessoas com quem partilha o inventário também recebem os alertas, cada uma à sua hora, por e-mail, notificação ou ambos.
           </p>
         </div>
 
         <div>
-          <h3>Que campos pode um alerta vigiar?</h3>
+          <h3 id="q-which-fields-can-an-alert-watch">Que campos pode um alerta vigiar?</h3>
           <p class="measure">
             A quantidade, ou um campo seu do tipo Número, Decimal, Data ou Data/Hora. Um campo numérico leva um mínimo, abaixo de 10, por exemplo; um campo de data, um número de dias antes ou depois da data. Os campos de texto não podem ser vigiados. Uma regra também pode ficar limitada a certas localizações, para que um mínimo se aplique na despensa mas não na garagem. Cada alerta fica guardado na aplicação, em Alertas, e no separador «Alerts» da sua folha de cálculo.
           </p>
         </div>
 
         <div>
-          <h3>E se precisar de mais de cinco pessoas?</h3>
+          <h3 id="q-what-if-i-need-more-than-five-people">E se precisar de mais de cinco pessoas?</h3>
           <p class="measure">
             Cinco pessoas é aquilo em torno do qual a aplicação foi construída: uma casa, uma oficina ou uma equipa pequena. As localizações não têm limite no Premium, mas ficam lado a lado em vez de encaixadas umas nas outras, e todas as pessoas que convida têm o mesmo nível de acesso. Se precisa de zonas de armazém dentro de zonas, permissões por localização ou um papel só de leitura, um sistema maior serve-o melhor.
           </p>
@@ -641,14 +709,14 @@
       <div class="stack">
 
         <div>
-          <h3>É seguro deixar entrar o meu companheiro ou um colega?</h3>
+          <h3 id="q-is-it-safe-to-let-my-partner-or-a-colleague-in">É seguro deixar entrar o meu companheiro ou um colega?</h3>
           <p class="measure">
             Sim. Iniciam sessão com a própria conta Google e, onde o inventário tem separador de Histórico, cada alteração fica lá com o nome deles. Vale a pena saber: há dois papéis em vez de uma opção só de leitura, por isso quem convida pode editar e eliminar. Convidar exige Premium, o limite é de cinco pessoas incluindo você, e a folha de cálculo fica só no seu Drive.
           </p>
         </div>
 
         <div>
-          <h3>As alterações deles aparecem logo no meu telemóvel?</h3>
+          <h3 id="q-will-their-changes-appear-on-my-phone-straight-a">As alterações deles aparecem logo no meu telemóvel?</h3>
           <p class="measure">
             As alterações chegam à sua folha do Google assim que são guardadas. Noutro telemóvel aparecem quando se puxa a lista para baixo para atualizar, e não em direto enquanto está a olhar. Se duas pessoas contarem a mesma prateleira ao mesmo tempo, ganha quem guardar por último.
           </p>
@@ -699,27 +767,28 @@
       <div class="stack">
 
         <div>
-          <h3>Quanto custa o Premium?</h3>
+          <h3 id="q-what-does-premium-cost">Quanto custa o Premium?</h3>
           <p class="measure">
-            0,99 &euro; por mês ou 9,99 &euro; por ano, com 7 dias grátis em qualquer um. O plano anual custa menos do que doze meses ao preço mensal, que somam 11,88 &euro;. Não há pacote nem um segundo nível. A subscrição é gerida pela App Store ou pelo Google Play, por isso cancela-a aí, e a aplicação mostra o preço na sua própria moeda.
+            0,99 &euro; por mês ou 9,99 &euro; por ano, com 7 dias grátis em qualquer um. O plano anual custa menos do que doze meses ao preço mensal, que somam 11,88 &euro;. Não há pacote nem um segundo nível. A subscrição é gerida pela App Store ou pelo Google Play, por isso cancela-a aí, ou na página Subscrição da aplicação, que o leva diretamente ao ecrã da loja. Quem paga ao mês pode mudar para o plano anual na mesma página, e a loja credita a parte do mês não utilizada. A aplicação mostra o preço na sua própria moeda.
           </p>
         </div>
 
         <div>
-          <h3>O que acontece se deixar de pagar?</h3>
+          <h3 id="q-what-happens-if-i-stop-paying">O que acontece se deixar de pagar?</h3>
           <p class="measure">
-            Nada é eliminado. Os inventários, localizações e campos personalizados a mais, e as pessoas que convidou, ficam bloqueados, e tudo volta de uma vez se voltar a subscrever. Os seus produtos ficam intactos, porque vivem na sua folha do Google. Enquanto um inventário está bloqueado fica oculto na aplicação, e as pessoas que convidou perdem o acesso até voltar a subscrever.
+            Nada é eliminado. Os inventários, localizações, campos personalizados e regras de alerta a mais, e as pessoas que convidou, ficam bloqueados, e tudo volta de uma vez se voltar a subscrever. Os seus produtos continuam na sua folha do Google, e a aplicação mostra os primeiros 100. Enquanto um inventário está bloqueado fica oculto na aplicação, e as pessoas que convidou perdem o acesso até voltar a subscrever.
           </p>
         </div>
 
         <div>
-          <h3>Vale a pena pagar?</h3>
-          <!-- The six things named here are the six Free-plan caps that actually
+          <h3 id="q-is-it-worth-paying-for">Vale a pena pagar?</h3>
+          <!-- The seven things named here are the seven Free-plan caps that actually
                bite: a second inventory, a second location, a second person, more
-               than 100 products, more alert rules, and change history. The list is
+               than 100 products, more alert rules, change history, and offline
+               mode (Premium since app 1.2.0). The list is
                exact — every one of them is a row in the plans table. -->
           <p class="measure">
-            Comece grátis e descubra. Catalogue um quarto no plano gratuito e, em duas semanas, saberá se quer um segundo inventário, uma segunda localização, uma segunda pessoa, espaço para mais de 100 produtos, mais regras de alerta ou um histórico de alterações. Essas seis coisas são o que o Premium acrescenta, e 0,99 &euro; por mês, ou 9,99 &euro; por ano, é o preço inteiro.
+            Comece grátis e descubra. Catalogue um quarto no plano gratuito e, em duas semanas, saberá se quer um segundo inventário, uma segunda localização, uma segunda pessoa, espaço para mais de 100 produtos, mais regras de alerta, um histórico de alterações, ou continuar a trabalhar quando a rede falha. Essas sete coisas são o que o Premium acrescenta, e 0,99 &euro; por mês, ou 9,99 &euro; por ano, é o preço inteiro.
           </p>
         </div>
 
@@ -770,14 +839,14 @@
       <div class="stack">
 
         <div>
-          <h3>Posso exportar os meus dados?</h3>
+          <h3 id="q-can-i-export-my-data">Posso exportar os meus dados?</h3>
           <p class="measure">
             Não há botão de exportação, porque não há nada para exportar. O seu inventário já é uma folha do Google no seu próprio Drive, e o Google guarda-lha como CSV, Excel ou PDF quando quiser. Uma ressalva: o ficheiro vive no Drive de quem é dono do inventário, por isso isto é algo que os proprietários podem fazer e as pessoas convidadas não.
           </p>
         </div>
 
         <div>
-          <h3>E se eliminar alguma coisa sem querer?</h3>
+          <h3 id="q-what-if-i-delete-something-by-accident">E se eliminar alguma coisa sem querer?</h3>
           <!-- ⚠ There is genuinely no restore button in the app. The Backups screen
                lists Drive revisions and hands you off to Google Sheets to do the
                restore. Do not describe it as a restore feature. -->
@@ -787,14 +856,14 @@
         </div>
 
         <div>
-          <h3>O que acontece se o 1inventory encerrar?</h3>
+          <h3 id="q-what-happens-if-1inventory-shuts-down">O que acontece se o 1inventory encerrar?</h3>
           <p class="measure">
             A folha de cálculo, o seu separador de histórico e a pasta de fotografias estão no seu Google Drive e lá ficam, legíveis por tudo o que abra uma folha de cálculo. O que perderia era o leitor, a consulta de códigos de barras e a vista de pastas. Podemos prometer continuidade dos dados, não continuidade do serviço.
           </p>
         </div>
 
         <div>
-          <h3>Quem faz isto?</h3>
+          <h3 id="q-who-makes-this">Quem faz isto?</h3>
           <!-- The Impressum link is a standalone .link-arrow, never an inline <a>
                inside the sentence: .link-arrow is inline-flex with a 44px minimum
                height, so mid-paragraph it would blow the line box apart. Every
@@ -805,14 +874,14 @@
         </div>
 
         <div>
-          <h3>Mostram publicidade?</h3>
+          <h3 id="q-do-you-show-ads">Mostram publicidade?</h3>
           <p class="measure">
             Não, em nenhum dos planos. Não há nenhum SDK de publicidade na aplicação, e ela nunca pediu um identificador de rastreio nem lhe mostrou um pedido de App Tracking Transparency. O plano gratuito é pago por quem passa a Premium, e é esse todo o modelo de negócio.
           </p>
         </div>
 
         <div>
-          <h3>Em que idiomas está?</h3>
+          <h3 id="q-what-languages-is-it-in">Em que idiomas está?</h3>
           <p class="measure">
             Inglês, alemão, espanhol, francês e português: a aplicação toda, e também os e-mails de alerta e os resultados da consulta de códigos de barras, que voltam no seu idioma. A sua definição de idioma pertence à sua conta, por isso acompanha-o quando muda de telemóvel.
           </p>

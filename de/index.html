@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
 
   <script type="application/ld+json">
 {
@@ -133,13 +133,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="./" aria-current="page">So funktioniert es</a>
         <a href="plans.html">Tarife</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -212,7 +214,7 @@
               <img src="/img/badge-googleplay.svg?v=22" alt="Jetzt bei Google Play" width="169" height="50" />
             </a>
           </div>
-          <p class="note">Kostenlos installieren. Anmeldung mit Google. Kein Formular, kein Passwort.</p>
+          <p class="note">Kostenlos installieren, Premium ab 0,99 &euro; im Monat. Anmeldung mit Google. Kein Formular, kein Passwort.</p>
         </div>
       </div>
 
@@ -248,9 +250,12 @@
        thing that happens while they are not looking, and it is the one with no
        equivalent in a spreadsheet.
 
-       ⚠ Step 2 says "eight types" — that count is exact
-       (lib/models/enums/custom_field_type.dart: text, large text, number,
-       decimal, checkbox, dropdown, date, date/time). How MANY fields you get
+       ⚠ The "Your own fields" card in the more-band says "nine types" (step 2
+       carried the count until 2026-11-15, when it was trimmed to match its
+       neighbours' length) — that count is exact
+       (lib/models/enums/custom_field_type.dart: text, large text, barcode,
+       number, decimal, checkbox, dropdown, date, date/time; Barcode arrived
+       in app 1.2.1). How MANY fields you get
        is a plan limit, not a capability, and belongs on the plans page rather
        than here. Same for locations in step 3.
 
@@ -298,7 +303,7 @@
             <circle cx="13" cy="23" r="2.2" />
           </svg>
           <h3>Sie machen es zu Ihrem</h3>
-          <p>Eine Speisekammer braucht Mindesthaltbarkeitsdaten, eine Werkstatt Seriennummern. Fügen Sie die Felder hinzu, die Ihre Dinge haben – in acht Typen, darunter Auswahllisten mit Ihren eigenen Optionen –, und die Tabelle bekommt die passenden Spalten dazu.</p>
+          <p>Fügen Sie die Felder hinzu, die Ihre Dinge haben: Haltbarkeitsdaten, Seriennummern, Auswahllisten mit Ihren eigenen Optionen. Die Tabelle bekommt die passenden Spalten dazu.</p>
         </li>
 
         <li class="flow__step">
@@ -346,7 +351,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Es sagt Ihnen rechtzeitig Bescheid</h3>
-          <p>Hinterlegen Sie ein Ablauf-, Garantie- oder Wartungsdatum bei einem Produkt, und die App meldet sich per Push oder E-Mail, bevor es so weit ist. Setzen Sie eine Untergrenze für eine Menge, und sie meldet sich, wenn Sie darunter fallen. Das ist der eine Schritt, für den Sie nichts tun.</p>
+          <p>Hinterlegen Sie ein Datum oder eine Mindestmenge bei einem Produkt, und die App meldet sich vor dem Datum oder wenn der Bestand darunter fällt.</p>
         </li>
 
       </ol>
@@ -429,7 +434,7 @@
           <h2 id="s2-title">Zielen. Bestätigen. Weiter.</h2>
           <div class="prose">
             <p>
-              Tippen Sie auf den grünen Kreis, halten Sie die Kamera auf einen Barcode, und die App durchsucht weltweite Produktdatenbanken. Name, Beschreibung und Foto kommen ausgefüllt zurück, in Ihrer Sprache. Ein Tipp auf <em>Speichern &amp; weiter scannen</em>, und die Kamera ist schon wieder da.
+              Tippen Sie auf den grünen Kreis, halten Sie die Kamera auf einen Barcode, und die App durchsucht eine weltweite Produktdatenbank. Name, Beschreibung und Foto kommen ausgefüllt zurück, in Ihrer Sprache. Ein Tipp auf <em>Speichern &amp; weiter scannen</em>, und die Kamera ist schon wieder da.
             </p>
             <p>
               Es gibt keine Hardware zu kaufen. Keine Scannerpistole, nichts zu koppeln, nichts zu laden. Die App liest zwölf Barcode-Formate, zoomt bei kleinem Druck von selbst heran und piept, damit Ihr Blick am Regal bleiben kann.
@@ -551,10 +556,10 @@
         <h2 id="s4-title" class="mb-0">Und da ist noch mehr.</h2>
       </div>
 
-      <div class="grid grid--5" style="margin-top:28px">
+      <div class="grid grid--6" style="margin-top:28px">
         <div>
           <img class="frame-shot frame-shot--card" src="/img/de/dashboard-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="Die Übersicht eines Inventars namens Home inv: 5 Produkte, 4 Orte, 2 eigene Felder, 1 Nutzer, 1 Erinnerungsregel, Gesamtbestand 86 und die letzte Aktivität." />
+               alt="Die Übersicht eines Inventars namens Home inv: 5 Produkte, 4 Orte, 5 eigene Felder, 3 Nutzer, 1 Erinnerungsregel, Gesamtbestand 86 und die letzte Aktivität." />
           <h3>Übersicht</h3>
           <p>Produkte, Orte, Gesamtbestand und die letzte Änderung, auf einem Bildschirm.</p>
         </div>
@@ -562,11 +567,11 @@
           <img class="frame-shot frame-shot--card" src="/img/de/custom-fields-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="Der Bildschirm zum Bearbeiten der Felder mit fünf eigenen Feldern und ihren Typen: Mindestens haltbar bis und Geöffnet am als Datum, Einkaufspreis als Zahl, Lieferant als Text und Lagerfach als Auswahlliste mit sechs Optionen." />
           <h3>Ihre eigenen Felder</h3>
-          <p>Preise, Daten, Seriennummern. Acht Typen, und jedes wird zu einer echten Spalte in der Tabelle.</p>
+          <p>Preise, Daten, Seriennummern. Neun Typen, und jedes wird zu einer echten Spalte in der Tabelle.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/de/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="Der Bildschirm für eine neue Erinnerungsregel: eine Regel namens Läuft bald ab, die das Feld Mindestens haltbar bis beobachtet, sieben Tage vor dem Datum um 09:00 Uhr benachrichtigt, begrenzt auf die Orte Küche und Speisekammerregal, mit Push und E-Mail beide eingeschaltet." />
+               alt="Der Bildschirm für eine neue Erinnerungsregel: eine Regel namens Läuft bald ab, die das Feld Mindestens haltbar bis beobachtet, sieben Tage vor dem Datum benachrichtigt, begrenzt auf die Orte Küche und Speisekammerregal, mit einem Link zu den Benachrichtigungseinstellungen." />
           <h3>Erinnerungen</h3>
           <p>Ein Datum bei einem Produkt, und die App meldet sich Tage vorher, per Push oder E-Mail. Eine Untergrenze bei einer Menge, und sie meldet sich, wenn der Bestand darunter fällt.</p>
         </div>
@@ -581,6 +586,17 @@
                alt="Der Verlaufsbildschirm listet jede Änderung mit Datum, Produkt, Person und Menge davor und danach: Olivenöl von 1 auf 2 erhöht, Passata von 7 auf 6 verringert, geräuchertes Paprikapulver angelegt, Rohrzucker gelöscht." />
           <h3>Verlauf <span class="pill">Premium</span></h3>
           <p>Was sich geändert hat, wer es war und wann. Jede bewegte Menge, jedes angelegte oder gelöschte Produkt.</p>
+        </div>
+        <!-- Offline mode: Premium, shipped in app 1.2.0; 1.2.1 fixed the return
+             online after a restart. Barcode lookups, CSV import, inviting people
+             and alert-rule changes still need a connection, so the card names
+             the one a reader meets first. The screen quotes the app, which says
+             "sync"; the site's own copy still does not. -->
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/de/offline-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
+               alt="Der Bildschirm Offline-Modus: der Status Sie arbeiten offline, eine Liste dessen, was weiter funktioniert – Produkte, Scanner und Suche, Orte, eigene Felder – und eine Schaltfläche Online gehen." />
+          <h3>Offline-Modus <span class="pill">Premium</span></h3>
+          <p>Kein Empfang im Keller? Fügen Sie weiter hinzu, bearbeiten und scannen Sie. Ihre Änderungen erreichen Ihre Tabelle, sobald Sie wieder online sind; Barcode-Abfragen warten bis dahin.</p>
         </div>
       </div>
     </div>
@@ -599,7 +615,7 @@
       </div>
       <div class="prose">
         <p>
-          Bei der ersten Anmeldung legt 1inventory eine echte Tabelle in Ihrem eigenen Google Drive an. Jedes Produkt, das Sie hinzufügen, ist darin eine Zeile. Öffnen Sie sie am Laptop, sortieren Sie, erstellen Sie Diagramme, oder teilen Sie sie mit Ihrer Steuerberatung wie jede andere Google-Datei.
+          Bei der ersten Anmeldung legt 1inventory eine echte Tabelle in Ihrem eigenen Google Drive an. Jedes Produkt, das Sie hinzufügen, ist darin eine Zeile. Öffnen Sie sie am Laptop, sortieren Sie, erstellen Sie Diagramme, oder teilen Sie sie mit Ihrer Steuerberatung wie jede andere Google-Datei. Bearbeiten Sie sie auch dort: Die App übernimmt Ihre Änderungen beim nächsten Aktualisieren.
         </p>
         <p>
           Hören Sie auf zu zahlen, und es wird nichts gelöscht. Löschen Sie die App, und die Datei liegt weiter in Ihrem Drive. Würden wir morgen verschwinden, hätten Sie immer noch alles – denn es war nie unseres.

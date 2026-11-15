@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css?v=23" />
+  <link rel="stylesheet" href="/css/style.css?v=27" />
 
   <script type="application/ld+json">
 {
@@ -133,13 +133,15 @@
       <span>1inventory</span>
     </a>
     <div class="nav-menu" id="nav-menu">
-      <!-- Three links, identical on every page. Earlier builds grew per-page
+      <!-- Four links, identical on every page (Support joined on 2026-11-15:
+           a subscriber with a problem looks here before the footer). Earlier builds grew per-page
            nav items (The sheet / Your data / What it doesn't do) which made the
            menu change shape as you moved around the site. -->
       <nav class="nav-links" aria-label="Principal">
         <a href="./" aria-current="page">Como funciona</a>
         <a href="plans.html">Planos</a>
         <a href="faq.html">FAQ</a>
+        <a href="support.html">Apoio</a>
       </nav>
       <!-- Language. A <details> so it opens with no JavaScript and the five
            entries stay real links a crawler can follow; main.js stores the
@@ -212,7 +214,7 @@
               <img src="/img/badge-googleplay.svg?v=22" alt="Disponível no Google Play" width="169" height="50" />
             </a>
           </div>
-          <p class="note">Instalação gratuita. Inicie sessão com o Google. Sem formulários, sem palavra-passe.</p>
+          <p class="note">Instalação gratuita, Premium a partir de 0,99 &euro; por mês. Inicie sessão com o Google. Sem formulários, sem palavra-passe.</p>
         </div>
       </div>
 
@@ -248,9 +250,12 @@
        thing that happens while they are not looking, and it is the one with no
        equivalent in a spreadsheet.
 
-       ⚠ Step 2 says "eight types" — that count is exact
-       (lib/models/enums/custom_field_type.dart: text, large text, number,
-       decimal, checkbox, dropdown, date, date/time). How MANY fields you get
+       ⚠ The "Your own fields" card in the more-band says "nine types" (step 2
+       carried the count until 2026-11-15, when it was trimmed to match its
+       neighbours' length) — that count is exact
+       (lib/models/enums/custom_field_type.dart: text, large text, barcode,
+       number, decimal, checkbox, dropdown, date, date/time; Barcode arrived
+       in app 1.2.1). How MANY fields you get
        is a plan limit, not a capability, and belongs on the plans page rather
        than here. Same for locations in step 3.
 
@@ -298,7 +303,7 @@
             <circle cx="13" cy="23" r="2.2" />
           </svg>
           <h3>Torna-o seu</h3>
-          <p>Uma despensa precisa de datas de validade; uma oficina, de números de série. Acrescente os campos que as suas coisas têm, em oito tipos, incluindo listas pendentes com as suas próprias opções, e a folha ganha as colunas correspondentes.</p>
+          <p>Acrescente os campos que as suas coisas têm: datas de validade, números de série, listas pendentes com as suas próprias opções. A folha ganha as colunas correspondentes.</p>
         </li>
 
         <li class="flow__step">
@@ -346,7 +351,7 @@
             <path d="M13.5 25a2.8 2.8 0 0 0 5 0" />
           </svg>
           <h3>Avisa-o a tempo</h3>
-          <p>Ponha uma data de validade, de garantia ou de manutenção num produto e a aplicação avisa-o por notificação ou por e-mail antes de passar. Ponha um mínimo numa quantidade e avisa-o quando ficar abaixo dele. Este é o único passo em que não faz nada.</p>
+          <p>Ponha uma data ou um mínimo num produto e a aplicação avisa-o antes da data, ou quando o stock fica abaixo do mínimo.</p>
         </li>
 
       </ol>
@@ -429,7 +434,7 @@
           <h2 id="s2-title">Aponte. Confirme. Seguinte.</h2>
           <div class="prose">
             <p>
-              Toque no círculo verde, aponte a câmara a um código de barras e a aplicação pesquisa bases de dados globais de produtos. O nome, a descrição e a fotografia voltam preenchidos, no seu idioma. Toque em <em>Guardar e ler o seguinte</em> e a câmara já está de volta.
+              Toque no círculo verde, aponte a câmara a um código de barras e a aplicação pesquisa numa base de dados global de produtos. O nome, a descrição e a fotografia voltam preenchidos, no seu idioma. Toque em <em>Guardar e ler o seguinte</em> e a câmara já está de volta.
             </p>
             <p>
               Não há hardware para comprar. Nem pistola de leitura, nada para emparelhar, nada para carregar. Lê doze formatos de código de barras, aproxima sozinha quando a letra é pequena e emite um sinal sonoro para que possa manter os olhos na prateleira.
@@ -551,10 +556,10 @@
         <h2 id="s4-title" class="mb-0">E há mais.</h2>
       </div>
 
-      <div class="grid grid--5" style="margin-top:28px">
+      <div class="grid grid--6" style="margin-top:28px">
         <div>
           <img class="frame-shot frame-shot--card" src="/img/pt/dashboard-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="O painel de um inventário chamado Home inv: 5 produtos, 4 localizações, 2 campos personalizados, 1 utilizador, 1 regra de alerta, stock total 86, e a última atividade." />
+               alt="O painel de um inventário chamado Home inv: 5 produtos, 4 localizações, 5 campos personalizados, 3 utilizadores, 1 regra de alerta, stock total 86, e a última atividade." />
           <h3>Painel</h3>
           <p>Produtos, localizações, stock total e a última coisa que mudou, num só ecrã.</p>
         </div>
@@ -562,11 +567,11 @@
           <img class="frame-shot frame-shot--card" src="/img/pt/custom-fields-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
                alt="O ecrã de edição de campos com cinco campos personalizados e os seus tipos: Consumir até e Aberto em como datas, Preço de compra como número, Fornecedor como texto, e Compartimento como lista pendente com seis opções." />
           <h3>Os seus próprios campos</h3>
-          <p>Preços, datas, números de série. Oito tipos, e cada um passa a ser uma coluna real na folha.</p>
+          <p>Preços, datas, números de série. Nove tipos, e cada um passa a ser uma coluna real na folha.</p>
         </div>
         <div>
           <img class="frame-shot frame-shot--card" src="/img/pt/alert-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
-               alt="O ecrã de nova regra de alerta: uma regra chamada A expirar em breve, que vigia o campo Consumir até, avisa sete dias antes da data às 09:00, limitada às localizações Cozinha e Prateleira da despensa, com notificação e e-mail ambos ativados." />
+               alt="O ecrã de nova regra de alerta: uma regra chamada A expirar em breve, que vigia o campo Consumir até, avisa sete dias antes da data, limitada às localizações Cozinha e Prateleira da despensa, com uma ligação para as definições de notificações." />
           <h3>Alertas</h3>
           <p>Uma data num produto, e avisa-o dias antes de passar, por notificação ou por e-mail. Um mínimo numa quantidade, e avisa-o quando o stock fica abaixo dele.</p>
         </div>
@@ -581,6 +586,17 @@
                alt="O ecrã de histórico com cada alteração: data, produto, quem a fez e a quantidade antes e depois: azeite aumentado de 1 para 2, passata reduzida de 7 para 6, paprica fumada criada, açúcar de cana eliminado." />
           <h3>Histórico <span class="pill">Premium</span></h3>
           <p>O que mudou, quem o fez e quando. Cada quantidade movida, cada produto acrescentado ou eliminado.</p>
+        </div>
+        <!-- Offline mode: Premium, shipped in app 1.2.0; 1.2.1 fixed the return
+             online after a restart. Barcode lookups, CSV import, inviting people
+             and alert-rule changes still need a connection, so the card names
+             the one a reader meets first. The screen quotes the app, which says
+             "sync"; the site's own copy still does not. -->
+        <div>
+          <img class="frame-shot frame-shot--card" src="/img/pt/offline-wt.png?v=22" width="696" height="1442" loading="lazy" decoding="async"
+               alt="O ecrã do modo offline: o estado Está a trabalhar offline, uma lista do que continua a funcionar — produtos, leitura e pesquisa, localizações, campos personalizados — e um botão Passar a online." />
+          <h3>Modo offline <span class="pill">Premium</span></h3>
+          <p>Sem rede na cave? Continue a acrescentar, editar e ler códigos. As suas alterações chegam à sua folha quando voltar a estar online; as consultas de códigos de barras esperam até lá.</p>
         </div>
       </div>
     </div>
@@ -599,7 +615,7 @@
       </div>
       <div class="prose">
         <p>
-          Na primeira vez que inicia sessão, o 1inventory cria uma folha de cálculo verdadeira no seu próprio Google Drive. Cada produto que acrescenta é uma linha nela. Abra-a num portátil, ordene-a, faça gráficos, ou partilhe-a com o seu contabilista como partilharia qualquer ficheiro do Google.
+          Na primeira vez que inicia sessão, o 1inventory cria uma folha de cálculo verdadeira no seu próprio Google Drive. Cada produto que acrescenta é uma linha nela. Abra-a num portátil, ordene-a, faça gráficos, ou partilhe-a com o seu contabilista como partilharia qualquer ficheiro do Google. Edite-a aí também: a aplicação recolhe as suas alterações na próxima atualização.
         </p>
         <p>
           Deixe de pagar e nada é eliminado. Elimine a aplicação e o ficheiro continua no seu Drive. Se desaparecêssemos amanhã, continuaria a ter tudo, porque nunca foi nosso.
